@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { questionsAndAnswers } from '../../helpers/questionsAndAnswers';
-import './style.css';
 import { Link } from 'react-router-dom';
+import './style.css';
 
-const FirstQuestions = () => {
+const InitQuestions = () => {
 
     const [responseUser, setResponseUser] = useState([
         {
@@ -40,16 +40,16 @@ const FirstQuestions = () => {
     };
 
     return (
-        <div>
+        <div className="container-init-questions">
             <p>Mi árbol</p>
             <p>Pregunta: {questionsAndAnswers.find(el => el.id === currentQuestion).question}</p>
-            {/* <div> // RESOLVER TEMA PREGUNTAS
+            <div>
                 {questionsAndAnswers.find(el => el.id === currentQuestion).answers.map((el, idx) => {
                     return (
-                        <p key={idx}>{el}</p>
+                        <p key={idx}>{el.name}</p>
                     )
                 })}
-            </div> */}
+            </div>
             {
                 currentQuestion < 4 ?
                     <button onClick={() => nextQuestion()}>Siguiente</button>
@@ -62,4 +62,4 @@ const FirstQuestions = () => {
     );
 };
 
-export default FirstQuestions;
+export default InitQuestions;

@@ -1,0 +1,17 @@
+.nav-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 7.5vh;
+    width: 100%;
+    background-color: white;
+    border-radius: 0 0 1rem 1rem;
+    padding: 1vh 3vw;
+}
+
+.item-list{
+    display: flex;
+    width: 50vw;
+    justify-content: space-between;
+    list-style-type: none;
+}

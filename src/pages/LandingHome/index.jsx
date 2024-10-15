@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import './style.css';
-import Register from '../../components/Register';
 
 const LandingHome = () => {
 
@@ -20,18 +20,21 @@ const LandingHome = () => {
         <div className="container-landing-home">
             <div>
                 {
-                    image !== "Registrarse" ?
-                        <p>
-                            {image}
-                        </p>
-                        :
-                        <Register />
+                    <p>
+                        {image}
+                    </p>
                 }
                 {
-                    image !== "LandingHome" && image !== "Registrarse" &&
-                    <button onClick={() => image === "Nuestra misión" ? goToNext("El primer paso") : image === goToNext("Registrarse")}>
-                        {image === "Nuestra misión" ? "Empezar" : "Registrarse"}
-                    </button>
+                    image === "LandingHome" ? null : image === "Nuestra misión" ?
+                        <button onClick={() => goToNext("El primer paso")}>
+                            Empezar
+                        </button>
+                        :
+                        <Link to="/registerForm">
+                            <button>
+                                Registrarse
+                            </button>
+                        </Link>
                 }
             </div>
         </div>

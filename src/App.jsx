@@ -1,7 +1,8 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import LandingHome from './pages/LandingHome';
 import Home from './pages/Home';
-import FirstQuestions from './pages/FirstQuestions';
+import InitQuestions from './pages/InitQuestions';
+import RegisterForm from './pages/RegisterForm';
 
 import './App.css';
 
@@ -12,7 +13,8 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingHome />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/initQuestions" element={<FirstQuestions />} />
+        <Route path="/initQuestions" element={<InitQuestions />} />
+        <Route path="/registerForm" element={<RegisterForm />} />
       </Routes>
     </BrowserRouter>
   );

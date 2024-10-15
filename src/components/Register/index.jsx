@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import './style.css';
 import { Link } from 'react-router-dom';
+import './style.css';
 
 const Register = () => {
 
@@ -38,7 +38,9 @@ const Register = () => {
     return (
         <div className="container-register">
             <div className="title-register">
+                <Link to="/">
                 <p>Mi árbol</p>
+                </Link>
                 <div className="text-register">
                     <p>Creemos tu perfil para comenzar a disminuir esa huella de carbono</p>
                     <p>"SEMBRAREMOS UN ÁRBOL HOY, PARA DAR SOBRA A LAS PERSONAS DEL MAÑANA."</p>
