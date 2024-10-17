@@ -1,8 +1,11 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import LandingHome from './pages/LandingHome';
-import Home from './pages/Home';
 import InitQuestions from './pages/InitQuestions';
 import RegisterForm from './pages/RegisterForm';
+import Home from './pages/Home';
+import NeutralCarbon from './pages/NeutralCarbon';
+import MySubscription from './pages/MySubscription';
+import MySeeds from './pages/MySeeds';
 
 import './App.css';
 
@@ -12,9 +15,12 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LandingHome />} />
-        <Route path="/home" element={<Home />} />
         <Route path="/initQuestions" element={<InitQuestions />} />
         <Route path="/registerForm" element={<RegisterForm />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/neutralCarbon" element={<NeutralCarbon />} />
+        <Route path="/mySubscription" element={<MySubscription />} />
+        <Route path="/mySeeds" element={<MySeeds />} />
       </Routes>
     </BrowserRouter>
   );

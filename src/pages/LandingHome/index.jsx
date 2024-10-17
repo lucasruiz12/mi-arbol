@@ -26,12 +26,12 @@ const LandingHome = () => {
                 }
                 {
                     image === "LandingHome" ? null : image === "Nuestra misión" ?
-                        <button onClick={() => goToNext("El primer paso")}>
+                        <button className="btn-green" onClick={() => goToNext("El primer paso")}>
                             Empezar
                         </button>
                         :
                         <Link to="/registerForm">
-                            <button>
+                            <button className="btn-green">
                                 Registrarse
                             </button>
                         </Link>

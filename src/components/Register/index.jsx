@@ -39,7 +39,7 @@ const Register = () => {
         <div className="container-register">
             <div className="title-register">
                 <Link to="/">
-                <p>Mi árbol</p>
+                    <p>Mi árbol</p>
                 </Link>
                 <div className="text-register">
                     <p>Creemos tu perfil para comenzar a disminuir esa huella de carbono</p>
@@ -151,24 +151,27 @@ const Register = () => {
                         <button className="btn-social-media" type="button" onClick={() => console.log("Apple")}>A</button>
                     </div>
                 </div>
-                <Link to="/initQuestions">
-                    <input
-                        type="submit"
-                        value="Registrarse"
-                        disabled={
-                            formData.name === "" ||
-                            formData.lastname === "" ||
-                            formData.city === "" ||
-                            formData.state === "" ||
-                            formData.phone === "" ||
-                            formData.email === "" ||
-                            formData.password === "" ||
-                            formData.repeatPassword === "" ||
-                            formData.password.length < 7 ||
-                            formData.password !== formData.repeatPassword
-                        }
-                    />
-                </Link>
+                <div className="link-container">
+                    <Link to="/initQuestions">
+                        <input
+                            type="submit"
+                            value="Registrarse"
+                            className="btn-green"
+                            disabled={
+                                formData.name === "" ||
+                                formData.lastname === "" ||
+                                formData.city === "" ||
+                                formData.state === "" ||
+                                formData.phone === "" ||
+                                formData.email === "" ||
+                                formData.password === "" ||
+                                formData.repeatPassword === "" ||
+                                formData.password.length < 7 ||
+                                formData.password !== formData.repeatPassword
+                            }
+                        />
+                    </Link>
+                </div>
             </form>
         </div>
     );

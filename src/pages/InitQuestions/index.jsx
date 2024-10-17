@@ -2,60 +2,67 @@ import React, { useState } from 'react';
 import { questionsAndAnswers } from '../../helpers/questionsAndAnswers';
 import { Link } from 'react-router-dom';
 import './style.css';
+import CustomCheckbox from '../../components/CustomCheckbox';
 
 const InitQuestions = () => {
 
     const [responseUser, setResponseUser] = useState([
         {
             id: 1,
-            answer: "",
+            // answer: "",
             points: 0
         },
         {
             id: 2,
-            answer: "",
+            // answer: "",
             points: 0
         },
         {
             id: 3,
-            answer: "",
+            // answer: "",
             points: 0
         },
         {
             id: 4,
-            answer: "",
+            // answer: "",
             points: 0
         },
         {
             id: 5,
-            answer: "",
+            // answer: "",
             points: 0
-        }
+        },
     ]);
 
+    const [responsePoints, setResponsePoints] = useState("");
     const [currentQuestion, setCurrentQuestion] = useState(1);
 
     const nextQuestion = () => {
+        const currentIndex = responseUser.findIndex(el => el.id === currentQuestion);
+        const newResponse = [...responseUser];
+        newResponse[currentIndex].points = responsePoints;
+        // newResponse[currentIndex].answer = responsePoints;
+
+        setResponseUser(newResponse);
         setCurrentQuestion(currentQuestion + 1);
+        setTimeout(() => {
+            console.log("Actual response", responseUser);
+        }, 1000);
     };
 
     return (
         <div className="container-init-questions">
-            <p>Mi árbol</p>
-            <p>Pregunta: {questionsAndAnswers.find(el => el.id === currentQuestion).question}</p>
-            <div>
-                {questionsAndAnswers.find(el => el.id === currentQuestion).answers.map((el, idx) => {
-                    return (
-                        <p key={idx}>{el.name}</p>
-                    )
-                })}
+            <p style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "10vh", width: "50vw" }}>Mi árbol logo</p>
+            <p style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "10vh", width: "50vw" }}><b>{questionsAndAnswers.find(el => el.id === currentQuestion).id}</b> {questionsAndAnswers.find(el => el.id === currentQuestion).question}</p>
+            <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "10vh", width: "50vw" }}>
+                <CustomCheckbox data={questionsAndAnswers.find(el => el.id === currentQuestion).answers} setData={setResponsePoints} resetData={responseUser} />
             </div>
             {
-                currentQuestion < 4 ?
-                    <button onClick={() => nextQuestion()}>Siguiente</button>
+                currentQuestion < 5 ?
+                    <button className="btn-green" disabled={responsePoints === ""} onClick={() => nextQuestion()}>Siguiente</button>
                     :
                     <Link to="/home">
-                        <button onClick={() => nextQuestion()}>Finalizar</button>
+                        <button className="btn-green" disabled={responsePoints === ""} onClick={() => nextQuestion()}>Finalizar</button>
                     </Link>
             }
         </div>

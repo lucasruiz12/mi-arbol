@@ -1,0 +1,14 @@
+body {
+    margin: 0
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+p,
+label,
+input {
+    color: #244855;
+}

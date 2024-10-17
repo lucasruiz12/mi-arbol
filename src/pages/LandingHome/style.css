@@ -4,3 +4,17 @@
     height: 100%;
     width: 100%;
 }
+
+.btn-green {
+    width: 10vw;
+    height: 5vh;
+    border: none;
+    border-radius: 1rem;
+    color: white;
+    background-color: #34C759;
+    cursor: pointer;
+}
+
+.btn-green:hover{
+    background-color: #73D354;
+}
