@@ -1,4 +1,25 @@
 .container-my-subscription {
     display: flex;
     flex-direction: column;
+    height: 90vh;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.my-subscription-title {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 30%;
+}
+
+.text-title {
+    font-size: xx-large;
+}
+
+.container-all-subscriptions {
+    display: flex;
+    justify-content: space-evenly;
+    width: 75%;
 }

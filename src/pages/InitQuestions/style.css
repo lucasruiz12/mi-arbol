@@ -1,10 +1,42 @@
 .container-init-questions {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     height: 100%;
     width: 100%;
+}
+
+.container-question{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 35vw;
+}
+
+.container-number{
+    width: 15%;
+}
+
+.question-number{
+    background-color: #34C759;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: xx-large;
+    width: 7.5vh;
+    height: 7.5vh;
+}
+
+.container-text{
+    width: 85%;
+}
+
+.question-text{
+    font-size: xx-large;
+    font-weight: bold;
 }
 
 .btn-green {

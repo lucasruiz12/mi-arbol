@@ -1,4 +1,76 @@
-.container-neutral-carbon{
+.container-neutral-carbon {
+    display: flex;
+    height: 90vh;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.container-info-text {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 23%;
+    height: 50%;
+}
+
+.text-you-know {
+    font-size: 5vh;
+    font-weight: bold;
+}
+
+.info-you-know {
+    font-size: xx-large;
+    margin: -2vh 0 5vh 0.5vw
+}
+
+.container-info-pizza {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 23%;
+    height: 50%;
+}
+
+.pizza-img {
+    height: 10vh;
+    width: 10vh;
+}
+
+.pizza-price {
+    font-size: xx-large;
+}
+
+.container-info-three {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 23%;
+    height: 50%;
+}
+
+.three-img {
+    height: 10vh;
+    width: 10vh;
+}
+
+.three-price {
+    font-size: xx-large;
+}
+
+.btn-green {
+    width: 10vw;
+    height: 5vh;
+    border: none;
+    border-radius: 1rem;
+    color: white;
+    background-color: #34C759;
+    cursor: pointer;
+}
+
+.btn-green:hover {
+    background-color: #73D354;
 }

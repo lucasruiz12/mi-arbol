@@ -3,14 +3,13 @@
     flex-direction: column-reverse;
     align-items: center;
     position: relative;
-    padding-left: 35px;
-    margin-bottom: 12px;
     cursor: pointer;
-    font-size: 22px;
+    font-size: xx-large;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    width: 33%;
 }
 
 .container-checkbox input {
@@ -26,11 +25,12 @@
     position: relative;
     top: 0;
     left: 0;
-    height: 25px;
-    width: 25px;
+    height: 4vh;
+    width: 4vh;
     background-color: #eee;
     border: solid 1px #00000096;
     border-radius: 0.3rem;
+    margin-bottom: 2vh;
 }
 
 /* On mouse-over, add a grey background color */
@@ -57,10 +57,10 @@
 
 /* Style the box-checkbox/indicator */
 .container-checkbox .box-checkbox:after {
-    left: 9px;
+    left: 12px;
     top: 5px;
-    width: 5px;
-    height: 10px;
+    width: 1vh;
+    height: 2vh;
     border: solid white;
     border-width: 0 3px 3px 0;
     -webkit-transform: rotate(45deg);
