@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
-  base: "/mi-arbol/",
+  base: "/",
   plugins: [
     react(),
     VitePWA({
@@ -13,9 +13,6 @@ export default defineConfig({
         short_name: 'PWAApp',
         description: 'Mi increíble PWA con React y Vite',
         theme_color: '#ffffff',
-        background_color: '#ffffff',
-        display: 'standalone',
-        start_url: '/mi-arbol/',
         icons: [
           {
             src: '/favicon-192x192.png',
