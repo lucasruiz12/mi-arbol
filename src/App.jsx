@@ -10,7 +10,6 @@ import MySeeds from './pages/MySeeds';
 import './App.css';
 
 function App() {
-
   return (
     <BrowserRouter>
       <Routes>
