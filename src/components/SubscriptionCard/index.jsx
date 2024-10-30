@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
 
-const SubscriptionCard = ({ data }) => {
+const SubscriptionCard = ({ data, setModal }) => {
 
     const { name, img, price, duration, color, includes } = data;
 
@@ -10,23 +10,25 @@ const SubscriptionCard = ({ data }) => {
             <div className="card-title" style={{ backgroundColor: color }}>
                 <p className="title-text">{name}</p>
             </div>
-            <p>Imagen {img}</p>
-            <div>
-                <p>{price}</p>
-                <p>{duration}</p>
+            <div className="card-img-three">
+                <p>Imagen {img}</p>
             </div>
-            <div>
+            <div className="card-container-price">
+                <p className="card-price" style={{ color }}>{price}</p>
+                <p className="card-duration">{duration}</p>
+            </div>
+            <div className="card-includes">
                 {
                     includes.map((el, index) => {
                         return (
-                            <p key={index}>{el}</p>
+                            <p className="includes-items" key={index}>{el}</p>
                         )
                     })
                 }
             </div>
-            <button className="btn-plan" style={{ backgroundColor: color }}>Contratar plan</button>
+            <button className="btn-plan" style={{ backgroundColor: color }} onClick={() => setModal(true)}>Contratar plan</button>
         </div>
-    )
-}
+    );
+};
 
-export default SubscriptionCard
+export default SubscriptionCard;

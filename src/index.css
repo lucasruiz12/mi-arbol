@@ -1,5 +1,6 @@
 body {
-    margin: 0
+    margin: 0;
+    background-color: #E2EFDA;
 }
 
 a {
@@ -11,4 +12,5 @@ p,
 label,
 input {
     color: #244855;
+    margin: 0;
 }

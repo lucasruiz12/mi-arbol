@@ -1,6 +1,6 @@
 import React from 'react';
-import './style.css'
 import { Link } from 'react-router-dom';
+import './style.css';
 
 const NavBar = () => {
     return (
@@ -17,7 +17,7 @@ const NavBar = () => {
                         Soy carbono neutro
                     </li>
                 </Link>
-                <Link to="/mySubscription" className={`navbar-container-btn ${window.location.pathname === "/MySubscription" ? "active-btn" : ""}`}>
+                <Link to="/mySubscription" className={`navbar-container-btn ${window.location.pathname === "/mySubscription" ? "active-btn" : ""}`}>
                     <li className="navbar-item">
                         Mi subscripción
                     </li>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { questionsAndAnswers } from '../../helpers/questionsAndAnswers';
 import { Link } from 'react-router-dom';
+import { questionsAndAnswers } from '../../helpers/questionsAndAnswers';
 import CustomCheckbox from '../../components/CustomCheckbox';
 import './style.css';
 

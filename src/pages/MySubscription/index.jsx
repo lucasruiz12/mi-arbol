@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import NavBar from '../../components/NavBar';
-import './style.css';
 import { subscriptions } from '../../helpers/subscriptions';
 import SubscriptionCard from '../../components/SubscriptionCard';
+import ModalPayment from '../../components/ModalPayment';
+import './style.css';
 
 const MySubscription = () => {
+
+    const [modalPayment, setModalPayment] = useState(false);
+
     return (
         <>
             <NavBar />
@@ -16,12 +20,13 @@ const MySubscription = () => {
                 {
                     subscriptions.map((el, idx) => {
                         return (
-                            <SubscriptionCard data={el} idx={idx} key={idx} />
+                            <SubscriptionCard data={el} idx={idx} key={idx} setModal={setModalPayment} />
                         )
                     })
                 }
                 </div>
             </div>
+            {modalPayment && <ModalPayment showModal={modalPayment} hideModal={() => setModalPayment(false)} />}
         </>
     );
 };
