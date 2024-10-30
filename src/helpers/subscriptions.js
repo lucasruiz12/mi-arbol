@@ -6,7 +6,8 @@ export const subscriptions = [
         price: "$149",
         duration: "por mes",
         color: "#34C759",
-        includes: ["Semilla para un árbol", "Etiqueta en árbol", "Geolocalización", "Tips de cuidado"]
+        includes: ["Semilla para un árbol", "Etiqueta en árbol", "Geolocalización", "Tips de cuidado"],
+        link: "https://buy.stripe.com/test_cN20156ri9PAcj68ww",
     },
     {
         id: 2,
@@ -15,7 +16,8 @@ export const subscriptions = [
         price: "$415",
         duration: "por seis meses",
         color: "#007AFF",
-        includes: ["Semilla para un árbol", "Etiqueta en árbol", "Geolocalización", "Tips de cuidado"]
+        includes: ["Semilla para un árbol", "Etiqueta en árbol", "Geolocalización", "Tips de cuidado"],
+        link: "https://buy.stripe.com/test_cN20156ri9PAcj68ww",
     },
     {
         id: 3,
@@ -24,6 +26,7 @@ export const subscriptions = [
         price: "$1500",
         duration: "por año",
         color: "#FF9500",
-        includes: ["Semilla para un árbol", "Etiqueta en árbol", "Geolocalización", "Tips de cuidado"]
+        includes: ["Semilla para un árbol", "Etiqueta en árbol", "Geolocalización", "Tips de cuidado"],
+        link: "https://buy.stripe.com/test_cN20156ri9PAcj68ww",
     },
 ]

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import NavBar from '../../components/NavBar';
 import './style.css';
 
@@ -29,7 +30,18 @@ const NeutralCarbon = () => {
                         </>
                         :
                         <>
-                            <p>Preparar vista 2</p>
+                            <div className="container-info-text">
+                                <p className="text-you-know">¿Cómo impacta tu inversión?</p>
+                                <p className="info-you-know">Inscrito podrás conocer la geolocalización de tus árboles y visitarlos siempre que gustes.</p>
+                                <p className="info-you-know">Tus árboles estarán etiquetados con tus datos y podrás formar parte de las reforestaciones que hagamos.</p>
+                                <Link to="/mySubscription">
+                                    <button className="btn-green" onClick={() => setRenderView(2)}>¡Vuélvete carbono neutro!</button>
+                                </Link>
+                            </div>
+                            <div className="container-info-pizza">
+                                <p className="pizza-price">Foto de la pizza</p>
+                                <p className="pizza-img">Toca la pizza para ver el impacto de tu inversión</p>
+                            </div>
                         </>
                 }
             </div>

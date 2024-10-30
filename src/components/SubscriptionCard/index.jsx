@@ -1,9 +1,14 @@
 import React from 'react';
 import './style.css';
 
-const SubscriptionCard = ({ data, setModal }) => {
+const SubscriptionCard = ({ data, setModal, setLinkPayment }) => {
 
-    const { name, img, price, duration, color, includes } = data;
+    const { name, img, price, duration, color, includes, link } = data;
+
+    const hirePlan = () => {
+        setModal(true);
+        setLinkPayment(link)
+    };
 
     return (
         <div className="card-subscription">
@@ -26,7 +31,7 @@ const SubscriptionCard = ({ data, setModal }) => {
                     })
                 }
             </div>
-            <button className="btn-plan" style={{ backgroundColor: color }} onClick={() => setModal(true)}>Contratar plan</button>
+            <button className="btn-plan" style={{ backgroundColor: color }} onClick={() => hirePlan()}>Contratar plan</button>
         </div>
     );
 };

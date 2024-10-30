@@ -1,4 +1,4 @@
-.modal-payment-title{
+.modal-payment-title {
     display: flex;
     width: 100%;
     justify-content: center;
@@ -7,24 +7,23 @@
     color: #34C759;
 }
 
-.btn-close-modal{
+.btn-close-modal {
     background-color: transparent;
     border: none;
     font-weight: bold;
 }
 
-.container-payment-form{
+.container-payment-form {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 80%;
 }
 
-.container-pay-with-card{
+.container-pay-request {
     display: flex;
 }
 
-.container-images-cards{
+.container-buttons-confirm {
     display: flex;
 }

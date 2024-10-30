@@ -1,14 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Modal } from 'react-bootstrap';
 import './style.css';
 
 
-const ModalPayment = ({ showModal, hideModal }) => {
+const ModalPayment = ({ showModal, hideModal, linkPayment }) => {
+
+    const [currentEmail, setCurrentEmail] = useState("");
+
+    useEffect(() => {
+        const sessionEmail = "juan@luis.com";
+        // const sessionEmail = JSON.parse(localStorage.getItem("sessionEmail"));
+        setCurrentEmail(sessionEmail);
+    },[]);
+
     return (
         <Modal size="lg" backdrop={"static"} show={showModal} onHide={hideModal}>
             <Modal.Header>
                 <h3 className="modal-payment-title">
-                    Opciones de pago
+                    Contratar plan
                 </h3>
                 <button className="btn-close-modal" onClick={() => hideModal()}>
                     {/* <img src={closeModal} alt="X" /> */}
@@ -17,16 +26,12 @@ const ModalPayment = ({ showModal, hideModal }) => {
             </Modal.Header>
             <Modal.Body>
                 <div className="container-payment-form">
-                    <div className="container-pay-with-card">
-                        <div>
-                            <input type="radio" id="card-payment" name="card-payment" value="card" />
-                            <label htmlFor="card-payment">Tarjeta de crédito / débito</label>
-                        </div>
-                        <div className="container-images-cards">
-                            <p>1</p>
-                            <p>2</p>
-                            <p>3</p>
-                        </div>
+                    <div className="container-pay-request">
+                        <span>¿Estás seguro que deseas contratar este plan?</span>
+                    </div>
+                    <div className="container-buttons-confirm">
+                        <button onClick={() => window.location.href = `${linkPayment}?prefilled_email=${currentEmail}`}>Sí</button>
+                        <button onClick={() => hideModal()}>No</button>
                     </div>
                 </div>
             </Modal.Body>

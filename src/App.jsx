@@ -8,6 +8,7 @@ import MySubscription from './pages/MySubscription';
 import MySeeds from './pages/MySeeds';
 
 import './App.css';
+import SuccessfulPayment from './pages/SuccessfulPayment';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/neutralCarbon" element={<NeutralCarbon />} />
         <Route path="/mySubscription" element={<MySubscription />} />
         <Route path="/mySeeds" element={<MySeeds />} />
+        <Route path="/successfulPayment" element={<SuccessfulPayment />} />
       </Routes>
     </BrowserRouter>
   );

@@ -1,0 +1,1 @@
+export const SECRET_KEY = "sk_test_51QCo70GLrG1S8pttkQjFcgrZqCro43LuevQcOa1plOYnJIJfzGQ2okQ8sdmjz38yHkYptRlakP1CKs2IwJNn9sCL00r21j44sD";

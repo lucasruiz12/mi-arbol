@@ -8,6 +8,7 @@ import './style.css';
 const MySubscription = () => {
 
     const [modalPayment, setModalPayment] = useState(false);
+    const [linkPayment, setLinkPayment] = useState("");
 
     return (
         <>
@@ -20,13 +21,13 @@ const MySubscription = () => {
                 {
                     subscriptions.map((el, idx) => {
                         return (
-                            <SubscriptionCard data={el} idx={idx} key={idx} setModal={setModalPayment} />
+                            <SubscriptionCard data={el} idx={idx} key={idx} setModal={setModalPayment} setLinkPayment={setLinkPayment} />
                         )
                     })
                 }
                 </div>
             </div>
-            {modalPayment && <ModalPayment showModal={modalPayment} hideModal={() => setModalPayment(false)} />}
+            {modalPayment && <ModalPayment showModal={modalPayment} hideModal={() => setModalPayment(false)} linkPayment={linkPayment} />}
         </>
     );
 };
