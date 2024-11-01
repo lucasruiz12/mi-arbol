@@ -65,7 +65,7 @@ const Register = () => {
             };
 
             localStorage.setItem(IS_AUTHENTICATED, JSON.stringify(dataToStorage));
-            // window.location.href = "/home";
+            window.location.href = "/home";
         } catch (err) {
             console.error("Error registrando usuario:", err);
         };

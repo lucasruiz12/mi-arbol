@@ -9,8 +9,9 @@ const ModalPayment = ({ showModal, hideModal, linkPayment }) => {
     const [currentEmail, setCurrentEmail] = useState("");
 
     useEffect(() => {
-        const sessionEmail = JSON.parse(localStorage.getItem(IS_AUTHENTICATED).email);
-        setCurrentEmail(sessionEmail);
+        const sessionEmail = JSON.parse(localStorage.getItem(IS_AUTHENTICATED));
+        const emailToSet = sessionEmail.email;
+        setCurrentEmail(emailToSet);
     },[]);
 
     return (
