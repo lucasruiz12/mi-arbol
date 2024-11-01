@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './style.css';
+import { logout } from '../../firebase/connections';
 
 const NavBar = () => {
     return (
@@ -28,7 +29,7 @@ const NavBar = () => {
                     </li>
                 </Link>
             </ul>
-            <p>Imagen</p>
+            <p onClick={() => logout()}>Imagen (logout)</p>
         </nav>
     );
 };

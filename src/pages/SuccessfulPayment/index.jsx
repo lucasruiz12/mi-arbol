@@ -7,11 +7,11 @@ const SuccessfulPayment = () => {
     const [statusPayment, setStatusPayment] = useState(false);
 
     useEffect(() => {
-        const sessionEmail = "lucas@mail.com";
+        const sessionEmail = "juan@gmail.com";
         // const sessionEmail = JSON.parse(localStorage.getItem("sessionEmail"));
         getCustomerByEmail(sessionEmail).then(response => {
-            const { data } = response;
-            if (data.length > 0) {
+            if (response.length > 0) {
+                console.log(response);
                 setStatusPayment(true);
             } else {
                 setTimeout(() => {

@@ -17,7 +17,7 @@ export const subscriptions = [
         duration: "por seis meses",
         color: "#007AFF",
         includes: ["Semilla para un árbol", "Etiqueta en árbol", "Geolocalización", "Tips de cuidado"],
-        link: "https://buy.stripe.com/test_cN20156ri9PAcj68ww",
+        link: "https://buy.stripe.com/test_cN29BFbLCd1M3MA6op",
     },
     {
         id: 3,
@@ -27,6 +27,6 @@ export const subscriptions = [
         duration: "por año",
         color: "#FF9500",
         includes: ["Semilla para un árbol", "Etiqueta en árbol", "Geolocalización", "Tips de cuidado"],
-        link: "https://buy.stripe.com/test_cN20156ri9PAcj68ww",
+        link: "https://buy.stripe.com/test_6oE29d7vm4vg2Iw4gi",
     },
 ]

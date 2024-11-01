@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Modal } from 'react-bootstrap';
+import { IS_AUTHENTICATED } from '../../helpers/constants';
 import './style.css';
 
 
@@ -8,8 +9,7 @@ const ModalPayment = ({ showModal, hideModal, linkPayment }) => {
     const [currentEmail, setCurrentEmail] = useState("");
 
     useEffect(() => {
-        const sessionEmail = "juan@luis.com";
-        // const sessionEmail = JSON.parse(localStorage.getItem("sessionEmail"));
+        const sessionEmail = JSON.parse(localStorage.getItem(IS_AUTHENTICATED).email);
         setCurrentEmail(sessionEmail);
     },[]);
 
