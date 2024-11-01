@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { signUpWithEmail, signUpWithFacebook, signUpWithGoogle } from '../../firebase/connections';
 import { IS_AUTHENTICATED } from '../../helpers/constants';
+import LoadingLogo from '../LoadingLogo';
 import './style.css';
 
 const Register = () => {
@@ -51,7 +52,8 @@ const Register = () => {
         };
     };
 
-    const makeLogin = async () => {
+    const submitData = async (event) => {
+        event.preventDefault();
         try {
             const { accessToken, displayName, email, uid } = await signUpWithEmail(formData.email, formData.password, `${formData.name} ${formData.lastname}`);
 
@@ -63,7 +65,7 @@ const Register = () => {
             };
 
             localStorage.setItem(IS_AUTHENTICATED, JSON.stringify(dataToStorage));
-            window.location.href = "/home";
+            // window.location.href = "/home";
         } catch (err) {
             console.error("Error registrando usuario:", err);
         };
@@ -86,7 +88,7 @@ const Register = () => {
         <div className="container-register">
             {
                 loading ?
-                    <p>Cargando</p>
+                    <LoadingLogo />
                     :
                     <>
                         <div className="title-register">
@@ -98,7 +100,7 @@ const Register = () => {
                                 <p>"SEMBRAREMOS UN ÁRBOL HOY, PARA DAR SOBRA A LAS PERSONAS DEL MAÑANA."</p>
                             </div>
                         </div>
-                        <div className="form-register">
+                        <form className="form-register" onSubmit={submitData}>
                             <div className="container-input-form">
                                 <label className="input-title" htmlFor="name">
                                     Nombre(s):
@@ -205,8 +207,10 @@ const Register = () => {
                             </div>
                             <div className="link-container">
                                 {/* <Link to="/initQuestions"> */}
-                                <button className="btn-green"
-                                    onClick={() => makeLogin()}
+                                <input
+                                    type="submit"
+                                    value="Registrarse"
+                                    className="btn-green"
                                     disabled={
                                         formData.name === "" ||
                                         formData.lastname === "" ||
@@ -219,10 +223,10 @@ const Register = () => {
                                         formData.password.length < 7 ||
                                         formData.password !== formData.repeatPassword
                                     }
-                                >Registrarse</button>
+                                />
                                 {/* </Link> */}
                             </div>
-                        </div>
+                        </form>
                     </>
             }
         </div>

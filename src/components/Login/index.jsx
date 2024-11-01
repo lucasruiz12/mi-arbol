@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { loginWithEmail, loginWithGoogle, loginWithFacebook } from '../../firebase/connections';
 import { IS_AUTHENTICATED } from '../../helpers/constants';
+import LoadingLogo from '../LoadingLogo';
 import './style.css';
 
 const Login = () => {
@@ -29,10 +30,9 @@ const Login = () => {
 
     const submitData = async (event) => {
         event.preventDefault();
-        // console.log(formData);
         try {
-            const { accessToken, displayName, email, uid } = await loginWithEmail(formData.user, formData.password);
-
+            const user = await loginWithEmail(formData.user, formData.password);
+            const { accessToken, displayName, email, uid } = user;
             const dataToStorage = {
                 accessToken,
                 displayName,
@@ -83,7 +83,7 @@ const Login = () => {
         <div className="container-login">
             {
                 loading ?
-                    <p>Cargando</p>
+                    <LoadingLogo />
                     :
                     <form className="form-login" onSubmit={submitData}>
                         <div className="title-login">

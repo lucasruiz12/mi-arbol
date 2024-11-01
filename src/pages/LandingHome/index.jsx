@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { IS_AUTHENTICATED } from '../../helpers/constants';
+import LoadingLogo from '../../components/LoadingLogo';
 import './style.css';
 
 const LandingHome = () => {
@@ -32,7 +33,7 @@ const LandingHome = () => {
         <div className="container-landing-home">
             {
                 loading ?
-                    <p>Cargando</p>
+                    <LoadingLogo />
                     :
                     <div>
                         {
