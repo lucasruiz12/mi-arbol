@@ -7,7 +7,7 @@ const SubscriptionCard = ({ data, setModal, setLinkPayment }) => {
 
     const hirePlan = () => {
         setModal(true);
-        setLinkPayment(link)
+        setLinkPayment(link);
     };
 
     return (
