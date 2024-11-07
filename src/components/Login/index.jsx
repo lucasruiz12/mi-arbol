@@ -95,7 +95,7 @@ const Login = () => {
                                 <p className="text-carbon">Soy carbono neutro</p>
                             </div>
                         </div>
-                        <div className="container-input-form">
+                        <div className="container-input-form-login">
                             <label className="input-title" htmlFor="user">
                                 Usuario:
                             </label>
@@ -107,7 +107,7 @@ const Login = () => {
                                 onChange={changeData}
                             />
                         </div>
-                        <div className="container-input-form">
+                        <div className="container-input-form-login">
                             <label className="input-title" htmlFor="password">
                                 Contraseña:
                             </label>
@@ -124,7 +124,7 @@ const Login = () => {
                             <input
                                 type="submit"
                                 value="Iniciar sesión"
-                                className="btn-green"
+                                className="btn-green-login"
                                 disabled={
                                     formData.user === "" ||
                                     formData.password === "" ||

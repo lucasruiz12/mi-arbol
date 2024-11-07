@@ -4,3 +4,15 @@
     height: 100%;
     width: 100%;
 }
+
+.register-video{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100.1vh;
+    object-fit: fill;
+    transform: translate(-50%, -50%);
+    filter: opacity(50%);
+    z-index: -1;
+}

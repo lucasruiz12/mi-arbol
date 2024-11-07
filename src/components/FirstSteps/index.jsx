@@ -11,7 +11,7 @@ const FirstSteps = () => {
             </video>
             <div className="steps-content">
                 <p style={{ height: "10vh", width: "10vh", border: "solid 1px black" }}>Logo</p>
-                <h2 className="steps-title">Nuestra misión</h2>
+                <h2 className="steps-title">El primer paso</h2>
                 <div className="steps-text">
                     <p className="steps-line-text">Es entender cuántos gases de efecto invernadero generas en tu vida diaria, por lo que te haremos 8 sencillas preguntas sobre tu día a día para conocer tu huella.</p>
                     <p className="steps-line-text">El resultado es un estimado muy preciso, realizado de acuerdo al protocolo internacional para el cálculo de gases de efecto invernadero.</p>

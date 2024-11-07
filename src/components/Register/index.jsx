@@ -96,8 +96,8 @@ const Register = () => {
                                 <p>Mi árbol</p>
                             </Link>
                             <div className="text-register">
-                                <p>Creemos tu perfil para comenzar a disminuir esa huella de carbono</p>
-                                <p>"SEMBRAREMOS UN ÁRBOL HOY, PARA DAR SOBRA A LAS PERSONAS DEL MAÑANA."</p>
+                                <p className="register-line">Creemos tu perfil para comenzar a disminuir esa huella de carbono</p>
+                                <p className="register-line">"SEMBRAREMOS UN ÁRBOL HOY, PARA DAR SOBRA A LAS PERSONAS DEL MAÑANA."</p>
                             </div>
                         </div>
                         <form className="form-register" onSubmit={submitData}>
@@ -205,12 +205,12 @@ const Register = () => {
                                     {/* <button className="btn-social-media" type="button" onClick={() => console.log("Apple")}>A</button> */}
                                 </div>
                             </div>
-                            <div className="link-container">
+                            <div className="link-container-register">
                                 {/* <Link to="/initQuestions"> */}
                                 <input
                                     type="submit"
                                     value="Registrarse"
-                                    className="btn-green"
+                                    className="btn-green-register"
                                     disabled={
                                         formData.name === "" ||
                                         formData.lastname === "" ||
