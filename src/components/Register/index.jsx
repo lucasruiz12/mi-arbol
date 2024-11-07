@@ -36,7 +36,7 @@ const Register = () => {
 
     const submitSocialMedia = async (socialMedia) => {
         try {
-            const { accessToken, displayName, email, uid } = await socialMedia();
+            const { accessToken, displayName, email, uid } = await socialMedia(formData);
 
             const dataToStorage = {
                 accessToken,

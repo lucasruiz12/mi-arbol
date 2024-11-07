@@ -1,4 +1,4 @@
-.container-neutral-carbon {
+.container-neutral-carbon-content {
     display: flex;
     height: 90vh;
     width: 100%;
@@ -68,10 +68,10 @@
     border: none;
     border-radius: 1rem;
     color: white;
-    background-color: #34C759;
+    background-color: #88AE55;
     cursor: pointer;
 }
 
 .btn-green:hover {
-    background-color: #73D354;
+    background-color: #92CD43;
 }

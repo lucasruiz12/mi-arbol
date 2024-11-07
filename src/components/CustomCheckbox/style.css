@@ -35,12 +35,12 @@
 
 /* On mouse-over, add a grey background color */
 .container-checkbox:hover input~.box-checkbox {
-    background-color: #73D354;
+    background-color: #92CD43;
 }
 
 /* When the checkbox is checked, add a blue background */
 .container-checkbox input:checked~.box-checkbox {
-    background-color: #34C759;
+    background-color: #88AE55;
 }
 
 /* Create the box-checkbox/indicator (hidden when not checked) */

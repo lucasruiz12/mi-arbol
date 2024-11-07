@@ -19,13 +19,13 @@ const MySubscription = () => {
     }, []);
 
     return (
-        <>
+        <div className="container-my-subscription">
             <NavBar />
             {
                 loading ?
                     <LoadingLogo />
                     :
-                    <div className="container-my-subscription">
+                    <div className="container-my-subscription-content">
                         <div className="my-subscription-title">
                             <p className="text-title">¡Somos la plataforma que más árboles sembrará por cada peso tuyo!</p>
                         </div>
@@ -41,7 +41,7 @@ const MySubscription = () => {
                     </div>
             }
             {modalPayment && <ModalPayment showModal={modalPayment} hideModal={() => setModalPayment(false)} linkPayment={linkPayment} />}
-        </>
+        </div>
     );
 };
 

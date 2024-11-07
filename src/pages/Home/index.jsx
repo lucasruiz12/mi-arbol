@@ -22,7 +22,7 @@ const Home = () => {
                 loading ?
                     <LoadingLogo />
                     :
-                    <div>MyTrace {user}</div>
+                    <div className="container-home-content">MyTrace {user}</div>
             }
         </div>
     );

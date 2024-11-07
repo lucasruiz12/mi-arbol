@@ -1,4 +1,15 @@
 .container-home {
     display: flex;
     flex-direction: column;
+    height: 100%;
+}
+
+.container-home-content {
+    height: 90vh;
+}
+
+@media (max-width: 768px) {
+    .container-home {
+        flex-direction: column-reverse;
+    }
 }

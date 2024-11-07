@@ -45,12 +45,12 @@ export const updateUserProfile = async (docId, updatedData) => {
 };
 
 // Sign-up functions
-export const signUpWithEmail = async (email, password, name) => {
+export const signUpWithEmail = async (email, password, data) => {
     try {
         const { user } = await createUserWithEmailAndPassword(auth, email, password);
+        const { name } = data;
         await updateProfile(user, { displayName: name });
-        console.log("ESTE ES USER", user);
-        await saveUserProfile(user.uid, { name });
+        await saveUserProfile(user.uid, data);
         return user;
     } catch (error) {
         console.error('Error al crear cuenta con email:', error);
@@ -58,9 +58,29 @@ export const signUpWithEmail = async (email, password, name) => {
     }
 };
 
-const signInWithProvider = async (provider) => {
+const signInWithProvider = async (provider, data) => {
     try {
         const { user } = await signInWithPopup(auth, provider);
+        const newData = {
+            ...data,
+            suscription: false,
+            // questions: [
+            //     {
+            //         id: 1,
+            //         response: 1
+            //     },
+            //     {
+            //         id: 1,
+            //         response: 1
+            //     },
+            //     {
+            //         id: 1,
+            //         response: 1
+            //     },
+            // ]
+        };
+
+        await saveUserProfile(user.uid, newData);
         return user;
     } catch (error) {
         console.error('Error al iniciar sesión:', error);
@@ -68,9 +88,8 @@ const signInWithProvider = async (provider) => {
     }
 };
 
-export const signUpWithGoogle = async () => signInWithProvider(new GoogleAuthProvider());
-export const signUpWithFacebook = async () => signInWithProvider(new FacebookAuthProvider());
-// export const signUpWithApple = async () => signInWithProvider(new OAuthProvider('apple.com'));
+export const signUpWithGoogle = async (data) => signInWithProvider(new GoogleAuthProvider(), data);
+export const signUpWithFacebook = async (data) => signInWithProvider(new FacebookAuthProvider(), data);
 
 // Login functions
 export const loginWithEmail = async (email, password) => {
@@ -80,12 +99,11 @@ export const loginWithEmail = async (email, password) => {
     } catch (error) {
         console.error('Error al iniciar sesión con email:', error);
         throw error;
-    }
+    };
 };
 
 export const loginWithGoogle = async () => signInWithProvider(new GoogleAuthProvider());
 export const loginWithFacebook = async () => signInWithProvider(new FacebookAuthProvider());
-// export const loginWithApple = async () => signInWithProvider(new OAuthProvider('apple.com'));
 
 // Logout function
 export const logout = async () => {

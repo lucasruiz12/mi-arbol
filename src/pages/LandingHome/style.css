@@ -1,4 +1,4 @@
-.container-landing-home{
+.container-landing-home {
     display: flex;
     justify-content: center;
     height: 100%;
@@ -11,10 +11,10 @@
     border: none;
     border-radius: 1rem;
     color: white;
-    background-color: #34C759;
+    background-color: #88AE55;
     cursor: pointer;
 }
 
-.btn-green:hover{
-    background-color: #73D354;
+.btn-green:hover {
+    background-color: #92CD43;
 }

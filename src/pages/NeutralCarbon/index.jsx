@@ -16,9 +16,9 @@ const NeutralCarbon = () => {
     }, []);
 
     return (
-        <>
+        <div className="container-neutral-carbon">
             <NavBar />
-            <div className="container-neutral-carbon">
+            <div className="container-neutral-carbon-content">
                 {
                     loading ?
                         <LoadingLogo />
@@ -56,7 +56,7 @@ const NeutralCarbon = () => {
                             </>
                 }
             </div>
-        </>
+        </div>
     );
 };
 
