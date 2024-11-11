@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import { signUpWithEmail, signUpWithFacebook, signUpWithGoogle } from '../../firebase/connections';
 import { IS_AUTHENTICATED } from '../../helpers/constants';
 import LoadingLogo from '../LoadingLogo';
+import logoArbol from '../../assets/icons/logo-blanco.svg';
+import iconGoogle from '../../assets/icons/rrss-google.svg';
+import iconFacebook from '../../assets/icons/rrss-facebook.svg';
 import './style.css';
 
 const Register = () => {
@@ -80,7 +83,7 @@ const Register = () => {
 
         setTimeout(() => {
             setLoading(false);
-        }, 1000);
+        }, 3000);
 
     }, []);
 
@@ -92,12 +95,12 @@ const Register = () => {
                     :
                     <>
                         <div className="title-register">
-                            <Link to="/">
-                                <p>Mi árbol</p>
+                            <Link to="/loginForm">
+                            <img className="register-logo" src={logoArbol} alt="LOG" />
                             </Link>
                             <div className="text-register">
                                 <p className="register-line">Creemos tu perfil para comenzar a disminuir esa huella de carbono</p>
-                                <p className="register-line">"SEMBRAREMOS UN ÁRBOL HOY, PARA DAR SOBRA A LAS PERSONAS DEL MAÑANA."</p>
+                                <p className="register-line">"SEMBREMOS UN ÁRBOL HOY PARA DAR SOMBRA A LAS PERSONAS DEL MAÑANA."</p>
                             </div>
                         </div>
                         <form className="form-register" onSubmit={submitData}>
@@ -200,9 +203,8 @@ const Register = () => {
                             <div className="container-social-media">
                                 <span>Registrarse con: </span>
                                 <div className="container-btn-social-media">
-                                    <button className="btn-social-media" type="button" onClick={() => submitSocialMedia(signUpWithGoogle)}>G</button>
-                                    <button className="btn-social-media" type="button" onClick={() => submitSocialMedia(signUpWithFacebook)}>F</button>
-                                    {/* <button className="btn-social-media" type="button" onClick={() => console.log("Apple")}>A</button> */}
+                                    <img src={iconGoogle} alt='GS' className="btn-social-media" onClick={() => submitSocialMedia(signUpWithGoogle)} />
+                                    <img src={iconFacebook} alt='FB' className="btn-social-media" onClick={() => submitSocialMedia(signUpWithFacebook)} />
                                 </div>
                             </div>
                             <div className="link-container-register">

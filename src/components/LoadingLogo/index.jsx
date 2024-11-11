@@ -1,10 +1,11 @@
 import React from 'react';
+import logoArbol from '../../assets/icons/logo-cuadrado.svg';
 import './style.css';
 
 const LoadingLogo = () => {
   return (
     <div className="loading-logo-container">
-    <p>Cargando</p>
+      <img className="loading-logo" src={logoArbol} alt="LOG" />
     </div>
   );
 };

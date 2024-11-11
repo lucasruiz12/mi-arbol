@@ -27,6 +27,12 @@
     color: white;
 }
 
+.steps-logo{
+    height: 12vh;
+    width: 12vh;
+    cursor: pointer;
+}
+
 .steps-text{
     display: flex;
     flex-direction: column;

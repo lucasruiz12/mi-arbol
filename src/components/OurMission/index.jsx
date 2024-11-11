@@ -1,5 +1,6 @@
 import React from 'react';
 import misionVideo from '../../assets/videos/1. hojas.mp4';
+import logoArbol from '../../assets/icons/logo-cuadrado.svg';
 import './style.css';
 
 const OurMission = ({ setView }) => {
@@ -9,7 +10,7 @@ const OurMission = ({ setView }) => {
                 <source src={misionVideo} type="video/mp4" />
             </video>
             <div className="mission-content">
-                <p style={{ height: "10vh", width: "10vh", border: "solid 1px black" }}>Logo</p>
+                <img className="mission-logo" src={logoArbol} alt="LOG" />
                 <h2 className="mission-title">Nuestra misión</h2>
                 <div className="mission-text">
                     <p className="mission-line-text">Es ayudar a compensar las huellas de carbono que generas en tu vida diaria.</p>

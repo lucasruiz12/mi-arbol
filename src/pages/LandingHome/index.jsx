@@ -9,6 +9,15 @@ const LandingHome = () => {
 
     const [view, setView] = useState(1);
     const [loading, setLoading] = useState(true);
+    const [isAnimating, setIsAnimating] = useState(false);
+
+    const handleChangeView = (newView) => {
+        setIsAnimating(true);
+        setTimeout(() => {
+            setView(newView);
+            setIsAnimating(false);
+        }, 500);
+    };
 
     useEffect(() => {
         const user = JSON.parse(localStorage.getItem(IS_AUTHENTICATED));
@@ -19,22 +28,26 @@ const LandingHome = () => {
 
         setTimeout(() => {
             setLoading(false);
-        }, 1000);
+        }, 3000);
     }, []);
 
     return (
-        <div className="container-landing-home">
+        <div className={`container-landing-home ${isAnimating ? 'animating' : ''}`}>
             {
-                loading ?
+                loading ? (
                     <LoadingLogo />
-                    :
-                    view === 1 ?
-                        <OurMission setView={setView} />
-                        :
-                        <FirstSteps />
+                ) : view === 1 ? (
+                    <div className="slide-container slide-out">
+                        <OurMission setView={handleChangeView} />
+                    </div>
+                ) : (
+                    <div className={`slide-container slide-in`}>
+                        <FirstSteps setView={handleChangeView} />
+                    </div>
+                )
             }
         </div>
-    )
+    );
 }
 
 export default LandingHome;

@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import { loginWithEmail, loginWithGoogle, loginWithFacebook } from '../../firebase/connections';
 import { IS_AUTHENTICATED } from '../../helpers/constants';
 import LoadingLogo from '../LoadingLogo';
+import logoFull from '../../assets/icons/logo-full.svg';
+import iconGoogle from '../../assets/icons/rrss-google.svg';
+import iconFacebook from '../../assets/icons/rrss-facebook.svg';
 import './style.css';
 
 const Login = () => {
@@ -74,7 +77,7 @@ const Login = () => {
 
         setTimeout(() => {
             setLoading(false);
-        }, 1000);
+        }, 3000);
 
     }, []);
 
@@ -88,7 +91,7 @@ const Login = () => {
                     <form className="form-login" onSubmit={submitData}>
                         <div className="title-login">
                             <Link to="/">
-                                <p>Mi árbol</p>
+                                <img className="login-logo" src={logoFull} alt="LOG" />
                             </Link>
                             <div className="text-login-container">
                                 <p className="text-welcome">Bienvenido(a)</p>
@@ -136,9 +139,8 @@ const Login = () => {
                         <div className="container-social-media">
                             <span>Iniciar sesión con: </span>
                             <div className="container-btn-social-media">
-                                <button className="btn-social-media" type="button" onClick={() => submitSocialMedia(loginWithGoogle)}>G</button>
-                                <button className="btn-social-media" type="button" onClick={() => submitSocialMedia(loginWithFacebook)}>F</button>
-                                {/* <button className="btn-social-media" type="button" onClick={() => console.log("Apple")}>A</button> */}
+                                <img src={iconGoogle} alt='GS' className="btn-social-media" onClick={() => submitSocialMedia(loginWithGoogle)} />
+                                <img src={iconFacebook} alt='FB' className="btn-social-media" onClick={() => submitSocialMedia(loginWithFacebook)} />
                             </div>
                         </div>
                         <div className="container-social-media">

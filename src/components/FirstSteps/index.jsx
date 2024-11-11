@@ -1,16 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import stepsVideo from '../../assets/videos/2. Mundo.mp4';
+import logoArbol from '../../assets/icons/logo-cuadrado.svg';
 import './style.css'
 
-const FirstSteps = () => {
+const FirstSteps = ({setView}) => {
     return (
         <div className="container-steps-view">
             <video autoPlay muted loop className="steps-video">
                 <source src={stepsVideo} type="video/mp4" />
             </video>
             <div className="steps-content">
-                <p style={{ height: "10vh", width: "10vh", border: "solid 1px black" }}>Logo</p>
+            <img onClick={() => setView(1)} className="steps-logo" src={logoArbol} alt="LOG" />
                 <h2 className="steps-title">El primer paso</h2>
                 <div className="steps-text">
                     <p className="steps-line-text">Es entender cuántos gases de efecto invernadero generas en tu vida diaria, por lo que te haremos 8 sencillas preguntas sobre tu día a día para conocer tu huella.</p>

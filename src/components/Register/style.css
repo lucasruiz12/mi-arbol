@@ -11,6 +11,11 @@
     margin: 2vh 0;
 }
 
+.register-logo{
+    height: 12vh;
+    width: 12vh;
+}
+
 .text-register {
     display: flex;
     flex-direction: column;
@@ -56,17 +61,19 @@
 
 .container-social-media {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .container-btn-social-media {
     display: flex;
     justify-content: space-evenly;
+    width: 50%;
 }
 
 .btn-social-media {
-    border-radius: 1rem;
+    cursor: pointer;
 }
 
 .link-container-register {

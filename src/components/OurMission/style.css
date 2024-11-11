@@ -21,6 +21,11 @@
     padding: 10% 5%;
 }
 
+.mission-logo{
+    height: 12vh;
+    width: 12vh;
+}
+
 .mission-title{
     font-size: 6vh;
     font-weight: bold;

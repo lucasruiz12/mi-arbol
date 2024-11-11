@@ -15,6 +15,12 @@
     margin: 2vh 0;
 }
 
+.login-logo{
+    height: 12vh;
+    width: 30vh;
+    margin-top: 2vh;
+}
+
 .text-login-container {
     display: flex;
     flex-direction: column;
@@ -25,11 +31,12 @@
 .text-welcome {
     font-size: xx-large;
     font-weight: bold;
-    color: #34C759
+    color: #88AE55;
 }
 
 .text-carbon {
     font-size: x-large;
+    margin-bottom: 1rem;
 }
 
 .text-login {
@@ -47,6 +54,7 @@
     align-items: center;
     padding: 3vh 3vw;
     height: 65vh;
+    width: 80%;
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 1rem;
 }
@@ -97,15 +105,17 @@
 
 .container-social-media {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .container-btn-social-media {
     display: flex;
     justify-content: space-evenly;
+    width: 50%;
 }
 
 .btn-social-media {
-    border-radius: 1rem;
+    cursor: pointer;
 }
