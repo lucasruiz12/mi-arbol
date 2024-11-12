@@ -25,21 +25,25 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    transition: transform 0.5s ease;
+    transition: filter 0.5s ease;
 }
 
 .slide-out {
+    /* filter: opacity(1); */
     transform: translateX(0);
 }
 
 .slide-in {
+    /* filter: opacity(1); */
     transform: translateX(0%);
 }
 
 .animating .slide-out {
+    /* filter: opacity(0); */
     transform: translateX(-100%);
 }
 
 .animating .slide-in {
+    /* filter: opacity(0); */
     transform: translateX(-100%);
 }

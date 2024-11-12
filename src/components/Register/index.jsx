@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { signUpWithEmail, signUpWithFacebook, signUpWithGoogle } from '../../firebase/connections';
 import { IS_AUTHENTICATED } from '../../helpers/constants';
 import LoadingLogo from '../LoadingLogo';
-import logoArbol from '../../assets/icons/logo-blanco.svg';
+import logoArbol from '../../assets/icons/logo-cuadrado.svg';
 import iconGoogle from '../../assets/icons/rrss-google.svg';
 import iconFacebook from '../../assets/icons/rrss-facebook.svg';
 import './style.css';
@@ -95,8 +95,8 @@ const Register = () => {
                     :
                     <>
                         <div className="title-register">
-                            <Link to="/loginForm">
-                            <img className="register-logo" src={logoArbol} alt="LOG" />
+                            <Link className='link-register' to="/loginForm">
+                                <img className="register-logo" src={logoArbol} alt="LOG" />
                             </Link>
                             <div className="text-register">
                                 <p className="register-line">Creemos tu perfil para comenzar a disminuir esa huella de carbono</p>
@@ -200,33 +200,35 @@ const Register = () => {
                                     onChange={changeData}
                                 />
                             </div>
-                            <div className="container-social-media">
-                                <span>Registrarse con: </span>
-                                <div className="container-btn-social-media">
-                                    <img src={iconGoogle} alt='GS' className="btn-social-media" onClick={() => submitSocialMedia(signUpWithGoogle)} />
-                                    <img src={iconFacebook} alt='FB' className="btn-social-media" onClick={() => submitSocialMedia(signUpWithFacebook)} />
+                            <div className="container-all-btns">
+                                <div className="container-social-media">
+                                    <span>Registrarse con: </span>
+                                    <div className="container-btn-social-media">
+                                        <img src={iconGoogle} alt='GS' className="btn-social-media" onClick={() => submitSocialMedia(signUpWithGoogle)} />
+                                        <img src={iconFacebook} alt='FB' className="btn-social-media" onClick={() => submitSocialMedia(signUpWithFacebook)} />
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="link-container-register">
-                                {/* <Link to="/initQuestions"> */}
-                                <input
-                                    type="submit"
-                                    value="Registrarse"
-                                    className="btn-green-register"
-                                    disabled={
-                                        formData.name === "" ||
-                                        formData.lastname === "" ||
-                                        formData.city === "" ||
-                                        formData.state === "" ||
-                                        formData.phone === "" ||
-                                        formData.email === "" ||
-                                        formData.password === "" ||
-                                        formData.repeatPassword === "" ||
-                                        formData.password.length < 7 ||
-                                        formData.password !== formData.repeatPassword
-                                    }
-                                />
-                                {/* </Link> */}
+                                <div className="link-container-register">
+                                    {/* <Link to="/initQuestions"> */}
+                                    <input
+                                        type="submit"
+                                        value="Registrarse"
+                                        className="btn-green-register"
+                                        disabled={
+                                            formData.name === "" ||
+                                            formData.lastname === "" ||
+                                            formData.city === "" ||
+                                            formData.state === "" ||
+                                            formData.phone === "" ||
+                                            formData.email === "" ||
+                                            formData.password === "" ||
+                                            formData.repeatPassword === "" ||
+                                            formData.password.length < 7 ||
+                                            formData.password !== formData.repeatPassword
+                                        }
+                                    />
+                                    {/* </Link> */}
+                                </div>
                             </div>
                         </form>
                     </>

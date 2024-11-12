@@ -45,7 +45,7 @@
 }
 
 .btn-green {
-    width: 10vw;
+    width: 15vw;
     height: 5vh;
     border: none;
     border-radius: 1rem;
@@ -56,4 +56,33 @@
 
 .btn-green:hover {
     background-color: #92CD43;
+}
+
+@media (max-width: 768px) {
+    .mission-content{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .mission-title{
+        font-size: 5vh;
+        font-weight: bold;
+    }
+    .mission-text{
+        width: 100%;
+        height: auto;
+        background-color: rgba(0,0,0,0.35);
+        padding: 1rem;
+        border-radius: 1rem;
+    }
+    .mission-line-text{
+        color: white;
+        margin: 0.5rem 0
+    }
+    .btn-green{
+        width: 90% !important;
+        align-self: center;
+        font-size: larger !important;
+    }
 }

@@ -17,3 +17,9 @@
     filter: opacity(50%);
     z-index: -1;
 }
+
+@media (max-width: 768px) {
+    .container-login-form{
+        justify-content: flex-start;
+    }
+}

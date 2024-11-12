@@ -11,7 +11,7 @@
     margin: 2vh 0;
 }
 
-.register-logo{
+.register-logo {
     height: 12vh;
     width: 12vh;
 }
@@ -24,7 +24,7 @@
     height: 100%;
 }
 
-.register-line{
+.register-line {
     color: white;
 }
 
@@ -59,6 +59,11 @@
     padding: 0 1vw;
 }
 
+.container-all-btns{
+    grid-column: span 2;
+    margin-top: 1rem;
+}
+
 .container-social-media {
     display: flex;
     justify-content: center;
@@ -69,7 +74,7 @@
 .container-btn-social-media {
     display: flex;
     justify-content: space-evenly;
-    width: 50%;
+    width: 30%;
 }
 
 .btn-social-media {
@@ -95,4 +100,57 @@
 
 .btn-green-register:hover {
     background-color: #92CD43;
+}
+
+@media (max-width: 768px) {
+    .container-register {
+        width: 100%;
+        height: 100%;
+        justify-content: flex-start;
+        padding: 1rem;
+    }
+
+    .title-register {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .link-register {
+        display: flex;
+        width: 100%;
+    }
+
+    .text-register {
+        padding: 0.5rem;
+    }
+
+    .register-line {
+        margin-top: 1rem;
+    }
+
+    .form-register {
+        display: flex;
+        flex-direction: column;
+        width: 85%;
+        justify-self: center;
+        max-height: 60%;
+        overflow-y: scroll;
+    }
+
+    .form-register::-webkit-scrollbar {
+        width: 3px;
+        background-color: transparent;
+    }
+
+    .container-input-form {
+        margin-bottom: 1rem;
+    }
+
+    .container-social-media {
+        margin: 1rem 0;
+    }
+
+    .container-btn-social-media{
+        width: 60%;
+    }
 }
