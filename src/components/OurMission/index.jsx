@@ -1,6 +1,6 @@
 import React from 'react';
 import missionVideo from '../../assets/videos/1. hojas.mp4';
-// import missionMobileVideo from '../../assets/videos/1. hojasMobile.mp4';
+import missionMobileVideo from '../../assets/videos/1. hojasMobile.mp4';
 import logoArbol from '../../assets/icons/logo-cuadrado.svg';
 import './style.css';
 
@@ -8,7 +8,7 @@ const OurMission = ({ setView }) => {
     return (
         <div className="container-mission-view">
             <video autoPlay muted loop className="mission-video">
-                <source src={missionVideo} type="video/mp4" />
+                <source src={window.innerWidth >= 768 ? missionVideo : missionMobileVideo} type="video/mp4" />
             </video>
             <div className="mission-content">
                 <div>
