@@ -17,8 +17,8 @@
 
 .steps-content {
     height: 100%;
-    width: 50%;
-    padding: 10% 5%;
+    width: 100%;
+    padding: 5%;
 }
 
 .steps-title {
@@ -29,8 +29,14 @@
 
 .steps-logo {
     height: 12vh;
-    width: 12vh;
+    /* width: 12vh; */
     cursor: pointer;
+}
+
+.steps-info-container{
+    display: flex;
+    align-items: center;
+    width: 100%;
 }
 
 .steps-text {
@@ -38,27 +44,27 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: flex-start;
-    width: 85%;
-    height: 25vh;
+    width: 60%;
+    height: 45vh;
 }
 
 .steps-line-text {
-    font-size: larger;
+    font-size: xx-large;
     color: white;
 }
 
-.btn-green {
-    width: 10vw;
-    height: 5vh;
-    border: none;
-    border-radius: 1rem;
-    color: white;
-    background-color: #88AE55;
-    cursor: pointer;
+.logo-iso-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    margin-left: 5vw;
+    height: 45vh;
 }
 
-.btn-green:hover {
-    background-color: #92CD43;
+.logo-iso{
+    height: 20vh;
+    width: 20vh;
 }
 
 @media (max-width: 768px) {

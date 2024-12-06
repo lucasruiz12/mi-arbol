@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { signUpWithEmail, signUpWithFacebook, signUpWithGoogle } from '../../firebase/connections';
+import { signUpWithEmail /*, signUpWithFacebook, signUpWithGoogle*/ } from '../../firebase/connections';
 import { IS_AUTHENTICATED } from '../../helpers/constants';
 import LoadingLogo from '../LoadingLogo';
-import logoArbol from '../../assets/icons/logo-cuadrado.svg';
-import iconGoogle from '../../assets/icons/rrss-google.svg';
-import iconFacebook from '../../assets/icons/rrss-facebook.svg';
+import logoArbol from '../../assets/logos/logo-TAO-brown.svg';
+// import iconGoogle from '../../assets/icons/rrss-google.svg';
+// import iconFacebook from '../../assets/icons/rrss-facebook.svg';
 import './style.css';
 
 const Register = () => {
@@ -37,23 +37,23 @@ const Register = () => {
         };
     };
 
-    const submitSocialMedia = async (socialMedia) => {
-        try {
-            const { accessToken, displayName, email, uid } = await socialMedia(formData);
+    // const submitSocialMedia = async (socialMedia) => {
+    //     try {
+    //         const { accessToken, displayName, email, uid } = await socialMedia(formData);
 
-            const dataToStorage = {
-                accessToken,
-                displayName,
-                email,
-                uid
-            };
+    //         const dataToStorage = {
+    //             accessToken,
+    //             displayName,
+    //             email,
+    //             uid
+    //         };
 
-            localStorage.setItem(IS_AUTHENTICATED, JSON.stringify(dataToStorage));
-            window.location.href = "/home";
-        } catch (err) {
-            console.error("Error registrando usuario:", err);
-        };
-    };
+    //         localStorage.setItem(IS_AUTHENTICATED, JSON.stringify(dataToStorage));
+    //         window.location.href = "/home";
+    //     } catch (err) {
+    //         console.error("Error registrando usuario:", err);
+    //     };
+    // };
 
     const submitData = async (event) => {
         event.preventDefault();
@@ -201,13 +201,13 @@ const Register = () => {
                                 />
                             </div>
                             <div className="container-all-btns">
-                                <div className="container-social-media">
+                                {/* <div className="container-social-media">
                                     <span>Registrarse con: </span>
                                     <div className="container-btn-social-media">
                                         <img src={iconGoogle} alt='GS' className="btn-social-media" onClick={() => submitSocialMedia(signUpWithGoogle)} />
                                         <img src={iconFacebook} alt='FB' className="btn-social-media" onClick={() => submitSocialMedia(signUpWithFacebook)} />
                                     </div>
-                                </div>
+                                </div> */}
                                 <div className="link-container-register">
                                     {/* <Link to="/initQuestions"> */}
                                     <input

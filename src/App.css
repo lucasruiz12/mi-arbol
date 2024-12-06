@@ -18,3 +18,18 @@ body{
   height: 100%;
   width: 100%;
 }
+
+.btn-green {
+  width: 12vw;
+  height: 7vh;
+  font-size: x-large;
+  border: none;
+  border-radius: 1rem;
+  color: white;
+  background-color: #A4B46A;
+  cursor: pointer;
+}
+
+.btn-green:hover {
+  background-color: #92CD43;
+}

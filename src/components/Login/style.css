@@ -31,7 +31,7 @@
 .text-welcome {
     font-size: xx-large;
     font-weight: bold;
-    color: #88AE55;
+    color: #A4B46A;
 }
 
 .text-carbon {
@@ -96,7 +96,7 @@
     border: none;
     border-radius: 1rem;
     color: white;
-    background-color: #88AE55;
+    background-color: #A4B46A;
     cursor: pointer;
 }
 

@@ -7,20 +7,6 @@
     position: relative;
 }
 
-.btn-green {
-    width: 10vw;
-    height: 5vh;
-    border: none;
-    border-radius: 1rem;
-    color: white;
-    background-color: #88AE55;
-    cursor: pointer;
-}
-
-.btn-green:hover {
-    background-color: #92CD43;
-}
-
 .slide-container {
     position: absolute;
     width: 100%;

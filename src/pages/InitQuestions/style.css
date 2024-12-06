@@ -7,6 +7,10 @@
     width: 100%;
 }
 
+.question-logo{
+    height: 12vh;
+}
+
 .container-question{
     display: flex;
     justify-content: space-evenly;
@@ -19,7 +23,7 @@
 }
 
 .question-number{
-    background-color: #34C759;
+    background-color: #A4B46A;
     color: white;
     display: flex;
     justify-content: center;
@@ -37,18 +41,4 @@
 .question-text{
     font-size: xx-large;
     font-weight: bold;
-}
-
-.btn-green {
-    width: 10vw;
-    height: 5vh;
-    border: none;
-    border-radius: 1rem;
-    color: white;
-    background-color: #88AE55;
-    cursor: pointer;
-}
-
-.btn-green:hover{
-    background-color: #92CD43;
 }

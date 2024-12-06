@@ -4,7 +4,7 @@
     align-items: center;
     position: relative;
     cursor: pointer;
-    font-size: xx-large;
+    font-size: x-large;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -40,7 +40,7 @@
 
 /* When the checkbox is checked, add a blue background */
 .container-checkbox input:checked~.box-checkbox {
-    background-color: #88AE55;
+    background-color: #A4B46A;
 }
 
 /* Create the box-checkbox/indicator (hidden when not checked) */

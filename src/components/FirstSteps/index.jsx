@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import stepsVideo from '../../assets/videos/2. Mundo.mp4';
-import logoArbol from '../../assets/icons/logo-cuadrado.svg';
+import logoArbol from '../../assets/logos/logo-TAO-white.svg';
+import logoISO from '../../assets/logos/logo-ISO.svg';
 import './style.css'
+import CarouselLogo from '../CarouselLogos';
 
 const FirstSteps = ({ setView }) => {
     return (
@@ -13,17 +15,22 @@ const FirstSteps = ({ setView }) => {
             <div className="steps-content">
                 <div>
                     <img onClick={() => setView(1)} className="steps-logo" src={logoArbol} alt="LOG" />
-                    <h2 className="steps-title">El primer paso</h2>
+                    {/* <h2 className="steps-title">El primer paso</h2> */}
                 </div>
-                <div className="steps-text">
-                    <p className="steps-line-text">Es entender cuántos gases de efecto invernadero generas en tu vida diaria, por lo que te haremos 8 sencillas preguntas sobre tu día a día para conocer tu huella.</p>
-                    <p className="steps-line-text">El resultado es un estimado muy preciso, realizado de acuerdo al protocolo internacional para el cálculo de gases de efecto invernadero.</p>
+                <div className="steps-info-container">
+                    <div className="steps-text">
+                        <p className="steps-line-text">El primer paso es medir el impacto de tu día a día respondiendo unas simples preguntas que usaremos para determinar tu huella de carbono individual, apegándonos a los factores de emisión del <b>IPCC</b> y el <b>protocolo internacional de GHG.</b></p>
+                    </div>
+                    <div className="logo-iso-container">
+                        <img src={logoISO} alt="NOIMG" className="logo-iso" />
+                    </div>
                 </div>
-                <Link className="link-btn" to="/loginForm">
+                <Link className="link-btn" to="/initQuestions">
                     <button className="btn-green">
-                        Registrarse
+                        Medir mi huella
                     </button>
                 </Link>
+                <CarouselLogo />
             </div>
         </div>
     );

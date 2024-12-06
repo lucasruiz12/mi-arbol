@@ -61,17 +61,3 @@
 .three-price {
     font-size: xx-large;
 }
-
-.btn-green {
-    width: 15vw;
-    height: 5vh;
-    border: none;
-    border-radius: 1rem;
-    color: white;
-    background-color: #88AE55;
-    cursor: pointer;
-}
-
-.btn-green:hover {
-    background-color: #92CD43;
-}

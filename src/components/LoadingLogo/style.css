@@ -7,7 +7,7 @@
 }
 
 .loading-logo {
-    width: 150px;
+    width: 30vh;
     animation: heartbeat 1.5s ease-in-out infinite;
 }
 

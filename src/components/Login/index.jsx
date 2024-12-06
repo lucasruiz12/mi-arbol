@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { loginWithEmail, loginWithGoogle, loginWithFacebook } from '../../firebase/connections';
+import { loginWithEmail /*, loginWithGoogle, loginWithFacebook*/ } from '../../firebase/connections';
 import { IS_AUTHENTICATED } from '../../helpers/constants';
 import LoadingLogo from '../LoadingLogo';
-import logoFull from '../../assets/icons/logo-full.svg';
-import iconGoogle from '../../assets/icons/rrss-google.svg';
-import iconFacebook from '../../assets/icons/rrss-facebook.svg';
+import logoFull from '../../assets/logos/logo-TAO-brown.svg';
+// import iconGoogle from '../../assets/icons/rrss-google.svg';
+// import iconFacebook from '../../assets/icons/rrss-facebook.svg';
 import './style.css';
 
 const Login = () => {
@@ -50,23 +50,23 @@ const Login = () => {
         };
     };
 
-    const submitSocialMedia = async (socialMedia) => {
-        try {
-            const { accessToken, displayName, email, uid } = await socialMedia();
+    // const submitSocialMedia = async (socialMedia) => {
+    //     try {
+    //         const { accessToken, displayName, email, uid } = await socialMedia();
 
-            const dataToStorage = {
-                accessToken,
-                displayName,
-                email,
-                uid
-            };
+    //         const dataToStorage = {
+    //             accessToken,
+    //             displayName,
+    //             email,
+    //             uid
+    //         };
 
-            localStorage.setItem(IS_AUTHENTICATED, JSON.stringify(dataToStorage));
-            window.location.href = "/home";
-        } catch (err) {
-            console.error("Error registrando usuario:", err);
-        };
-    };
+    //         localStorage.setItem(IS_AUTHENTICATED, JSON.stringify(dataToStorage));
+    //         window.location.href = "/home";
+    //     } catch (err) {
+    //         console.error("Error registrando usuario:", err);
+    //     };
+    // };
 
     useEffect(() => {
         const user = JSON.parse(localStorage.getItem(IS_AUTHENTICATED));
@@ -136,13 +136,13 @@ const Login = () => {
                             />
                             {/* </Link> */}
                         </div>
-                        <div className="container-social-media">
+                        {/* <div className="container-social-media">
                             <span>Iniciar sesión con: </span>
                             <div className="container-btn-social-media">
                                 <img src={iconGoogle} alt='GS' className="btn-social-media" onClick={() => submitSocialMedia(loginWithGoogle)} />
                                 <img src={iconFacebook} alt='FB' className="btn-social-media" onClick={() => submitSocialMedia(loginWithFacebook)} />
                             </div>
-                        </div>
+                        </div> */}
                         <div className="container-social-media">
                             <Link to="/registerForm">
                                 <span style={{ cursor: "pointer" }}>¿No tienes cuenta? Crear una</span>
