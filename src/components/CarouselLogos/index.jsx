@@ -18,7 +18,7 @@ const CarouselLogo = () => {
   };
 
   return (
-    <div style={{ width: "70%", margin: "0 auto", padding: "2rem 0", marginTop: "5vh" }}>
+    <div style={{ width: "70%", margin: "0 auto", padding: "2rem 0", marginTop: "2vh" }}>
       <Slider {...settings}>
         {whiteLogos.map((logo, index) => (
           <div key={index} style={{ display: "flex", justifyContent: "center" }}>
