@@ -114,9 +114,11 @@ const InitQuestions = () => {
         setResponseUser(newResponse);
         setCurrentQuestion(currentQuestion + 1);
         setResponsePoints("");
-        setTimeout(() => {
-            console.log("Actual response", responseUser);
-        }, 1000);
+        if(currentQuestion === 18){
+            setTimeout(() => {
+                console.log("Puntaje final", responseUser);
+            }, 1000);
+        }
     };
 
     useEffect(() => {
@@ -133,6 +135,10 @@ const InitQuestions = () => {
 
     return (
         <div className="container-init-questions">
+            {
+                questionsAndAnswers.find(el => el.id === currentQuestion) && questionsAndAnswers.find(el => el.id === currentQuestion).messageToShow &&
+                <p className="question-tip">{questionsAndAnswers.find(el => el.id === currentQuestion).messageToShow}</p>
+            }
             {loading ?
                 <LoadingLogo />
                 :
@@ -140,12 +146,13 @@ const InitQuestions = () => {
                     <img className="question-logo" src={logoArbol} alt="LOG" />
                     <div className="container-question">
                         <div className="container-number">
-                            <p className="question-number">
-                                <b>{questionsAndAnswers.find(el => el.id === currentQuestion).id}</b>
-                            </p>
+                            <img className="question-icon" src={questionsAndAnswers.find(el => el.id === currentQuestion).icon} alt="NOIC" />
+                            {/* <p className="question-number">
+                                <b>{questionsAndAnswers.find(el => el.id === currentQuestion).icon}</b>
+                            </p> */}
                         </div>
                         <div className="container-text">
-                            <p className="question-text">{questionsAndAnswers.find(el => el.id === currentQuestion).question}</p>
+                            <p className="question-text">{questionsAndAnswers.find(el => el.id === currentQuestion).id}.- {questionsAndAnswers.find(el => el.id === currentQuestion).question}</p>
                         </div>
                     </div>
                     {/* <p style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "10vh", width: "50vw" }}><b>{questionsAndAnswers.find(el => el.id === currentQuestion).id}</b> {questionsAndAnswers.find(el => el.id === currentQuestion).question}</p> */}

@@ -50,6 +50,13 @@ const Login = () => {
         };
     };
 
+    const fakeSubmit = (e) => {
+        e.preventDefault();
+        setTimeout(() => {
+            window.location.href = "/home";
+        }, 1000);
+    };
+
     // const submitSocialMedia = async (socialMedia) => {
     //     try {
     //         const { accessToken, displayName, email, uid } = await socialMedia();
@@ -88,7 +95,8 @@ const Login = () => {
                 loading ?
                     <LoadingLogo />
                     :
-                    <form className="form-login" onSubmit={submitData}>
+                    // <form className="form-login" onSubmit={submitData}>
+                    <form className="form-login" onSubmit={fakeSubmit}>
                         <div className="title-login">
                             <Link to="/">
                                 <img className="login-logo" src={logoFull} alt="LOG" />

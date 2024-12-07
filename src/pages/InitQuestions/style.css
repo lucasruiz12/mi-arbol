@@ -7,6 +7,42 @@
     width: 100%;
 }
 
+.question-tip{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    width: 30vw;
+    font-size: larger;
+    background-color: #FFF2D4;
+    position: absolute;
+    left: 65%;
+    top: 10%;
+    border-radius: 1rem;
+    animation: slideInText 0.5s ease-out;
+}
+
+@keyframes slideInText {
+    0% {
+        top: -100px;
+    }
+    100% {
+        top: 10%;
+    }
+}
+
+.question-tip::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    right: 15px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 10px 0 20px;
+    border-color: #FFF2D4 transparent transparent transparent;
+}
+
 .question-logo{
     height: 12vh;
 }
@@ -15,11 +51,16 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    width: 35vw;
+    width: 40vw;
 }
 
 .container-number{
     width: 15%;
+}
+
+.question-icon{
+    width: 7.5vh;
+    height: 7.5vh;
 }
 
 .question-number{

@@ -9,6 +9,11 @@
     padding: 0 3vw;
 }
 
+.nav-logo{
+    height: auto;
+    /* width: 12vh; */
+}
+
 .navbar-container-btn {
     display: flex;
     justify-content: center;
@@ -17,14 +22,14 @@
     height: 100%;
     box-sizing: border-box;
     border-bottom: solid 0.5rem transparent;
-    color: #244855;
+    color: #604848;
 }
 
 .navbar-container-btn:hover,
 .navbar-container-btn.active-btn {
     background-color: #FAFBFD;
-    border-bottom: solid 0.5rem #4ABD40;
-    color: #4ABD40;
+    border-bottom: solid 0.5rem #A4B46A;
+    color: #A4B46A;
 }
 
 .item-list {

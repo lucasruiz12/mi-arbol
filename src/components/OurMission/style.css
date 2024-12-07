@@ -44,21 +44,21 @@
     left: 65%;
     top: 10%;
     border-radius: 1rem;
-    animation: slideIn 8s ease-out; /* Animación de entrada */
+    animation: slideIn 8s ease-out;
 }
 
 @keyframes slideIn {
     0% {
-        top: -100px; /* Empieza fuera de la pantalla (ajustable según tu diseño) */
+        top: -100px;
     }
     10% {
-        top: 10%; /* Termina en su posición actual */
+        top: 10%;
     }
     90% {
-        opacity: 0.99; /* Termina en su posición actual */
+        opacity: 0.99;
     }
     100% {
-        opacity: 0; /* Termina en su posición actual */
+        opacity: 0;
     }
 
 }
@@ -66,13 +66,13 @@
 .mission-tips::after {
     content: '';
     position: absolute;
-    bottom: -10px; /* Posiciona el pico debajo del contenedor */
-    right: 15px; /* Ajusta la posición horizontal del pico */
+    bottom: -10px;
+    right: 15px;
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: 10px 10px 0 20px; /* Forma del triángulo */
-    border-color: #FFF2D4 transparent transparent transparent; /* Color del pico */
+    border-width: 10px 10px 0 20px;
+    border-color: #FFF2D4 transparent transparent transparent;
 }
 
 .mission-title{

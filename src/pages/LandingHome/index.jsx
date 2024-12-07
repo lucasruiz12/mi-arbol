@@ -13,9 +13,11 @@ const LandingHome = () => {
 
     const handleChangeView = (newView) => {
         setIsAnimating(true);
+        setLoading(true);
         setTimeout(() => {
             setView(newView);
             setIsAnimating(false);
+            setLoading(false);
         }, 500);
     };
 

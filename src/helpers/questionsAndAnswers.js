@@ -1,3 +1,8 @@
+import iconAir from '../assets/icons/questions/icon-air.svg';
+import iconCar from '../assets/icons/questions/icon-car.svg';
+import iconEnergy from '../assets/icons/questions/icon-energy.svg';
+import iconRoom from '../assets/icons/questions/icon-room.svg';
+
 export const questionsAndAnswers = [
     {
         id: 1,
@@ -8,6 +13,7 @@ export const questionsAndAnswers = [
             { name: "Más de 5", points: 3 },
         ],
         messageToShow: null,
+        icon: iconRoom,
     },
     {
         id: 2,
@@ -19,6 +25,7 @@ export const questionsAndAnswers = [
             { name: "Más de 5", points: 4 },
         ],
         messageToShow: null,
+        icon: iconRoom,
     },
     {
         id: 3,
@@ -30,6 +37,7 @@ export const questionsAndAnswers = [
             { name: "No lo uso", points: 0 },
         ],
         messageToShow: "Reducir tu consumo energético es clave para disminuir tu huella de carbono. Aprovecha la luz natural y apaga el aire acondicionado cuando no sea estrictamente necesario.",
+        icon: iconAir,
     },
     {
         id: 4,
@@ -40,6 +48,7 @@ export const questionsAndAnswers = [
             { name: "Cada 3er día", points: 1 },
         ],
         messageToShow: null,
+        icon: iconRoom,
     },
     {
         id: 5,
@@ -49,6 +58,7 @@ export const questionsAndAnswers = [
             { name: "Caliente", points: 2 },
         ],
         messageToShow: null,
+        icon: iconEnergy,
     },
     {
         id: 6,
@@ -60,6 +70,7 @@ export const questionsAndAnswers = [
             { name: "No uso", points: 0 },
         ],
         messageToShow: "Optar por calentadores solares puede evitar el uso de combustibles fósiles, reduciendo significativamente tu huella ambiental.",
+        icon: iconEnergy,
     },
     {
         id: 7,
@@ -69,6 +80,7 @@ export const questionsAndAnswers = [
             { name: "No", points: 3 },
         ],
         messageToShow: null,
+        icon: iconEnergy,
     },
     {
         id: 8,
@@ -79,6 +91,7 @@ export const questionsAndAnswers = [
             { name: "No lo hago", points: 3 },
         ],
         messageToShow: null,
+        icon: iconEnergy,
     },
     {
         id: 9,
@@ -90,6 +103,7 @@ export const questionsAndAnswers = [
             { name: "Más de 22 hrs", points: 4 },
         ],
         messageToShow: "Cada hora de vuelo genera grandes emisiones de CO₂. Compensa tu huella apoyando proyectos de reforestación.",
+        icon: iconCar,
     },
     {
         id: 10,
@@ -98,12 +112,13 @@ export const questionsAndAnswers = [
             { name: "Automóvil pequeño", points: 2 },
             { name: "Automóvil mediano", points: 3 },
             { name: "Automóvil grande", points: 4 },
-            { name: "Transporte público", points: 1 },
-            { name: "Motocicleta", points: 2 },
+            { name: "Transporte público", points: 0.5 },
+            { name: "Motocicleta", points: 1.5 },
             { name: "Caminando/Bicicleta", points: 0 },
             { name: "Auto eléctrico o híbrido", points: 1 },
         ],
         messageToShow: "Cambiar a transportes más sustentables puede reducir significativamente tus emisiones de carbono.",
+        icon: iconCar,
     },
     {
         id: 11,
@@ -114,6 +129,7 @@ export const questionsAndAnswers = [
             { name: "Más de 10 horas", points: 3 },
         ],
         messageToShow: null,
+        icon: iconCar,
     },
     {
         id: 12,
@@ -124,6 +140,7 @@ export const questionsAndAnswers = [
             { name: "Más de 500 km", points: 3 },
         ],
         messageToShow: "Reducir los viajes largos o compartirlos puede disminuir tu impacto ambiental.",
+        icon: iconCar,
     },
     {
         id: 13,
@@ -135,6 +152,7 @@ export const questionsAndAnswers = [
             { name: "Una vez a la semana", points: 0 },
         ],
         messageToShow: "Disminuir el consumo de productos de origen animal ayuda a reducir tu huella hídrica y de carbono.",
+        icon: iconEnergy,
     },
     {
         id: 14,
@@ -145,6 +163,7 @@ export const questionsAndAnswers = [
             { name: "Más del 60%", points: 1 },
         ],
         messageToShow: "Consumir productos locales no solo apoya la economía local, sino que reduce las emisiones asociadas al transporte.",
+        icon: iconEnergy,
     },
     {
         id: 15,
@@ -153,9 +172,10 @@ export const questionsAndAnswers = [
             { name: "Nunca hay sobrantes", points: 0 },
             { name: "La regalo", points: 1 },
             { name: "La tiro", points: 3 },
-            { name: "Hago composta", points: 1 },
+            { name: "Hago composta", points: 0.5 },
         ],
         messageToShow: null,
+        icon: iconEnergy,
     },
     {
         id: 16,
@@ -164,9 +184,10 @@ export const questionsAndAnswers = [
             { name: "No genero residuos", points: 0 },
             { name: "Los separo y los llevo a puntos de reciclaje", points: 1 },
             { name: "Los tiro a la basura", points: 3 },
-            { name: "Hago composta", points: 1 },
+            { name: "Hago composta", points: 1.5 },
         ],
         messageToShow: "Separar y reciclar tus residuos es una de las maneras más efectivas de reducir la cantidad de basura que llega a los vertederos.",
+        icon: iconRoom,
     },
     {
         id: 17,
@@ -178,6 +199,7 @@ export const questionsAndAnswers = [
             { name: "Nunca", points: 0 },
         ],
         messageToShow: "Evitar los plásticos de un solo uso es esencial para reducir la contaminación ambiental.",
+        icon: iconRoom,
     },
     {
         id: 18,
@@ -188,5 +210,6 @@ export const questionsAndAnswers = [
             { name: "Soy comprador compulsivo", points: 3 },
         ],
         messageToShow: "Optar por un consumo responsable y prolongar la vida útil de los productos ayuda a disminuir los desechos y el impacto ambiental.",
+        icon: iconRoom,
     },
 ];

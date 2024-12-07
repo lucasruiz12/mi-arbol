@@ -1,11 +1,15 @@
 .container-register {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 50vw;
-    height: 100%;
 }
 
 .title-register {
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     height: 15vh;
     margin: 2vh 0;
@@ -21,6 +25,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 2vh 0;
     height: 100%;
 }
 
@@ -29,10 +34,13 @@
 }
 
 .form-register {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
     padding: 3vh 3vw;
-    height: 65vh;
+    height: 90vh;
+    width: 90%;
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 1rem;
 }
@@ -42,7 +50,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    padding: 0 2vw;
+    width: 100%;
+    margin-bottom: 0.3rem;
 }
 
 .input-title {
@@ -59,16 +68,17 @@
     padding: 0 1vw;
 }
 
-.container-all-btns{
-    grid-column: span 2;
-    margin-top: 1rem;
+.container-all-btns {
+    width: 100%;
 }
 
 .container-social-media {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
+    margin: 3.5vh 0;
 }
 
 .container-btn-social-media {
@@ -89,8 +99,8 @@
 }
 
 .btn-green-register {
-    width: 85%;
     height: 5vh;
+    width: 100%;
     border: none;
     border-radius: 2rem;
     color: white;
@@ -150,7 +160,7 @@
         margin: 0.5rem 0;
     }
 
-    .container-btn-social-media{
+    .container-btn-social-media {
         width: 60%;
     }
 }

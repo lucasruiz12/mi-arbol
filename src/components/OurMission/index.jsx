@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import missionVideo from '../../assets/videos/1. hojas.mp4';
 import missionMobileVideo from '../../assets/videos/1. hojasMobile.mp4';
 import logoArbol from '../../assets/logos/logo-TAO-brown.svg';
-import './style.css';
 import { tipsAndRecommendations } from '../../helpers/messagesAndTips';
+import './style.css';
 
 const OurMission = ({ setView }) => {
 
