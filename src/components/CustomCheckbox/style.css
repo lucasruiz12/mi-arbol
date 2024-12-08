@@ -20,6 +20,10 @@
     width: 0;
 }
 
+.text-checkbox{
+    margin: 0 1rem;
+}
+
 /* Create a custom checkbox */
 .box-checkbox {
     position: relative;
@@ -66,4 +70,20 @@
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
+}
+
+@media (max-width: 768px) {
+    .container-checkbox{
+        width: 100%;
+        margin: 1vh 0;
+    }
+    .container-checkbox .box-checkbox:after {
+        left: 10px
+    }
+    .box-checkbox {
+        margin-bottom: 0;
+    }
+    .text-checkbox{
+        text-align: center;
+    }
 }

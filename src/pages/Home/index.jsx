@@ -37,7 +37,7 @@ const Home = () => {
                                     <p className="home-need">y para mitigarla necesitas plantar</p>
                                     <div>
                                         <h1 className="home-target">200 árboles</h1>
-                                        <ManyTrees quantity={20} />
+                                        <ManyTrees />
                                     </div>
                                 </div>
                             </div>

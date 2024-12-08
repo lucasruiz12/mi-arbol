@@ -18,7 +18,7 @@ const CustomCheckbox = ({ data, setData, resetData }) => {
         data.map((el, idx) => {
             return (
                 <label key={idx} className="container-checkbox">
-                    <p style={{margin: "0 1rem"}}>
+                    <p className="text-checkbox">
                         {el.name}
                     </p>
                     <input type="checkbox" value={el.points} checked={checkValue === el.points} onChange={() => setValue(el.points)} />

@@ -60,7 +60,21 @@
     100% {
         opacity: 0;
     }
+}
 
+@keyframes slideInMobile {
+    0% {
+        top: 100%;
+    }
+    10% {
+        top: 80%;
+    }
+    90% {
+        opacity: 0.99;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 
 .mission-tips::after {
@@ -105,7 +119,9 @@
         width: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
+    }
+    .mission-info-container{
+        margin: 5vh 0
     }
     .mission-title{
         font-size: 5vh;
@@ -120,11 +136,26 @@
     }
     .mission-line-text{
         color: white;
+        font-size: large;
         margin: 0.5rem 0
     }
     .btn-green{
         width: 90% !important;
         align-self: center;
         font-size: larger !important;
+    }
+    .mission-tips{
+        padding: 1rem;
+        width: 100%;
+        font-size: larger;
+        background-color: #FFF2D4;
+        position: absolute;
+        left: 0%;
+        top: 80%;
+        animation: slideInMobile 8s ease-out;
+        font-size: medium;
+    }
+    .mission-tips::after {
+        display: none;
     }
 }

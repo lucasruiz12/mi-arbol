@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { colorLogos, whiteLogos } from "../../helpers/logosToCarousel";
+import './style.css';
 
 const CarouselLogo = () => {
   const settings = {
@@ -15,10 +16,30 @@ const CarouselLogo = () => {
     autoplaySpeed: 2000, // Velocidad del desplazamiento
     cssEase: "linear", // Transición fluida
     arrows: false, // Oculta flechas
+    responsive: [
+      {
+        breakpoint: 1024, // Para pantallas menores a 1024px
+        settings: {
+          slidesToShow: 4, // Muestra 3 imágenes
+        },
+      },
+      {
+        breakpoint: 768, // Para pantallas menores a 768px
+        settings: {
+          slidesToShow: 3, // Muestra 2 imágenes
+        },
+      },
+      {
+        breakpoint: 480, // Para pantallas menores a 480px
+        settings: {
+          slidesToShow: 2, // Muestra 1 imagen
+        },
+      },
+    ],
   };
 
   return (
-    <div style={{ width: "70%", margin: "0 auto", padding: "2rem 0", marginTop: "2vh" }}>
+    <div className="carousel-container" style={{ width: "70%", margin: "0 auto", padding: "2rem 0", marginTop: "2vh" }}>
       <Slider {...settings}>
         {whiteLogos.map((logo, index) => (
           <div key={index} style={{ display: "flex", justifyContent: "center" }}>

@@ -114,7 +114,7 @@ const InitQuestions = () => {
         setResponseUser(newResponse);
         setCurrentQuestion(currentQuestion + 1);
         setResponsePoints("");
-        if(currentQuestion === 18){
+        if (currentQuestion === 18) {
             setTimeout(() => {
                 console.log("Puntaje final", responseUser);
             }, 1000);
@@ -156,7 +156,7 @@ const InitQuestions = () => {
                         </div>
                     </div>
                     {/* <p style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "10vh", width: "50vw" }}><b>{questionsAndAnswers.find(el => el.id === currentQuestion).id}</b> {questionsAndAnswers.find(el => el.id === currentQuestion).question}</p> */}
-                    <div style={{ display: "flex", justifyContent: "center", alignItems: "flex-start", height: "10vh", width: "70vw" }}>
+                    <div className="container-answers">
                         <CustomCheckbox data={questionsAndAnswers.find(el => el.id === currentQuestion).answers} setData={setResponsePoints} resetData={responseUser} />
                     </div>
                     <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "10vh", width: "50vw" }}>
@@ -164,7 +164,7 @@ const InitQuestions = () => {
                             currentQuestion < questionsAndAnswers.length ?
                                 <button className="btn-green" disabled={responsePoints === ""} onClick={() => nextQuestion()}>Siguiente</button>
                                 :
-                                <Link to="/registerForm">
+                                <Link style={{ display: "flex", justifyContent: "center", width: "100%" }} to="/registerForm">
                                     <button className="btn-green" disabled={responsePoints === ""} onClick={() => nextQuestion()}>Finalizar</button>
                                 </Link>
                         }

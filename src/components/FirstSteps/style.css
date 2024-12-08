@@ -75,6 +75,11 @@
         justify-content: space-around;
     }
 
+    .steps-info-container{
+        flex-direction: column-reverse;
+
+    }
+
     .steps-title {
         font-size: 5vh;
         font-weight: bold;
@@ -83,13 +88,18 @@
     .steps-text {
         width: 100%;
         height: auto;
-        padding: 1rem;
+        padding: 0.5rem 1rem;
         border-radius: 1rem;
     }
 
     .steps-line-text {
         color: white;
-        margin: 0.5rem 0
+        font-size: large;
+    }
+
+    .logo-iso-container{
+        height: auto;
+        margin-top: 3vh;
     }
 
     .link-btn {
