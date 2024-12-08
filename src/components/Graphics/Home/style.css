@@ -15,7 +15,7 @@
     margin-left: 0 !important;
 }
 
-.graphics-background{
+.graphics-background {
     display: flex;
     justify-content: space-between;
     padding: 2rem;
@@ -33,4 +33,60 @@
 
 .all-cover-btn {
     width: 100% !important;
+}
+
+.legend-wrapper{
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .container-graphics-home {
+        align-items: flex-start;
+    }
+    .graphics-background {
+        flex-direction: column; /* Permite que los elementos del gráfico se apilen verticalmente */
+        align-items: center;
+        padding: 1rem; /* Ajuste del padding para móviles */
+    }
+
+    .apexcharts-canvas {
+        margin: 0 auto; /* Centrar el gráfico */
+    }
+
+    .graphics-background.pie-chart {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .legend-wrapper {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%; /* Aprovecha todo el espacio horizontal */
+        margin-top: 1rem; /* Separar la leyenda del gráfico */
+    }
+
+    .legend-wrapper .category {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem; /* Espacio entre el cuadrado y el texto */
+        text-align: center;
+        flex: 1; /* Cada categoría ocupa un espacio igual */
+        font-size: 1rem; /* Tamaño del texto ajustado */
+    }
+
+    .legend-wrapper .color-box {
+        width: 1rem;
+        height: 1rem;
+        border-radius: 0.25rem; /* Cuadrados con esquinas suaves */
+    }
+
+    .label-legend{
+        font-size: smaller;
+    }
+
+    .container-button-home{
+        margin-bottom: 1rem;
+    }
 }

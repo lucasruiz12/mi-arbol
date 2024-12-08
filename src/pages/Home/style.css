@@ -5,7 +5,8 @@
 }
 
 .container-home-content {
-    height: 90vh;
+    flex-grow: 1;
+    overflow-y: auto;
 }
 
 .home-info {
@@ -61,5 +62,49 @@
 @media (max-width: 768px) {
     .container-home {
         flex-direction: column-reverse;
+    }
+
+    .container-home-content {
+        height: 90%;
+    }
+
+    .home-info {
+        flex-direction: column;
+        padding: 0 2rem;
+    }
+
+    .home-user-data {
+        align-items: center;
+        width: 100%;
+    }
+
+    .home-welcome{
+        font-size: x-large;
+    }
+
+    .home-number{
+        font-size: 7vh;
+        text-align: center;
+    }
+
+    .home-text{
+        font-size: 2vh;
+        margin-bottom: 5vh;
+        text-align: center;
+    }
+
+    .home-need{
+        text-align: center;
+    }
+
+    .home-target{
+        text-align: center;
+        font-size: 5vh;
+    }
+
+    .home-user-graphics {
+        width: 100%;
+        padding: 0;
+        margin-left: 0;
     }
 }

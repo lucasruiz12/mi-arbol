@@ -75,6 +75,12 @@
         justify-content: space-around;
     }
 
+    .steps-img-container{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
     .steps-info-container{
         flex-direction: column-reverse;
 

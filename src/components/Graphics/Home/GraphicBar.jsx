@@ -51,19 +51,20 @@ const GraphicBar = () => {
         ],
         options: {
             chart: {
-                height: 400,
                 type: 'bar',
+                height: 400,
+                width: '100%', // Se ajusta automáticamente al 100% del contenedor
             },
             plotOptions: {
                 bar: {
                     horizontal: true,
                     barHeight: '50%',
-                    borderRadius: 5,  // Redondeo general de todas las barras
+                    borderRadius: 5,
                     colors: {
                         ranges: [
-                            { from: 0, to: 10000, color: '#A4B46A' },  // Color para la primera barra
-                            { from: 0, to: 10000, color: '#C0D860' },  // Color para la segunda barra
-                            { from: 0, to: 10000, color: '#C8D390' },  // Color para la tercera barra
+                            { from: 0, to: 10000, color: '#A4B46A' },
+                            { from: 0, to: 10000, color: '#C0D860' },
+                            { from: 0, to: 10000, color: '#C8D390' },
                         ],
                     },
                 },
@@ -81,19 +82,19 @@ const GraphicBar = () => {
                 },
                 style: {
                     fontSize: '14px',
-                    colors: ['#604848'], // Cambiar color del texto a marrón
+                    colors: ['#604848'],
                 },
             },
             legend: {
                 show: true,
                 showForSingleSeries: true,
-                position: 'top',  // Leyenda arriba
+                position: 'top',
                 customLegendItems: ['Consumo', 'Consumo Ideal'],
                 markers: {
-                    fillColors: ['#A4B46A', '#FF4560'],  // Colores de las leyendas
+                    fillColors: ['#A4B46A', '#FF4560'],
                 },
                 labels: {
-                    colors: '#604848', // Cambiar color del texto de la leyenda a marrón
+                    colors: '#604848',
                 },
             },
             grid: {
@@ -102,23 +103,34 @@ const GraphicBar = () => {
             xaxis: {
                 labels: {
                     style: {
-                        colors: '#604848', // Cambiar color del texto de los ejes X
+                        colors: '#604848',
                     },
                 },
             },
             yaxis: {
                 labels: {
                     style: {
-                        colors: '#604848', // Cambiar color del texto de los ejes Y
+                        colors: '#604848',
                     },
                 },
             },
+            responsive: [
+                {
+                    breakpoint: 768, // Para pantallas más pequeñas
+                    options: {
+                        chart: {
+                            width: '100%',
+                            height: 250, // Ajustamos la altura para pantallas pequeñas
+                        },
+                    },
+                },
+            ],
         },
     };
 
     return (
         <div className="graphics-background">
-            <ReactApexChart options={data.options} series={data.series} type="bar" height={250} width={500} />
+            <ReactApexChart options={data.options} series={data.series} type="bar" />
         </div>
     );
 };

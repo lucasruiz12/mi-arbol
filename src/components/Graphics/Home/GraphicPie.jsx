@@ -20,37 +20,35 @@ const GraphicPie = () => {
                             width: 200,
                         },
                         legend: {
-                            position: 'bottom',
-                            labels: {
-                                colors: ['#604848'], // Color del texto del legend
-                                useSeriesColors: false,
-                            },
+                            show: false, // Oculta la leyenda estándar en móviles
                         },
                     },
                 },
             ],
-            legend: {
-                labels: {
-                    colors: ['#604848'], // Color del texto del legend
-                    useSeriesColors: false,
-                },
-            },
-            tooltip: {
-                theme: 'light', // Hace el fondo del tooltip más claro
-                style: {
-                    fontSize: '1rem', // Tamaño del texto
-                    color: '#604848', // Color del texto del tooltip (negro)
-                },
-                marker: {
-                    show: true, // Si deseas mostrar el marcador en el tooltip
-                },
-            },
         },
     };
 
     return (
-        <div className="graphics-background">
-            <ReactApexChart options={data.options} series={data.series} type="pie" width={400} />
+        <div className="graphics-background pie-chart">
+            <ReactApexChart
+                options={data.options}
+                series={data.series}
+                type="pie"
+                width={380}
+            />
+            <div className="legend-wrapper">
+                {data.options.labels.map((label, index) => (
+                    <div className="category" key={index}>
+                        <div
+                            className="color-box"
+                            style={{ backgroundColor: data.options.colors[index] }}
+                        ></div>
+                        <p className="label-legend">
+                        {label}
+                        </p>
+                    </div>
+                ))}
+            </div>
         </div>
     );
 };

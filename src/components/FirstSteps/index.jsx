@@ -13,7 +13,7 @@ const FirstSteps = ({ setView }) => {
                 <source src={stepsVideo} type="video/mp4" />
             </video>
             <div className="steps-content">
-                <div>
+                <div className="steps-img-container">
                     <img onClick={() => setView(1)} className="steps-logo" src={logoArbol} alt="LOG" />
                     {/* <h2 className="steps-title">El primer paso</h2> */}
                 </div>
