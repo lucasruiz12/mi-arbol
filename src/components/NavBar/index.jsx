@@ -15,7 +15,7 @@ const NavBar = () => {
             <img className="nav-logo" src={logoArbol} alt="LOG" />
             <ul className="item-list" >
                 <Link to="/home" className={`navbar-container-btn ${window.location.pathname === "/home" ? "active-btn" : ""}`}>
-                    <li className="navbar-item">
+                    <li className="navbar-item" data-responsive-text="Mi huella">
                         <img src={iconTrace} alt="NOIC" className="navbar-icon" />
                         <p>
                             Mi huella
@@ -24,7 +24,7 @@ const NavBar = () => {
                 </Link>
                 {/* <Link to="/neutralCarbon" className={`navbar-container-btn ${window.location.pathname === "/neutralCarbon" ? "active-btn" : ""}`}> */}
                 <Link to="/home" className={`navbar-container-btn ${window.location.pathname === "/neutralCarbon" ? "active-btn" : ""}`}>
-                    <li className="navbar-item">
+                    <li className="navbar-item" data-responsive-text="Carbono neutro">
                         <img src={iconNeutral} alt="NOIC" className="navbar-icon" />
                         <p>
                             Soy carbono neutro
@@ -33,7 +33,7 @@ const NavBar = () => {
                 </Link>
                 {/* <Link to="/mySubscription" className={`navbar-container-btn ${window.location.pathname === "/mySubscription" ? "active-btn" : ""}`}> */}
                 <Link to="/home" className={`navbar-container-btn ${window.location.pathname === "/mySubscription" ? "active-btn" : ""}`}>
-                    <li className="navbar-item">
+                    <li className="navbar-item" data-responsive-text="Subscripción">
                         <img src={iconSubscription} alt="NOIC" className="navbar-icon" />
                         <p>
                             Mi subscripción
@@ -42,7 +42,7 @@ const NavBar = () => {
                 </Link>
                 {/* <Link to="/mySeeds" className={`navbar-container-btn ${window.location.pathname === "/mySeeds" ? "active-btn" : ""}`}> */}
                 <Link to="/home" className={`navbar-container-btn ${window.location.pathname === "/mySeeds" ? "active-btn" : ""}`}>
-                    <li className="navbar-item">
+                    <li className="navbar-item" data-responsive-text="Mis semillas">
                         <img src={iconSeeds} alt="NOIC" className="navbar-icon" />
                         <p>
                             Mis semillas
@@ -50,7 +50,7 @@ const NavBar = () => {
                     </li>
                 </Link>
             </ul>
-            <div className="navbar-item logout">
+            <div className="navbar-item logout" data-responsive-text="Cerrar sesión">
                 <img src={iconLogout} alt="NOIC" className="navbar-icon" />
                 <p className="navbar-logout" onClick={() => logout()}>Cerrar sesión</p>
             </div>

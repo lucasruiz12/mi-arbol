@@ -4,8 +4,8 @@ import { signUpWithEmail /*, signUpWithFacebook, signUpWithGoogle*/ } from '../.
 import { IS_AUTHENTICATED } from '../../helpers/constants';
 import LoadingLogo from '../LoadingLogo';
 import logoArbol from '../../assets/logos/logo-TAO-brown.svg';
-// import iconGoogle from '../../assets/icons/rrss-google.svg';
-// import iconFacebook from '../../assets/icons/rrss-facebook.svg';
+import iconGoogle from '../../assets/icons/rrss-google.svg';
+import iconFacebook from '../../assets/icons/rrss-facebook.svg';
 import './style.css';
 
 const Register = () => {
@@ -238,6 +238,13 @@ const Register = () => {
                                     {/* </Link> */}
                                 </div>
                                 <div className="container-social-media">
+                                    <div className="container-btn-sm">
+                                        <span>Registrarse con: </span>
+                                        <div className="container-btn-social-media">
+                                            <img src={iconGoogle} alt='GS' className="btn-social-media" />
+                                            <img src={iconFacebook} alt='FB' className="btn-social-media" />
+                                        </div>
+                                    </div>
                                     <Link to="/loginForm">
                                         <span style={{ cursor: "pointer" }}>¿Tienes cuenta? Iniciar sesión</span>
                                     </Link>

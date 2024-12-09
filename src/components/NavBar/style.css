@@ -92,10 +92,18 @@
         font-size: smaller;
         font-weight: normal;
         height: 100%;
+        text-align: center;
+        margin-top: 1rem;
     }
 
-    .navbar-item{
-        text-align: center;
+    .navbar-item p{
+        display: none;
+    }
+
+    .navbar-item::after{
+        content: attr(data-responsive-text);
+        font-size: 1.25vh;
+        color: black;
     }
 
     .navbar-icon {

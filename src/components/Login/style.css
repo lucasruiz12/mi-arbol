@@ -31,7 +31,7 @@
 .text-welcome {
     font-size: xx-large;
     font-weight: bold;
-    color: #A4B46A;
+    color: #A4C73D;
 }
 
 .text-carbon {
@@ -96,7 +96,7 @@
     border: none;
     border-radius: 2rem;
     color: white;
-    background-color: #A4B46A;
+    background-color: #A4C73D;
     cursor: pointer;
 }
 
@@ -105,6 +105,14 @@
 }
 
 .container-social-media {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.container-btn-sm{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -137,6 +145,10 @@
 
     .container-input-form-login {
         margin: 1rem 0 0 0;
+    }
+
+    .container-btn-sm{
+        width: 95%;
     }
 
     .container-btn-social-media {

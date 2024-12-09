@@ -4,8 +4,8 @@ import { loginWithEmail /*, loginWithGoogle, loginWithFacebook*/ } from '../../f
 import { IS_AUTHENTICATED } from '../../helpers/constants';
 import LoadingLogo from '../LoadingLogo';
 import logoFull from '../../assets/logos/logo-TAO-brown.svg';
-// import iconGoogle from '../../assets/icons/rrss-google.svg';
-// import iconFacebook from '../../assets/icons/rrss-facebook.svg';
+import iconGoogle from '../../assets/icons/rrss-google.svg';
+import iconFacebook from '../../assets/icons/rrss-facebook.svg';
 import './style.css';
 
 const Login = () => {
@@ -152,6 +152,13 @@ const Login = () => {
                             </div>
                         </div> */}
                         <div className="container-social-media">
+                            <div className="container-btn-sm">
+                                <span>Iniciar sesión con: </span>
+                                <div className="container-btn-social-media">
+                                    <img src={iconGoogle} alt='GS' className="btn-social-media" />
+                                    <img src={iconFacebook} alt='FB' className="btn-social-media" />
+                                </div>
+                            </div>
                             <Link to="/registerForm">
                                 <span style={{ cursor: "pointer" }}>¿No tienes cuenta? Crear una</span>
                             </Link>

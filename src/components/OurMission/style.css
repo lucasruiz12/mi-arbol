@@ -15,24 +15,25 @@
     z-index: -1;
 }
 
-.mission-content{
+.mission-content {
     height: 100%;
     width: 100%;
     padding: 5%;
 }
 
-.mission-header{
+.mission-header {
     display: flex;
     justify-content: space-between;
     margin-top: 5vh;
 }
 
-.mission-logo{
+.mission-logo {
     height: 12vh;
     /* width: 12vh; */
 }
 
-.mission-tips{
+/* Estilo del speech bubble */
+.speech-bubble {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,15 +45,38 @@
     left: 65%;
     top: 10%;
     border-radius: 1rem;
-    animation: slideIn 8s ease-out;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    animation: slideIn 8s ease-out, heartbeat 1s infinite;
 }
 
+/* Botón de cierre */
+.close-btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #666;
+    transition: color 0.3s ease;
+    z-index: 11;
+}
+
+.close-btn:hover {
+    color: #000;
+}
+
+/* Animación para el mensaje */
 @keyframes slideIn {
     0% {
         top: -100px;
+        opacity: 0;
     }
     10% {
         top: 10%;
+        opacity: 1;
     }
     90% {
         opacity: 0.99;
@@ -65,9 +89,11 @@
 @keyframes slideInMobile {
     0% {
         top: 100%;
+        opacity: 0;
     }
     10% {
         top: 80%;
+        opacity: 1;
     }
     90% {
         opacity: 0.99;
@@ -77,16 +103,13 @@
     }
 }
 
-.mission-tips::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    right: 15px;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 10px 10px 0 20px;
-    border-color: #FFF2D4 transparent transparent transparent;
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
 }
 
 .mission-title{
@@ -114,48 +137,46 @@
     font-size: xx-large;
 }
 
+/* Estilo para dispositivos móviles */
 @media (max-width: 768px) {
-    .mission-content{
+    .mission-content {
         width: 100%;
         display: flex;
         flex-direction: column;
     }
-    .mission-info-container{
-        margin: 5vh 0
+    .mission-info-container {
+        margin: 5vh 0;
     }
-    .mission-title{
+    .mission-title {
         font-size: 5vh;
         font-weight: bold;
     }
-    .mission-text{
+    .mission-text {
         width: 100%;
         height: auto;
-        background-color: rgba(0,0,0,0.35);
+        background-color: rgba(0, 0, 0, 0.35);
         padding: 1rem;
         border-radius: 1rem;
     }
-    .mission-line-text{
+    .mission-line-text {
         color: white;
         font-size: large;
-        margin: 0.5rem 0
+        margin: 0.5rem 0;
     }
-    .btn-green{
+    .btn-green {
         width: 90% !important;
         align-self: center;
         font-size: larger !important;
     }
-    .mission-tips{
+    .speech-bubble {
         padding: 1rem;
-        width: 100%;
-        font-size: larger;
+        width: 90%;
+        font-size: medium;
         background-color: #FFF2D4;
         position: absolute;
-        left: 0%;
+        left: 5%;
         top: 80%;
         animation: slideInMobile 8s ease-out;
         font-size: medium;
-    }
-    .mission-tips::after {
-        display: none;
     }
 }

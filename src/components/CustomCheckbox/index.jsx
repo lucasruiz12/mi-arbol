@@ -11,7 +11,9 @@ const CustomCheckbox = ({ data, setData, resetData }) => {
     };
 
     useEffect(() => {
-        setCheckValue("");
+        setTimeout(() => {
+            setCheckValue("");
+        }, 300);
     }, [resetData]);
 
     return (

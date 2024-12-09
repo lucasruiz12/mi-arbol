@@ -9,7 +9,7 @@ const CarouselLogo = () => {
   const settings = {
     dots: false, // Muestra los puntos de navegación
     infinite: true, // Hace que el carrusel sea infinito
-    speed: 2000, // Velocidad de la transición
+    speed: 3000, // Velocidad de la transición
     slidesToShow: 5, // Cantidad de logos visibles
     slidesToScroll: 1, // Logos que se mueven por scroll
     autoplay: true, // Activar desplazamiento automático
@@ -39,18 +39,20 @@ const CarouselLogo = () => {
   };
 
   return (
-    <div className="carousel-container" style={{ width: "70%", margin: "0 auto", padding: "2rem 0", marginTop: "2vh" }}>
-      <Slider {...settings}>
-        {whiteLogos.map((logo, index) => (
-          <div key={index} style={{ display: "flex", justifyContent: "center" }}>
-            <img
-              src={logo}
-              alt={`Logo ${index + 1}`}
-              style={{ width: "100px", height: "100px", objectFit: "contain" }}
-            />
-          </div>
-        ))}
-      </Slider>
+    <div className="container-carousel-logos">
+      <div className="carousel-container">
+        <Slider {...settings}>
+          {whiteLogos.map((logo, index) => (
+            <div key={index} style={{ display: "flex", justifyContent: "center" }}>
+              <img
+                src={logo}
+                alt={`Logo ${index + 1}`}
+                style={{ width: "100px", height: "100px", objectFit: "contain" }}
+              />
+            </div>
+          ))}
+        </Slider>
+      </div>
     </div>
   );
 };
