@@ -46,6 +46,10 @@
     font-weight: bold;
 }
 
+.navbar-item.logout{
+    font-size: medium !important;
+}
+
 .navbar-logout {
     cursor: pointer;
 }
@@ -77,6 +81,7 @@
 
     .item-list {
         width: 100%;
+        padding-left: 0;
     }
 
     .navbar-item {
@@ -87,6 +92,10 @@
         font-size: smaller;
         font-weight: normal;
         height: 100%;
+    }
+
+    .navbar-item{
+        text-align: center;
     }
 
     .navbar-icon {
@@ -101,6 +110,6 @@
     .navbar-container-btn:hover,
     .navbar-container-btn.active-btn {
         border-bottom: none;
-        background-color: #ececec;
+        background-color: #E1E6A7;
     }
 }

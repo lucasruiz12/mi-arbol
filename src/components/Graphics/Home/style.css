@@ -17,13 +17,20 @@
 
 .graphics-background {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     padding: 2rem;
     margin: 0.5rem 0;
     background-color: white;
     border-radius: 2rem;
     width: 90%;
     opacity: 0.85;
+}
+
+.graphics-div{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
 }
 
 .container-button-home {

@@ -5,6 +5,7 @@ import { IS_AUTHENTICATED } from '../../helpers/constants';
 import logoArbol from '../../assets/logos/logo-TAO-brown.svg';
 import LoadingLogo from '../../components/LoadingLogo';
 import CustomCheckbox from '../../components/CustomCheckbox';
+import { backgroundImages } from '../../helpers/backgroundImages';
 import './style.css';
 
 const InitQuestions = () => {
@@ -134,7 +135,15 @@ const InitQuestions = () => {
     }, []);
 
     return (
-        <div className="container-init-questions">
+        <div
+            className="container-init-questions"
+            style={{
+                backgroundImage: loading ? "none" : `url(${backgroundImages[currentQuestion - 1]})` || 'none',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                transition: 'background-image 0.5s ease-in-out',
+            }}
+        >
             {
                 questionsAndAnswers.find(el => el.id === currentQuestion) && questionsAndAnswers.find(el => el.id === currentQuestion).messageToShow &&
                 <p className="question-tip">{questionsAndAnswers.find(el => el.id === currentQuestion).messageToShow}</p>

@@ -4,6 +4,12 @@
     height: 100%;
 }
 
+.with-back{
+    background-image: url('../../assets/images/image-background-trace.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
 .container-home-content {
     flex-grow: 1;
     overflow-y: auto;
@@ -25,27 +31,27 @@
 }
 
 .home-welcome {
-    color: #604848;
+    color: white;
     margin-top: 4vh;
 }
 
 .home-number {
-    color: #604848;
+    color: white;
     font-size: 10vh;
     font-weight: bold;
 }
 
 .home-text {
-    color: #604848;
+    color: white;
     font-size: 4vh;
 }
 
 .home-need {
-    color: #604848;
+    color: white;
 }
 
 .home-target {
-    color: #604848;
+    color: white;
     font-weight: bold;
 }
 

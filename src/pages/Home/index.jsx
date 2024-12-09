@@ -18,8 +18,12 @@ const Home = () => {
         }, 3000);
     }, []);
 
+    /* backgroundImage: loading ? "none" : `url(${backgroundImages[currentQuestion - 1]})` || 'none',
+backgroundSize: 'cover',
+backgroundPosition: 'center', */
+
     return (
-        <div className="container-home">
+        <div className={loading ? `container-home` : `container-home with-back`}>
             <NavBar />
             <div className="container-home-content">
                 {

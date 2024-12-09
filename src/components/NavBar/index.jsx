@@ -2,7 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { logout } from '../../firebase/connections';
 import logoArbol from '../../assets/logos/logo-TAO-brown.svg';
-import iconTree from '../../assets/icons/icon-tree.svg';
+import iconTrace from '../../assets/icons/navbar/icon-trace.svg';
+import iconNeutral from '../../assets/icons/navbar/icon-neutral.svg';
+import iconSubscription from '../../assets/icons/navbar/icon-subscription.svg';
+import iconSeeds from '../../assets/icons/navbar/icon-seeds.svg';
+import iconLogout from '../../assets/icons/navbar/icon-logout.svg';
 import './style.css';
 
 const NavBar = () => {
@@ -12,7 +16,7 @@ const NavBar = () => {
             <ul className="item-list" >
                 <Link to="/home" className={`navbar-container-btn ${window.location.pathname === "/home" ? "active-btn" : ""}`}>
                     <li className="navbar-item">
-                        <img src={iconTree} alt="NOIC" className="navbar-icon" />
+                        <img src={iconTrace} alt="NOIC" className="navbar-icon" />
                         <p>
                             Mi huella
                         </p>
@@ -21,7 +25,7 @@ const NavBar = () => {
                 {/* <Link to="/neutralCarbon" className={`navbar-container-btn ${window.location.pathname === "/neutralCarbon" ? "active-btn" : ""}`}> */}
                 <Link to="/home" className={`navbar-container-btn ${window.location.pathname === "/neutralCarbon" ? "active-btn" : ""}`}>
                     <li className="navbar-item">
-                        <img src={iconTree} alt="NOIC" className="navbar-icon" />
+                        <img src={iconNeutral} alt="NOIC" className="navbar-icon" />
                         <p>
                             Soy carbono neutro
                         </p>
@@ -30,7 +34,7 @@ const NavBar = () => {
                 {/* <Link to="/mySubscription" className={`navbar-container-btn ${window.location.pathname === "/mySubscription" ? "active-btn" : ""}`}> */}
                 <Link to="/home" className={`navbar-container-btn ${window.location.pathname === "/mySubscription" ? "active-btn" : ""}`}>
                     <li className="navbar-item">
-                        <img src={iconTree} alt="NOIC" className="navbar-icon" />
+                        <img src={iconSubscription} alt="NOIC" className="navbar-icon" />
                         <p>
                             Mi subscripción
                         </p>
@@ -39,14 +43,17 @@ const NavBar = () => {
                 {/* <Link to="/mySeeds" className={`navbar-container-btn ${window.location.pathname === "/mySeeds" ? "active-btn" : ""}`}> */}
                 <Link to="/home" className={`navbar-container-btn ${window.location.pathname === "/mySeeds" ? "active-btn" : ""}`}>
                     <li className="navbar-item">
-                        <img src={iconTree} alt="NOIC" className="navbar-icon" />
+                        <img src={iconSeeds} alt="NOIC" className="navbar-icon" />
                         <p>
                             Mis semillas
                         </p>
                     </li>
                 </Link>
             </ul>
-            <p className="navbar-logout" onClick={() => logout()}>LOGOUT</p>
+            <div className="navbar-item logout">
+                <img src={iconLogout} alt="NOIC" className="navbar-icon" />
+                <p className="navbar-logout" onClick={() => logout()}>Cerrar sesión</p>
+            </div>
         </nav>
     );
 };

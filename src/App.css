@@ -1,17 +1,18 @@
-@font-face {
+/* @font-face {
   font-family: Cocogoose-Light;
   src: url('./assets/fonts/Cocogoose\ Pro\ Regular\ Trial.ttf');
-}
+} */
 
 
-html{
+/* html{
   font-family: Cocogoose-Light, sans-serif;
-}
+} */
 
 body{
   height: 100vh;
   width: 100vw;
   background-color: #E2EFDA;
+  font-family: 'Open Sans', serif !important;
 }
 
 #root{
