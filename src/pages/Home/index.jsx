@@ -25,34 +25,36 @@ backgroundPosition: 'center', */
 
     return (
         <div className={loading ? `container-home` : `container-home with-back`}>
-            <NavBar />
-            <div className="container-home-content">
-                {
-                    loading ?
-                        <LoadingLogo />
-                        :
-                        <div className="home-info">
-                            <div className="home-user-data">
-                                <h4 className="home-welcome">Bienvenido usuario</h4>
-                                <div>
-                                    <h1 className="home-number">4.800kg CO2</h1>
-                                    <h5 className="home-text">es tu huella de carbono...</h5>
-                                </div>
-                                <div>
-                                    <p className="home-need">y para mitigarla necesitas plantar</p>
-                                    <div className="home-container-target">
-                                        <img src={iconTree} alt="NOIC" />
-                                        <h1 className="home-target">200 árboles</h1>
-                                        {/* <ManyTrees /> */}
+            {
+                loading ?
+                    <LoadingLogo />
+                    :
+                    <>
+                        <NavBar />
+                        <div className="container-home-content">
+                            <div className="home-info">
+                                <div className="home-user-data">
+                                    <h4 className="home-welcome">Bienvenido usuario</h4>
+                                    <div>
+                                        <h1 className="home-number">4.800kg CO2</h1>
+                                        <h5 className="home-text">es tu huella de carbono...</h5>
+                                    </div>
+                                    <div>
+                                        <p className="home-need">y para mitigarla necesitas plantar</p>
+                                        <div className="home-container-target">
+                                            <img src={iconTree} alt="NOIC" />
+                                            <h1 className="home-target">200 árboles</h1>
+                                            {/* <ManyTrees /> */}
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div className="home-user-graphics">
-                                <GraphicsHome />
+                                <div className="home-user-graphics">
+                                    <GraphicsHome />
+                                </div>
                             </div>
                         </div>
-                }
-            </div>
+                    </>
+            }
         </div>
     );
 };

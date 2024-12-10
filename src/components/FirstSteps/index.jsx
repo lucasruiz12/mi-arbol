@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 import stepsVideo from '../../assets/videos/2. Mundo.mp4';
 import logoArbol from '../../assets/logos/logo-TAO-white.svg';
 import logoISO from '../../assets/logos/logo-ISO.svg';
-import './style.css'
 import CarouselLogo from '../CarouselLogos';
+import ButtonStyledMain from '../ButtonStyledMain';
+import './style.css'
 
 const FirstSteps = ({ setView }) => {
     return (
@@ -26,9 +27,12 @@ const FirstSteps = ({ setView }) => {
                     </div>
                 </div>
                 <Link className="link-btn" to="/initQuestions">
-                    <button className="btn-green">
+                    <div className="steps-btn-container">
+                        <ButtonStyledMain text="Medir mi huella" />
+                        {/* <button className="btn-green">
                         Medir mi huella
-                    </button>
+                    </button> */}
+                    </div>
                 </Link>
                 <CarouselLogo />
             </div>

@@ -2,6 +2,7 @@ import React from 'react';
 import { logout } from '../../firebase/connections';
 import homeVideo from '../../assets/videos/Home.mp4';
 import './style.css';
+import ButtonStyledQuestions from '../ButtonStyledQuestions';
 
 const ViewInProgress = () => {
 
@@ -19,9 +20,10 @@ const ViewInProgress = () => {
             </video>
             <div className="container-progress-view">
                 <p className="progress-line">Estamos trabajando en este proceso</p>
-                <button className="btn-green" onClick={() => goToInit()}>
+                <ButtonStyledQuestions text="Regresar al inicio" functionClick={() => goToInit()} />
+                {/* <button className="btn-green" onClick={() => goToInit()}>
                     Regresar al inicio
-                </button>
+                </button> */}
             </div>
         </>
     );

@@ -1,56 +1,65 @@
 import React from 'react';
-import ReactApexChart from 'react-apexcharts';
-import './style.css';
+import { Chart } from 'react-google-charts';
 
-const GraphicPie = () => {
-    const data = {
-        series: [40, 25, 35],
-        options: {
-            chart: {
-                width: 380,
-                type: 'pie',
+function GraphicPie() {
+    const data = [
+        ["Consumo", "Porcentaje"],
+        ["Hogar", 16],
+        ["Transporte", 15],
+        ["Alimentación", 12],
+        ["Residuos", 11],
+        ["Otros", 21],
+    ];
+
+    const options = {
+        title: "",
+        pieHole: 0.4, // Creates a Donut Chart
+        is3D: true, // Enables 3D view
+        pieStartAngle: 100, // Rotates the chart
+        sliceVisibilityThreshold: 0.02, // Hides slices smaller than 2%
+        legend: {
+            position: "right",
+            alignment: "center",
+            textStyle: {
+                color: "white",
+                fontSize: 16,
             },
-            labels: ['Hogar', 'Transporte', 'Alimentación'],
-            colors: ['#A4B46A', '#82816B', '#C8D390'], // Colores según la paleta proporcionada
-            responsive: [
-                {
-                    breakpoint: 480,
-                    options: {
-                        chart: {
-                            width: 200,
-                        },
-                        legend: {
-                            show: false, // Oculta la leyenda estándar en móviles
-                        },
-                    },
-                },
-            ],
+        },
+        colors: [
+            "#66BB6A", // Verde (Hogar - Energía limpia)
+            "#0277BD", // Azul oscuro (Transporte)
+            "#FFB300", // Amarillo (Alimentación)
+            "#8D6E63", // Marrón (Residuos)
+            "#BDBDBD", // Gris (Otros)
+        ],
+        tooltip: {
+            isHtml: true,
+            trigger: 'hover',
+            // Tooltip sin puntos, solo nombre e ítem
+            textStyle: {
+                color: 'black',
+                fontSize: 14,
+            },
+        },
+        backgroundColor: "transparent", // Fondo del gráfico
+        chartArea: {
+            backgroundColor: "#fff", // Fondo blanco dentro del gráfico
+            width: '95%', // Ajusta el ancho
+            height: '100%', // Ajusta la altura
+        },
+        slices: {
+            1: { offset: 0.2 }, // Explota el segundo segmento
         },
     };
 
     return (
-        <div className="graphics-background pie-chart">
-            <ReactApexChart
-                options={data.options}
-                series={data.series}
-                type="pie"
-                width={380}
-            />
-            <div className="legend-wrapper">
-                {data.options.labels.map((label, index) => (
-                    <div className="category" key={index}>
-                        <div
-                            className="color-box"
-                            style={{ backgroundColor: data.options.colors[index] }}
-                        ></div>
-                        <p className="label-legend">
-                        {label}
-                        </p>
-                    </div>
-                ))}
-            </div>
-        </div>
+        <Chart
+            chartType="PieChart"
+            data={data}
+            options={options}
+            height={"300px"}
+        />
     );
-};
+}
 
 export default GraphicPie;

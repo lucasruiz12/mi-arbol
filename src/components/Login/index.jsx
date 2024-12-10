@@ -6,6 +6,7 @@ import LoadingLogo from '../LoadingLogo';
 import logoFull from '../../assets/logos/logo-TAO-brown.svg';
 import iconGoogle from '../../assets/icons/rrss-google.svg';
 import iconFacebook from '../../assets/icons/rrss-facebook.svg';
+import ButtonStyledQuestions from '../ButtonStyledQuestions';
 import './style.css';
 
 const Login = () => {
@@ -132,7 +133,16 @@ const Login = () => {
                         </div>
                         <div className="link-container">
                             {/* <Link to="/initQuestions"> */}
-                            <input
+                            <ButtonStyledQuestions
+                            text="Iniciar sesión"
+                            disabled={
+                                formData.user === "" ||
+                                formData.password === "" ||
+                                formData.password.length < 7
+                            }
+                            type="submit"
+                            />
+                            {/* <input
                                 type="submit"
                                 value="Iniciar sesión"
                                 className="btn-green-login"
@@ -141,7 +151,7 @@ const Login = () => {
                                     formData.password === "" ||
                                     formData.password.length < 7
                                 }
-                            />
+                            /> */}
                             {/* </Link> */}
                         </div>
                         {/* <div className="container-social-media">

@@ -6,6 +6,7 @@ import LoadingLogo from '../LoadingLogo';
 import logoArbol from '../../assets/logos/logo-TAO-brown.svg';
 import iconGoogle from '../../assets/icons/rrss-google.svg';
 import iconFacebook from '../../assets/icons/rrss-facebook.svg';
+import ButtonStyledQuestions from '../ButtonStyledQuestions';
 import './style.css';
 
 const Register = () => {
@@ -218,7 +219,23 @@ const Register = () => {
                                 </div> */}
                                 <div className="link-container-register">
                                     {/* <Link to="/initQuestions"> */}
-                                    <input
+                                    <ButtonStyledQuestions
+                                        type="submit"
+                                        text="Registrarse"
+                                        disabled={
+                                            formData.name === "" ||
+                                            formData.lastname === "" ||
+                                            formData.city === "" ||
+                                            formData.state === "" ||
+                                            formData.phone === "" ||
+                                            formData.email === "" ||
+                                            formData.password === "" ||
+                                            formData.repeatPassword === "" ||
+                                            formData.password.length < 7 ||
+                                            formData.password !== formData.repeatPassword
+                                        }
+                                    />
+                                    {/* <input
                                         type="submit"
                                         value="Registrarse"
                                         className="btn-green-register"
@@ -234,7 +251,7 @@ const Register = () => {
                                             formData.password.length < 7 ||
                                             formData.password !== formData.repeatPassword
                                         }
-                                    />
+                                    /> */}
                                     {/* </Link> */}
                                 </div>
                                 <div className="container-social-media">

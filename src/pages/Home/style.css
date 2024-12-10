@@ -78,10 +78,9 @@
 .home-user-graphics {
     display: flex;
     padding: 5vh 0;
-    margin-left: 5vh;
     flex-direction: column;
     justify-content: space-between;
-    width: 35%;
+    width: 50%;
 }
 
 @media (max-width: 768px) {

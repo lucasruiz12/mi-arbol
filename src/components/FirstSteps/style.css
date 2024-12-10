@@ -67,12 +67,17 @@
     width: 20vh;
 }
 
+.steps-btn-container{
+    width: 50%;
+}
+
 @media (max-width: 768px) {
     .steps-content {
         width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
+        align-items: center;
     }
 
     .steps-img-container{
@@ -118,5 +123,8 @@
         width: 90% !important;
         align-self: center !important;
         font-size: larger !important;
+    }
+    .steps-btn-container{
+        width: 90%;
     }
 }

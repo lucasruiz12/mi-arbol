@@ -4,7 +4,7 @@
     align-items: center;
     height: 10vh;
     width: auto;
-    background-color: white;
+    background-color: transparent;
     border-radius: 0 0 2rem 2rem;
     padding: 0 3vw;
 }
@@ -23,13 +23,38 @@
     box-sizing: border-box;
     border-bottom: solid 0.5rem transparent;
     color: #604848;
+    overflow: hidden; /* Para asegurarnos de que la animación no se salga */
+    position: relative;
 }
 
-.navbar-container-btn:hover,
-.navbar-container-btn.active-btn {
-    background-color: #FAFBFD;
-    border-bottom: solid 0.5rem #A4B46A;
+.navbar-container-btn:hover {
     color: #A4B46A;
+    transition: color 0.3s ease;
+}
+
+.navbar-container-btn::after {
+    content: "";
+    display: block;
+    height: 0.5rem; /* Igual al grosor del border-bottom */
+    width: 0;
+    background-color: #A4B46A;
+    transition: width 0.3s ease; /* Controla la animación */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.navbar-container-btn:hover::after {
+    width: 100%; /* Anima el borde desde la izquierda hacia la derecha */
+}
+
+.navbar-container-btn.active-btn {
+    color: #A4B46A;
+}
+
+.navbar-container-btn.active-btn::after {
+    width: 100%; /* Borde completo para el botón activo */
+    background-color: #A4B46A;
 }
 
 .item-list {
@@ -46,7 +71,7 @@
     font-weight: bold;
 }
 
-.navbar-item.logout{
+.navbar-item.logout {
     font-size: medium !important;
 }
 
@@ -63,6 +88,7 @@
     .nav-container {
         border-radius: 1rem 1rem 0 0;
         height: 7vh;
+        padding: 0 7vw 0 0;
     }
 
     .nav-logo {
@@ -99,14 +125,14 @@
         text-align: center;
     }
 
-    .navbar-item p{
+    .navbar-item p {
         display: none;
     }
 
-    .navbar-item.logout{
+    .navbar-item.logout {
         margin-left: 1.5vw !important;
     }
-    
+
     .navbar-icon {
         display: flex;
         height: 30px;

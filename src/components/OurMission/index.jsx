@@ -4,6 +4,7 @@ import missionMobileVideo from '../../assets/videos/1. hojasMobile.mp4';
 import logoArbol from '../../assets/logos/logo-TAO-brown.svg';
 import { tipsAndRecommendations } from '../../helpers/messagesAndTips';
 import './style.css';
+import ButtonStyledMain from '../ButtonStyledMain';
 
 const OurMission = ({ setView }) => {
     const [showMessage, setShowMessage] = useState(false);
@@ -57,9 +58,12 @@ const OurMission = ({ setView }) => {
                         </p>
                     </div>
                 </div>
-                <button className="btn-green" onClick={() => setView(2)}>
+                <div className="mission-btn-container">
+                <ButtonStyledMain text="Empezar" functionClick={() => setView(2)} />
+                </div>
+                {/* <button className="btn-green" onClick={() => setView(2)}>
                     Empezar
-                </button>
+                </button> */}
             </div>
         </div>
     );

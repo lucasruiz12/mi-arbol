@@ -1,36 +1,23 @@
 .container-graphics-home {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     width: 100%;
     height: 100%;
-    margin-left: 5vw;
 }
 
-.apexcharts-legend-text {
-    font-size: 1rem !important;
-    font-weight: bold !important;
-    color: #604848 !important;
-    margin-left: 0 !important;
-}
-
-.graphics-background {
+.container-graphic {
     display: flex;
     justify-content: center;
-    padding: 2rem;
+    align-items: center;
     margin: 0.5rem 0;
-    background-color: white;
-    border-radius: 2rem;
-    width: 90%;
-    opacity: 0.85;
+    width: 100%;
 }
 
-.graphics-div{
-    display: flex;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
+.container-graphic:hover{
+    cursor: pointer;
+    animation: shake 1s infinite;
 }
 
 .container-button-home {
@@ -42,58 +29,18 @@
     width: 100% !important;
 }
 
-.legend-wrapper{
-    display: none;
-}
-
 @media (max-width: 768px) {
-    .container-graphics-home {
-        align-items: flex-start;
-    }
-    .graphics-background {
-        flex-direction: column; /* Permite que los elementos del gráfico se apilen verticalmente */
-        align-items: center;
-        padding: 1rem; /* Ajuste del padding para móviles */
-    }
-
-    .apexcharts-canvas {
-        margin: 0 auto; /* Centrar el gráfico */
-    }
-
-    .graphics-background.pie-chart {
+    .container-graphic {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
-    .legend-wrapper {
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        width: 100%; /* Aprovecha todo el espacio horizontal */
-        margin-top: 1rem; /* Separar la leyenda del gráfico */
-    }
-
-    .legend-wrapper .category {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem; /* Espacio entre el cuadrado y el texto */
-        text-align: center;
-        flex: 1; /* Cada categoría ocupa un espacio igual */
-        font-size: 1rem; /* Tamaño del texto ajustado */
-    }
-
-    .legend-wrapper .color-box {
-        width: 1rem;
-        height: 1rem;
-        border-radius: 0.25rem; /* Cuadrados con esquinas suaves */
-    }
-
-    .label-legend{
-        font-size: smaller;
-    }
-
     .container-button-home{
         margin-bottom: 1rem;
+    }
+    .container-graphic:hover{
+        cursor: pointer;
+        animation: none;
     }
 }

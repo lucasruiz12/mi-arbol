@@ -6,6 +6,7 @@ import logoArbol from '../../assets/logos/logo-TAO-brown.svg';
 import LoadingLogo from '../../components/LoadingLogo';
 import CustomCheckbox from '../../components/CustomCheckbox';
 import { backgroundImages } from '../../helpers/backgroundImages';
+import ButtonStyledQuestions from '../../components/ButtonStyledQuestions';
 import './style.css';
 
 const InitQuestions = () => {
@@ -94,22 +95,24 @@ const InitQuestions = () => {
                     </div>
                     <div className={`btn-container fade-in`} style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "10vh", width: "50vw" }}>
                         {currentQuestion < questionsAndAnswers.length ? (
-                            <button
-                                className="btn-green"
-                                disabled={responsePoints === ""}
-                                onClick={nextQuestion}
-                            >
-                                Siguiente
-                            </button>
+                            <ButtonStyledQuestions text="Siguiente" functionClick={() => nextQuestion()} disabled={responsePoints === ""} />
+                            // <button
+                            //     className="btn-green"
+                            //     disabled={responsePoints === ""}
+                            //     onClick={nextQuestion}
+                            // >
+                            //     Siguiente
+                            // </button>
                         ) : (
                             <Link to="/registerForm" style={{ display: "flex", justifyContent: "center", width: "100%" }}>
-                                <button
+                                <ButtonStyledQuestions text="Finalizar" functionClick={() => nextQuestion()} disabled={responsePoints === ""} />
+                                {/* <button
                                     className="btn-green"
                                     disabled={responsePoints === ""}
                                     onClick={nextQuestion}
                                 >
                                     Finalizar
-                                </button>
+                                </button> */}
                             </Link>
                         )}
                     </div>
