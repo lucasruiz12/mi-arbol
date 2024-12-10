@@ -17,7 +17,6 @@
 
 .container-graphic:hover{
     cursor: pointer;
-    animation: shake 1s infinite;
 }
 
 .container-button-home {
@@ -41,6 +40,5 @@
     }
     .container-graphic:hover{
         cursor: pointer;
-        animation: none;
     }
 }

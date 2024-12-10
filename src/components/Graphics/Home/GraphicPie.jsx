@@ -34,7 +34,7 @@ function GraphicPie() {
         ],
         tooltip: {
             isHtml: true,
-            trigger: 'hover',
+            trigger: 'none',
             // Tooltip sin puntos, solo nombre e ítem
             textStyle: {
                 color: 'black',
@@ -48,7 +48,7 @@ function GraphicPie() {
             height: '100%', // Ajusta la altura
         },
         slices: {
-            1: { offset: 0.2 }, // Explota el segundo segmento
+            1: { offset: 0.1 }, // Explota el segundo segmento
         },
     };
 
