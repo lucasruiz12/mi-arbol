@@ -53,7 +53,6 @@ const InitQuestions = () => {
             style={{
                 backgroundImage: loading ? "none" : `url(${backgroundImages[currentQuestion - 1]})` || 'none',
                 backgroundSize: 'cover',
-                backgroundPosition: 'center',
                 transition: 'background-image 0.5s ease-in-out',
             }}
         >
@@ -93,7 +92,7 @@ const InitQuestions = () => {
                             resetData={responseUser}
                         />
                     </div>
-                    <div className={`fade-in`} style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "10vh", width: "50vw" }}>
+                    <div className={`btn-container fade-in`} style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "10vh", width: "50vw" }}>
                         {currentQuestion < questionsAndAnswers.length ? (
                             <button
                                 className="btn-green"

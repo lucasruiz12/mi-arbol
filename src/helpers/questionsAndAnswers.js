@@ -117,7 +117,7 @@ export const questionsAndAnswers = [
             { name: "Caminando/Bicicleta", points: 0 },
             { name: "Auto eléctrico o híbrido", points: 1 },
         ],
-        messageToShow: "Cambiar a transportes más sustentables puede reducir significativamente tus emisiones de carbono.",
+        messageToShow: null,
         icon: iconCar,
     },
     {

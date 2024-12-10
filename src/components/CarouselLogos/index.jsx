@@ -16,6 +16,10 @@ const CarouselLogo = () => {
     autoplaySpeed: 2000, // Velocidad del desplazamiento
     cssEase: "linear", // Transición fluida
     arrows: false, // Oculta flechas
+    draggable: false, // Desactiva el arrastre
+    swipe: false, // Desactiva el deslizamiento
+    touchMove: false, // Desactiva el movimiento táctil
+    pauseOnHover: false, // Desactiva la pausa al pasar el ratón
     responsive: [
       {
         breakpoint: 1024, // Para pantallas menores a 1024px

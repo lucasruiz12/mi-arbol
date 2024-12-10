@@ -8,6 +8,7 @@ import iconSubscription from '../../assets/icons/navbar/icon-subscription.svg';
 import iconSeeds from '../../assets/icons/navbar/icon-seeds.svg';
 import iconLogout from '../../assets/icons/navbar/icon-logout.svg';
 import './style.css';
+import LogOutDropdown from '../LogOutDropdown';
 
 const NavBar = () => {
     return (
@@ -15,7 +16,7 @@ const NavBar = () => {
             <img className="nav-logo" src={logoArbol} alt="LOG" />
             <ul className="item-list" >
                 <Link to="/home" className={`navbar-container-btn ${window.location.pathname === "/home" ? "active-btn" : ""}`}>
-                    <li className="navbar-item" data-responsive-text="Mi huella">
+                    <li className="navbar-item">
                         <img src={iconTrace} alt="NOIC" className="navbar-icon" />
                         <p>
                             Mi huella
@@ -24,7 +25,7 @@ const NavBar = () => {
                 </Link>
                 {/* <Link to="/neutralCarbon" className={`navbar-container-btn ${window.location.pathname === "/neutralCarbon" ? "active-btn" : ""}`}> */}
                 <Link to="/home" className={`navbar-container-btn ${window.location.pathname === "/neutralCarbon" ? "active-btn" : ""}`}>
-                    <li className="navbar-item" data-responsive-text="Carbono neutro">
+                    <li className="navbar-item">
                         <img src={iconNeutral} alt="NOIC" className="navbar-icon" />
                         <p>
                             Soy carbono neutro
@@ -33,7 +34,7 @@ const NavBar = () => {
                 </Link>
                 {/* <Link to="/mySubscription" className={`navbar-container-btn ${window.location.pathname === "/mySubscription" ? "active-btn" : ""}`}> */}
                 <Link to="/home" className={`navbar-container-btn ${window.location.pathname === "/mySubscription" ? "active-btn" : ""}`}>
-                    <li className="navbar-item" data-responsive-text="Subscripción">
+                    <li className="navbar-item">
                         <img src={iconSubscription} alt="NOIC" className="navbar-icon" />
                         <p>
                             Mi subscripción
@@ -42,7 +43,7 @@ const NavBar = () => {
                 </Link>
                 {/* <Link to="/mySeeds" className={`navbar-container-btn ${window.location.pathname === "/mySeeds" ? "active-btn" : ""}`}> */}
                 <Link to="/home" className={`navbar-container-btn ${window.location.pathname === "/mySeeds" ? "active-btn" : ""}`}>
-                    <li className="navbar-item" data-responsive-text="Mis semillas">
+                    <li className="navbar-item">
                         <img src={iconSeeds} alt="NOIC" className="navbar-icon" />
                         <p>
                             Mis semillas
@@ -50,9 +51,9 @@ const NavBar = () => {
                     </li>
                 </Link>
             </ul>
-            <div className="navbar-item logout" data-responsive-text="Cerrar sesión">
+            <div className="navbar-item logout">
                 <img src={iconLogout} alt="NOIC" className="navbar-icon" />
-                <p className="navbar-logout" onClick={() => logout()}>Cerrar sesión</p>
+                <LogOutDropdown logout={logout} />
             </div>
         </nav>
     );

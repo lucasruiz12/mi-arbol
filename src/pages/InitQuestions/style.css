@@ -114,10 +114,14 @@
     .container-text{
         width: 75%;
     }
+    .container-init-questions{
+        padding: 5rem 0;
+    }
     .container-question{
         width: 100%;
         padding: 0 1vh;
         align-items: flex-start;
+        margin-top: 4vh;
     }
     .question-text{
         font-size: x-large;
@@ -130,10 +134,14 @@
     }
     .question-tip{
         left: 5%;
-        top: 0;
-        font-size: small;
+        top: 1%;
+        font-size: x-small;
+        font-weight: bold;
         padding: 1rem;
         width: 90%;
-        /* animation: slideInTextMobile 0.5s ease-out; */
+        animation: slideInTextMobile 0.5s ease-out;
+    }
+    .btn-container{
+        width: 80% !important;
     }
 }

@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import NavBar from '../../components/NavBar';
+import iconTree from '../../assets/icons/icon-tree.svg';
 // import { IS_AUTHENTICATED } from '../../helpers/constants';
 import LoadingLogo from '../../components/LoadingLogo';
 
 import './style.css';
-import ManyTrees from '../../components/ManyTrees';
+// import ManyTrees from '../../components/ManyTrees';
 import GraphicsHome from '../../components/Graphics/Home';
 
 const Home = () => {
@@ -39,9 +40,10 @@ backgroundPosition: 'center', */
                                 </div>
                                 <div>
                                     <p className="home-need">y para mitigarla necesitas plantar</p>
-                                    <div>
+                                    <div className="home-container-target">
+                                        <img src={iconTree} alt="NOIC" />
                                         <h1 className="home-target">200 árboles</h1>
-                                        <ManyTrees />
+                                        {/* <ManyTrees /> */}
                                     </div>
                                 </div>
                             </div>
