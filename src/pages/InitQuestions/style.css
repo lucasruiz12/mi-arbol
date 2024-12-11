@@ -132,11 +132,15 @@
         align-items: flex-start;
         margin-top: 4vh;
     }
+    .question-logo{
+        height: 8vh;
+    }
     .question-text{
         font-size: x-large;
     }
     .container-answers{
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
         width: 100%;
         align-items: center;
         height: auto;

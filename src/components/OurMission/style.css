@@ -100,7 +100,7 @@
         opacity: 0;
     }
     10% {
-        top: 80%;
+        top: 75%;
         opacity: 1;
     }
     90% {
@@ -154,7 +154,7 @@
         align-items: center;
     }
     .mission-info-container {
-        margin: 5vh 0;
+        margin: 3vh 0;
     }
     .mission-title {
         font-size: 5vh;
@@ -178,13 +178,13 @@
         font-size: larger !important;
     }
     .speech-bubble {
-        padding: 2rem 3rem;
+        padding: 1rem 3rem;
         width: 90%;
         font-size: medium;
         background-color: #FFF2D4;
         position: absolute;
         left: 5%;
-        top: 80%;
+        top: 75%;
         animation: slideInMobile 8s ease-out;
         font-size: medium;
     }

@@ -145,9 +145,8 @@
         font-size: smaller;
     }
 
-    .navbar-container-btn:hover,
-    .navbar-container-btn.active-btn {
+    /* .navbar-container-btn.active-btn {
         border-bottom: none;
         background-color: #E1E6A7;
-    }
+    } */
 }
