@@ -86,7 +86,7 @@ const InitQuestions = () => {
                             </p>
                         </div>
                     </div>
-                    <div className={`container-answers ${fadeIn ? 'fade-in' : ''}`}>
+                    <div className={`container-answers ${questionsAndAnswers.find(el => el.id === currentQuestion)?.answers.length > 3 ? " many-answers" : ""} ${fadeIn ? 'fade-in' : ''}`}>
                         <CustomCheckbox
                             data={questionsAndAnswers.find(el => el.id === currentQuestion)?.answers}
                             setData={setResponsePoints}

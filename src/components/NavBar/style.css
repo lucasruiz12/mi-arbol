@@ -145,6 +145,18 @@
         font-size: smaller;
     }
 
+    .navbar-container-btn:hover {
+        color: red
+    }
+    
+    .navbar-container-btn::after {
+        background-color: transparent;
+    }
+    
+    .navbar-container-btn:hover::after {
+        width: 0%; /* Anima el borde desde la izquierda hacia la derecha */
+    }
+
     /* .navbar-container-btn.active-btn {
         border-bottom: none;
         background-color: #E1E6A7;
