@@ -20,8 +20,9 @@
     width: 0;
 }
 
-.text-checkbox{
+.text-checkbox {
     margin: 0 1rem;
+    text-align: center;
 }
 
 /* Create a custom checkbox */
@@ -73,17 +74,21 @@
 }
 
 @media (max-width: 768px) {
-    .container-checkbox{
+    .container-checkbox {
         width: 100%;
         margin: 1vh 0;
+        font-size: small;
     }
+
     .container-checkbox .box-checkbox:after {
         left: 10px
     }
+
     .box-checkbox {
         margin-bottom: 0;
     }
-    .text-checkbox{
+
+    .text-checkbox {
         text-align: center;
     }
 }

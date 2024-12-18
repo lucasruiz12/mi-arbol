@@ -21,6 +21,13 @@
     padding: 5%;
 }
 
+.steps-img-container{
+    display: flex;
+    width: 35%;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .steps-title {
     font-size: 6vh;
     font-weight: bold;
@@ -45,7 +52,7 @@
     justify-content: space-evenly;
     align-items: flex-start;
     width: 60%;
-    height: 45vh;
+    height: 35vh;
 }
 
 .steps-line-text {
@@ -65,6 +72,41 @@
 .logo-iso{
     height: 20vh;
     width: 20vh;
+}
+
+@keyframes slideIn {
+    0% {
+        top: -100px;
+    }
+    10% {
+        top: 10%;
+    }
+    90% {
+        opacity: 0.99;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.steps-tips{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3.5rem;
+    width: 25vw;
+    font-size: larger;
+    background-color: #FFF2D4;
+    position: absolute;
+    left: 65%;
+    top: 10%;
+    border-radius: 6rem;
+    animation: slideIn 8s ease-out;
+}
+
+.steps-clients-title{
+    color: white;
+    font-size: xx-large;
 }
 
 @media (max-width: 768px) {

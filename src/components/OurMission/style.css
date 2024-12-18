@@ -36,14 +36,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2rem;
-    width: 30vw;
+    padding: 3.5rem;
+    width: 25vw;
     font-size: larger;
     background-color: #FFF2D4;
     position: absolute;
     left: 65%;
     top: 10%;
-    border-radius: 1rem;
+    border-radius: 6rem;
     animation: slideIn 8s ease-out;
 }
 
@@ -77,18 +77,6 @@
     }
 }
 
-.mission-tips::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    right: 15px;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 10px 10px 0 20px;
-    border-color: #FFF2D4 transparent transparent transparent;
-}
-
 .mission-title{
     font-size: 6vh;
     font-weight: bold;
@@ -99,6 +87,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    margin: 5vh 0;
 }
 
 .mission-text{
@@ -154,8 +143,5 @@
         top: 80%;
         animation: slideInMobile 8s ease-out;
         font-size: medium;
-    }
-    .mission-tips::after {
-        display: none;
     }
 }

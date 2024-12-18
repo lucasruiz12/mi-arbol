@@ -4,8 +4,8 @@ import { signUpWithEmail /*, signUpWithFacebook, signUpWithGoogle*/ } from '../.
 import { IS_AUTHENTICATED } from '../../helpers/constants';
 import LoadingLogo from '../LoadingLogo';
 import logoArbol from '../../assets/logos/logo-TAO-brown.svg';
-// import iconGoogle from '../../assets/icons/rrss-google.svg';
-// import iconFacebook from '../../assets/icons/rrss-facebook.svg';
+import iconGoogle from '../../assets/icons/rrss-google.svg';
+import iconFacebook from '../../assets/icons/rrss-facebook.svg';
 import './style.css';
 
 const Register = () => {
@@ -209,13 +209,19 @@ const Register = () => {
                                 />
                             </div>
                             <div className="container-all-btns">
-                                {/* <div className="container-social-media">
+                                <div className="container-social-media">
                                     <span>Registrarse con: </span>
                                     <div className="container-btn-social-media">
-                                        <img src={iconGoogle} alt='GS' className="btn-social-media" onClick={() => submitSocialMedia(signUpWithGoogle)} />
-                                        <img src={iconFacebook} alt='FB' className="btn-social-media" onClick={() => submitSocialMedia(signUpWithFacebook)} />
+                                        <img src={iconGoogle} alt='GS' className="btn-social-media" 
+                                        onClick={() => alert("TA")}
+                                        // onClick={() => submitSocialMedia(signUpWithGoogle)} 
+                                        />
+                                        <img src={iconFacebook} alt='FB' className="btn-social-media" 
+                                        onClick={() => alert("TA")}
+                                        // onClick={() => submitSocialMedia(signUpWithFacebook)} 
+                                        />
                                     </div>
-                                </div> */}
+                                </div>
                                 <div className="link-container-register">
                                     {/* <Link to="/initQuestions"> */}
                                     <input

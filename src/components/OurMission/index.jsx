@@ -14,14 +14,22 @@ const OurMission = ({ setView }) => {
         if (showMessage) {
             setTimeout(() => {
                 setShowMessage(false);
+                if (currentMessage === 2) {
+                    setView(2)
+                }
             }, 8000);
             // }, 1000000000);
         } else {
-            const randomNumber = Math.floor(Math.random() * 30);
-            setCurrentMessage(tipsAndRecommendations[randomNumber].message)
+            if (currentMessage === "") {
+                setCurrentMessage(0)
+            } else {
+                if(currentMessage < 2){
+                    setCurrentMessage(currentMessage + 1)
+                };
+            };
             setTimeout(() => {
                 setShowMessage(true);
-            }, 2000);
+            }, 1000);
         }
     }, [showMessage]);
 
@@ -32,10 +40,10 @@ const OurMission = ({ setView }) => {
             </video>
             <div className="mission-content">
                 <div className="mission-header">
-                    <img className="mission-logo" src={logoArbol} alt="LOG" />
+                    <img onClick={() => setView(2)} className="mission-logo" src={logoArbol} alt="LOG" />
                     {
-                        showMessage &&
-                        <p className="mission-tips">{currentMessage}</p>
+                        currentMessage !== "" && showMessage &&
+                        <p className="mission-tips">{tipsAndRecommendations[currentMessage].message}</p>
                     }
                 </div>
                 <div className="mission-info-container">
@@ -44,9 +52,9 @@ const OurMission = ({ setView }) => {
                         <p className="mission-line-text">Entendiendo cuántos gases de efecto invernadero generas, te ayudaremos a ser <b>CARBONO NEUTRO</b> reforestando los árboles necesarios para ello.</p>
                     </div>
                 </div>
-                <button className="btn-green" onClick={() => setView(2)}>
+                {/* <button className="btn-green" onClick={() => setView(2)}>
                     Empezar
-                </button>
+                </button> */}
             </div>
         </div>
     );

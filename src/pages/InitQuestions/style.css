@@ -11,14 +11,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2rem;
-    width: 30vw;
+    padding: 3rem;
+    width: 35vw;
     font-size: larger;
     background-color: #FFF2D4;
     position: absolute;
     left: 65%;
     top: 10%;
-    border-radius: 1rem;
+    border-radius: 5rem;
     animation: slideInText 0.5s ease-out;
 }
 
@@ -40,18 +40,6 @@
     }
 }
 
-.question-tip::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    right: 15px;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 10px 10px 0 20px;
-    border-color: #FFF2D4 transparent transparent transparent;
-}
-
 .question-logo{
     height: 12vh;
 }
@@ -60,7 +48,7 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    width: 40vw;
+    width: 60vw;
 }
 
 .container-number{
@@ -126,8 +114,5 @@
         padding: 1rem;
         width: 90%;
         animation: slideInTextMobile 0.5s ease-out;
-    }
-    .question-tip::after{
-        display: none;
     }
 }
