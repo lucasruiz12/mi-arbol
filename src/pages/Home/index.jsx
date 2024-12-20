@@ -28,7 +28,7 @@ backgroundPosition: 'center', */
                 loading ?
                     <LoadingLogo />
                     :
-                    <>x
+                    <>
                         <NavBar />
                         <div className="container-home-content">
                             <div className="home-info">

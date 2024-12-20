@@ -105,7 +105,7 @@ const InitQuestions = () => {
     ]);
 
     const [responsePoints, setResponsePoints] = useState("");
-    const [currentQuestion, setCurrentQuestion] = useState(17);
+    const [currentQuestion, setCurrentQuestion] = useState(1);
     const [loading, setLoading] = useState(true);
     const [loadResults, setLoadResults] = useState(false);
 
