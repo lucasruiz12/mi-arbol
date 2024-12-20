@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { loginWithEmail /*, loginWithGoogle, loginWithFacebook*/ } from '../../firebase/connections';
+import { loginWithEmail , loginWithGoogle, loginWithFacebook } from '../../firebase/connections';
 import { IS_AUTHENTICATED } from '../../helpers/constants';
 import LoadingLogo from '../LoadingLogo';
 import logoFull from '../../assets/logos/logo-TAO-brown.svg';
@@ -57,23 +57,23 @@ const Login = () => {
         }, 1000);
     };
 
-    // const submitSocialMedia = async (socialMedia) => {
-    //     try {
-    //         const { accessToken, displayName, email, uid } = await socialMedia();
+    const submitSocialMedia = async (socialMedia) => {
+        try {
+            const { accessToken, displayName, email, uid } = await socialMedia();
 
-    //         const dataToStorage = {
-    //             accessToken,
-    //             displayName,
-    //             email,
-    //             uid
-    //         };
+            const dataToStorage = {
+                accessToken,
+                displayName,
+                email,
+                uid
+            };
 
-    //         localStorage.setItem(IS_AUTHENTICATED, JSON.stringify(dataToStorage));
-    //         window.location.href = "/home";
-    //     } catch (err) {
-    //         console.error("Error registrando usuario:", err);
-    //     };
-    // };
+            localStorage.setItem(IS_AUTHENTICATED, JSON.stringify(dataToStorage));
+            window.location.href = "/home";
+        } catch (err) {
+            console.error("Error registrando usuario:", err);
+        };
+    };
 
     useEffect(() => {
         const user = JSON.parse(localStorage.getItem(IS_AUTHENTICATED));
@@ -95,8 +95,8 @@ const Login = () => {
                 loading ?
                     <LoadingLogo />
                     :
-                    // <form className="form-login" onSubmit={submitData}>
-                    <form className="form-login" onSubmit={fakeSubmit}>
+                    // <form className="form-login" onSubmit={fakeSubmit}>
+                    <form className="form-login" onSubmit={submitData}>
                         <div className="title-login">
                             <Link to="/">
                                 <img className="login-logo" src={logoFull} alt="LOG" />
@@ -148,12 +148,12 @@ const Login = () => {
                             <span>Iniciar sesión con: </span>
                             <div className="container-btn-social-media">
                                 <img src={iconGoogle} alt='GS' className="btn-social-media" 
-                                // onClick={() => submitSocialMedia(loginWithGoogle)}
-                                onClick={() => alert("TAMB")}
+                                onClick={() => submitSocialMedia(loginWithGoogle)}
+                                // onClick={() => alert("TAMB")}
                                 />
                                 <img src={iconFacebook} alt='FB' className="btn-social-media" 
-                                // onClick={() => submitSocialMedia(loginWithFacebook)}
-                                onClick={() => alert("TAMB")}
+                                onClick={() => submitSocialMedia(loginWithFacebook)}
+                                // onClick={() => alert("TAMB")}
                                 />
                             </div>
                         </div>

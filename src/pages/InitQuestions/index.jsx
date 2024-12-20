@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { questionsAndAnswers } from '../../helpers/questionsAndAnswers';
 import { IS_AUTHENTICATED } from '../../helpers/constants';
 import logoArbol from '../../assets/logos/logo-TAO-brown.svg';
 import LoadingLogo from '../../components/LoadingLogo';
 import CustomCheckbox from '../../components/CustomCheckbox';
 import { backgroundImages } from '../../helpers/backgroundImages';
+import LoadingResult from '../../components/LoadingResult';
 import './style.css';
 
 const InitQuestions = () => {
@@ -104,8 +105,11 @@ const InitQuestions = () => {
     ]);
 
     const [responsePoints, setResponsePoints] = useState("");
-    const [currentQuestion, setCurrentQuestion] = useState(1);
+    const [currentQuestion, setCurrentQuestion] = useState(17);
     const [loading, setLoading] = useState(true);
+    const [loadResults, setLoadResults] = useState(false);
+
+    const navigate = useNavigate();
 
     const nextQuestion = () => {
         const currentIndex = responseUser.findIndex(el => el.id === currentQuestion);
@@ -120,6 +124,13 @@ const InitQuestions = () => {
                 console.log("Puntaje final", responseUser);
             }, 1000);
         }
+    };
+
+    const goToResults = () => {
+        setLoadResults(true);
+        setTimeout(() => {
+            navigate("/registerForm");
+        }, 3000);
     };
 
     useEffect(() => {
@@ -138,47 +149,48 @@ const InitQuestions = () => {
         <div
             className="container-init-questions"
             style={{
-                backgroundImage: loading ? "none" : `url(${backgroundImages[currentQuestion - 1]})` || 'none',
+                backgroundImage: (loading || loadResults) ? "none" : `url(${backgroundImages[currentQuestion - 1]})` || 'none',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 transition: 'background-image 0.5s ease-in-out',
             }}
         >
             {
-                questionsAndAnswers.find(el => el.id === currentQuestion) && questionsAndAnswers.find(el => el.id === currentQuestion).messageToShow &&
+                !loadResults && questionsAndAnswers.find(el => el.id === currentQuestion) && questionsAndAnswers.find(el => el.id === currentQuestion).messageToShow &&
                 <p className="question-tip">{questionsAndAnswers.find(el => el.id === currentQuestion).messageToShow}</p>
             }
             {loading ?
                 <LoadingLogo />
                 :
-                <>
-                    <img className="question-logo" src={logoArbol} alt="LOG" />
-                    <div className="container-question">
-                        <div className="container-number">
-                            <img className="question-icon" src={questionsAndAnswers.find(el => el.id === currentQuestion).icon} alt="NOIC" />
-                            {/* <p className="question-number">
+                loadResults ?
+                    <LoadingResult />
+                    :
+                    <>
+                        <img className="question-logo" src={logoArbol} alt="LOG" />
+                        <div className="container-question">
+                            <div className="container-number">
+                                <img className="question-icon" src={questionsAndAnswers.find(el => el.id === currentQuestion).cartoon} alt="NOIC" />
+                                {/* <p className="question-number">
                                 <b>{questionsAndAnswers.find(el => el.id === currentQuestion).icon}</b>
                             </p> */}
+                            </div>
+                            <div className="container-text">
+                                <p className="question-text">{questionsAndAnswers.find(el => el.id === currentQuestion).id}.- {questionsAndAnswers.find(el => el.id === currentQuestion).question}</p>
+                            </div>
                         </div>
-                        <div className="container-text">
-                            <p className="question-text">{questionsAndAnswers.find(el => el.id === currentQuestion).id}.- {questionsAndAnswers.find(el => el.id === currentQuestion).question}</p>
+                        {/* <p style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "10vh", width: "50vw" }}><b>{questionsAndAnswers.find(el => el.id === currentQuestion).id}</b> {questionsAndAnswers.find(el => el.id === currentQuestion).question}</p> */}
+                        <div className="container-answers">
+                            <CustomCheckbox data={questionsAndAnswers.find(el => el.id === currentQuestion).answers} setData={setResponsePoints} resetData={responseUser} />
                         </div>
-                    </div>
-                    {/* <p style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "10vh", width: "50vw" }}><b>{questionsAndAnswers.find(el => el.id === currentQuestion).id}</b> {questionsAndAnswers.find(el => el.id === currentQuestion).question}</p> */}
-                    <div className="container-answers">
-                        <CustomCheckbox data={questionsAndAnswers.find(el => el.id === currentQuestion).answers} setData={setResponsePoints} resetData={responseUser} />
-                    </div>
-                    <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "10vh", width: "50vw" }}>
-                        {
-                            currentQuestion < questionsAndAnswers.length ?
-                                <button className="btn-green" disabled={responsePoints === ""} onClick={() => nextQuestion()}>Siguiente</button>
-                                :
-                                <Link style={{ display: "flex", justifyContent: "center", width: "100%" }} to="/registerForm">
-                                    <button className="btn-green" disabled={responsePoints === ""} onClick={() => nextQuestion()}>Finalizar</button>
-                                </Link>
-                        }
-                    </div>
-                </>
+                        <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "10vh", width: "50vw" }}>
+                            {
+                                currentQuestion < questionsAndAnswers.length ?
+                                    <button className="btn-green" disabled={responsePoints === ""} onClick={() => nextQuestion()}>Siguiente</button>
+                                    :
+                                    <button className="btn-green" disabled={responsePoints === ""} onClick={() => goToResults()}>Finalizar</button>
+                            }
+                        </div>
+                    </>
             }
         </div>
     );

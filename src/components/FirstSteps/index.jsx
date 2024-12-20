@@ -56,7 +56,7 @@ const FirstSteps = ({ setView }) => {
                     </button>
                 </Link>
                 <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                    <p className="steps-clients-title">Clientes que confían en <b>TAO Solutions</b></p>
+                    <p className="steps-clients-title">Nuestros clientes</p>
                     <CarouselLogo />
                 </div>
             </div>

@@ -136,30 +136,38 @@ export const tipsAndRecommendations = [
     },
     {
         id: 4,
-        message: "Medimos nuestro trabajo bajo el estandar internacional, acorde a la metodologia de la norma ISO 14064.",
+        message: "Medimos nuestro trabajo bajo el estándar internacional, acorde a la metodología de la norma ISO 14064.",
     },
     {
         id: 5,
-        message: "El cambio climático afectará a todas las personas de todos los países de todos los continentes de alguna forma. Se avecina un cataclismo climático y no estamos preparados para las posibles consecuencias.",
+        message: "La norma ISO 14064 es un estándar internacional que establece directrices para la cuantificación, monitoreo y reporte de emisiones de gases de efecto invernadero (GEI).",
     },
     {
         id: 6,
-        message: "El Grupo Intergubernamental de Expertos sobre el Cambio Climático (IPCC) subraya que es esencial reducir de forma sustancial, rápida y sostenida las emisiones de los gases de efecto invernadero (GEI) en todos los sectores, a partir de ahora, y durante toda esta década. Para limitar el calentamiento global a 1,5 ºC por encima de los niveles preindustriales, las emisiones deben estar ya disminuyendo y reduciéndose a casi a la mitad para 2030, a tan solo siete años vista.",
+        message: "ISO 14064 proporciona un marco para validar y verificar los datos relacionados con las emisiones de GEI, asegurando su transparencia y precisión.",
     },
     {
         id: 7,
-        message: "Ante la inminencia de un cataclismo climático, el ritmo y la escala de los actuales planes de acción climática son totalmente insuficientes para abordar con eficacia el cambio climático. Los fenómenos meteorológicos extremos, cada vez más frecuentes e intensos, afectan ya a todas las regiones de la Tierra. El aumento de las temperaturas agravará aún más estos peligros, lo que plantea graves riesgos.",
+        message: "El objetivo de ISO 14064 es ayudar a las organizaciones a gestionar sus emisiones de GEI y mejorar su desempeño ambiental de manera sostenible.",
     },
     {
         id: 8,
-        message: "El Protocolo GHG (Greenhouse Gas Protocol) es un estándar internacionalmente reconocido que se emplea para medir y gestionar las emisiones de gases de efecto invernadero.",
+        message: "La norma ISO 14064 consta de tres partes: ISO 14064-1 (organizaciones), ISO 14064-2 (proyectos) e ISO 14064-3 (verificación).",
     },
     {
         id: 9,
-        message: "TAO Solutions es una empresa especializada en proyectos de eficiencia energética y sustentabilidad que desde hace más de 7 años ha logrado ayudar a clientes como Pepsi, Canon, La ONU, entre otros, a desarrollar e implementar planes de sostenibilidad y de eficiencia de forma rentable debido a su metodología integral.",
+        message: "ISO 14064-1 ayuda a las organizaciones a medir y gestionar las emisiones directas e indirectas de GEI derivadas de sus actividades.",
     },
     {
         id: 10,
-        message: "Medimos nuestro trabajo bajo el estandar internacional, acorde a la metodologia de la norma ISO 14064.",
+        message: "ISO 14064-2 se enfoca en proyectos de reducción de emisiones de GEI, como reforestación o energías renovables, asegurando que cumplan con estándares reconocidos.",
+    },
+    {
+        id: 11,
+        message: "ISO 14064-3 proporciona principios para la validación y verificación de inventarios de emisiones de GEI, garantizando su credibilidad y exactitud.",
+    },
+    {
+        id: 12,
+        message: "La adopción de la norma ISO 14064 no solo contribuye al cumplimiento normativo, sino también a la mejora de la reputación corporativa y la atracción de inversionistas responsables.",
     },
 ];

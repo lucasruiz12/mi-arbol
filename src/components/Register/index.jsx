@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { signUpWithEmail /*, signUpWithFacebook, signUpWithGoogle*/ } from '../../firebase/connections';
+import { signUpWithEmail, signUpWithFacebook, signUpWithGoogle } from '../../firebase/connections';
 import { IS_AUTHENTICATED } from '../../helpers/constants';
 import LoadingLogo from '../LoadingLogo';
 import logoArbol from '../../assets/logos/logo-TAO-brown.svg';
@@ -37,23 +37,23 @@ const Register = () => {
         };
     };
 
-    // const submitSocialMedia = async (socialMedia) => {
-    //     try {
-    //         const { accessToken, displayName, email, uid } = await socialMedia(formData);
+    const submitSocialMedia = async (socialMedia) => {
+        try {
+            const { accessToken, displayName, email, uid } = await socialMedia(formData);
 
-    //         const dataToStorage = {
-    //             accessToken,
-    //             displayName,
-    //             email,
-    //             uid
-    //         };
+            const dataToStorage = {
+                accessToken,
+                displayName,
+                email,
+                uid
+            };
 
-    //         localStorage.setItem(IS_AUTHENTICATED, JSON.stringify(dataToStorage));
-    //         window.location.href = "/home";
-    //     } catch (err) {
-    //         console.error("Error registrando usuario:", err);
-    //     };
-    // };
+            localStorage.setItem(IS_AUTHENTICATED, JSON.stringify(dataToStorage));
+            window.location.href = "/home";
+        } catch (err) {
+            console.error("Error registrando usuario:", err);
+        };
+    };
 
     const submitData = async (event) => {
         event.preventDefault();
@@ -212,13 +212,13 @@ const Register = () => {
                                 <div className="container-social-media">
                                     <span>Registrarse con: </span>
                                     <div className="container-btn-social-media">
-                                        <img src={iconGoogle} alt='GS' className="btn-social-media" 
-                                        onClick={() => alert("TA")}
-                                        // onClick={() => submitSocialMedia(signUpWithGoogle)} 
+                                        <img src={iconGoogle} alt='GS' className="btn-social-media"
+                                            // onClick={() => alert("TA")}
+                                        onClick={() => submitSocialMedia(signUpWithGoogle)} 
                                         />
-                                        <img src={iconFacebook} alt='FB' className="btn-social-media" 
-                                        onClick={() => alert("TA")}
-                                        // onClick={() => submitSocialMedia(signUpWithFacebook)} 
+                                        <img src={iconFacebook} alt='FB' className="btn-social-media"
+                                            // onClick={() => alert("TA")}
+                                        onClick={() => submitSocialMedia(signUpWithFacebook)} 
                                         />
                                     </div>
                                 </div>

@@ -12,7 +12,7 @@
     justify-content: center;
     align-items: center;
     padding: 3rem;
-    width: 35vw;
+    width: 30vw;
     font-size: larger;
     background-color: #FFF2D4;
     position: absolute;
@@ -48,7 +48,7 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    width: 60vw;
+    width: 75vw;
 }
 
 .container-number{
@@ -56,8 +56,8 @@
 }
 
 .question-icon{
-    width: 7.5vh;
-    height: 7.5vh;
+    width: 20vh;
+    height: 20vh;
 }
 
 .question-number{
@@ -73,7 +73,7 @@
 }
 
 .container-text{
-    width: 85%;
+    width: 65%;
 }
 
 .question-text{

@@ -3,6 +3,18 @@ import iconCar from '../assets/icons/questions/icon-car.svg';
 import iconEnergy from '../assets/icons/questions/icon-energy.svg';
 import iconRoom from '../assets/icons/questions/icon-room.svg';
 
+import cartoonAire from '../assets/images/cartoon/tips-aire.png';
+import cartoonAnimal from '../assets/images/cartoon/tips-animal.png';
+import cartoonAuto from '../assets/images/cartoon/tips-auto.png';
+import cartoonCasa from '../assets/images/cartoon/tips-casa.png';
+import cartoonComida from '../assets/images/cartoon/tips-comida.png';
+import cartoonCompras from '../assets/images/cartoon/tips-compras.png';
+import cartoonDucha from '../assets/images/cartoon/tips-ducha.png';
+import cartoonEnergia from '../assets/images/cartoon/tips-energia.png';
+import cartoonRenovable from '../assets/images/cartoon/tips-renovable.png';
+import cartoonResiduos from '../assets/images/cartoon/tips-residuos.png';
+import cartoonViajes from '../assets/images/cartoon/tips-viajes.png';
+
 export const questionsAndAnswers = [
     {
         id: 1,
@@ -13,6 +25,7 @@ export const questionsAndAnswers = [
             { name: "Más de 5", points: 3 },
         ],
         messageToShow: null,
+        cartoon: cartoonCasa,
         icon: iconRoom,
     },
     {
@@ -25,6 +38,7 @@ export const questionsAndAnswers = [
             { name: "Más de 5", points: 4 },
         ],
         messageToShow: null,
+        cartoon: cartoonCasa,
         icon: iconRoom,
     },
     {
@@ -37,6 +51,7 @@ export const questionsAndAnswers = [
             { name: "No lo uso", points: 0 },
         ],
         messageToShow: "Reducir tu consumo energético es clave para disminuir tu huella de carbono. Aprovecha la luz natural y apaga el aire acondicionado cuando no sea estrictamente necesario.",
+        cartoon: cartoonAire,
         icon: iconAir,
     },
     {
@@ -48,6 +63,7 @@ export const questionsAndAnswers = [
             { name: "Cada 3er día", points: 1 },
         ],
         messageToShow: null,
+        cartoon: cartoonDucha,
         icon: iconRoom,
     },
     {
@@ -58,6 +74,7 @@ export const questionsAndAnswers = [
             { name: "Caliente", points: 2 },
         ],
         messageToShow: null,
+        cartoon: cartoonDucha,
         icon: iconEnergy,
     },
     {
@@ -70,6 +87,7 @@ export const questionsAndAnswers = [
             { name: "No uso", points: 0 },
         ],
         messageToShow: "Optar por calentadores solares puede evitar el uso de combustibles fósiles, reduciendo significativamente tu huella ambiental.",
+        cartoon: cartoonDucha,
         icon: iconEnergy,
     },
     {
@@ -80,6 +98,7 @@ export const questionsAndAnswers = [
             { name: "No", points: 3 },
         ],
         messageToShow: null,
+        cartoon: cartoonRenovable,
         icon: iconEnergy,
     },
     {
@@ -91,6 +110,7 @@ export const questionsAndAnswers = [
             { name: "No lo hago", points: 3 },
         ],
         messageToShow: null,
+        cartoon: cartoonEnergia,
         icon: iconEnergy,
     },
     {
@@ -103,6 +123,7 @@ export const questionsAndAnswers = [
             { name: "Más de 22 hrs", points: 4 },
         ],
         messageToShow: "Cada hora de vuelo genera grandes emisiones de CO₂. Compensa tu huella apoyando proyectos de reforestación.",
+        cartoon: cartoonViajes,
         icon: iconCar,
     },
     {
@@ -118,6 +139,7 @@ export const questionsAndAnswers = [
             { name: "Auto eléctrico o híbrido", points: 1 },
         ],
         messageToShow: "Cambiar a transportes más sustentables puede reducir significativamente tus emisiones de carbono.",
+        cartoon: cartoonAuto,
         icon: iconCar,
     },
     {
@@ -129,6 +151,7 @@ export const questionsAndAnswers = [
             { name: "Más de 10 horas", points: 3 },
         ],
         messageToShow: null,
+        cartoon: cartoonAuto,
         icon: iconCar,
     },
     {
@@ -140,6 +163,7 @@ export const questionsAndAnswers = [
             { name: "Más de 500 km", points: 3 },
         ],
         messageToShow: "Reducir los viajes largos o compartirlos puede disminuir tu impacto ambiental.",
+        cartoon: cartoonAuto,
         icon: iconCar,
     },
     {
@@ -152,6 +176,7 @@ export const questionsAndAnswers = [
             { name: "Una vez a la semana", points: 0 },
         ],
         messageToShow: "Disminuir el consumo de productos de origen animal ayuda a reducir tu huella hídrica y de carbono.",
+        cartoon: cartoonAnimal,
         icon: iconEnergy,
     },
     {
@@ -163,6 +188,7 @@ export const questionsAndAnswers = [
             { name: "Más del 60%", points: 1 },
         ],
         messageToShow: "Consumir productos locales no solo apoya la economía local, sino que reduce las emisiones asociadas al transporte.",
+        cartoon: cartoonComida,
         icon: iconEnergy,
     },
     {
@@ -175,6 +201,7 @@ export const questionsAndAnswers = [
             { name: "Hago composta", points: 0.5 },
         ],
         messageToShow: null,
+        cartoon: cartoonResiduos,
         icon: iconEnergy,
     },
     {
@@ -187,6 +214,7 @@ export const questionsAndAnswers = [
             { name: "Hago composta", points: 1.5 },
         ],
         messageToShow: "Separar y reciclar tus residuos es una de las maneras más efectivas de reducir la cantidad de basura que llega a los vertederos.",
+        cartoon: cartoonResiduos,
         icon: iconRoom,
     },
     {
@@ -199,6 +227,7 @@ export const questionsAndAnswers = [
             { name: "Nunca", points: 0 },
         ],
         messageToShow: "Evitar los plásticos de un solo uso es esencial para reducir la contaminación ambiental.",
+        cartoon: cartoonResiduos,
         icon: iconRoom,
     },
     {
@@ -210,6 +239,7 @@ export const questionsAndAnswers = [
             { name: "Soy comprador compulsivo", points: 3 },
         ],
         messageToShow: "Optar por un consumo responsable y prolongar la vida útil de los productos ayuda a disminuir los desechos y el impacto ambiental.",
+        cartoon: cartoonCompras,
         icon: iconRoom,
     },
 ];

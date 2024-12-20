@@ -1,0 +1,23 @@
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(1.05);
+    }
+
+    50% {
+        transform: scale(1.025);
+    }
+
+    75% {
+        transform: scale(1.05);
+    }
+}
+
+.modal-confirm-logout{
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
