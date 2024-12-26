@@ -23,7 +23,7 @@
 
 .steps-img-container {
     display: flex;
-    width: 35%;
+    width: 60%;
     justify-content: space-between;
     align-items: center;
 }
@@ -56,8 +56,9 @@
 }
 
 .steps-line-text {
-    font-size: xx-large;
+    font-size: x-large;
     color: white;
+    text-align: justify;
 }
 
 .logo-iso-container {
@@ -81,6 +82,23 @@
 
     10% {
         top: 10%;
+    }
+
+    90% {
+        opacity: 0.99;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes slideInCloseSteps {
+    0% {
+        top: -100px;
+    }
+
+    10% {
+        top: 17%;
     }
 
     90% {
@@ -115,14 +133,24 @@
     justify-content: center;
     align-items: center;
     padding: 3.5rem;
-    width: 25vw;
+    width: 20vw;
+    height: 20vw;
     font-size: larger;
     background-color: #FFF2D4;
     position: absolute;
     left: 65%;
     top: 10%;
-    border-radius: 6rem;
+    border-radius: 50%;
     animation: slideInSteps 8s ease-out;
+}
+
+.close-steps-tips{
+    height: auto;
+    position: absolute;
+    left: 80%;
+    top: 17%;
+    cursor: pointer;
+    animation: slideInCloseSteps 8s ease-out;
 }
 
 .steps-clients-title {
@@ -140,7 +168,8 @@
     }
 
     .steps-tips {
-        width: 100%;
+        height: 50vw;
+        width: 50vw;
         left: 0%;
         top: 5%;
         padding: 2rem;

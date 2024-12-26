@@ -36,15 +36,26 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 3.5rem;
-    width: 25vw;
+    text-align: justify;
+    padding: 4rem;
+    width: 20vw;
+    height: 20vw;
     font-size: larger;
     background-color: #FFF2D4;
     position: absolute;
     left: 65%;
     top: 10%;
-    border-radius: 6rem;
+    border-radius: 50%;
     animation: slideInMission 8s ease-out;
+}
+
+.close-mission-tips{
+    height: auto;
+    position: absolute;
+    top: 17%;
+    left: 80%;
+    cursor: pointer;
+    animation: slideInCloseMission 8s ease-out;
 }
 
 @keyframes slideInMission {
@@ -53,6 +64,21 @@
     }
     10% {
         top: 10%;
+    }
+    90% {
+        opacity: 0.99;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes slideInCloseMission {
+    0% {
+        top: -100px;
+    }
+    10% {
+        top: 17%;
     }
     90% {
         opacity: 0.99;
@@ -100,7 +126,8 @@
 }
 
 .mission-line-text{
-    font-size: xx-large;
+    font-size: x-large;
+    text-align: justify;
 }
 
 @media (max-width: 768px) {

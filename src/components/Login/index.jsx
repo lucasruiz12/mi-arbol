@@ -95,8 +95,8 @@ const Login = () => {
                 loading ?
                     <LoadingLogo />
                     :
-                    // <form className="form-login" onSubmit={fakeSubmit}>
-                    <form className="form-login" onSubmit={submitData}>
+                    // <form className="form-login" onSubmit={submitData}>
+                        <form className="form-login" onSubmit={fakeSubmit}>
                         <div className="title-login">
                             <Link to="/">
                                 <img className="login-logo" src={logoFull} alt="LOG" />

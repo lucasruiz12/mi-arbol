@@ -124,31 +124,31 @@
 export const tipsAndRecommendations = [
     {
         id: 1,
-        message: "Plantemos juntos un mejor futuro: cada árbol cuenta. 🌳 ¿Ya has considerado sumarte a nuestra campaña de reforestación? Únete a + Raíces, - Huella.",
+        message: "Trabajamos según la norma ISO 14064, un estándar internacional reconocido.",
     },
     {
         id: 2,
-        message: "TAO Solutions es una empresa especializada en proyectos de eficiencia energética y sustentabilidad que desde hace más de 7 años ha logrado ayudar a clientes como Pepsi, Canon, La ONU, entre otros, a desarrollar e implementar planes de sostenibilidad y de eficiencia de forma rentable debido a su metodología integral.",
+        message: "ISO 14064 establece pautas para medir, monitorear y reportar emisiones de gases de efecto invernadero (GEI).",
     },
     {
         id: 3,
-        message: "Gracias a estos proyectos y en busca de contribuir al desarrollo de su comunidad, TAO Solutions comenzó con una estrategia de reforestación masiva para generar un impacto positivo y restaurador como empresa.",
+        message: "Este estándar garantiza la precisión y transparencia en los datos de emisiones.",
     },
     {
         id: 4,
-        message: "Medimos nuestro trabajo bajo el estándar internacional, acorde a la metodología de la norma ISO 14064.",
+        message: "Trabajamos según la norma ISO 14064, un estándar internacional reconocido.",
     },
     {
         id: 5,
-        message: "La norma ISO 14064 es un estándar internacional que establece directrices para la cuantificación, monitoreo y reporte de emisiones de gases de efecto invernadero (GEI).",
+        message: "ISO 14064 establece pautas para medir, monitorear y reportar emisiones de gases de efecto invernadero (GEI).",
     },
     {
         id: 6,
-        message: "ISO 14064 proporciona un marco para validar y verificar los datos relacionados con las emisiones de GEI, asegurando su transparencia y precisión.",
+        message: "Este estándar garantiza la precisión y transparencia en los datos de emisiones.",
     },
     {
         id: 7,
-        message: "El objetivo de ISO 14064 es ayudar a las organizaciones a gestionar sus emisiones de GEI y mejorar su desempeño ambiental de manera sostenible.",
+        message: "La norma ISO 14064 ayuda a las organizaciones a gestionar y mejorar su desempeño ambiental de manera sostenible.",
     },
     {
         id: 8,
@@ -156,18 +156,18 @@ export const tipsAndRecommendations = [
     },
     {
         id: 9,
-        message: "ISO 14064-1 ayuda a las organizaciones a medir y gestionar las emisiones directas e indirectas de GEI derivadas de sus actividades.",
+        message: "ISO 14064-1: Usada para medir y gestionar emisiones de organizaciones.",
     },
     {
         id: 10,
-        message: "ISO 14064-2 se enfoca en proyectos de reducción de emisiones de GEI, como reforestación o energías renovables, asegurando que cumplan con estándares reconocidos.",
+        message: "ISO 14064-2: Usada para proyectos de reducción de emisiones (como reforestación y energías renovables).",
     },
     {
         id: 11,
-        message: "ISO 14064-3 proporciona principios para la validación y verificación de inventarios de emisiones de GEI, garantizando su credibilidad y exactitud.",
+        message: "ISO 14064-3: Usada para verificar inventarios de emisiones y garantizar su exactitud.",
     },
     {
         id: 12,
-        message: "La adopción de la norma ISO 14064 no solo contribuye al cumplimiento normativo, sino también a la mejora de la reputación corporativa y la atracción de inversionistas responsables.",
+        message: "Implementar esta norma mejora la reputación corporativa y atrae inversionistas responsables.",
     },
 ];

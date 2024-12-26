@@ -16,7 +16,7 @@
 }
 
 .login-logo {
-    height: 12vh;
+    height: 8vh;
     width: 30vh;
     margin-top: 2vh;
 }
@@ -29,13 +29,13 @@
 }
 
 .text-welcome {
-    font-size: xx-large;
+    font-size: x-large;
     font-weight: bold;
     color: #A4B46A;
 }
 
 .text-carbon {
-    font-size: x-large;
+    font-size: large;
     margin-bottom: 1rem;
 }
 

@@ -11,6 +11,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: justify;
     padding: 3rem;
     width: 30vw;
     font-size: larger;
@@ -43,7 +44,7 @@
 }
 
 .question-logo {
-    height: 12vh;
+    height: 8vh;
 }
 
 .container-question {
@@ -81,6 +82,7 @@
 .question-text {
     font-size: xx-large;
     font-weight: bold;
+    text-align: justify;
 }
 
 .container-answers {

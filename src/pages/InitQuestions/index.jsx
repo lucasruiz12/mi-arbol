@@ -168,12 +168,6 @@ const InitQuestions = () => {
                     <>
                         <img className="question-logo" src={logoArbol} alt="LOG" />
                         <div className="container-question">
-                            <div className="container-number">
-                                <img className="question-icon" src={questionsAndAnswers.find(el => el.id === currentQuestion).cartoon} alt="NOIC" />
-                                {/* <p className="question-number">
-                                <b>{questionsAndAnswers.find(el => el.id === currentQuestion).icon}</b>
-                            </p> */}
-                            </div>
                             <div className="container-text">
                                 <p className="question-text">{questionsAndAnswers.find(el => el.id === currentQuestion).id}.- {questionsAndAnswers.find(el => el.id === currentQuestion).question}</p>
                             </div>
