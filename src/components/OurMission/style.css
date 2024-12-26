@@ -44,10 +44,10 @@
     left: 65%;
     top: 10%;
     border-radius: 6rem;
-    animation: slideIn 8s ease-out;
+    animation: slideInMission 8s ease-out;
 }
 
-@keyframes slideIn {
+@keyframes slideInMission {
     0% {
         top: -100px;
     }
@@ -62,12 +62,12 @@
     }
 }
 
-@keyframes slideInMobile {
+@keyframes slideInMobileMission {
     0% {
         top: 100%;
     }
     10% {
-        top: 80%;
+        top: 60%;
     }
     90% {
         opacity: 0.99;
@@ -104,6 +104,9 @@
 }
 
 @media (max-width: 768px) {
+    .mission-header{
+        justify-content: center;
+    }
     .mission-content{
         width: 100%;
         display: flex;
@@ -134,14 +137,14 @@
         font-size: larger !important;
     }
     .mission-tips{
-        padding: 1rem;
+        padding: 2rem;
         width: 100%;
         font-size: larger;
         background-color: #FFF2D4;
         position: absolute;
         left: 0%;
-        top: 80%;
-        animation: slideInMobile 8s ease-out;
+        top: 60%;
+        animation: slideInMobileMission 8s ease-out;
         font-size: medium;
     }
 }

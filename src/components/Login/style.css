@@ -12,7 +12,7 @@
     justify-content: center;
     align-items: center;
     height: 15vh;
-    margin: 2vh 0;
+    margin: 5vh 0;
 }
 
 .login-logo {
@@ -52,9 +52,9 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    padding: 3vh 3vw;
-    height: 65vh;
-    width: 80%;
+    padding: 5vh 3vw;
+    height: 80vh;
+    width: 50%;
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 1rem;
 }

@@ -2,9 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import NavBar from '../../components/NavBar';
 import LoadingLogo from '../../components/LoadingLogo';
+// import GraphicsNeutralCarbon from '../../components/Graphics/NeutralCarbon';
 import './style.css';
 
 const NeutralCarbon = () => {
+
+    {/* <GraphicsNeutralCarbon /> */}
 
     const [renderView, setRenderView] = useState(1);
     const [loading, setLoading] = useState(true);

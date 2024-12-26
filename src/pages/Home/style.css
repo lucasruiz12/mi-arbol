@@ -4,7 +4,7 @@
     height: 100%;
 }
 
-.with-back{
+.with-back {
     background-image: url('../../assets/images/image-background-trace.jpg');
     background-size: cover;
     background-position: center;
@@ -46,13 +46,24 @@
     font-size: 4vh;
 }
 
-.home-need {
+.home-result {
+    display: flex;
+}
+
+.home-result-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.home-status {
     color: white;
 }
 
-.home-target {
+.home-invitation {
     color: white;
-    font-weight: bold;
+    text-align: center;
 }
 
 
@@ -61,11 +72,39 @@
     padding: 5vh 0;
     margin-left: 5vh;
     flex-direction: column;
-    justify-content: space-between;
-    width: 35%;
+    /* justify-content: space-between; */
+    width: 50%;
+}
+
+.home-formula {
+    color: white;
+    text-align: center;
+}
+
+.formula-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 2vh;
+}
+
+.formula-img {
+    height: 2.5vh;
+    width: auto;
+    object-fit: contain;
+}
+
+.work-video {
+    border-radius: 1rem;
 }
 
 @media (max-width: 768px) {
+    .home-result {
+        flex-direction: column;
+    }
+
     .container-home {
         flex-direction: column-reverse;
     }
@@ -84,26 +123,26 @@
         width: 100%;
     }
 
-    .home-welcome{
+    .home-welcome {
         font-size: x-large;
     }
 
-    .home-number{
+    .home-number {
         font-size: 7vh;
         text-align: center;
     }
 
-    .home-text{
+    .home-text {
         font-size: 2vh;
         margin-bottom: 5vh;
         text-align: center;
     }
 
-    .home-need{
+    .home-need {
         text-align: center;
     }
 
-    .home-target{
+    .home-target {
         text-align: center;
         font-size: 5vh;
     }
@@ -112,5 +151,14 @@
         width: 100%;
         padding: 0;
         margin-left: 0;
+    }
+
+    .btn-container-link {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    .formula-img {
+        height: 1vh;
     }
 }

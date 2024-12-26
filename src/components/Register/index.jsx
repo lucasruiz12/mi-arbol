@@ -108,7 +108,7 @@ const Register = () => {
                                     <img className="register-logo" src={logoArbol} alt="LOG" />
                                 </Link>
                                 <div className="text-register">
-                                    <p className="register-line">Creemos tu perfil para comenzar a disminuir esa huella de carbono</p>
+                                    {/* <p className="register-line">Creemos tu perfil para comenzar a disminuir esa huella de carbono</p> */}
                                     <p className="register-line">"SEMBREMOS UN ÁRBOL HOY PARA DAR SOMBRA A LAS PERSONAS DEL MAÑANA."</p>
                                 </div>
                             </div>

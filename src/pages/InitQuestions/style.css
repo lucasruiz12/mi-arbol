@@ -7,7 +7,7 @@
     width: 100%;
 }
 
-.question-tip{
+.question-tip {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,6 +26,7 @@
     0% {
         top: -100px;
     }
+
     100% {
         top: 10%;
     }
@@ -35,32 +36,33 @@
     0% {
         top: -100px;
     }
+
     100% {
-        top: 0%;
+        top: 20%;
     }
 }
 
-.question-logo{
+.question-logo {
     height: 12vh;
 }
 
-.container-question{
+.container-question {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     width: 75vw;
 }
 
-.container-number{
+.container-number {
     width: 15%;
 }
 
-.question-icon{
+.question-icon {
     width: 20vh;
     height: 20vh;
 }
 
-.question-number{
+.question-number {
     background-color: #A4B46A;
     color: white;
     display: flex;
@@ -72,16 +74,16 @@
     height: 7.5vh;
 }
 
-.container-text{
+.container-text {
     width: 65%;
 }
 
-.question-text{
+.question-text {
     font-size: xx-large;
     font-weight: bold;
 }
 
-.container-answers{
+.container-answers {
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -90,29 +92,37 @@
 }
 
 @media (max-width: 768px) {
-    .container-text{
-        width: 75%;
+    .container-text {
+        width: 100%;
+        padding: 0 1rem;
+        text-align: center;
     }
-    .container-question{
+
+    .container-question {
         width: 100%;
         padding: 0 1vh;
         align-items: flex-start;
+        flex-direction: column;
     }
-    .question-text{
+
+    .question-text {
         font-size: x-large;
     }
-    .container-answers{
-        flex-direction: column;
+
+    .container-answers.many-answers {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
         width: 100%;
         align-items: center;
         height: auto;
     }
-    .question-tip{
-        left: 5%;
-        top: 0;
-        font-size: small;
-        padding: 1rem;
-        width: 90%;
-        animation: slideInTextMobile 0.5s ease-out;
+
+    .question-tip {
+        left: 45%;
+        top: 20%;
+        font-size: 1.25vh;
+        padding: 1.5rem;
+        width: 50%;
+        animation: slideInTextMobile 2s ease-out;
     }
 }

@@ -21,7 +21,7 @@
     padding: 5%;
 }
 
-.steps-img-container{
+.steps-img-container {
     display: flex;
     width: 35%;
     justify-content: space-between;
@@ -40,7 +40,7 @@
     cursor: pointer;
 }
 
-.steps-info-container{
+.steps-info-container {
     display: flex;
     align-items: center;
     width: 100%;
@@ -60,7 +60,7 @@
     color: white;
 }
 
-.logo-iso-container{
+.logo-iso-container {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -69,27 +69,48 @@
     height: 45vh;
 }
 
-.logo-iso{
+.logo-iso {
     height: 20vh;
     width: 20vh;
 }
 
-@keyframes slideIn {
+@keyframes slideInSteps {
     0% {
         top: -100px;
     }
+
     10% {
         top: 10%;
     }
+
     90% {
         opacity: 0.99;
     }
+
     100% {
         opacity: 0;
     }
 }
 
-.steps-tips{
+@keyframes slideInMobileSteps {
+    0% {
+        top: -100px;
+    }
+
+    10% {
+        top: 5%;
+    }
+
+    90% {
+        opacity: 0.99;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.steps-tips {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -101,15 +122,32 @@
     left: 65%;
     top: 10%;
     border-radius: 6rem;
-    animation: slideIn 8s ease-out;
+    animation: slideInSteps 8s ease-out;
 }
 
-.steps-clients-title{
+.steps-clients-title {
     color: white;
     font-size: xx-large;
 }
 
 @media (max-width: 768px) {
+    .steps-logo {
+        width: 15vh;
+    }
+
+    .logo-iso {
+        width: 10vh;
+    }
+
+    .steps-tips {
+        width: 100%;
+        left: 0%;
+        top: 5%;
+        padding: 2rem;
+        font-size: small;
+        animation: slideInMobileSteps 8s ease-out;
+    }
+
     .steps-content {
         width: 100%;
         display: flex;
@@ -117,13 +155,14 @@
         justify-content: space-around;
     }
 
-    .steps-img-container{
+    .steps-img-container {
         display: flex;
         justify-content: center;
         width: 100%;
+        margin-top: 12vh;
     }
 
-    .steps-info-container{
+    .steps-info-container {
         flex-direction: column-reverse;
 
     }
@@ -145,7 +184,7 @@
         font-size: large;
     }
 
-    .logo-iso-container{
+    .logo-iso-container {
         height: auto;
         margin-top: 3vh;
     }

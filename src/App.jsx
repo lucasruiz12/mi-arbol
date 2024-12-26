@@ -11,6 +11,9 @@ import SuccessfulPayment from './pages/SuccessfulPayment';
 import ViewInProgress from './components/ViewInProgress';
 
 import './App.css';
+import Watermark from './components/Watermark';
+
+// const locationsWithoutWatermark = ["/", "/initQuestions", "/loginFrom", "/registerForm"]
 
 function App() {
   return (
@@ -28,6 +31,10 @@ function App() {
         <Route path="/mySeeds" element={<MySeeds />} />
         <Route path="/successfulPayment" element={<SuccessfulPayment />} />
       </Routes>
+      {/* {
+        !locationsWithoutWatermark.includes(window.location.pathname) && <Watermark />
+      } */}
+      <Watermark currentLocation={window.location.pathname} />
     </BrowserRouter>
   );
 };

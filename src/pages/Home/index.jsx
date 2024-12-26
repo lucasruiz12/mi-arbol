@@ -2,10 +2,13 @@ import React, { useEffect, useState } from 'react';
 import NavBar from '../../components/NavBar';
 // import { IS_AUTHENTICATED } from '../../helpers/constants';
 import LoadingLogo from '../../components/LoadingLogo';
+import badWorld from '../../assets/images/image-bad-world.png';
+import carbonFormula from '../../assets/images/image-carbon-formula.png';
+// import goodWorld from '../../assets/images/image-good-world.png';
+import videoTAO from '../../assets/videos/home/siembra-TAO.mp4';
 
 import './style.css';
-import ManyTrees from '../../components/ManyTrees';
-import GraphicsHome from '../../components/Graphics/Home';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
 
@@ -17,10 +20,6 @@ const Home = () => {
             setLoading(false);
         }, 3000);
     }, []);
-
-    /* backgroundImage: loading ? "none" : `url(${backgroundImages[currentQuestion - 1]})` || 'none',
-backgroundSize: 'cover',
-backgroundPosition: 'center', */
 
     return (
         <div className={loading ? `container-home` : `container-home with-back`}>
@@ -38,16 +37,28 @@ backgroundPosition: 'center', */
                                         <h1 className="home-number">9.000kg CO2</h1>
                                         <h5 className="home-text">es tu huella de carbono...</h5>
                                     </div>
-                                    <div>
-                                        <p className="home-need">y para mitigarla necesitas plantar</p>
-                                        <div>
-                                            <h1 className="home-target">200 árboles</h1>
-                                            <ManyTrees />
+                                    <div className="home-result">
+                                        <img src={badWorld} alt="NOIM" />
+                                        <div className="home-result-text">
+                                            <h2 className="home-status">Eres <b>VILLANO AMBIENTAL</b></h2>
+                                            <h4 className="home-invitation">Te invitamos a revertirlo con nosotros!</h4>
+                                            <Link className="btn-container-link" to="/mySubscription">
+                                                <button className="btn-green">Mitigar tu huella</button>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="home-user-graphics">
-                                    <GraphicsHome />
+                                    <h3 className="home-formula">Calculamos tu huella con la siguiente fórmula</h3>
+                                    <div className="formula-container">
+                                        <img className="formula-img" src={carbonFormula} alt="NOIM" />
+                                    </div>
+                                    <video autoPlay muted loop className="work-video">
+                                        <source
+                                            // src={window.innerWidth >= 768 ? missionVideo : missionMobileVideo} 
+                                            src={videoTAO}
+                                            type="video/mp4" />
+                                    </video>
                                 </div>
                             </div>
                         </div>
