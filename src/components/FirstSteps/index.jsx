@@ -44,10 +44,7 @@ const FirstSteps = ({ setView }) => {
                 </div>
                 {
                     currentMessage !== "" && showMessage &&
-                    <>
-                        <p className="steps-tips">{tipsAndRecommendations[currentMessage].message}</p>
-                        <p className="close-mission-tips" onClick={() => setShowMessage(false)}>x</p>
-                    </>
+                    <p className="steps-tips">{tipsAndRecommendations[currentMessage].message}</p>
                 }
                 <div className="steps-info-container">
                     <div className="steps-text">

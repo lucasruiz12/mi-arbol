@@ -26,7 +26,8 @@
     display: flex;
     padding: 5vh 0;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
     width: 50%;
 }
 
@@ -37,17 +38,26 @@
 
 .home-number {
     color: white;
-    font-size: 10vh;
+    font-size: 7vh;
     font-weight: bold;
+    text-align: justify;
 }
 
 .home-text {
     color: white;
-    font-size: 4vh;
+    font-size: 3vh;
+    text-align: justify;
 }
 
 .home-result {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.result-img{
+    height: 40vh;
+    width: 40vh;
 }
 
 .home-result-text {
@@ -59,11 +69,14 @@
 
 .home-status {
     color: white;
+    text-align: justify;
 }
 
 .home-invitation {
     color: white;
     text-align: center;
+    margin-bottom: 4vh;
+    text-align: justify;
 }
 
 

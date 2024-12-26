@@ -36,11 +36,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: justify;
-    padding: 4rem;
-    width: 20vw;
-    height: 20vw;
-    font-size: larger;
+    padding: 2rem;
+    width: 15vw;
+    height: 15vw;
+    font-size: large;
     background-color: #FFF2D4;
     position: absolute;
     left: 65%;
