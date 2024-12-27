@@ -33,14 +33,14 @@ const Home = () => {
                             <div className="home-info">
                                 <div className="home-user-data">
                                     <div>
+                                        <h5 className="home-text">Tu huella de carbono es: </h5>
                                         <h1 className="home-number">9.000kg CO2</h1>
-                                        <h5 className="home-text">es tu huella de carbono...</h5>
                                     </div>
                                     <div className="home-result">
                                         <img className="result-img" src={badWorld} alt="NOIM" />
                                         <div className="home-result-text">
                                             <h2 className="home-status">Eres <b>AGENTE DE DESBALANCE</b></h2>
-                                            <h4 className="home-invitation">Su acción actual está generando un impacto ambiental adverso. Le invitamos a ser parte del cambio hacia un equilibrio sostenible.</h4>
+                                            <h5 className="home-invitation">Su acción actual está generando un impacto ambiental adverso. Le invitamos a ser parte del cambio hacia un equilibrio sostenible.</h5>
                                             <Link className="btn-container-link" to="/mySubscription">
                                                 <button className="btn-green">Mitigar tu huella</button>
                                             </Link>
