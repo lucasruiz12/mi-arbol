@@ -7,7 +7,7 @@ const Watermark = ({ currentLocation }) => {
     const [showMark, setShowMark] = useState(true);
 
     useEffect(() => {
-        if(currentLocation === "/home" && window.innerWidth < 768){
+        if((currentLocation === "/home" || currentLocation === "/registerForm" || currentLocation === "/loginForm") && window.innerWidth < 768){
             setShowMark(false);
         }
     },[]);

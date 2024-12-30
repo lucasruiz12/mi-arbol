@@ -25,6 +25,21 @@
 
 @media (max-width: 768px) {
     .watermark{
-        left: 70%;
+        left: 77.5%;
+        top: 92.5%
+    }
+
+    .watermark img {
+        width: 75px;
+        height: auto;
+        opacity: 0.2;
+    }
+    
+    .watermark span {
+        display: block;
+        font-size: 8px;
+        color: #636363;
+        opacity: 0.5;
+        margin-top: 10px;
     }
 }

@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import missionVideo from '../../assets/videos/1. hojas.mp4';
-import missionMobileVideo from '../../assets/videos/1. hojasMobile.mp4';
-import logoArbol from '../../assets/logos/logo-TAO-brown.svg';
+import missionVideo from '../../assets/videos/landinghome/video-TAO.mp4';
+// import missionVideo from '../../assets/videos/landinghome/video-TAO-c.mp4';
+// import missionVideo from '../../assets/videos/1. hojas.mp4';
+import missionMobileVideo from '../../assets/videos/landinghome/video-TAO-movil.mp4';
+import logoArbol from '../../assets/logos/logo-TAO-white.svg';
 import { tipsAndRecommendations } from '../../helpers/messagesAndTips';
 import './style.css';
 
@@ -39,10 +41,11 @@ const OurMission = ({ setView }) => {
         <div className="container-mission-view">
             <video autoPlay muted loop className="mission-video">
                 <source src={window.innerWidth >= 768 ? missionVideo : missionMobileVideo} type="video/mp4" />
+                {/* <source src={missionVideo} type="video/mp4" /> */}
             </video>
             <div className="mission-content">
                 <div className="mission-header">
-                    <img onClick={() => setView(2)} className="mission-logo" src={logoArbol} alt="LOG" />
+                    <img /*onClick={() => setView(2)}*/ className="mission-logo" src={logoArbol} alt="LOG" />
                     {
                         currentMessage !== "" && showMessage && !hideMessage &&
                         <p className="mission-tips">{tipsAndRecommendations[currentMessage].message}</p>

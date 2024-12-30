@@ -120,9 +120,19 @@
         height: 100%;
     }
 
+    .input-title {
+        font-size: smaller;
+        margin-bottom: 0.5vh;
+    }
+
     .title-register {
         flex-direction: column;
         height: auto;
+        margin: 0;
+    }
+
+    .span-social-media{
+        font-size: small;
     }
 
     .link-register {
@@ -136,7 +146,7 @@
     }
 
     .register-line {
-        margin-top: 1rem;
+        font-size: small;
     }
 
     .form-register {

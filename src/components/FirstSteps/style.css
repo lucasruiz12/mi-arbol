@@ -58,7 +58,7 @@
 .steps-line-text {
     font-size: x-large;
     color: white;
-    text-align: justify;
+    /* text-align: justify; */
 }
 
 .logo-iso-container {
@@ -116,7 +116,7 @@
     }
 
     10% {
-        top: 5%;
+        top: 1%;
     }
 
     90% {
@@ -159,6 +159,11 @@
 }
 
 @media (max-width: 768px) {
+    .steps-clients-title {
+        color: white;
+        font-size: larger;
+    }
+    
     .steps-logo {
         width: 15vh;
     }
@@ -168,13 +173,14 @@
     }
 
     .steps-tips {
-        height: 50vw;
-        width: 50vw;
-        left: 0%;
-        top: 5%;
-        padding: 2rem;
+        width: 47.5vw;
+        height: 47.5vw;
+        left: 1%;
+        top: 1%;
+        padding: 2rem 1.25rem;
         font-size: small;
         animation: slideInMobileSteps 8s ease-out;
+        text-align: center;
     }
 
     .steps-content {
@@ -188,7 +194,7 @@
         display: flex;
         justify-content: center;
         width: 100%;
-        margin-top: 12vh;
+        margin-top: 15vh;
     }
 
     .steps-info-container {

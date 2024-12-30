@@ -1,6 +1,6 @@
 import React from 'react';
 import GraphicPie from './GraphicPie';
-import GraphicBar from './GraphicBar';
+// import GraphicBar from '../Home/GraphicBar';
 import { Link } from 'react-router-dom';
 import './style.css';
 

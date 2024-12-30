@@ -125,8 +125,9 @@
 }
 
 .mission-line-text{
+    color: white;
     font-size: x-large;
-    text-align: justify;
+    /* text-align: justify; */
 }
 
 @media (max-width: 768px) {
@@ -154,7 +155,7 @@
     }
     .mission-line-text{
         color: white;
-        font-size: large;
+        font-size: medium;
         margin: 0.5rem 0
     }
     .btn-green{
@@ -164,11 +165,12 @@
     }
     .mission-tips{
         padding: 2rem;
-        width: 100%;
+        width: 60vw;
+        height: 60vw;
         font-size: larger;
         background-color: #FFF2D4;
         position: absolute;
-        left: 0%;
+        left: 20%;
         top: 60%;
         animation: slideInMobileMission 8s ease-out;
         font-size: medium;

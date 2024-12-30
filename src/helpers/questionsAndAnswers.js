@@ -138,7 +138,7 @@ export const questionsAndAnswers = [
             { name: "Caminando/Bicicleta", points: 0 },
             { name: "Auto eléctrico o híbrido", points: 1 },
         ],
-        messageToShow: "Elige transportes sustentables para reducir tus emisiones de carbono.",
+        messageToShow: null,
         cartoon: cartoonAuto,
         icon: iconCar,
     },

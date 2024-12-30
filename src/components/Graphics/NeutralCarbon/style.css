@@ -1,4 +1,4 @@
-.container-graphics-home {
+/* .container-graphics-home {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -6,7 +6,7 @@
     width: 100%;
     height: 100%;
     margin-left: 5vw;
-}
+} */
 
 .apexcharts-legend-text {
     font-size: 1rem !important;
@@ -76,9 +76,9 @@
 }
 
 @media (max-width: 768px) {
-    .container-graphics-home {
+    /* .container-graphics-home {
         align-items: flex-start;
-    }
+    } */
     .graphics-background {
         flex-direction: column; /* Permite que los elementos del gráfico se apilen verticalmente */
         align-items: center;

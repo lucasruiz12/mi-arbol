@@ -46,7 +46,7 @@ const CarouselLogo = () => {
             <img
               src={logo}
               alt={`Logo ${index + 1}`}
-              style={{ width: "100px", height: "100px", objectFit: "contain" }}
+              className="img-logo-carousel"
             />
           </div>
         ))}

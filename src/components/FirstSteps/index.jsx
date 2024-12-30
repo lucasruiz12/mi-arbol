@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import stepsVideo from '../../assets/videos/2. Mundo.mp4';
-import stepsMobileVideo from '../../assets/videos/2. mundo movil.mp4'
+import stepsVideo from '../../assets/videos/landinghome/video-TAO2.mp4';
+// import stepsVideo from '../../assets/videos/landinghome/video-TAO2-c.mp4';
+// import stepsVideo from '../../assets/videos/2. Mundo.mp4';
+import stepsMobileVideo from '../../assets/videos/landinghome/video-TAO2-movil.mp4'
 import logoArbol from '../../assets/logos/logo-TAO-white.svg';
 import logoISO from '../../assets/logos/logo-ISO.svg';
 import CarouselLogo from '../CarouselLogos';
@@ -35,6 +37,7 @@ const FirstSteps = ({ setView }) => {
         <div className="container-steps-view">
             <video autoPlay muted loop className="steps-video">
                 <source src={window.innerWidth >= 768 ? stepsVideo : stepsMobileVideo} type="video/mp4" />
+                {/* <source src={stepsVideo} type="video/mp4" /> */}
             </video>
             <div className="steps-content">
                 <div className="steps-img-container">

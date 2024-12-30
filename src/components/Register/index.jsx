@@ -210,7 +210,7 @@ const Register = () => {
                             </div>
                             <div className="container-all-btns">
                                 <div className="container-social-media">
-                                    <span>Registrarse con: </span>
+                                    <span className="span-social-media">Registrarse con: </span>
                                     <div className="container-btn-social-media">
                                         <img src={iconGoogle} alt='GS' className="btn-social-media"
                                             // onClick={() => alert("TA")}

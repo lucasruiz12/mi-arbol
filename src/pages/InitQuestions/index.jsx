@@ -176,7 +176,7 @@ const InitQuestions = () => {
                         <div className={`container-answers ${questionsAndAnswers.find(el => el.id === currentQuestion)?.answers.length > 3 ? " many-answers" : ""}`}>
                             <CustomCheckbox data={questionsAndAnswers.find(el => el.id === currentQuestion).answers} setData={setResponsePoints} resetData={responseUser} />
                         </div>
-                        <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "10vh", width: "50vw" }}>
+                        <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "10vh", width: "50vw", marginTop: "5vh" }}>
                             {
                                 currentQuestion < questionsAndAnswers.length ?
                                     <button className="btn-green" disabled={responsePoints === ""} onClick={() => nextQuestion()}>Siguiente</button>

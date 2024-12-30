@@ -148,23 +148,23 @@ export const tipsAndRecommendations = [
     },
     {
         id: 7,
-        message: "La norma ISO 14064 ayuda a las organizaciones a gestionar y mejorar su desempeño ambiental de manera sostenible.",
+        message: "ISO 14064 ayuda a las organizaciones a gestionar y mejorar su desempeño ambiental de manera sostenible.",
     },
     {
         id: 8,
-        message: "La norma ISO 14064 consta de tres partes: ISO 14064-1 (organizaciones), ISO 14064-2 (proyectos) e ISO 14064-3 (verificación).",
+        message: "La norma ISO 14064 consta de tres partes: ISO 14064-1, ISO 14064-2 e ISO 14064-3.",
     },
     {
         id: 9,
-        message: "ISO 14064-1: Usada para medir y gestionar emisiones de organizaciones.",
+        message: "ISO 14064-1: Para medir y gestionar emisiones de organizaciones.",
     },
     {
         id: 10,
-        message: "ISO 14064-2: Usada para proyectos de reducción de emisiones (como reforestación y energías renovables).",
+        message: "ISO 14064-2: Para proyectos de reducción de emisiones (como reforestación).",
     },
     {
         id: 11,
-        message: "ISO 14064-3: Usada para verificar inventarios de emisiones y garantizar su exactitud.",
+        message: "ISO 14064-3: Para verificar inventarios de emisiones y garantizar su exactitud.",
     },
     {
         id: 12,

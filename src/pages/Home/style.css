@@ -40,13 +40,13 @@
     color: white;
     font-size: 7vh;
     font-weight: bold;
-    text-align: justify;
+    /* text-align: justify; */
 }
 
 .home-text {
     color: white;
     font-size: 3vh;
-    text-align: justify;
+    /* text-align: justify; */
 }
 
 .home-result {
@@ -69,21 +69,21 @@
 
 .home-status {
     color: white;
-    text-align: justify;
+    text-align: center;
 }
 
 .home-invitation {
     color: white;
     text-align: center;
     margin-bottom: 4vh;
-    text-align: justify;
+    /* text-align: justify; */
 }
 
 
 .home-user-graphics {
     display: flex;
     padding: 5vh 0;
-    margin-left: 5vh;
+    margin-left: 2vh;
     flex-direction: column;
     /* justify-content: space-between; */
     width: 50%;
@@ -167,7 +167,7 @@
     }
 
     .btn-container-link {
-        display: flex;
+        display: none;
         justify-content: center;
         width: 100%;
     }
