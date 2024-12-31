@@ -1,38 +1,68 @@
+.container-neutral-carbon {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-image: url('../../assets/images/image-background-trace.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
 .container-neutral-carbon-content {
     display: flex;
-    height: 90vh;
+    height: 100%;
     width: 100%;
     justify-content: space-around;
     align-items: center;
+    padding: 2rem 4rem;
 }
 
 .container-info-text {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: flex-start;
-    width: 23%;
-    height: 50%;
+    width: 50%;
+    height: 100%;
 }
 
 .text-you-know {
     font-size: 5vh;
     font-weight: bold;
     margin-bottom: 3vh;
+    color: white;
 }
 
 .info-you-know {
     font-size: xx-large;
-    margin: -2vh 0 5vh 0.5vw
+    margin: -2vh 0 5vh 0.5vw;
+    color: white;
 }
 
 .container-info-pizza {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    /* flex-direction: column; */
+    justify-content: space-around;
     align-items: center;
-    width: 23%;
-    height: 50%;
+    width: 45%;
+    height: 100%;
+}
+
+.info-pizza-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-pizza-img{
+    height: 30vh;
+    width: 30vh;
+}
+
+.info-pizza-text{
+    color: white;
+    font-size: 10vh;
+    font-weight: bold;
 }
 
 .pizza-img {

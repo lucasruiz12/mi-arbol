@@ -5,7 +5,7 @@ import { IS_AUTHENTICATED } from '../../helpers/constants';
 import logoArbol from '../../assets/logos/logo-TAO-brown.svg';
 import LoadingLogo from '../../components/LoadingLogo';
 import CustomCheckbox from '../../components/CustomCheckbox';
-import { backgroundImages } from '../../helpers/backgroundImages';
+import { backgroundImages, backgroundImagesMovil } from '../../helpers/backgroundImages';
 import LoadingResult from '../../components/LoadingResult';
 import './style.css';
 
@@ -130,7 +130,7 @@ const InitQuestions = () => {
         setLoadResults(true);
         setTimeout(() => {
             navigate("/registerForm");
-        }, 3000);
+        }, 7500);
     };
 
     useEffect(() => {
@@ -149,7 +149,7 @@ const InitQuestions = () => {
         <div
             className="container-init-questions"
             style={{
-                backgroundImage: (loading || loadResults) ? "none" : `url(${backgroundImages[currentQuestion - 1]})` || 'none',
+                backgroundImage: (loading || loadResults) ? "none" : `url(${window.innerWidth > 768 ? backgroundImages[currentQuestion - 1] : backgroundImagesMovil[currentQuestion - 1]})` || 'none',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 transition: 'background-image 0.5s ease-in-out',

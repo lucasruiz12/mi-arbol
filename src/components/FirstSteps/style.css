@@ -141,7 +141,7 @@
     left: 65%;
     top: 10%;
     border-radius: 50%;
-    animation: slideInSteps 8s ease-out;
+    animation: grow 8s ease-out;
 }
 
 .close-steps-tips{

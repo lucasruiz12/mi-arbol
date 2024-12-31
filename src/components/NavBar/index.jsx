@@ -27,8 +27,8 @@ const NavBar = () => {
                         </p>
                     </li>
                 </Link>
-                {/* <Link to="/neutralCarbon" className={`navbar-container-btn ${window.location.pathname === "/neutralCarbon" ? "active-btn" : ""}`}> */}
-                <Link to="/home" className={`navbar-container-btn ${window.location.pathname === "/neutralCarbon" ? "active-btn" : ""}`}>
+                <Link to="/neutralCarbon" className={`navbar-container-btn ${window.location.pathname === "/neutralCarbon" ? "active-btn" : ""}`}>
+                {/* <Link to="/home" className={`navbar-container-btn ${window.location.pathname === "/neutralCarbon" ? "active-btn" : ""}`}> */}
                     <li className="navbar-item">
                         <img src={iconNeutral} alt="NOIC" className="navbar-icon" />
                         <p style={{ color: "white" }}>

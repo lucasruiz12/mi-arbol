@@ -1,5 +1,5 @@
 import React from 'react';
-import logoResult from '../../assets/logos/gif-result.png';
+import logoResult from '../../assets/gifs/gif-mundo-loader.gif';
 import './style.css';
 
 const LoadingResult = () => {
