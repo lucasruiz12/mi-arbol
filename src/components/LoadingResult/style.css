@@ -1,5 +1,6 @@
 .loading-result-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -8,4 +9,36 @@
 
 .loading-result {
     width: 30vh;
+}
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(1.1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    75% {
+        transform: scale(1.1);
+    }
+}
+
+.loading-text {
+    color: white;
+    font-size: xx-large;
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@media (max-width: 768px) {
+    .loading-text {
+        font-size: larger;
+    }
 }

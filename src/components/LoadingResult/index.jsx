@@ -6,6 +6,7 @@ const LoadingResult = () => {
   return (
     <div className="loading-result-container">
       <img className="loading-result" src={logoResult} alt="LOG" />
+      <p className="loading-text">Calculando resultados</p>
     </div>
   );
 };
