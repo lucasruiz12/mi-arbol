@@ -6,12 +6,12 @@ import './style.css';
 
 const GraphicsNeutralCarbon = () => {
     return (
-        <div className="container-graphics-home">
+        <div className="container-graphics-carbon">
             <GraphicPie />
             {/* <GraphicBar /> */}
-            <div className="container-button-home">
+            <div className="container-button-carbon">
                 <Link to="/mySubscription">
-                    <button className="btn-green all-cover-btn">Mitigar tu huella</button>
+                    <button className="btn-green all-cover-btn">¡Vuélvete carbono neutro!</button>
                 </Link>
             </div>
         </div>
