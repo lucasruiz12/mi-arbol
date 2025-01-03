@@ -116,13 +116,18 @@
         font-size: large;
     }
 
-    .container-answers.many-answers {
+    .container-answers{
+        flex-direction: column;
+        height: auto;
+    }
+
+    /* .container-answers.many-answers {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         width: 100%;
         align-items: center;
         height: auto;
-    }
+    } */
 
     .question-tip {
         left: 60%;

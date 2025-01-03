@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { loginWithEmail , loginWithGoogle, loginWithFacebook } from '../../firebase/connections';
+import { loginWithEmail, loginWithGoogle, loginWithFacebook } from '../../firebase/connections';
 import { IS_AUTHENTICATED } from '../../helpers/constants';
 import LoadingLogo from '../LoadingLogo';
 import logoFull from '../../assets/logos/logo-TAO-brown.svg';
@@ -15,7 +15,7 @@ const Login = () => {
         password: "",
     });
 
-    const [loading, setLoading] = useState(true);
+    // const [loading, setLoading] = useState(true);
 
     const changeData = (event, data) => {
         if (data) {
@@ -91,79 +91,74 @@ const Login = () => {
 
     return (
         <div className="container-login">
-            {
-                loading ?
-                    <LoadingLogo />
-                    :
-                    // <form className="form-login" onSubmit={submitData}>
-                        <form className="form-login" onSubmit={fakeSubmit}>
-                        <div className="title-login">
-                            <Link to="/">
-                                <img className="login-logo" src={logoFull} alt="LOG" />
-                            </Link>
-                            <div className="text-login-container">
-                                <p className="text-welcome">Bienvenido(a)</p>
-                                <p className="text-carbon">Soy carbono neutro</p>
-                            </div>
-                        </div>
-                        <div className="container-input-form-login">
-                            <label className="input-title" htmlFor="user">
-                                Usuario:
-                            </label>
-                            <input
-                                className="input-form"
-                                type="text"
-                                id="user"
-                                name="user"
-                                onChange={changeData}
-                            />
-                        </div>
-                        <div className="container-input-form-login">
-                            <label className="input-title" htmlFor="password">
-                                Contraseña:
-                            </label>
-                            <input
-                                className="input-form"
-                                type="password"
-                                id="password"
-                                name="password"
-                                onChange={changeData}
-                            />
-                        </div>
-                        <div className="link-container">
-                            {/* <Link to="/initQuestions"> */}
-                            <input
-                                type="submit"
-                                value="Iniciar sesión"
-                                className="btn-green-login"
-                                disabled={
-                                    formData.user === "" ||
-                                    formData.password === "" ||
-                                    formData.password.length < 7
-                                }
-                            />
-                            {/* </Link> */}
-                        </div>
-                        <div className="container-social-media">
-                            <span>Iniciar sesión con: </span>
-                            <div className="container-btn-social-media">
-                                <img src={iconGoogle} alt='GS' className="btn-social-media" 
-                                onClick={() => submitSocialMedia(loginWithGoogle)}
-                                // onClick={() => alert("TAMB")}
-                                />
-                                <img src={iconFacebook} alt='FB' className="btn-social-media" 
-                                onClick={() => submitSocialMedia(loginWithFacebook)}
-                                // onClick={() => alert("TAMB")}
-                                />
-                            </div>
-                        </div>
-                        <div className="container-social-media">
-                            <Link to="/registerForm">
-                                <span style={{ cursor: "pointer" }}>¿No tienes cuenta? Crear una</span>
-                            </Link>
-                        </div>
-                    </form>
-            }
+            {/* <form className="form-login" onSubmit={submitData}> */}
+            <form className="form-login" onSubmit={fakeSubmit}>
+                <div className="title-login">
+                    <Link to="/">
+                        <img className="login-logo" src={logoFull} alt="LOG" />
+                    </Link>
+                    <div className="text-login-container">
+                        <p className="text-welcome">Bienvenido(a)</p>
+                        <p className="text-carbon">Soy carbono neutro</p>
+                    </div>
+                </div>
+                <div className="container-input-form-login">
+                    <label className="input-title" htmlFor="user">
+                        Usuario:
+                    </label>
+                    <input
+                        className="input-form"
+                        type="text"
+                        id="user"
+                        name="user"
+                        onChange={changeData}
+                    />
+                </div>
+                <div className="container-input-form-login">
+                    <label className="input-title" htmlFor="password">
+                        Contraseña:
+                    </label>
+                    <input
+                        className="input-form"
+                        type="password"
+                        id="password"
+                        name="password"
+                        onChange={changeData}
+                    />
+                </div>
+                <div className="link-container">
+                    {/* <Link to="/initQuestions"> */}
+                    <input
+                        type="submit"
+                        value="Iniciar sesión"
+                        className="btn-green-login"
+                        disabled={
+                            formData.user === "" ||
+                            formData.password === "" ||
+                            formData.password.length < 7
+                        }
+                    />
+                    {/* </Link> */}
+                </div>
+                <div className="container-social-media">
+                    <span>Iniciar sesión con: </span>
+                    <div className="container-btn-social-media">
+                        <img src={iconGoogle} alt='GS' className="btn-social-media"
+                            onClick={() => submitSocialMedia(loginWithGoogle)}
+                        // onClick={() => alert("TAMB")}
+                        />
+                        <img src={iconFacebook} alt='FB' className="btn-social-media"
+                            onClick={() => submitSocialMedia(loginWithFacebook)}
+                        // onClick={() => alert("TAMB")}
+                        />
+                    </div>
+                </div>
+                <div className="container-social-media">
+                    <Link to="/registerForm">
+                        <span style={{ cursor: "pointer" }}>¿No tienes cuenta? Crear una</span>
+                    </Link>
+                </div>
+            </form>
         </div>
     );
 };

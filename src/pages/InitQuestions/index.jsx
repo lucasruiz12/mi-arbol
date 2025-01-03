@@ -152,7 +152,7 @@ const InitQuestions = () => {
                 backgroundImage: (loading || loadResults) ? "none" : `url(${window.innerWidth > 768 ? backgroundImages[currentQuestion - 1] : backgroundImagesMovil[currentQuestion - 1]})` || 'none',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
-                transition: 'background-image 0.5s ease-in-out',
+                transition: 'background-image 1s ease-in-out',
             }}
         >
             {

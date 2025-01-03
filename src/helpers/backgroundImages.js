@@ -69,3 +69,24 @@ export const backgroundImagesMovil = [
     movil13,
     movil11,
 ];
+
+// export const backgroundImagesMovil = [
+//     image1,
+//     image1,
+//     movil2,
+//     image5,
+//     image5,
+//     movil6,
+//     image3,
+//     movil13,
+//     image7,
+//     movil4,
+//     image14,
+//     movil4,
+//     image9,
+//     movil10,
+//     image8,
+//     movil12,
+//     image13,
+//     movil11,
+// ];

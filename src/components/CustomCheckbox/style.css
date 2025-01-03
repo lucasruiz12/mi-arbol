@@ -78,6 +78,8 @@
         width: 100%;
         margin: 1vh 0;
         font-size: small;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
     }
 
     .container-checkbox .box-checkbox:after {
@@ -89,6 +91,7 @@
     }
 
     .text-checkbox {
-        text-align: center;
+        text-align: justify;
+        width: 75%;
     }
 }

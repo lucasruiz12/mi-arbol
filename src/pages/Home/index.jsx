@@ -36,7 +36,7 @@ const Home = () => {
                         </div>
                         <div className="home-result">
                             <div className="home-container-img">
-                                <div className="home-container-examples">
+                                {/* <div className="home-container-examples">
                                     <div className="home-example">
                                         <img className="example-img" src={gifLow} alt="NOIM" />
                                         <p className="example-text">Impacto bajo</p>
@@ -49,14 +49,14 @@ const Home = () => {
                                         <img className="example-img" src={gifHigh} alt="NOIM" />
                                         <p className="example-text">Impacto alto</p>
                                     </div>
-                                </div>
+                                </div> */}
                                 <img className="result-img" src={gifHigh} alt="NOIM" />
 
                             </div>
                             <div className="home-result-text">
                                 <h2 className="home-status">Eres <b>IMPACTO ALTO</b></h2>
                                 <h5 className="home-invitation">Sus emisiones equivalen a cortar <b>160 árboles</b> por año. Modifique sus hábitos y empiece a disminuir su impacto</h5>
-                                <Link className="btn-container-link" to="/mySubscription">
+                                <Link className="btn-container-link" to="/neutralCarbono">
                                     <button className="btn-green">Mitigar tu huella</button>
                                 </Link>
                             </div>

@@ -33,19 +33,6 @@ const GraphicBar = () => {
                             },
                         ],
                     },
-                    {
-                        x: 'Promedio en México',
-                        y: 3600,
-                        goals: [
-                            {
-                                name: 'Consumo Ideal',
-                                value: 2000,
-                                strokeWidth: 5,
-                                strokeDashArray: 5,
-                                strokeColor: '#FF4560',
-                            },
-                        ],
-                    },
                 ],
             },
         ],
