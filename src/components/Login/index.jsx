@@ -6,8 +6,9 @@ import LoadingLogo from '../LoadingLogo';
 import logoFull from '../../assets/logos/logo-TAO-brown.svg';
 import iconGoogle from '../../assets/icons/rrss-google.svg';
 import iconFacebook from '../../assets/icons/rrss-facebook.svg';
-import './style.css';
 import loginConnections from '../../helpers/loginConnections';
+import { toast, ToastContainer, Bounce } from 'react-toastify';
+import './style.css';
 
 const Login = () => {
 
@@ -64,18 +65,53 @@ const Login = () => {
         try {
             const { data } = await loginConnections.loginUser(userData);
             if (data.success) {
-                localStorage.setItem(IS_AUTHENTICATED, JSON.stringify(data.user));
+                const { email, name, id, createdAt } = data.user
+                const isAuthenticated = { email, name, id, createdAt };
+                localStorage.setItem(IS_AUTHENTICATED, JSON.stringify(isAuthenticated));
+                toast.success(data.message, {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: false,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                    transition: Bounce,
+                });
             } else {
-                console.log("INVÁLIDO");
+                toast.error('Error!', {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: false,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                    transition: Bounce,
+                });
             };
-            setTimeout(() => {
-                window.location.href = "/home";
-            }, 1000);
+            // setTimeout(() => {
+            //     window.location.href = "/home";
+            // }, 1000);
         } catch (err) {
+            const { message } = err.response.data;
+            toast.error(message, {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+                transition: Bounce,
+            });
             console.error(err);
-            setTimeout(() => {
-                window.location.href = "/home";
-            }, 1000);
+            // setTimeout(() => {
+            //     window.location.href = "/home";
+            // }, 1000);
         };
     };
 
@@ -98,11 +134,11 @@ const Login = () => {
     };
 
     useEffect(() => {
-        const user = JSON.parse(localStorage.getItem(IS_AUTHENTICATED));
+        // const user = JSON.parse(localStorage.getItem(IS_AUTHENTICATED));
 
-        if (user) {
-            window.location.href = "/home";
-        };
+        // if (user) {
+        //     window.location.href = "/home";
+        // };
 
         setTimeout(() => {
             setLoading(false);
@@ -113,6 +149,19 @@ const Login = () => {
 
     return (
         <div className="container-login">
+            <ToastContainer
+                position="top-right"
+                autoClose={3000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick={false}
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="colored"
+                transition={Bounce}
+            />
             {
                 loading ?
                     <LoadingLogo />

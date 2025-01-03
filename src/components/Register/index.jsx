@@ -2,10 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { signUpWithEmail, signUpWithFacebook, signUpWithGoogle } from '../../firebase/connections';
 import { IS_AUTHENTICATED } from '../../helpers/constants';
-import LoadingLogo from '../LoadingLogo';
+// import LoadingLogo from '../LoadingLogo';
 import logoArbol from '../../assets/logos/logo-TAO-brown.svg';
 import iconGoogle from '../../assets/icons/rrss-google.svg';
 import iconFacebook from '../../assets/icons/rrss-facebook.svg';
+import loginConnections from '../../helpers/loginConnections';
+import { toast, ToastContainer, Bounce } from 'react-toastify';
 import './style.css';
 
 const Register = () => {
@@ -74,28 +76,98 @@ const Register = () => {
         };
     };
 
-    const fakeSubmit = (e) => {
+    const fakeSubmit = async (e) => {
         e.preventDefault();
-        setTimeout(() => {
-            window.location.href = "/home";
-        }, 1000);
-    };
 
-    useEffect(() => {
-        const user = JSON.parse(localStorage.getItem(IS_AUTHENTICATED));
+        const { name, email, password } = formData;
 
-        if (user) {
-            window.location.href = "/home";
+        const userData = {
+            name,
+            email,
+            password
         };
 
-        // setTimeout(() => {
-        //     setLoading(false);
-        // }, 3000);
+        try {
+            const { data } = await loginConnections.createUser(userData);
+            if (data.success) {
+                const { email, name, id, createdAt } = data.user
+                const isAuthenticated = { email, name, id, createdAt };
+                localStorage.setItem(IS_AUTHENTICATED, JSON.stringify(isAuthenticated));
+                toast.success(data.message, {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: false,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                    transition: Bounce,
+                });
+            } else {
+                toast.error('Error!', {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: false,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                    transition: Bounce,
+                });
+            };
+            // setTimeout(() => {
+            //     window.location.href = "/home";
+            // }, 1000);
+        } catch (err) {
+            const { message } = err.response.data;
+            toast.error(message, {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+                transition: Bounce,
+            });
+            console.error(err);
+            // setTimeout(() => {
+            //     window.location.href = "/home";
+            // }, 1000);
+        };
+    };
 
-    }, []);
+    // useEffect(() => {
+    //     const user = JSON.parse(localStorage.getItem(IS_AUTHENTICATED));
+
+    //     if (user) {
+    //         window.location.href = "/home";
+    //     };
+
+    //     // setTimeout(() => {
+    //     //     setLoading(false);
+    //     // }, 3000);
+
+    // }, []);
 
     return (
         <div className="container-register">
+            <ToastContainer
+                position="top-right"
+                autoClose={3000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick={false}
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="colored"
+                transition={Bounce}
+            />
             {/* <form className="form-register" onSubmit={submitData}> */}
             <form className="form-register" onSubmit={fakeSubmit}>
                 <div className="title-register">
@@ -103,7 +175,6 @@ const Register = () => {
                         <img className="register-logo" src={logoArbol} alt="LOG" />
                     </Link>
                     <div className="text-register">
-                        {/* <p className="register-line">Creemos tu perfil para comenzar a disminuir esa huella de carbono</p> */}
                         <p className="register-line">"SEMBREMOS UN ÁRBOL HOY PARA DAR SOMBRA A LAS PERSONAS DEL MAÑANA."</p>
                     </div>
                 </div>
@@ -119,54 +190,6 @@ const Register = () => {
                         onChange={changeData}
                     />
                 </div>
-                {/* <div className="container-input-form">
-                                <label className="input-title" htmlFor="lastname">
-                                    Apellidos:
-                                </label>
-                                <input
-                                    className="input-form"
-                                    type="text"
-                                    id="lastname"
-                                    name="lastname"
-                                    onChange={changeData}
-                                />
-                            </div>
-                            <div className="container-input-form">
-                                <label className="input-title" htmlFor="city">
-                                    Ciudad:
-                                </label>
-                                <input
-                                    className="input-form"
-                                    type="text"
-                                    id="city"
-                                    name="city"
-                                    onChange={changeData}
-                                />
-                            </div>
-                            <div className="container-input-form">
-                                <label className="input-title" htmlFor="state">
-                                    Estado:
-                                </label>
-                                <input
-                                    className="input-form"
-                                    type="text"
-                                    id="state"
-                                    name="state"
-                                    onChange={changeData}
-                                />
-                            </div>
-                            <div className="container-input-form">
-                                <label className="input-title" htmlFor="phone">
-                                    Móvil:
-                                </label>
-                                <input
-                                    className="input-form"
-                                    type="number"
-                                    id="phone"
-                                    name="phone"
-                                    onChange={changeData}
-                                />
-                            </div> */}
                 <div className="container-input-form">
                     <label className="input-title" htmlFor="email">
                         Email:
