@@ -56,9 +56,9 @@
 }
 
 .steps-line-text {
-    font-size: x-large;
+    font-size: 31px;
     color: white;
-    /* text-align: justify; */
+    text-align: justify;
 }
 
 .logo-iso-container {
@@ -133,14 +133,15 @@
     justify-content: center;
     align-items: center;
     padding: 2rem;
-    width: 17.5vw;
-    height: 17.5vw;
+    width: 22.5vw;
+    height: 7.5vw;
     font-size: large;
-    background-color: #FFF2D4;
+    background-color: #4e4e4e7e;
+    color: white;
     position: absolute;
-    left: 65%;
-    top: 10%;
-    border-radius: 50%;
+    left: 75%;
+    top: 5%;
+    border-radius: 1rem;
     animation: grow 8s ease-out;
 }
 
@@ -173,9 +174,9 @@
     }
 
     .steps-tips {
-        width: 47.5vw;
-        height: 47.5vw;
-        left: 1%;
+        width: 80vw;
+        height: auto;
+        left: 10%;
         top: 1%;
         padding: 2rem 1.25rem;
         font-size: small;

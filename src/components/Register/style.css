@@ -110,8 +110,17 @@
     cursor: pointer;
 }
 
+.btn-green-register.disabled {
+    background-color: #6C757D;
+    cursor: no-drop
+}
+
 .btn-green-register:hover {
-    background-color: #92CD43;
+    background-color: #C0D860;
+}
+
+.btn-green-register.disabled:hover {
+    background-color: #6C757D;
 }
 
 @media (max-width: 768px) {
@@ -131,7 +140,7 @@
         margin: 0;
     }
 
-    .span-social-media{
+    .span-social-media {
         font-size: small;
     }
 

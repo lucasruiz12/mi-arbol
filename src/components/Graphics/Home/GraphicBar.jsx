@@ -39,7 +39,7 @@ const GraphicBar = () => {
         options: {
             chart: {
                 type: 'bar',
-                height: 400,
+                height: '100%',
                 width: '100%', // Se ajusta automáticamente al 100% del contenedor
                 toolbar: {
                     show: false,
@@ -120,7 +120,7 @@ const GraphicBar = () => {
 
     return (
         <div className="graphics-background">
-            <ReactApexChart options={data.options} series={data.series} type="bar" width={500} />
+            <ReactApexChart options={data.options} series={data.series} type="bar" width={500} height={250} />
         </div>
     );
 };

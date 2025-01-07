@@ -131,7 +131,9 @@ const Login = () => {
                     <input
                         type="submit"
                         value="Iniciar sesión"
-                        className="btn-green-login"
+                        className={`btn-green-login${(formData.user === "" ||
+                            formData.password === "" ||
+                            formData.password.length < 7) ? " disabled" : ""}`}
                         disabled={
                             formData.user === "" ||
                             formData.password === "" ||

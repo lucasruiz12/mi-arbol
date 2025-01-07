@@ -33,9 +33,10 @@
 }
 
 .info-you-know {
-    font-size: xx-large;
+    font-size: 31px;
     margin: -2vh 0 5vh 0.5vw;
     color: white;
+    text-align: justify;
 }
 
 .container-btn-carbono {
@@ -57,7 +58,7 @@
     /* flex-direction: column; */
     justify-content: space-around;
     align-items: center;
-    width: 45%;
+    width: 80%;
     height: 100%;
 }
 

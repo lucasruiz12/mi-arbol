@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-// import stepsVideo from '../../assets/videos/landinghome/video-TAO2.mp4';
-import stepsVideo from '../../assets/videos/landinghome/video-test.mp4';
+import stepsVideo from '../../assets/videos/landinghome/video-TAO2.mp4';
 // import stepsVideo from '../../assets/videos/landinghome/video-TAO2-c.mp4';
 // import stepsVideo from '../../assets/videos/2. Mundo.mp4';
 import stepsMobileVideo from '../../assets/videos/landinghome/video-TAO2-movil.mp4'

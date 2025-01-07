@@ -18,11 +18,11 @@ const Home = () => {
     // const [loading, setLoading] = useState(true);
     // const user = JSON.parse(localStorage.getItem(IS_AUTHENTICATED)).displayName;
 
-    useEffect(() => {
-        setTimeout(() => {
-            setLoading(false);
-        }, 3000);
-    }, []);
+    // useEffect(() => {
+    //     setTimeout(() => {
+    //         setLoading(false);
+    //     }, 3000);
+    // }, []);
 
     return (
         <div className={`container-home with-back`}>
@@ -56,7 +56,7 @@ const Home = () => {
                             <div className="home-result-text">
                                 <h2 className="home-status">Eres <b>IMPACTO ALTO</b></h2>
                                 <h5 className="home-invitation">Sus emisiones equivalen a cortar <b>160 árboles</b> por año. Modifique sus hábitos y empiece a disminuir su impacto</h5>
-                                <Link className="btn-container-link" to="/neutralCarbono">
+                                <Link className="btn-container-link" to="/neutralCarbon">
                                     <button className="btn-green">Mitigar tu huella</button>
                                 </Link>
                             </div>

@@ -34,7 +34,7 @@ const NeutralCarbon = () => {
                                         <img className="info-pizza-img" src={pizzaIcon} alt="NOIMG" />
                                         <p className="info-pizza-text">$189</p>
                                     </div>
-                                    <div className="info-pizza-item">
+                                    <div className="info-pizza-item" style={{marginBottom: "4vh"}}>
                                         <p className="info-pizza-text"><b>{">"}</b></p>
                                     </div>
                                     <div className="info-pizza-item">

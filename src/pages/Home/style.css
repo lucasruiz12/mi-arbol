@@ -24,9 +24,8 @@
 
 .home-user-data {
     display: flex;
-    padding: 5vh 0;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     /* align-items: center; */
     width: 50%;
 }
@@ -95,6 +94,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    gap: 1vh;
 }
 
 .home-status {
@@ -162,6 +162,7 @@
     }
 
     .home-user-data {
+        padding: 5vh 0;
         align-items: center;
         width: 100%;
     }

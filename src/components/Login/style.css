@@ -100,8 +100,17 @@
     cursor: pointer;
 }
 
+.btn-green-login.disabled {
+    background-color: #6C757D;
+    cursor: no-drop
+}
+
 .btn-green-login:hover {
-    background-color: #92CD43;
+    background-color: #C0D860;
+}
+
+.btn-green-login.disabled:hover {
+    background-color: #6C757D;
 }
 
 .container-social-media {

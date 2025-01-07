@@ -222,7 +222,16 @@ const Register = () => {
                         <input
                             type="submit"
                             value="Registrarse"
-                            className="btn-green-register"
+                            className={`btn-green-register${(formData.name === "" ||
+                                formData.lastname === "" ||
+                                formData.city === "" ||
+                                formData.state === "" ||
+                                formData.phone === "" ||
+                                formData.email === "" ||
+                                formData.password === "" ||
+                                formData.repeatPassword === "" ||
+                                formData.password.length < 7 ||
+                                formData.password !== formData.repeatPassword) ? " disabled" : ""}`}
                             disabled={
                                 formData.name === "" ||
                                 formData.lastname === "" ||

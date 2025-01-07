@@ -31,8 +31,17 @@ body {
   cursor: pointer;
 }
 
+.btn-green.disabled{
+  background-color: #6C757D;
+  cursor: no-drop
+}
+
 .btn-green:hover {
-  background-color: #92CD43;
+  background-color: #C0D860;
+}
+
+.btn-green.disabled:hover{
+  background-color: #6C757D;
 }
 
 @keyframes grow {
