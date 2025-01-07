@@ -94,9 +94,7 @@ const Login = () => {
             {/* <form className="form-login" onSubmit={submitData}> */}
             <form className="form-login" onSubmit={fakeSubmit}>
                 <div className="title-login">
-                    <Link to="/">
-                        <img className="login-logo" src={logoFull} alt="LOG" />
-                    </Link>
+                    <img className="login-logo" src={logoFull} alt="LOG" />
                     <div className="text-login-container">
                         <p className="text-welcome">Bienvenido(a)</p>
                         <p className="text-carbon">Soy carbono neutro</p>
