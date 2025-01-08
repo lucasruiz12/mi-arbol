@@ -9,9 +9,11 @@ import NeutralCarbon from './pages/NeutralCarbon';
 import MySeeds from './pages/MySeeds';
 import SuccessfulPayment from './pages/SuccessfulPayment';
 import ViewInProgress from './components/ViewInProgress';
+import TestLog from './pages/TestLog';
+import Watermark from './components/Watermark';
+import LoadingUser from './pages/LoadingUser';
 
 import './App.css';
-import Watermark from './components/Watermark';
 
 // const locationsWithoutWatermark = ["/", "/initQuestions", "/loginFrom", "/registerForm"]
 
@@ -24,7 +26,8 @@ function App() {
         <Route path="/registerForm" element={<RegisterForm />} />
         <Route path="/loginForm" element={<LoginForm />} />
         <Route path="/home" element={<Home />} />
-        {/* <Route path="/home" element={<ViewInProgress />} /> */}
+        <Route path="/testlog" element={<TestLog />} />
+        <Route path="/loadingUser" element={<LoadingUser />} />
         <Route path="/neutralCarbon" element={<NeutralCarbon />} />
         {/* <Route path="/mySubscription" element={<MySubscription />} /> */}
         <Route path="/mySubscription" element={<ViewInProgress />} />

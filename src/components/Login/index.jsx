@@ -2,13 +2,17 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { loginWithEmail, loginWithGoogle, loginWithFacebook } from '../../firebase/connections';
 import { IS_AUTHENTICATED } from '../../helpers/constants';
-import LoadingLogo from '../LoadingLogo';
 import logoFull from '../../assets/logos/logo-TAO-brown.svg';
 import iconGoogle from '../../assets/icons/rrss-google.svg';
 import iconFacebook from '../../assets/icons/rrss-facebook.svg';
+import loginConnections from '../../helpers/loginConnections';
+import { toast, ToastContainer, Bounce } from 'react-toastify';
+import { useAuth0 } from '@auth0/auth0-react';
 import './style.css';
 
 const Login = () => {
+
+    const { loginWithRedirect } = useAuth0();
 
     const [formData, setFormData] = useState({
         user: "",
@@ -31,22 +35,66 @@ const Login = () => {
         };
     };
 
-    const submitData = async (event) => {
-        event.preventDefault();
-        try {
-            const user = await loginWithEmail(formData.user, formData.password);
-            const { accessToken, displayName, email, uid } = user;
-            const dataToStorage = {
-                accessToken,
-                displayName,
-                email,
-                uid
-            };
+    const submitData = async (e) => {
+        e.preventDefault();
 
-            localStorage.setItem(IS_AUTHENTICATED, JSON.stringify(dataToStorage));
-            window.location.href = "/home";
+        const { user: email, password } = formData;
+
+        const userData = {
+            email,
+            password,
+        };
+
+        try {
+            const { data } = await loginConnections.loginUser(userData);
+            if (data.success) {
+                const { email, name, id, createdAt } = data.user
+                const isAuthenticated = { email, name, id, createdAt };
+                localStorage.setItem(IS_AUTHENTICATED, JSON.stringify(isAuthenticated));
+                toast.success(data.message, {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: false,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                    transition: Bounce,
+                });
+            } else {
+                toast.error('Error!', {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: false,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                    transition: Bounce,
+                });
+            };
+            // setTimeout(() => {
+            //     window.location.href = "/home";
+            // }, 1000);
         } catch (err) {
-            console.error("Error registrando usuario:", err);
+            const { message } = err.response.data;
+            toast.error(message, {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+                transition: Bounce,
+            });
+            console.error(err);
+            // setTimeout(() => {
+            //     window.location.href = "/home";
+            // }, 1000);
         };
     };
 
@@ -75,22 +123,35 @@ const Login = () => {
         };
     };
 
-    useEffect(() => {
-        const user = JSON.parse(localStorage.getItem(IS_AUTHENTICATED));
+    // useEffect(() => {
+    //     // const user = JSON.parse(localStorage.getItem(IS_AUTHENTICATED));
 
-        if (user) {
-            window.location.href = "/home";
-        };
+    //     // if (user) {
+    //     //     window.location.href = "/home";
+    //     // };
 
-        setTimeout(() => {
-            setLoading(false);
-        }, 3000);
+    //     setTimeout(() => {
+    //         setLoading(false);
+    //     }, 3000);
 
-    }, []);
+    // }, []);
 
 
     return (
         <div className="container-login">
+            <ToastContainer
+                position="top-right"
+                autoClose={3000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick={false}
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="colored"
+                transition={Bounce}
+            />
             {/* <form className="form-login" onSubmit={submitData}> */}
             <form className="form-login" onSubmit={fakeSubmit}>
                 <div className="title-login">
@@ -144,12 +205,12 @@ const Login = () => {
                     <span>Iniciar sesión con: </span>
                     <div className="container-btn-social-media">
                         <img src={iconGoogle} alt='GS' className="btn-social-media"
-                            onClick={() => submitSocialMedia(loginWithGoogle)}
-                        // onClick={() => alert("TAMB")}
+                            // onClick={() => submitSocialMedia(loginWithGoogle)}
+                            onClick={() => loginWithRedirect({ redirectUri: window.location.origin + "/loadingUser" })}
                         />
                         <img src={iconFacebook} alt='FB' className="btn-social-media"
-                            onClick={() => submitSocialMedia(loginWithFacebook)}
-                        // onClick={() => alert("TAMB")}
+                            // onClick={() => submitSocialMedia(loginWithFacebook)}
+                            onClick={() => loginWithRedirect({ redirectUri: window.location.origin + "/loadingUser" })}
                         />
                     </div>
                 </div>

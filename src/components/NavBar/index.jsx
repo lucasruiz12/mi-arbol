@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { logout } from '../../firebase/connections';
+// import { logout } from '../../firebase/connections';
 import logoArbol from '../../assets/logos/logo-TAO-white.svg';
 import iconTrace from '../../assets/icons/navbar/icon-trace.svg';
 import iconNeutral from '../../assets/icons/navbar/icon-neutral.svg';
@@ -8,12 +8,32 @@ import iconSubscription from '../../assets/icons/navbar/icon-subscription.svg';
 import iconSeeds from '../../assets/icons/navbar/icon-seeds.svg';
 import iconLogout from '../../assets/icons/navbar/icon-logout.svg';
 import LogOutDropdown from '../LogOutDropdown';
+import { useAuth0 } from '@auth0/auth0-react';
 // import ModalConfirmLogout from '../Modals/ModalConfirmLogout';
 import './style.css';
 
 const NavBar = () => {
 
+    const { logout } = useAuth0();
+
     // const [showModal, setShowModal] = useState(false);
+
+    // export const logout = async () => {
+    //     try {
+    //         await signOut(auth);
+    //         localStorage.clear();
+    //         window.location.href = "/";
+    //     } catch (error) {
+    //         console.error('Error al cerrar sesión:', error);
+    //         throw error;
+    //     }
+    // };
+
+    const handleLogout = () => {
+        localStorage.clear();
+        logout();
+        window.location.href = "/";
+    }
 
     return (
         <nav className="nav-container">
@@ -28,7 +48,7 @@ const NavBar = () => {
                     </li>
                 </Link>
                 <Link to="/neutralCarbon" className={`navbar-container-btn ${window.location.pathname === "/neutralCarbon" ? "active-btn" : ""}`}>
-                {/* <Link to="/home" className={`navbar-container-btn ${window.location.pathname === "/neutralCarbon" ? "active-btn" : ""}`}> */}
+                    {/* <Link to="/home" className={`navbar-container-btn ${window.location.pathname === "/neutralCarbon" ? "active-btn" : ""}`}> */}
                     <li className="navbar-item">
                         <img src={iconNeutral} alt="NOIC" className="navbar-icon" />
                         <p style={{ color: "white" }}>
@@ -46,7 +66,7 @@ const NavBar = () => {
                     </li>
                 </Link>
                 <Link to="/mySubscription" className={`navbar-container-btn ${window.location.pathname === "/mySubscription" ? "active-btn" : ""}`}>
-                {/* <Link to="/home" className={`navbar-container-btn ${window.location.pathname === "/mySubscription" ? "active-btn" : ""}`}> */}
+                    {/* <Link to="/home" className={`navbar-container-btn ${window.location.pathname === "/mySubscription" ? "active-btn" : ""}`}> */}
                     <li className="navbar-item">
                         <img src={iconSubscription} alt="NOIC" className="navbar-icon" />
                         <p style={{ color: "white" }}>
@@ -56,10 +76,10 @@ const NavBar = () => {
                 </Link>
             </ul>
             <div className="navbar-item logout">
-                <img onClick={() => logout()} src={iconLogout} alt="NOIC" className="navbar-icon" />
+                <img onClick={() => handleLogout()} src={iconLogout} alt="NOIC" className="navbar-icon" />
                 {/* <img onClick={() => setShowModal(true)} src={iconLogout} alt="NOIC" className="navbar-icon" /> */}
                 {/* <LogOutDropdown openModal={() => setShowModal(true)} /> */}
-                <LogOutDropdown openModal={() => logout()} />
+                <LogOutDropdown openModal={() => handleLogout()} />
             </div>
             {/* <div>
             

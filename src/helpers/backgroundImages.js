@@ -26,6 +26,7 @@ import movil10 from '../assets/images/questions/P10_movil.jpg';
 import movil11 from '../assets/images/questions/P11_movil.jpg';
 import movil12 from '../assets/images/questions/P12_movil.jpg';
 import movil13 from '../assets/images/questions/P13_movil.jpg';
+import movil14 from '../assets/images/questions/P14_movil.jpg';
 
 
 export const backgroundImages = [
@@ -60,7 +61,7 @@ export const backgroundImagesMovil = [
     movil13,
     movil7,
     movil4,
-    image14,
+    movil14,
     movil4,
     movil9,
     movil10,
