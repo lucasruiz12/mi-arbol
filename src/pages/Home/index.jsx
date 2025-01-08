@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import NavBar from '../../components/NavBar';
 // import { IS_AUTHENTICATED } from '../../helpers/constants';
-import LoadingLogo from '../../components/LoadingLogo';
+// import LoadingLogo from '../../components/LoadingLogo';
 // import badWorld from '../../assets/images/image-bad-world.png';
 // import carbonFormula from '../../assets/images/image-carbon-formula.png';
 // import goodWorld from '../../assets/images/image-good-world.png';
-import gifLow from '../../assets/gifs/gif-mundo-bajo.gif';
-import gifMedium from '../../assets/gifs/gif-mundo-medio.gif';
+// import gifLow from '../../assets/gifs/gif-mundo-bajo.gif';
+// import gifMedium from '../../assets/gifs/gif-mundo-medio.gif';
 import gifHigh from '../../assets/gifs/gif-mundo-alto.gif';
 import GraphicsHome from '../../components/Graphics/Home';
 
 import './style.css';
 import { Link } from 'react-router-dom';
+import { videoCover } from '../../helpers/fullVideo';
 
 const Home = () => {
 
@@ -25,7 +26,12 @@ const Home = () => {
     // }, []);
 
     return (
-        <div className={`container-home with-back`}>
+        // <div className={`container-home with-back`}>
+        <div className={`container-home`}>
+            {/* <video autoPlay muted loop className="home-video">
+                <source src={window.innerWidth >= 768 ? loginVideo : loginMobileVideo} type="video/mp4" />
+                <source src={window.innerWidth >= 768 ? videoCover : videoCover} type="video/mp4" />
+            </video> */}
             <NavBar />
             <div className="container-home-content">
                 <div className="home-info">

@@ -1,5 +1,5 @@
 import React from 'react';
-import logoArbol from '../../assets/logos/logo-TAO-brown.svg';
+import logoArbol from '../../assets/logos/logo-TAO-white.svg';
 import './style.css';
 
 const LoadingLogo = () => {

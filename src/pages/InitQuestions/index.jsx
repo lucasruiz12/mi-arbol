@@ -87,7 +87,7 @@ const InitQuestions = () => {
             className="container-init-questions"
             style={{
                 backgroundImage: (loading || loadResults) ? "none" : backgroundLoaded ? `url(${window.innerWidth > 768 ? backgroundImages[currentQuestion - 1] : backgroundImagesMovil[currentQuestion - 1]})` : 'none',
-                backgroundColor: !backgroundLoaded ? '#C8D390' : 'transparent',
+                backgroundColor: "#C8D390",
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 transition: 'background-image 1s ease-in-out',

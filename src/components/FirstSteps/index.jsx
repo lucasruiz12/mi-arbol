@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import stepsVideo from '../../assets/videos/landinghome/video-TAO2.mp4';
-// import stepsVideo from '../../assets/videos/landinghome/video-TAO2-c.mp4';
-// import stepsVideo from '../../assets/videos/2. Mundo.mp4';
+// import stepsVideo from '../../assets/videos/landinghome/video-TAO2.mp4';
+
 import stepsMobileVideo from '../../assets/videos/landinghome/video-TAO2-movil.mp4'
 import logoArbol from '../../assets/logos/logo-TAO-white.svg';
 import logoISO from '../../assets/logos/logo-ISO.svg';
 import CarouselLogo from '../CarouselLogos';
 import { tipsAndRecommendations } from '../../helpers/messagesAndTips';
 import './style.css';
+import { videoCover } from '../../helpers/fullVideo';
 
 const FirstSteps = ({ setView }) => {
 
@@ -35,10 +35,10 @@ const FirstSteps = ({ setView }) => {
 
     return (
         <div className="container-steps-view">
-            <video autoPlay muted loop className="steps-video">
+            {/* <video autoPlay muted loop className="steps-video">
                 <source src={window.innerWidth >= 768 ? stepsVideo : stepsMobileVideo} type="video/mp4" />
-                {/* <source src={stepsVideo} type="video/mp4" /> */}
-            </video>
+                <source src={window.innerWidth >= 768 ? videoCover : stepsMobileVideo} type="video/mp4" />
+            </video> */}
             <div className="steps-content">
                 <div className="steps-img-container">
                     <img onClick={() => setView(1)} className="steps-logo" src={logoArbol} alt="LOG" />

@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { loginWithEmail, loginWithGoogle, loginWithFacebook } from '../../firebase/connections';
+// import { loginWithEmail, loginWithGoogle, loginWithFacebook } from '../../firebase/connections';
 import { IS_AUTHENTICATED } from '../../helpers/constants';
 import logoFull from '../../assets/logos/logo-TAO-brown.svg';
 import iconGoogle from '../../assets/icons/rrss-google.svg';
 import iconFacebook from '../../assets/icons/rrss-facebook.svg';
 import loginConnections from '../../helpers/loginConnections';
+import { Spinner } from 'react-bootstrap';
 import { toast, ToastContainer, Bounce } from 'react-toastify';
 import { useAuth0 } from '@auth0/auth0-react';
 import './style.css';
@@ -19,7 +20,7 @@ const Login = () => {
         password: "",
     });
 
-    // const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
 
     const changeData = (event, data) => {
         if (data) {
@@ -38,6 +39,8 @@ const Login = () => {
     const submitData = async (e) => {
         e.preventDefault();
 
+        setLoading(true);
+
         const { user: email, password } = formData;
 
         const userData = {
@@ -51,19 +54,33 @@ const Login = () => {
                 const { email, name, id, createdAt } = data.user
                 const isAuthenticated = { email, name, id, createdAt };
                 localStorage.setItem(IS_AUTHENTICATED, JSON.stringify(isAuthenticated));
-                toast.success(data.message, {
-                    position: "top-right",
-                    autoClose: 3000,
-                    hideProgressBar: false,
-                    closeOnClick: false,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "colored",
-                    transition: Bounce,
-                });
+
+                setTimeout(() => {
+                    setLoading(false);
+                    window.location.href = "/home"
+                }, 2000);
+
             } else {
-                toast.error('Error!', {
+                setTimeout(() => {
+                    toast.error('Error!', {
+                        position: "top-right",
+                        autoClose: 3000,
+                        hideProgressBar: false,
+                        closeOnClick: false,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "colored",
+                        transition: Bounce,
+                    });
+                    setLoading(false);
+                }, 2000);
+            };
+        } catch (err) {
+            console.log(err.response);
+            const { message } = err.response.data;
+            setTimeout(() => {
+                toast.error(message, {
                     position: "top-right",
                     autoClose: 3000,
                     hideProgressBar: false,
@@ -74,27 +91,9 @@ const Login = () => {
                     theme: "colored",
                     transition: Bounce,
                 });
-            };
-            // setTimeout(() => {
-            //     window.location.href = "/home";
-            // }, 1000);
-        } catch (err) {
-            const { message } = err.response.data;
-            toast.error(message, {
-                position: "top-right",
-                autoClose: 3000,
-                hideProgressBar: false,
-                closeOnClick: false,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "colored",
-                transition: Bounce,
-            });
-            console.error(err);
-            // setTimeout(() => {
-            //     window.location.href = "/home";
-            // }, 1000);
+                setLoading(false);
+                console.error(err);
+            }, 2000);
         };
     };
 
@@ -105,36 +104,14 @@ const Login = () => {
         }, 1000);
     };
 
-    const submitSocialMedia = async (socialMedia) => {
-        try {
-            const { accessToken, displayName, email, uid } = await socialMedia();
+    useEffect(() => {
+        const user = JSON.parse(localStorage.getItem(IS_AUTHENTICATED));
 
-            const dataToStorage = {
-                accessToken,
-                displayName,
-                email,
-                uid
-            };
-
-            localStorage.setItem(IS_AUTHENTICATED, JSON.stringify(dataToStorage));
+        if (user) {
             window.location.href = "/home";
-        } catch (err) {
-            console.error("Error registrando usuario:", err);
         };
-    };
 
-    // useEffect(() => {
-    //     // const user = JSON.parse(localStorage.getItem(IS_AUTHENTICATED));
-
-    //     // if (user) {
-    //     //     window.location.href = "/home";
-    //     // };
-
-    //     setTimeout(() => {
-    //         setLoading(false);
-    //     }, 3000);
-
-    // }, []);
+    }, []);
 
 
     return (
@@ -152,8 +129,8 @@ const Login = () => {
                 theme="colored"
                 transition={Bounce}
             />
-            {/* <form className="form-login" onSubmit={submitData}> */}
-            <form className="form-login" onSubmit={fakeSubmit}>
+            {/* <form className="form-login" onSubmit={fakeSubmit}> */}
+            <form className="form-login" onSubmit={submitData}>
                 <div className="title-login">
                     <img className="login-logo" src={logoFull} alt="LOG" />
                     <div className="text-login-container">
@@ -187,18 +164,31 @@ const Login = () => {
                 </div>
                 <div className="link-container">
                     {/* <Link to="/initQuestions"> */}
-                    <input
-                        type="submit"
-                        value="Iniciar sesión"
-                        className={`btn-green-login${(formData.user === "" ||
-                            formData.password === "" ||
-                            formData.password.length < 7) ? " disabled" : ""}`}
-                        disabled={
-                            formData.user === "" ||
-                            formData.password === "" ||
-                            formData.password.length < 7
-                        }
-                    />
+                    {
+                        loading ?
+                            <button className="btn-green-login">
+                                <Spinner
+                                    as="span"
+                                    animation="border"
+                                    size="sm"
+                                    role="status"
+                                    aria-hidden="true"
+                                />
+                            </button>
+                            :
+                            <input
+                                type="submit"
+                                value="Iniciar sesión"
+                                className={`btn-green-login${(formData.user === "" ||
+                                    formData.password === "" ||
+                                    formData.password.length < 7) ? " disabled" : ""}`}
+                                disabled={
+                                    formData.user === "" ||
+                                    formData.password === "" ||
+                                    formData.password.length < 7
+                                }
+                            />
+                    }
                     {/* </Link> */}
                 </div>
                 <div className="container-social-media">

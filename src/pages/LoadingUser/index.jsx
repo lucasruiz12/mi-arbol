@@ -1,37 +1,100 @@
 import React, { useEffect } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import { useNavigate } from 'react-router-dom';
-import LoadingLogo from '../../components/LoadingLogo';
 import { IS_AUTHENTICATED } from '../../helpers/constants';
+import { logout } from '../../firebase/connections';
+import loginConnections from '../../helpers/loginConnections';
+import { toast, ToastContainer, Bounce } from 'react-toastify';
+import LoadingLogo from '../../components/LoadingLogo';
 
 const LoadingUser = () => {
     const { user, isAuthenticated } = useAuth0();
     const navigate = useNavigate();
 
+    logout
+
+    const makeRegister = async (userData) => {
+        try {
+            const { data } = await loginConnections.loginUser(userData);
+            if (data.success) {
+                const { email, name, id, createdAt } = data.user
+                const isAuthenticated = { email, name, id, createdAt };
+                localStorage.setItem(IS_AUTHENTICATED, JSON.stringify(isAuthenticated));
+                setTimeout(() => {
+                    navigate("/home");
+                }, 2500);
+            } else {
+                toast.error("Error. Intente nuevamente!", {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: false,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                    transition: Bounce,
+                });
+                setTimeout(() => {
+                    logout();
+                }, 2000);
+            };
+        } catch (err) {
+            console.error(err);
+            toast.error("Error. Intente nuevamente!", {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+                transition: Bounce,
+            });
+            setTimeout(() => {
+                logout();
+            }, 2000);
+        };
+    };
+
     useEffect(() => {
         if (isAuthenticated) {
             const { name, sub } = user;
-            if (user.email) {
-                const dataUser = {
-                    name,
-                    email: user.email,
-                    password: "T40s0lu7i0n5-Google"
-                };
-                localStorage.setItem(IS_AUTHENTICATED, JSON.stringify(dataUser));
-            } else {
-                const dataUser = {
-                    name,
-                    email: sub,
-                    password: "T40s0lu7i0n5-Facebook"
-                };
-                localStorage.setItem(IS_AUTHENTICATED, JSON.stringify(dataUser));
+            const dataUser = {
+                name,
+                email: "",
+                password: ""
             };
-            navigate("/home");
+            if (user.email) {
+                dataUser.email = user.email;
+                dataUser.password = "T40s0lu7i0n5-Google";
+            } else {
+                dataUser.email = sub;
+                dataUser.password = "T40s0lu7i0n5-Google";
+            };
+
+            makeRegister(dataUser);
         };
     }, [isAuthenticated, user]);
 
     return (
-        <LoadingLogo />
+        <>
+            <ToastContainer
+                position="top-right"
+                autoClose={3000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick={false}
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="colored"
+                transition={Bounce}
+            />
+            <LoadingLogo />
+        </>
     );
 };
 

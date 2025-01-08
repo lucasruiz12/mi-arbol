@@ -57,20 +57,20 @@ const NavBar = () => {
                     </li>
                 </Link>
                 {/* <Link to="/mySeeds" className={`navbar-container-btn ${window.location.pathname === "/mySeeds" ? "active-btn" : ""}`}> */}
+                <Link to="/mySubscription" className={`navbar-container-btn ${window.location.pathname === "/subscriptionPlans" ? "active-btn" : ""}`}>
+                    {/* <Link to="/home" className={`navbar-container-btn ${window.location.pathname === "/mySubscription" ? "active-btn" : ""}`}> */}
+                    <li className="navbar-item">
+                        <img src={iconSubscription} alt="NOIC" className="navbar-icon" />
+                        <p style={{ color: "white" }}>
+                            Planes de suscripción
+                        </p>
+                    </li>
+                </Link>
                 <Link to="/home" className={`navbar-container-btn ${window.location.pathname === "/mySeeds" ? "active-btn" : ""}`}>
                     <li className="navbar-item">
                         <img src={iconSeeds} alt="NOIC" className="navbar-icon" />
                         <p style={{ color: "white" }}>
                             Mis semillas
-                        </p>
-                    </li>
-                </Link>
-                <Link to="/mySubscription" className={`navbar-container-btn ${window.location.pathname === "/mySubscription" ? "active-btn" : ""}`}>
-                    {/* <Link to="/home" className={`navbar-container-btn ${window.location.pathname === "/mySubscription" ? "active-btn" : ""}`}> */}
-                    <li className="navbar-item">
-                        <img src={iconSubscription} alt="NOIC" className="navbar-icon" />
-                        <p style={{ color: "white" }}>
-                            Mi subscripción
                         </p>
                     </li>
                 </Link>

@@ -6,6 +6,7 @@ import GraphicsNeutralCarbon from '../../components/Graphics/NeutralCarbon';
 import threeIcon from '../../assets/icons/cartoon/three.svg';
 import pizzaIcon from '../../assets/icons/cartoon/pizza-box.svg';
 import './style.css';
+import { videoCover } from '../../helpers/fullVideo';
 
 const NeutralCarbon = () => {
 
@@ -15,6 +16,10 @@ const NeutralCarbon = () => {
 
     return (
         <div className="container-neutral-carbon">
+            {/* <video autoPlay muted loop className="neutral-carbon-video">
+                <source src={window.innerWidth >= 768 ? loginVideo : loginMobileVideo} type="video/mp4" />
+                <source src={window.innerWidth >= 768 ? videoCover : videoCover} type="video/mp4" />
+            </video> */}
             <NavBar />
             <div className="container-neutral-carbon-content">
                 {
@@ -34,7 +39,7 @@ const NeutralCarbon = () => {
                                         <img className="info-pizza-img" src={pizzaIcon} alt="NOIMG" />
                                         <p className="info-pizza-text">$189</p>
                                     </div>
-                                    <div className="info-pizza-item" style={{marginBottom: "4vh"}}>
+                                    <div className="info-pizza-item" style={{ marginBottom: "4vh" }}>
                                         <p className="info-pizza-text"><b>{">"}</b></p>
                                     </div>
                                     <div className="info-pizza-item">

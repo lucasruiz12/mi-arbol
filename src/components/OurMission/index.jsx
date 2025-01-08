@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import missionVideo from '../../assets/videos/landinghome/video-TAO.mp4';
-// import missionVideo from '../../assets/videos/landinghome/video-TAO-c.mp4';
-// import missionVideo from '../../assets/videos/1. hojas.mp4';
+// import missionVideo from '../../assets/videos/landinghome/video-TAO.mp4';
 import missionMobileVideo from '../../assets/videos/landinghome/video-TAO-movil.mp4';
 import logoArbol from '../../assets/logos/logo-TAO-white.svg';
 import { tipsAndRecommendations } from '../../helpers/messagesAndTips';
 import './style.css';
+import { videoCover } from '../../helpers/fullVideo';
 
 const OurMission = ({ setView }) => {
 
@@ -39,10 +38,10 @@ const OurMission = ({ setView }) => {
 
     return (
         <div className="container-mission-view">
-            <video autoPlay muted loop className="mission-video">
+            {/* <video autoPlay muted loop className="mission-video">
                 <source src={window.innerWidth >= 768 ? missionVideo : missionMobileVideo} type="video/mp4" />
-                {/* <source src={missionVideo} type="video/mp4" /> */}
-            </video>
+                <source src={window.innerWidth >= 768 ? videoCover : missionMobileVideo} type="video/mp4" />
+            </video> */}
             <div className="mission-content">
                 <div className="mission-header">
                     <img /*onClick={() => setView(2)}*/ className="mission-logo" src={logoArbol} alt="LOG" />
