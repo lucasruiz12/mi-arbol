@@ -87,7 +87,7 @@ const InitQuestions = () => {
             className="container-init-questions"
             style={{
                 backgroundImage: (loading || loadResults) ? "none" : backgroundLoaded ? `url(${window.innerWidth > 768 ? backgroundImages[currentQuestion - 1] : backgroundImagesMovil[currentQuestion - 1]})` : 'none',
-                backgroundColor: "#C8D390",
+                backgroundColor: loadResults ? "transparent" : "#C8D390",
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 transition: 'background-image 1s ease-in-out',
@@ -116,7 +116,7 @@ const InitQuestions = () => {
                         <div className={`container-answers ${questionsAndAnswers.find(el => el.id === currentQuestion)?.answers.length > 3 ? " many-answers" : ""}`}>
                             <CustomCheckbox data={questionsAndAnswers.find(el => el.id === currentQuestion).answers} setData={setResponsePoints} resetData={responseUser} />
                         </div>
-                        <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "10vh", width: "50vw", marginTop: "5vh" }}>
+                        <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "10vh", width: "50vw" }}>
                             {
                                 currentQuestion < questionsAndAnswers.length ?
                                     <button className={`btn-green${(responsePoints === "") ? " disabled" : ""}`} disabled={responsePoints === ""} onClick={() => nextQuestion()}>Siguiente</button>

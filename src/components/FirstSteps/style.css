@@ -61,18 +61,18 @@
     text-align: justify;
 }
 
-.logo-iso-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: flex-start;
-    margin-left: 5vw;
-    height: 45vh;
+.steps-logos{
+    display: grid;
+    width: 40%;
+    height: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+    gap: 1vh;
 }
 
 .logo-iso {
-    height: 20vh;
-    width: 20vh;
+    height: 12.5vh;
+    width: 12.5vh;
 }
 
 @keyframes slideInSteps {
@@ -190,6 +190,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-around;
+        overflow-y: auto;
     }
 
     .steps-img-container {
@@ -221,9 +222,14 @@
         font-size: large;
     }
 
-    .logo-iso-container {
-        height: auto;
-        margin-top: 3vh;
+    .steps-logos{
+        width: 100%;
+        margin: 2vh 0;
+    }
+    
+    .logo-iso {
+        height: 7.5vh;
+        width: 7.5vh;
     }
 
     .link-btn {

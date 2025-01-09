@@ -5,10 +5,11 @@ import { Link } from 'react-router-dom';
 import stepsMobileVideo from '../../assets/videos/landinghome/video-TAO2-movil.mp4'
 import logoArbol from '../../assets/logos/logo-TAO-white.svg';
 import logoISO from '../../assets/logos/logo-ISO.svg';
+import logoGreenHouse from '../../assets/logos/logo-green-house.svg';
 import CarouselLogo from '../CarouselLogos';
 import { tipsAndRecommendations } from '../../helpers/messagesAndTips';
 import './style.css';
-import { videoCover } from '../../helpers/fullVideo';
+// import { videoCover } from '../../helpers/fullVideo';
 
 const FirstSteps = ({ setView }) => {
 
@@ -42,7 +43,6 @@ const FirstSteps = ({ setView }) => {
             <div className="steps-content">
                 <div className="steps-img-container">
                     <img onClick={() => setView(1)} className="steps-logo" src={logoArbol} alt="LOG" />
-                    <img src={logoISO} alt="NOIMG" className="logo-iso" />
                     {/* <h2 className="steps-title">El primer paso</h2> */}
                 </div>
                 {
@@ -53,13 +53,21 @@ const FirstSteps = ({ setView }) => {
                     <div className="steps-text">
                         <p className="steps-line-text">El primer paso es medir el impacto de tu día a día respondiendo unas simples preguntas que usaremos para determinar tu huella de carbono individual, apegándonos a los factores de emisión del <b>IPCC</b> y el <b>protocolo internacional de GHG.</b></p>
                     </div>
+                    <div className="steps-logos">
+                        <img src={logoISO} alt="NOIMG" className="logo-iso" />
+                        <img src={logoGreenHouse} alt="NOIMG" className="logo-iso" />
+                        <img src={logoISO} alt="NOIMG" className="logo-iso" />
+                        <img src={logoGreenHouse} alt="NOIMG" className="logo-iso" />
+                        <img src={logoISO} alt="NOIMG" className="logo-iso" />
+                        <img src={logoGreenHouse} alt="NOIMG" className="logo-iso" />
+                    </div>
                 </div>
                 <Link className="link-btn" to="/initQuestions">
                     <button className="btn-green">
                         Medir mi huella
                     </button>
                 </Link>
-                <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+                <div style={{ display: "flex", flexDirection: "column", alignItems: "center", marginTop: "5vh" }}>
                     <p className="steps-clients-title">Nuestros clientes</p>
                     <CarouselLogo />
                 </div>
