@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ReactSlider from 'react-slider';
+import { Link } from 'react-router-dom';
+import { IS_AUTHENTICATED } from '../../helpers/constants';
 import './style.css';
 
 const PriceSlider = ({ minPrice, currentPrice, setCurrentPrice, setModalPayment }) => {
@@ -77,7 +79,13 @@ const PriceSlider = ({ minPrice, currentPrice, setCurrentPrice, setModalPayment 
                 </div>
             </div>
             <button className="btn-green" onClick={() => setModalPayment(true)}>Contratar plan</button>
-        </div>
+            {
+                JSON.parse(localStorage.getItem(IS_AUTHENTICATED)).subscription &&
+                <Link className="container-go-subscription" to="/mySubscription">
+                    <button className="btn-green" onClick={() => setModalPayment(true)}>Ver mi suscripción</button>
+                </Link>
+            }
+        </div >
     );
 };
 

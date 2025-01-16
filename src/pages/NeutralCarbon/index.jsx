@@ -27,8 +27,8 @@ const NeutralCarbon = () => {
                         <>
                             <div className="container-info-text">
                                 <p className="text-you-know">¿Sabías qué?</p>
-                                <p className="info-you-know">Sembrar árboles tiene una serie de impactos positivos y beneficiosos para el medio ambiente, la biodiversidad y la salud humana. Los árboles capturan dióxido de carbono (CO2), ayudando a reducir las concentraciones de este gas de efecto invernadero.</p>
                                 <p className="info-you-know">Por menos de lo que te gastas en una pizza grande al mes, puedes neutralizar tu huella de carbono individual.</p>
+                                <p className="info-you-know">Sembrar árboles tiene una serie de impactos positivos y beneficiosos para el medio ambiente, la biodiversidad y la salud humana. Los árboles capturan dióxido de carbono (CO2), ayudando a reducir las concentraciones de este gas de efecto invernadero.</p>
                                 <div className="container-btn-carbono">
                                     <button className="btn-green" onClick={() => setRenderView(2)}>Saber más</button>
                                 </div>

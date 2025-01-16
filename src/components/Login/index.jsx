@@ -51,9 +51,9 @@ const Login = () => {
         try {
             const { data } = await loginConnections.loginUser(userData);
             if (data.success) {
-                const { subscription } = data;
+                const { subscription, allSubscriptions } = data;
                 const { email, name, id, createdAt } = data.user
-                const isAuthenticated = { email, name, id, createdAt, subscription };
+                const isAuthenticated = { email, name, id, createdAt, subscription, allSubscriptions };
                 localStorage.setItem(IS_AUTHENTICATED, JSON.stringify(isAuthenticated));
 
                 setTimeout(() => {

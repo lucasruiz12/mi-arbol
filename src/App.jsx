@@ -9,6 +9,7 @@ import MySubscription from './pages/MySubscription';
 // import MySeeds from './pages/MySeeds';
 import SubscriptionList from './pages/SubscriptionList';
 import SuccessPayment from './pages/SuccessPayment';
+import FailurePayment from './pages/FailurePayment';
 import ViewInProgress from './components/ViewInProgress';
 import Watermark from './components/Watermark';
 import LoadingUser from './pages/LoadingUser';
@@ -36,6 +37,7 @@ function App() {
         {/* <Route path="/mySeeds" element={<MySeeds />} /> */}
         <Route path="/mySeeds" element={<ViewInProgress />} />
         <Route path="/successPayment" element={<SuccessPayment />} />
+        <Route path="/failurePayment" element={<FailurePayment />} />
       </Routes>
       {/* {
         !locationsWithoutWatermark.includes(window.location.pathname) && <Watermark />

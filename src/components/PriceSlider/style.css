@@ -104,8 +104,19 @@
     border: none;
 }
 
+.container-go-subscription{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 2vh;
+}
+
 @media (max-width: 768px) {
     .price-input{
         width: 17.5vh;
+    }
+    .container-go-subscription{
+        display: flex;
     }
 }
