@@ -1,16 +1,11 @@
 import React from 'react';
-import { logout } from '../../firebase/connections';
 import homeVideo from '../../assets/videos/Home.mp4';
+import { useNavigate } from 'react-router-dom';
 import './style.css';
 
 const ViewInProgress = () => {
 
-    const goToInit = () => {
-        logout();
-        setTimeout(() => {
-            window.location.href = "/"
-        }, 500);
-    };
+    const navigate = useNavigate();
 
     return (
         <>
@@ -19,7 +14,7 @@ const ViewInProgress = () => {
             </video>
             <div className="container-progress-view">
                 <p className="progress-line">Estamos trabajando en este proceso</p>
-                <button className="btn-green" onClick={() => goToInit()}>
+                <button className="btn-green" onClick={() => navigate("/home")}>
                     Regresar al inicio
                 </button>
             </div>

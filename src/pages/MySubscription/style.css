@@ -1,3 +1,10 @@
+.container-my-subscription {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
 .container-my-subscription-content {
     display: flex;
     flex-direction: column;
@@ -10,16 +17,74 @@
 .my-subscription-title {
     display: flex;
     justify-content: center;
-    text-align: center;
-    width: 30%;
+    text-align: justify;
+    width: 60%;
+}
+
+.container-actual-plan {
+    display: flex;
+    justify-content: center;
+    width: 60%;
 }
 
 .text-title {
-    font-size: xx-large;
+    font-size: 31px;
+    font-weight: bold;
+    color: white;
+}
+
+.text-message {
+    font-size: x-large;
+    color: white;
 }
 
 .container-all-subscriptions {
     display: flex;
     justify-content: space-evenly;
     width: 75%;
+}
+
+@media (max-width: 768px) {
+    .container-my-subscription {
+        flex-direction: column-reverse;
+    }
+
+    .container-my-subscription-content {
+        flex-direction: column;
+        align-items: flex-start;
+        overflow-y: scroll;
+        padding: 1.5rem;
+        justify-content: space-evenly;
+    }
+
+    .my-subscription-title {
+        width: 100%;
+    }
+
+    .text-title {
+        font-size: 3vh;
+        width: 100%;
+        text-align: justify;
+    }
+
+    .container-all-subscriptions {
+        width: 100%;
+    }
+
+    .text-message {
+        font-size: large;
+        width: 100%;
+        text-align: justify;
+    }
+
+    .container-actual-plan {
+        width: 100%;
+    }
+
+    .container-btn-plan{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
 }

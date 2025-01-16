@@ -106,7 +106,7 @@
     width: 100%;
 }
 
-.container-info-three {
+.container-info-tree {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -115,12 +115,12 @@
     height: 50%;
 }
 
-.three-img {
+.tree-img {
     height: 10vh;
     width: 10vh;
 }
 
-.three-price {
+.tree-price {
     font-size: xx-large;
 }
 

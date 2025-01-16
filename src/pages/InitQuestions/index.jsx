@@ -101,7 +101,7 @@ const InitQuestions = () => {
                 <LoadingLogo />
                 :
                 loadResults ?
-                    <LoadingResult />
+                    <LoadingResult message="Calculando resultados" />
                     :
                     <>
                         <div className="container-question-logo">

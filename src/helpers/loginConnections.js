@@ -7,5 +7,11 @@ export default {
     },
     createUser: (data) => {
         return axios.post(`${URL_BASE}/api/users/create`, data);
-    }
+    },
+    createSubscription: (data) => {
+        return axios.post(`${URL_BASE}/api/stripe/checkout`, data);
+    },
+    verifyPayment: (data) => {
+        return axios.post(`${URL_BASE}/api/stripe/verifyPayment`, data);
+    },
 };

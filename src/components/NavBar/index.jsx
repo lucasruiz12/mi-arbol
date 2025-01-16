@@ -16,24 +16,11 @@ const NavBar = () => {
 
     const { logout } = useAuth0();
 
-    // const [showModal, setShowModal] = useState(false);
-
-    // export const logout = async () => {
-    //     try {
-    //         await signOut(auth);
-    //         localStorage.clear();
-    //         window.location.href = "/";
-    //     } catch (error) {
-    //         console.error('Error al cerrar sesión:', error);
-    //         throw error;
-    //     }
-    // };
-
     const handleLogout = () => {
         localStorage.clear();
         logout();
         window.location.href = "/";
-    }
+    };
 
     return (
         <nav className="nav-container">
@@ -57,7 +44,7 @@ const NavBar = () => {
                     </li>
                 </Link>
                 {/* <Link to="/mySeeds" className={`navbar-container-btn ${window.location.pathname === "/mySeeds" ? "active-btn" : ""}`}> */}
-                <Link to="/mySubscription" className={`navbar-container-btn ${window.location.pathname === "/subscriptionPlans" ? "active-btn" : ""}`}>
+                <Link to="/subscriptionPlans" className={`navbar-container-btn ${window.location.pathname === "/subscriptionPlans" ? "active-btn" : ""}`}>
                     {/* <Link to="/home" className={`navbar-container-btn ${window.location.pathname === "/mySubscription" ? "active-btn" : ""}`}> */}
                     <li className="navbar-item">
                         <img src={iconSubscription} alt="NOIC" className="navbar-icon" />
@@ -66,7 +53,7 @@ const NavBar = () => {
                         </p>
                     </li>
                 </Link>
-                <Link to="/home" className={`navbar-container-btn ${window.location.pathname === "/mySeeds" ? "active-btn" : ""}`}>
+                <Link to="/mySeeds" className={`navbar-container-btn ${window.location.pathname === "/mySeeds" ? "active-btn" : ""}`}>
                     <li className="navbar-item">
                         <img src={iconSeeds} alt="NOIC" className="navbar-icon" />
                         <p style={{ color: "white" }}>

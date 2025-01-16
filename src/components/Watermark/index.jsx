@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import logoTAO from '../../assets/logos/logo-TAO-white.svg'; // Asegúrate de importar tu logo SVG.
+import logoTAO from '../../assets/logos/logo-TAO-white.svg';
+import { IS_AUTHENTICATED } from '../../helpers/constants';
 import './style.css';
 
 const Watermark = ({ currentLocation }) => {
@@ -7,7 +8,10 @@ const Watermark = ({ currentLocation }) => {
     const [showMark, setShowMark] = useState(true);
 
     useEffect(() => {
-        if((currentLocation === "/home" || currentLocation === "/registerForm" || currentLocation === "/loginForm" || currentLocation === "/neutralCarbon") && window.innerWidth < 768){
+
+        const isAuthenticated = JSON.parse(localStorage.getItem(IS_AUTHENTICATED));
+
+        if((isAuthenticated || currentLocation === "/registerForm" || currentLocation === "/loginForm") && window.innerWidth < 768){
             setShowMark(false);
         }
     },[]);

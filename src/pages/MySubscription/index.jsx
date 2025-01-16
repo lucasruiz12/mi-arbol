@@ -1,46 +1,52 @@
 import React, { useEffect, useState } from 'react';
 import NavBar from '../../components/NavBar';
-import { subscriptions } from '../../helpers/subscriptions';
 import SubscriptionCard from '../../components/SubscriptionCard';
-import ModalPayment from '../../components/ModalPayment';
-import LoadingLogo from '../../components/LoadingLogo';
+import { IS_AUTHENTICATED } from '../../helpers/constants';
+import { Link, useNavigate } from 'react-router-dom';
 import './style.css';
 
 const MySubscription = () => {
 
-    const [modalPayment, setModalPayment] = useState(false);
-    const [linkPayment, setLinkPayment] = useState("");
-    const [loading, setLoading] = useState(true);
+    // const [currentSubscription, setCurrentSubscription] = useState({ price: 0, date: "" });
+    const [currentSubscription, setCurrentSubscription] = useState({ price: 0 });
+    const navigate = useNavigate();
 
     useEffect(() => {
-        setTimeout(() => {
-            setLoading(false);
-        }, 3000);
+        const isAuthenticated = JSON.parse(localStorage.getItem(IS_AUTHENTICATED));
+        if (isAuthenticated) {
+            if (isAuthenticated.subscription) {
+                // const { amount, created_at } = isAuthenticated.subscription;
+                // setCurrentSubscription({
+                //     price: parseInt(amount),
+                //     date: created_at,
+                // });
+                const { amount } = isAuthenticated.subscription;
+                setCurrentSubscription({
+                    price: parseInt(amount),
+                });
+            } else {
+                navigate("/home");
+            };
+        };
     }, []);
 
     return (
         <div className="container-my-subscription">
             <NavBar />
-            {
-                loading ?
-                    <LoadingLogo />
-                    :
-                    <div className="container-my-subscription-content">
-                        <div className="my-subscription-title">
-                            <p className="text-title">¡Somos la plataforma que más árboles sembrará por cada peso tuyo!</p>
-                        </div>
-                        <div className="container-all-subscriptions">
-                            {
-                                subscriptions.map((el, idx) => {
-                                    return (
-                                        <SubscriptionCard data={el} idx={idx} key={idx} setModal={setModalPayment} setLinkPayment={setLinkPayment} />
-                                    )
-                                })
-                            }
-                        </div>
-                    </div>
-            }
-            {modalPayment && <ModalPayment showModal={modalPayment} hideModal={() => setModalPayment(false)} linkPayment={linkPayment} />}
+            <div className="container-my-subscription-content">
+                <div className="my-subscription-title">
+                    <p className="text-title">¡Gracias por ser parte de esta comunidad! Con tu aporte has dado el primer paso para ayudar a mejorar el medio ambiente</p>
+                </div>
+                <div className="container-all-subscriptions">
+                    <p className="text-message">Continúa ayudándonos a mitigar tu huella de carbono actualizando tu plan por uno superior.</p>
+                </div>
+                <div className="container-actual-plan">
+                    <SubscriptionCard currentSubscription={currentSubscription} />
+                </div>
+                <Link className="container-btn-plan" to="/subscriptionPlans" >
+                    <button className="btn-green">Mejorar plan</button>
+                </Link>
+            </div>
         </div>
     );
 };

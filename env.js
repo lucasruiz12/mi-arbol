@@ -1,3 +1,4 @@
+export const PUBLIC_KEY = "pk_test_51QCo70GLrG1S8pttGrKz7JIvfTBoXgzNyCPbAciexWCOvjxqGLac1fvzOl3GqwTLST2seUewkyJJe4zmDuBzR6i500m13PEbCD";
 export const SECRET_KEY = "sk_test_51QCo70GLrG1S8pttkQjFcgrZqCro43LuevQcOa1plOYnJIJfzGQ2okQ8sdmjz38yHkYptRlakP1CKs2IwJNn9sCL00r21j44sD";
 
 export const FIREBASE_API_KEY = "AIzaSyByZbc0HTZm1F1JHgpd-t4lckWS9O7p43s";

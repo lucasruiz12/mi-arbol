@@ -4,7 +4,8 @@
     justify-content: center;
     margin: 0;
     font-weight: bold;
-    color: #34C759;
+    font-size: 31px;
+    color: #A4B46A;
 }
 
 .btn-close-modal {
@@ -22,8 +23,47 @@
 
 .container-pay-request {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2vh;
+}
+
+.pay-greetings{
+    font-size: x-large;
+    color: #A4B46A;
+}
+
+.container-video-checkout{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 60%;
+}
+
+.video-checkout{
+    height: 100%;
+    width: 100%;
 }
 
 .container-buttons-confirm {
-    display: flex;
+    margin-top: 2vh;
+}
+
+@media (max-width: 768px) {
+    .modal-payment-title {
+        font-size: larger;
+    }
+    .pay-greetings{
+        font-size: large;
+        color: #A4B46A;
+        text-align: justify;
+    }
+    .container-buttons-confirm {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
 }

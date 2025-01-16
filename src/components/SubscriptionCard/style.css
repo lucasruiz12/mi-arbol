@@ -4,8 +4,9 @@
     justify-content: space-between;
     align-items: center;
     border-radius: 1rem;
-    width: 13vw;
+    width: 50%;
     background-color: white;
+    height: 35vh;
 }
 
 .card-title {
@@ -14,65 +15,61 @@
     border-radius: 1rem 1rem 0 0;
     width: 100%;
     height: 10vh;
+    background-color: #A4B46A;
 }
 
 .title-text {
     margin-top: 1.5vh;
-    font-size: x-large;
+    font-size: 25px;
     font-weight: bold;
     color: white;
 }
 
-.card-img-three {
+.card-img-tree {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 10vh;
     width: 10vh;
     border-radius: 50%;
-    margin-top: -4vh;
+    margin-top: -8.5%;
     background-color: white;
     -webkit-box-shadow: 0px 4px 5px 1px rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 0px 4px 5px 1px rgba(0, 0, 0, 0.2);
     box-shadow: 0px 4px 5px 1px rgba(0, 0, 0, 0.2);
 }
 
+.img-tree{
+    height: 100%;
+    width: 100%;
+    margin-top: 12.5%;
+}
+
 .card-container-price {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 2.5vh;
 }
 
 .card-price {
     font-size: 7vh;
     font-weight: bold;
     margin: 0;
+    color: #A4B46A;
 }
 
 .card-duration {
     width: 100%;
-    text-align: end;
+    text-align: justify;
     margin: -1vh 0 0 0;
 }
 
-.card-includes{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 1vh 0
-}
-
-.includes-items{
-    margin: 1vh
-}
-
-.btn-plan {
-    width: 10vw;
-    height: 5vh;
-    border: none;
-    border-radius: 1rem;
-    color: white;
-    cursor: pointer;
-    margin-bottom: 2vh;
+@media (max-width: 768px) {
+    .card-subscription {
+        width: 100%;
+    }
+    .card-img-tree {
+        margin-top: -12.5%;
+    }
 }

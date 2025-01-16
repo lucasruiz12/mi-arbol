@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import NavBar from '../../components/NavBar';
 // import LoadingLogo from '../../components/LoadingLogo';
 import GraphicsNeutralCarbon from '../../components/Graphics/NeutralCarbon';
-import threeIcon from '../../assets/icons/cartoon/three.svg';
+import treeIcon from '../../assets/icons/cartoon/tree.svg';
 import pizzaIcon from '../../assets/icons/cartoon/pizza-box.svg';
 import './style.css';
-import { videoCover } from '../../helpers/fullVideo';
+// import { videoCover } from '../../helpers/fullVideo';
 
 const NeutralCarbon = () => {
 
@@ -43,7 +43,7 @@ const NeutralCarbon = () => {
                                         <p className="info-pizza-text"><b>{">"}</b></p>
                                     </div>
                                     <div className="info-pizza-item">
-                                        <img className="info-pizza-img" src={threeIcon} alt="NOIMG" />
+                                        <img className="info-pizza-img" src={treeIcon} alt="NOIMG" />
                                         <p className="info-pizza-text">$149</p>
                                     </div>
                                     {/* <p className="pizza-img">Foto de la pizza</p>
@@ -61,7 +61,7 @@ const NeutralCarbon = () => {
                                 <p className="info-you-know">Inscrito podrás conocer la geolocalización de tus árboles y visitarlos siempre que gustes. Tus árboles estarán etiquetados con tus datos y podrás formar parte de las reforestaciones que hagamos.</p>
                                 <p className="info-you-know">Somos la plataforma que más árboles siembra por cada peso que recibimos.</p>
                                 <div className="container-btn-carbono">
-                                    <Link className="container-link-mobile" to="/mySubscription">
+                                    <Link className="container-link-mobile" to="/subscriptionPlans">
                                         <button className="btn-green" onClick={() => setRenderView(2)}>¡Vuélvete carbono neutro!</button>
                                     </Link>
                                 </div>

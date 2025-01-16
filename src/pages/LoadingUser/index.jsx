@@ -11,14 +11,15 @@ const LoadingUser = () => {
     const { user, isAuthenticated } = useAuth0();
     const navigate = useNavigate();
 
-    logout
+    // logout
 
     const makeRegister = async (userData) => {
         try {
             const { data } = await loginConnections.loginUser(userData);
             if (data.success) {
+                const { subscription } = data;
                 const { email, name, id, createdAt } = data.user
-                const isAuthenticated = { email, name, id, createdAt };
+                const isAuthenticated = { email, name, id, createdAt, subscription };
                 localStorage.setItem(IS_AUTHENTICATED, JSON.stringify(isAuthenticated));
                 setTimeout(() => {
                     navigate("/home");
@@ -54,7 +55,7 @@ const LoadingUser = () => {
             });
             setTimeout(() => {
                 logout();
-            }, 2000);
+            }, 20000);
         };
     };
 
@@ -71,7 +72,7 @@ const LoadingUser = () => {
                 dataUser.password = "T40s0lu7i0n5-Google";
             } else {
                 dataUser.email = sub;
-                dataUser.password = "T40s0lu7i0n5-Google";
+                dataUser.password = "T40s0lu7i0n5-Facebook";
             };
 
             makeRegister(dataUser);
