@@ -1,7 +1,7 @@
 {
-    "name": "Mi Árbol PWA",
-    "short_name": "PWA-Arbol",
-    "description": "SPA Mi Árbol en React-Vite PWA",
+    "name": "+ Raíces, - Huella",
+    "short_name": "+ Raíces, - Huella",
+    "description": "PWA de + Raíces, - Huella para mitigar huella de carbono mediante reforestación",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#ffffff",
