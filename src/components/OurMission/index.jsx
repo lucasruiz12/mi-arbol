@@ -53,7 +53,7 @@ const OurMission = ({ setView }) => {
                 <div className="mission-info-container">
                     <div className="mission-text">
                         <p className="mission-line-text">Te ayudamos a calcular tu huella de carbono y el impacto que tienes como persona en tu vida diaria.</p>
-                        <p className="mission-line-text">Entendiendo cuántos gases de efecto invernadero generas, te ayudaremos a ser <b>CARBONO NEUTRO</b> reforestando los árboles necesarios para ello.</p>
+                        <p className="mission-line-text">Entendiendo cuántos gases de efecto invernadero generas, te ayudaremos a ser CARBONO NEUTRO reforestando los árboles necesarios para ello.</p>
                     </div>
                 </div>
                 {/* <button className="btn-green" onClick={() => setView(2)}>

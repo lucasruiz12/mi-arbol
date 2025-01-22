@@ -1,4 +1,6 @@
 export const IS_AUTHENTICATED = "isAuthenticated";
+export const PRICE_TO_PAY = "priceToPay";
+export const CARBON_POINTS = "carbonPoints";
 export const USERS = "users";
 export const SESSION_ID_PAYMENT = "sessionIdPayment";
 export const PAYMENT_DATA = "paymentData";

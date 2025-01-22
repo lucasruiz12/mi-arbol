@@ -8,7 +8,9 @@ import logoISO from '../../assets/logos/logo-ISO.svg';
 import logoGreenHouse from '../../assets/logos/logo-green-house.svg';
 import CarouselLogo from '../CarouselLogos';
 import { tipsAndRecommendations } from '../../helpers/messagesAndTips';
+import backArrow from '../../assets/icons/cartoon/back-arrow.svg';
 import './style.css';
+import BackArrow from '../BackArrow';
 // import { videoCover } from '../../helpers/fullVideo';
 
 const FirstSteps = ({ setView }) => {
@@ -36,14 +38,10 @@ const FirstSteps = ({ setView }) => {
 
     return (
         <div className="container-steps-view">
-            {/* <video autoPlay muted loop className="steps-video">
-                <source src={window.innerWidth >= 768 ? stepsVideo : stepsMobileVideo} type="video/mp4" />
-                <source src={window.innerWidth >= 768 ? videoCover : stepsMobileVideo} type="video/mp4" />
-            </video> */}
+            <BackArrow handleAction={() => setView(1)} />
             <div className="steps-content">
                 <div className="steps-img-container">
-                    <img onClick={() => setView(1)} className="steps-logo" src={logoArbol} alt="LOG" />
-                    {/* <h2 className="steps-title">El primer paso</h2> */}
+                    <img className="steps-logo" src={logoArbol} alt="LOG" />
                 </div>
                 {
                     currentMessage !== "" && showMessage &&
@@ -51,7 +49,7 @@ const FirstSteps = ({ setView }) => {
                 }
                 <div className="steps-info-container">
                     <div className="steps-text">
-                        <p className="steps-line-text">El primer paso es medir el impacto de tu día a día respondiendo unas simples preguntas que usaremos para determinar tu huella de carbono individual, apegándonos a los factores de emisión del <b>IPCC</b> y el <b>protocolo internacional de GHG.</b></p>
+                        <p className="steps-line-text">El primer paso es medir el impacto de tu día a día, respondiendo unas simples preguntas que usaremos para determinar tu huella de carbono individual, apegándonos a los factores de emisión del protocolo internacional GHG.</p>
                     </div>
                     <div className="steps-logos">
                         <img src={logoISO} alt="NOIMG" className="logo-iso" />

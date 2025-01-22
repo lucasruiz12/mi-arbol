@@ -1,7 +1,7 @@
 .watermark {
     position: absolute;
-    top: 90%;
-    left: 92.5%;
+    top: 85%;
+    left: 90%;
     text-align: center;
 }
 
@@ -10,7 +10,7 @@
 }
 
 .watermark img {
-    width: 125px;
+    width: 150px;
     height: auto;
     opacity: 0.2;
 }

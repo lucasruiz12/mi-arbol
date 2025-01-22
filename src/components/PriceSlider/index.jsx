@@ -80,7 +80,7 @@ const PriceSlider = ({ minPrice, currentPrice, setCurrentPrice, setModalPayment 
             </div>
             <button className="btn-green" onClick={() => setModalPayment(true)}>Contratar plan</button>
             {
-                JSON.parse(localStorage.getItem(IS_AUTHENTICATED)).subscription &&
+                JSON.parse(localStorage.getItem(IS_AUTHENTICATED))?.subscription &&
                 <Link className="container-go-subscription" to="/mySubscription">
                     <button className="btn-green" onClick={() => setModalPayment(true)}>Ver mi suscripción</button>
                 </Link>

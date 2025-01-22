@@ -59,6 +59,7 @@
     font-size: 31px;
     color: white;
     text-align: justify;
+    font-weight: bold;
 }
 
 .steps-logos{
@@ -137,6 +138,7 @@
     width: 22.5vw;
     height: 7.5vw;
     font-size: large;
+    font-weight: bold;
     background-color: #4e4e4e7e;
     color: white;
     position: absolute;
@@ -177,7 +179,7 @@
     .steps-tips {
         width: 80vw;
         height: auto;
-        left: 10%;
+        left: 12.5%;
         top: 1%;
         padding: 2rem 1.25rem;
         font-size: small;

@@ -57,7 +57,7 @@
 
 /* Show the box-checkbox when checked */
 .container-checkbox input:checked~.box-checkbox:after {
-    display: block;
+    display: none;
 }
 
 /* Style the box-checkbox/indicator */

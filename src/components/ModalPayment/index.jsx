@@ -1,23 +1,24 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Modal } from 'react-bootstrap';
-import { IS_AUTHENTICATED } from '../../helpers/constants';
+import { /*IS_AUTHENTICATED,*/ PRICE_TO_PAY } from '../../helpers/constants';
 import { videoCover } from '../../helpers/fullVideo';
-import handlePayment from '../../helpers/stripePayments';
+// import handlePayment from '../../helpers/stripePayments';
 import './style.css';
 
 
 const ModalPayment = ({ currentPrice, showModal, hideModal }) => {
 
-    const [currentUserId, setCurrentUserId] = useState("");
-    const [currentEmail, setCurrentEmail] = useState("");
+    // const [currentUserId, setCurrentUserId] = useState("");
+    // const [currentEmail, setCurrentEmail] = useState("");
     const [showButtons, setShowButtons] = useState(false);
 
     useEffect(() => {
-        const sessionUser = JSON.parse(localStorage.getItem(IS_AUTHENTICATED));
-        const idToSet = sessionUser.id;
-        const emailToSet = sessionUser.email;
-        setCurrentUserId(idToSet.toString());
-        setCurrentEmail(emailToSet);
+        // const sessionUser = JSON.parse(localStorage.getItem(IS_AUTHENTICATED));
+        // const idToSet = sessionUser?.id || "";
+        // const emailToSet = sessionUser?.email || "";
+        // setCurrentUserId(idToSet.toString());
+        // setCurrentEmail(emailToSet);
         setTimeout(() => {
             setShowButtons(true);
         }, 5000);
@@ -48,10 +49,10 @@ const ModalPayment = ({ currentPrice, showModal, hideModal }) => {
                     <div className="container-buttons-confirm">
                         {
                             showButtons &&
-                            <>
+                            <Link to="/registerForm" onClick={() => localStorage.setItem(PRICE_TO_PAY, currentPrice)}>
                                 {/* <button className="btn-green" onClick={() => window.location.href = `${linkPayment}?prefilled_email=${currentEmail}`}>Sí</button> */}
-                                <button className="btn-green" onClick={() => handlePayment(currentPrice, currentUserId, currentEmail)}>Continuar con el pago</button>
-                            </>
+                                <button className="btn-green">Continuar</button>
+                            </Link>
                         }
                     </div>
                 </div>

@@ -42,7 +42,7 @@ function App() {
       {/* {
         !locationsWithoutWatermark.includes(window.location.pathname) && <Watermark />
       } */}
-      <Watermark currentLocation={window.location.pathname} />
+      <Watermark />
     </BrowserRouter>
   );
 };

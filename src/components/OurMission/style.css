@@ -11,7 +11,7 @@
     height: 100.1vh;
     object-fit: fill;
     transform: translate(-50%, -50%);
-    filter: contrast(80%);
+    filter: brightness(50%);
     z-index: -1;
 }
 
@@ -41,6 +41,7 @@
     width: 22.5vw;
     height: 7.5vw;
     font-size: large;
+    font-weight: bold;
     background-color: #4e4e4e7e;
     color: white;
     position: absolute;
@@ -140,6 +141,7 @@
     color: white;
     font-size: 31px;
     text-align: justify;
+    font-weight: bold;
 }
 
 @media (max-width: 768px) {

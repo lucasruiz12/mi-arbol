@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactApexChart from 'react-apexcharts';
 
-const GraphicBar = () => {
+const GraphicBar = ({ carbonPoints }) => {
     const data = {
         series: [
             {
@@ -9,7 +9,7 @@ const GraphicBar = () => {
                 data: [
                     {
                         x: 'Su consumo',
-                        y: 9000,
+                        y: parseInt(carbonPoints),
                         goals: [
                             {
                                 name: 'Consumo Ideal',

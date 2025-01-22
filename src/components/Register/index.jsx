@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-// import { signUpWithEmail, signUpWithFacebook, signUpWithGoogle } from '../../firebase/connections';
-import { IS_AUTHENTICATED } from '../../helpers/constants';
-// import LoadingLogo from '../LoadingLogo';
+// import { Link } from 'react-router-dom';
+import { IS_AUTHENTICATED, PRICE_TO_PAY } from '../../helpers/constants';
 import logoArbol from '../../assets/logos/logo-TAO-brown.svg';
 import iconGoogle from '../../assets/icons/rrss-google.svg';
 import iconFacebook from '../../assets/icons/rrss-facebook.svg';
@@ -10,6 +8,7 @@ import loginConnections from '../../helpers/loginConnections';
 import { Spinner } from 'react-bootstrap';
 import { toast, ToastContainer, Bounce } from 'react-toastify';
 import { useAuth0 } from '@auth0/auth0-react';
+import handlePayment from '../../helpers/stripePayments';
 import './style.css';
 
 const Register = () => {
@@ -18,10 +17,6 @@ const Register = () => {
 
     const [formData, setFormData] = useState({
         name: "",
-        // lastname: "",
-        // city: "",
-        // state: "",
-        // phone: "",
         email: "",
         password: "",
         repeatPassword: "",
@@ -61,12 +56,15 @@ const Register = () => {
             if (data.success) {
                 const { email, name, id, createdAt } = data.user
                 const isAuthenticated = { email, name, id, createdAt };
+                const priceToPay = JSON.parse(localStorage.getItem(PRICE_TO_PAY));
+                const userId = id.toString();
                 localStorage.setItem(IS_AUTHENTICATED, JSON.stringify(isAuthenticated));
+                await handlePayment(parseInt(priceToPay), userId, email);
 
-                setTimeout(() => {
-                    setLoading(false);
-                    window.location.href = "/home"
-                }, 2000);
+                // setTimeout(() => {
+                //     setLoading(false);
+                //     window.location.href = "/home"
+                // }, 2000);
             } else {
                 setTimeout(() => {
                     toast.error('Error!', {
@@ -84,7 +82,7 @@ const Register = () => {
                 }, 2000);
             };
         } catch (err) {
-            const { message } = err.response.data;
+            const { message } = err.response?.data;
             setTimeout(() => {
                 toast.error(message, {
                     position: "top-right",
@@ -103,12 +101,12 @@ const Register = () => {
         };
     };
 
-    const fakeSubmit = (e) => {
-        e.preventDefault();
-        setTimeout(() => {
-            window.location.href = "/home";
-        }, 1000);
-    };
+    // const fakeSubmit = (e) => {
+    //     e.preventDefault();
+    //     setTimeout(() => {
+    //         window.location.href = "/home";
+    //     }, 1000);
+    // };
 
     useEffect(() => {
         const user = JSON.parse(localStorage.getItem(IS_AUTHENTICATED));
@@ -219,21 +217,12 @@ const Register = () => {
                                     type="submit"
                                     value="Registrarse"
                                     className={`btn-green-register${(formData.name === "" ||
-                                        formData.lastname === "" ||
-                                        formData.city === "" ||
-                                        formData.state === "" ||
-                                        formData.phone === "" ||
                                         formData.email === "" ||
                                         formData.password === "" ||
                                         formData.repeatPassword === "" ||
                                         formData.password.length < 7 ||
                                         formData.password !== formData.repeatPassword) ? " disabled" : ""}`}
                                     disabled={
-                                        formData.name === "" ||
-                                        formData.lastname === "" ||
-                                        formData.city === "" ||
-                                        formData.state === "" ||
-                                        formData.phone === "" ||
                                         formData.email === "" ||
                                         formData.password === "" ||
                                         formData.repeatPassword === "" ||
@@ -243,11 +232,11 @@ const Register = () => {
                                 />
                         }
                     </div>
-                    <div className="container-social-media">
+                    {/* <div className="container-social-media">
                         <Link to="/loginForm">
                             <span style={{ cursor: "pointer" }}>¿Tienes cuenta? Iniciar sesión</span>
                         </Link>
-                    </div>
+                    </div> */}
                 </div>
             </form>
 

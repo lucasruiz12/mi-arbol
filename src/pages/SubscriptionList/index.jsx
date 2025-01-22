@@ -13,7 +13,7 @@ const SubscriptionList = () => {
 
     useEffect(() => {
 
-        if (JSON.parse(localStorage.getItem(IS_AUTHENTICATED)).subscription) {
+        if (JSON.parse(localStorage.getItem(IS_AUTHENTICATED))?.subscription) {
             const { amount } = JSON.parse(localStorage.getItem(IS_AUTHENTICATED)).subscription;
             setCurrentPrice(parseInt(amount));
             setMinPrice(parseInt(amount));

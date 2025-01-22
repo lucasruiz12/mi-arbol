@@ -3,6 +3,7 @@ import { SESSION_ID_PAYMENT } from './constants';
 import loginConnections from './loginConnections';
 
 const handlePayment = async (amount, userId, email) => {
+    console.log("ENTRA A INTENTAR PAGAR")
     try {
         const response = await loginConnections.createSubscription({ amount, userId, email });
         const { url, id } = response.data; // Obtén la URL de la sesión de Checkout

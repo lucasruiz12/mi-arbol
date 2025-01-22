@@ -4,12 +4,12 @@ import GraphicBar from './GraphicBar';
 import GraphicPie from './GraphicPie';
 import './style.css';
 
-const GraphicsHome = () => {
+const GraphicsHome = ({carbonPoints}) => {
     return (
         <div className="container-graphics-home">
             {/* <h3 className="graphics-comparation">Algunas comparaciones para dimensionar su consumo:</h3> */}
             <GraphicPie />
-            <GraphicBar />
+            <GraphicBar carbonPoints={carbonPoints} />
             <p className="item-home-tofix"></p>
             <div className="container-button-home">
                 <Link className="container-link" to="/neutralCarbon">

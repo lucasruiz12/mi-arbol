@@ -114,6 +114,13 @@
     width: 65%;
 }
 
+.container-question-count{
+    display: flex;
+    justify-content: flex-end;
+    width: 50%;
+    margin-bottom: 5vh;
+}
+
 .question-count{
     font-size: x-large;
     font-weight: bold;
@@ -160,6 +167,11 @@
 
     .question-logo{
         height: 9vh;
+    }
+
+    .container-question-count{
+        justify-content: center;
+        width: 100%;
     }
 
     .question-count{
