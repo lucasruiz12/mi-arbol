@@ -31,9 +31,9 @@ const Home = () => {
     const navigate = useNavigate();
 
     const getImpact = (points) => {
-        if (points > 7000) {
+        if (points > 5000) {
             return "ALTO"
-        } else if (points > 5000) {
+        } else if (points > 2000) {
             return "MEDIO"
         } else {
             return "BAJO";
@@ -59,8 +59,8 @@ const Home = () => {
     const formattedNumber = (number) => {
 
         const formatNumber = new Intl.NumberFormat('es-ES', {
-            minimumFractionDigits: 1,  // Mínimo 1 decimal
-            maximumFractionDigits: 1,  // Máximo 1 decimal
+            minimumFractionDigits: 1,
+            maximumFractionDigits: 1,
         }).format(number);
 
         return formatNumber;

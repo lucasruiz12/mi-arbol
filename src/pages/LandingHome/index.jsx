@@ -40,7 +40,7 @@ const LandingHome = () => {
                     <LoadingLogo />
                 ) : view === 1 ? (
                     <div className="slide-container slide-out">
-                        <OurMission setView={handleChangeView} />
+                        <OurMission view={view} setView={handleChangeView} />
                     </div>
                 ) : (
                     <div className={`slide-container slide-in`}>

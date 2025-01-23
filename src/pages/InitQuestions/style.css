@@ -76,6 +76,7 @@
     display: flex;
     width: 100%;
     padding-left: 5vw;
+    padding-top: 5vh;
 }
 
 .question-logo {

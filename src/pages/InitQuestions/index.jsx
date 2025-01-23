@@ -66,7 +66,7 @@ const InitQuestions = () => {
                         newResponseUser.push(el);
                     };
                 });
-                console.log("RESPUESTAS FINALES", newResponseUser);
+                // console.log("RESPUESTAS FINALES", newResponseUser);
                 const totalPoints = newResponseUser.filter(el => el.countPoints).reduce((acc, el) => acc + el.points, 0) * allMultiply;
                 localStorage.setItem(CARBON_POINTS, JSON.stringify(totalPoints));
             }, 1000);
@@ -116,7 +116,7 @@ const InitQuestions = () => {
             }}
         >
             {
-                currentQuestion > 1 &&
+                currentQuestion > 1 && !loadResults &&
                 <BackArrow handleAction={() => setCurrentQuestion(currentQuestion - 1)} />
             }
             {
@@ -134,7 +134,7 @@ const InitQuestions = () => {
                             <img className="question-logo" src={logoArbol} alt="LOG" />
                         </div>
                         <div className="container-question-count">
-                            <p className="question-count">Pregunta {currentQuestion}/18</p>
+                            <p className="question-count">Pregunta {currentQuestion}/16</p>
                         </div>
                         <div className="container-question">
                             <div className="container-text">

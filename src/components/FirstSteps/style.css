@@ -18,12 +18,12 @@
 .steps-content {
     height: 100%;
     width: 100%;
-    padding: 5%;
+    padding: 7%;
 }
 
 .steps-img-container {
     display: flex;
-    width: 60%;
+    width: 100%;
     justify-content: space-between;
     align-items: center;
 }
@@ -64,11 +64,11 @@
 
 .steps-logos{
     display: grid;
-    width: 40%;
+    width: 30%;
     height: 100%;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     place-items: center;
-    gap: 1vh;
+    gap: 0.5vh;
 }
 
 .logo-iso {
@@ -142,8 +142,8 @@
     background-color: #4e4e4e7e;
     color: white;
     position: absolute;
-    left: 75%;
-    top: 5%;
+    left: 70%;
+    top: 33%;
     border-radius: 1rem;
     animation: grow 8s ease-out;
 }

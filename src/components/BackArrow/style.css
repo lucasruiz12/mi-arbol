@@ -3,6 +3,8 @@
     position: absolute;
     top: 5%;
     left: 5%;
+    height: 5vh;
+    width: 5vh;
 }
 
 .img-arrow-back {
