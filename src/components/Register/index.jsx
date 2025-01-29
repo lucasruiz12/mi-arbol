@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 // import { Link } from 'react-router-dom';
-import { IS_AUTHENTICATED, PRICE_TO_PAY } from '../../helpers/constants';
+import { CARBON_POINTS, IS_AUTHENTICATED, PRICE_TO_PAY } from '../../helpers/constants';
 import logoArbol from '../../assets/logos/logo-TAO-brown.svg';
 import iconGoogle from '../../assets/icons/rrss-google.svg';
 import iconFacebook from '../../assets/icons/rrss-facebook.svg';
@@ -44,11 +44,13 @@ const Register = () => {
         setLoading(true);
 
         const { name, email, password } = formData;
+        const carbonPoints = JSON.parse(localStorage.getItem(CARBON_POINTS));
 
         const userData = {
             name,
             email,
-            password
+            password,
+            carbonPoints
         };
 
         try {
@@ -59,7 +61,7 @@ const Register = () => {
                 const priceToPay = JSON.parse(localStorage.getItem(PRICE_TO_PAY));
                 const userId = id.toString();
                 localStorage.setItem(IS_AUTHENTICATED, JSON.stringify(isAuthenticated));
-                await handlePayment(parseInt(priceToPay), userId, email);
+                await handlePayment(parseInt(priceToPay), userId, email, carbonPoints);
 
                 // setTimeout(() => {
                 //     setLoading(false);
@@ -193,10 +195,10 @@ const Register = () => {
                         <span className="span-social-media">Registrarse con: </span>
                         <div className="container-btn-social-media">
                             <img src={iconGoogle} alt='GS' className="btn-social-media"
-                                onClick={() => loginWithRedirect({ redirectUri: window.location.origin + "/loadingUser" })}
+                                onClick={() => loginWithRedirect({ redirectUri: window.location.origin + "/loadingUser", scope: "openid profile email", prompt: "consent" })}
                             />
                             <img src={iconFacebook} alt='FB' className="btn-social-media"
-                                onClick={() => loginWithRedirect({ redirectUri: window.location.origin + "/loadingUser" })}
+                                onClick={() => loginWithRedirect({ redirectUri: window.location.origin + "/loadingUser", scope: "openid profile email", prompt: "consent" })}
                             />
                         </div>
                     </div>

@@ -8,6 +8,9 @@ export default {
     createUser: (data) => {
         return axios.post(`${URL_BASE}/api/users/create`, data);
     },
+    updateUser: (data) => {
+        return axios.post(`${URL_BASE}/api/users/update`, data);
+    },
     createSubscription: (data) => {
         return axios.post(`${URL_BASE}/api/stripe/checkout`, data);
     },

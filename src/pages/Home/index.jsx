@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import NavBar from '../../components/NavBar';
-import { CARBON_POINTS } from '../../helpers/constants';
+import { CARBON_POINTS, IS_AUTHENTICATED } from '../../helpers/constants';
 import { Link, useNavigate } from 'react-router-dom';
 // import { IS_AUTHENTICATED } from '../../helpers/constants';
 // import LoadingLogo from '../../components/LoadingLogo';
@@ -31,9 +31,9 @@ const Home = () => {
     const navigate = useNavigate();
 
     const getImpact = (points) => {
-        if (points > 5000) {
+        if (points > 10) {
             return "ALTO"
-        } else if (points > 2000) {
+        } else if (points > 8) {
             return "MEDIO"
         } else {
             return "BAJO";
@@ -59,8 +59,8 @@ const Home = () => {
     const formattedNumber = (number) => {
 
         const formatNumber = new Intl.NumberFormat('es-ES', {
-            minimumFractionDigits: 1,
-            maximumFractionDigits: 1,
+            minimumFractionDigits: 3,
+            maximumFractionDigits: 3,
         }).format(number);
 
         return formatNumber;
@@ -68,10 +68,12 @@ const Home = () => {
 
     useEffect(() => {
         if (JSON.parse(localStorage.getItem(CARBON_POINTS))) {
-            setCarbonPoints(JSON.parse(localStorage.getItem(CARBON_POINTS)) * 1000);
+            setCarbonPoints(JSON.parse(localStorage.getItem(CARBON_POINTS)));
+            setFullLoading(true);
+        } else if (JSON.parse(localStorage.getItem(IS_AUTHENTICATED))?.carbonPoints) {
+            setCarbonPoints(JSON.parse(localStorage.getItem(IS_AUTHENTICATED)).carbonPoints);
             setFullLoading(true);
         } else {
-            console.log(navigate);
             navigate("/initQuestions");
         };
     }, []);
@@ -85,7 +87,7 @@ const Home = () => {
                     <div className="home-user-data">
                         <div>
                             <h5 className="home-text">Tu huella de carbono es: </h5>
-                            <h1 className="home-number">{formattedNumber(carbonPoints)}kg CO2</h1>
+                            <h1 className="home-number">{formattedNumber(carbonPoints)} tons CO2</h1>
                         </div>
                         <div className="home-result">
                             <div className="home-container-img">
@@ -108,7 +110,7 @@ const Home = () => {
                             </div>
                             <div className="home-result-text">
                                 <h2 className="home-status">Eres <b>IMPACTO {getImpact(carbonPoints)}</b></h2>
-                                <h5 className="home-invitation">Plantando <b>{Math.ceil(carbonPoints / 15)} árboles</b> en un año puede disminuir su impacto. Modifique sus hábitos y empiece a disminuir su impacto</h5>
+                                <h5 className="home-invitation">Plantando <b>{Math.ceil(carbonPoints / 0.015)} árboles</b> en un año puede disminuir su impacto. Modifique sus hábitos y empiece a disminuir su impacto</h5>
                                 <Link className="btn-container-link" to="/neutralCarbon">
                                     <button className="btn-green">Mitigar tu huella</button>
                                 </Link>
@@ -116,7 +118,7 @@ const Home = () => {
                         </div>
                     </div>
                     <div className="home-user-graphics">
-                        <GraphicsHome carbonPoints={carbonPoints} />
+                        <GraphicsHome carbonPoints={parseFloat(carbonPoints).toFixed(3)} />
                     </div>
                 </div>
             </div>

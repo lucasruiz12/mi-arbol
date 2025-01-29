@@ -78,7 +78,7 @@ const PriceSlider = ({ minPrice, currentPrice, setCurrentPrice, setModalPayment 
                     <p className="tree-line">{priceToValue.tons} tons de CO2</p>
                 </div>
             </div>
-            <button className="btn-green" onClick={() => setModalPayment(true)}>Contratar plan</button>
+            <button className={`btn-green${(JSON.parse(localStorage.getItem(IS_AUTHENTICATED))?.subscription?.amount === currentPrice) ? " disabled" : ""}`} disabled={JSON.parse(localStorage.getItem(IS_AUTHENTICATED))?.subscription?.amount === currentPrice} onClick={() => setModalPayment(true)}>Contratar plan</button>
             {
                 JSON.parse(localStorage.getItem(IS_AUTHENTICATED))?.subscription &&
                 <Link className="container-go-subscription" to="/mySubscription">

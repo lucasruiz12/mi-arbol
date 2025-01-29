@@ -7,8 +7,8 @@ import LoadingLogo from '../../components/LoadingLogo';
 import CustomCheckbox from '../../components/CustomCheckbox';
 import { backgroundImages, backgroundImagesMovil } from '../../helpers/backgroundImages';
 import LoadingResult from '../../components/LoadingResult';
-import './style.css';
 import BackArrow from '../../components/BackArrow';
+import './style.css';
 
 const InitQuestions = () => {
     const [responseUser, setResponseUser] = useState([
@@ -84,11 +84,11 @@ const InitQuestions = () => {
     };
 
     useEffect(() => {
-        const user = JSON.parse(localStorage.getItem(IS_AUTHENTICATED));
+        // const user = JSON.parse(localStorage.getItem(IS_AUTHENTICATED));
 
-        if (user) {
-            window.location.href = "/home";
-        };
+        // if (user) {
+        //     window.location.href = "/home";
+        // };
 
         setTimeout(() => {
             setLoading(false);
