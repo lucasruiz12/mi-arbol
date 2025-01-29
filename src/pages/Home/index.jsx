@@ -58,8 +58,7 @@ const Home = () => {
     useEffect(() => {
         if (JSON.parse(localStorage.getItem(CARBON_POINTS))) {
             setCarbonPoints(JSON.parse(localStorage.getItem(CARBON_POINTS)));
-        } else 
-        if (JSON.parse(localStorage.getItem(IS_AUTHENTICATED))?.carbonPoints) {
+        } else if (JSON.parse(localStorage.getItem(IS_AUTHENTICATED))?.carbonPoints) {
             setCarbonPoints(JSON.parse(localStorage.getItem(IS_AUTHENTICATED)).carbonPoints);
         } else {
             navigate("/initQuestions");

@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
-// import { useNavigate } from 'react-router-dom';
 import { CARBON_POINTS, IS_AUTHENTICATED, PRICE_TO_PAY } from '../../helpers/constants';
 import loginConnections from '../../helpers/loginConnections';
 import { toast, ToastContainer, Bounce } from 'react-toastify';
