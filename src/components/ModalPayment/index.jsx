@@ -1,24 +1,40 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Modal } from 'react-bootstrap';
-import { /*IS_AUTHENTICATED,*/ PRICE_TO_PAY } from '../../helpers/constants';
+import { IS_AUTHENTICATED, PRICE_TO_PAY } from '../../helpers/constants';
 import { videoCover } from '../../helpers/fullVideo';
-// import handlePayment from '../../helpers/stripePayments';
+import handlePayment from '../../helpers/stripePayments';
 import './style.css';
 
 
 const ModalPayment = ({ currentPrice, showModal, hideModal }) => {
 
-    // const [currentUserId, setCurrentUserId] = useState("");
-    // const [currentEmail, setCurrentEmail] = useState("");
     const [showButtons, setShowButtons] = useState(false);
+    const [sessionUser, setSessionUser] = useState("");
+
+    const updatePayment = async (amount, userId, email) => {
+        try{
+            await handlePayment(amount, userId, email);
+        } catch(err){
+            toast.error('Ocurrió un error en el pago! Reintentar.', {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+                transition: Bounce,
+            });
+        }
+    }
 
     useEffect(() => {
-        // const sessionUser = JSON.parse(localStorage.getItem(IS_AUTHENTICATED));
-        // const idToSet = sessionUser?.id || "";
-        // const emailToSet = sessionUser?.email || "";
-        // setCurrentUserId(idToSet.toString());
-        // setCurrentEmail(emailToSet);
+        const user = JSON.parse(localStorage.getItem(IS_AUTHENTICATED));
+        if (user) {
+            setSessionUser(user);
+        };
         setTimeout(() => {
             setShowButtons(true);
         }, 5000);
@@ -49,10 +65,14 @@ const ModalPayment = ({ currentPrice, showModal, hideModal }) => {
                     <div className="container-buttons-confirm">
                         {
                             showButtons &&
-                            <Link to="/registerForm" onClick={() => localStorage.setItem(PRICE_TO_PAY, currentPrice)}>
-                                {/* <button className="btn-green" onClick={() => window.location.href = `${linkPayment}?prefilled_email=${currentEmail}`}>Sí</button> */}
-                                <button className="btn-green">Continuar</button>
-                            </Link>
+                            (sessionUser ?
+                                <button className="btn-green" onClick={() => updatePayment(currentPrice, sessionUser.id.toString(), sessionUser.email)}>Continuar</button>
+                                :
+                                <Link to="/registerForm" onClick={() => localStorage.setItem(PRICE_TO_PAY, currentPrice)}>
+                                    {/* <button className="btn-green" onClick={() => window.location.href = `${linkPayment}?prefilled_email=${currentEmail}`}>Sí</button> */}
+                                    <button className="btn-green">Continuar</button>
+                                </Link>
+                            )
                         }
                     </div>
                 </div>

@@ -1,17 +1,15 @@
 import React, { useEffect } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
-import { useNavigate } from 'react-router-dom';
-import { IS_AUTHENTICATED } from '../../helpers/constants';
+// import { useNavigate } from 'react-router-dom';
+import { CARBON_POINTS, IS_AUTHENTICATED, PRICE_TO_PAY } from '../../helpers/constants';
 import { logout } from '../../firebase/connections';
 import loginConnections from '../../helpers/loginConnections';
 import { toast, ToastContainer, Bounce } from 'react-toastify';
 import LoadingLogo from '../../components/LoadingLogo';
+import handlePayment from '../../helpers/stripePayments';
 
 const LoadingUser = () => {
     const { user, isAuthenticated } = useAuth0();
-    const navigate = useNavigate();
-
-    // logout
 
     const makeRegister = async (userData) => {
         try {
@@ -20,12 +18,15 @@ const LoadingUser = () => {
                 const { subscription } = data;
                 const { email, name, id, createdAt } = data.user
                 const isAuthenticated = { email, name, id, createdAt, subscription };
+                const priceToPay = JSON.parse(localStorage.getItem(PRICE_TO_PAY));
+                const userId = id.toString();
                 localStorage.setItem(IS_AUTHENTICATED, JSON.stringify(isAuthenticated));
-                setTimeout(() => {
-                    navigate("/home");
-                }, 2500);
+                await handlePayment(parseInt(priceToPay), userId, email);
+                // setTimeout(() => {
+                //     navigate("/home");
+                // }, 2500);
             } else {
-                toast.error("Error. Intente nuevamente!", {
+                toast.error("Error. Intente nuevamente", {
                     position: "top-right",
                     autoClose: 3000,
                     hideProgressBar: false,
@@ -55,17 +56,19 @@ const LoadingUser = () => {
             });
             setTimeout(() => {
                 logout();
-            }, 20000);
+            }, 2000);
         };
     };
 
     useEffect(() => {
         if (isAuthenticated) {
             const { name, sub } = user;
+            const carbonPoints = parseFloat(JSON.parse(localStorage.getItem(CARBON_POINTS)));
             const dataUser = {
                 name,
                 email: "",
-                password: ""
+                password: "",
+                carbonPoints
             };
             if (user.email) {
                 dataUser.email = user.email;
