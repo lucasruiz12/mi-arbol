@@ -12,6 +12,7 @@
     align-items: center;
     height: 100%;
     width: 100%;
+    animation: showContent 1s;
 }
 
 .subscription-text-container{

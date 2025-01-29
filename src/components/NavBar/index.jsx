@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-// import { logout } from '../../firebase/connections';
 import logoArbol from '../../assets/logos/logo-TAO-white.svg';
 import iconTrace from '../../assets/icons/navbar/icon-trace.svg';
 import iconNeutral from '../../assets/icons/navbar/icon-neutral.svg';

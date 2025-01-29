@@ -1,7 +1,7 @@
 import Stripe from 'stripe';
-import { SECRET_KEY } from '../../env';
 
-const stripe = new Stripe(SECRET_KEY);
+const { VITE_SECRET_KEY } = import.meta.env;
+const stripe = new Stripe(VITE_SECRET_KEY);
 
 export const getAllSubscriptions = async () => {
     try {

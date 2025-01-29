@@ -4,6 +4,8 @@ import { Auth0Provider } from '@auth0/auth0-react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 
+const { VITE_AUTH0_CLIENT_ID, VITE_AUTH0_DOMAIN } = import.meta.env;
+
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
         navigator.serviceWorker.register('/sw.js').then(
@@ -19,8 +21,8 @@ if ('serviceWorker' in navigator) {
 
 createRoot(document.getElementById('root')).render(
     <Auth0Provider
-        domain="dev-ngx3zag6uurz6v6i.us.auth0.com"
-        clientId="t4EFBtPdAIYKzSQVPsZMVzV1RduKn5KV"
+        domain={VITE_AUTH0_DOMAIN}
+        clientId={VITE_AUTH0_CLIENT_ID}
         authorizationParams={{
             redirect_uri: window.location.origin
         }}

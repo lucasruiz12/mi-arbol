@@ -55,7 +55,7 @@ const NeutralCarbon = () => {
                             </div>
                         </>
                         :
-                        <>
+                        <div className="carbon-pizza-content">
                             <div className="container-info-text">
                                 <p className="text-you-know">¿Cómo impacta tu inversión?</p>
                                 <p className="info-you-know">Inscrito podrás conocer la geolocalización de tus árboles y visitarlos siempre que gustes. Tus árboles estarán etiquetados con tus datos y podrás formar parte de las reforestaciones que hagamos.</p>
@@ -71,7 +71,7 @@ const NeutralCarbon = () => {
                                 {/* <p className="pizza-price">Foto de la pizza</p>
                                 <p className="pizza-img">Toca la pizza para ver el impacto de tu inversión</p> */}
                             </div>
-                        </>
+                        </div>
                 }
             </div>
         </div>

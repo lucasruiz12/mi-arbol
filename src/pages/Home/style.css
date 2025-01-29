@@ -10,7 +10,7 @@
     background-position: center;
 }
 
-.home-video{
+.home-video {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -25,6 +25,7 @@
 .container-home-content {
     flex-grow: 1;
     overflow-y: auto;
+    animation: showContent 1s;
 }
 
 .home-info {
@@ -66,7 +67,7 @@
     align-items: center;
 }
 
-.home-container-img{
+.home-container-img {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -74,29 +75,29 @@
     width: 100%;
 }
 
-.home-container-examples{
+.home-container-examples {
     display: flex;
     width: 100%;
     justify-content: space-around;
 }
 
-.home-example{
+.home-example {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 1vh 0;
 }
 
-.example-img{
+.example-img {
     height: 12.5vh;
     width: 12.5vh;
 }
 
-.example-text{
+.example-text {
     color: white;
 }
 
-.result-img{
+.result-img {
     height: 30vh;
     width: 30vh;
 }
@@ -214,6 +215,7 @@
         justify-content: center;
         width: 100%;
     }
+
     .formula-img {
         height: 1vh;
     }
