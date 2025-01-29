@@ -12,6 +12,7 @@
     width: 100%;
     justify-content: space-evenly;
     align-items: center;
+    animation: showContent 1s;
 }
 
 .my-subscription-title {

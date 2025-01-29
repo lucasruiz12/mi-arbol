@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-// import { loginWithEmail, loginWithGoogle, loginWithFacebook } from '../../firebase/connections';
 import { IS_AUTHENTICATED } from '../../helpers/constants';
 import logoFull from '../../assets/logos/logo-TAO-brown.svg';
 import iconGoogle from '../../assets/icons/rrss-google.svg';
@@ -52,8 +51,8 @@ const Login = () => {
             const { data } = await loginConnections.loginUser(userData);
             if (data.success) {
                 const { subscription, allSubscriptions } = data;
-                const { email, name, id, createdAt } = data.user
-                const isAuthenticated = { email, name, id, createdAt, subscription, allSubscriptions };
+                const { email, name, id, createdAt, carbonPoints } = data.user
+                const isAuthenticated = { email, name, id, createdAt, subscription, allSubscriptions, carbonPoints };
                 localStorage.setItem(IS_AUTHENTICATED, JSON.stringify(isAuthenticated));
 
                 setTimeout(() => {
@@ -96,13 +95,6 @@ const Login = () => {
                 console.error(err);
             }, 2000);
         };
-    };
-
-    const fakeSubmit = (e) => {
-        e.preventDefault();
-        setTimeout(() => {
-            window.location.href = "/home";
-        }, 1000);
     };
 
     useEffect(() => {

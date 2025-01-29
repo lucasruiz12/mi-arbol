@@ -1,4 +1,3 @@
-// import { PUBLIC_KEY } from '../../env';
 import { SESSION_ID_PAYMENT } from './constants';
 import loginConnections from './loginConnections';
 

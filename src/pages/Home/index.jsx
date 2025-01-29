@@ -16,18 +16,7 @@ import './style.css';
 
 const Home = () => {
 
-    // const [loading, setLoading] = useState(true);
-    // const user = JSON.parse(localStorage.getItem(IS_AUTHENTICATED)).displayName;
-
-    // useEffect(() => {
-    //     setTimeout(() => {
-    //         setLoading(false);
-    //     }, 3000);
-    // }, []);
-
     const [carbonPoints, setCarbonPoints] = useState(0);
-    const [fullLoading, setFullLoading] = useState(false);
-
     const navigate = useNavigate();
 
     const getImpact = (points) => {
@@ -69,17 +58,15 @@ const Home = () => {
     useEffect(() => {
         if (JSON.parse(localStorage.getItem(CARBON_POINTS))) {
             setCarbonPoints(JSON.parse(localStorage.getItem(CARBON_POINTS)));
-            setFullLoading(true);
-        } else if (JSON.parse(localStorage.getItem(IS_AUTHENTICATED))?.carbonPoints) {
+        } else 
+        if (JSON.parse(localStorage.getItem(IS_AUTHENTICATED))?.carbonPoints) {
             setCarbonPoints(JSON.parse(localStorage.getItem(IS_AUTHENTICATED)).carbonPoints);
-            setFullLoading(true);
         } else {
             navigate("/initQuestions");
         };
     }, []);
 
     return (
-        fullLoading &&
         <div className={`container-home`}>
             <NavBar />
             <div className="container-home-content">
@@ -91,22 +78,7 @@ const Home = () => {
                         </div>
                         <div className="home-result">
                             <div className="home-container-img">
-                                {/* <div className="home-container-examples">
-                                    <div className="home-example">
-                                        <img className="example-img" src={gifLow} alt="NOIM" />
-                                        <p className="example-text">Impacto bajo</p>
-                                    </div>
-                                    <div className="home-example">
-                                        <img className="example-img" src={gifMedium} alt="NOIM" />
-                                        <p className="example-text">Impacto medio</p>
-                                    </div>
-                                    <div className="home-example">
-                                        <img className="example-img" src={gifHigh} alt="NOIM" />
-                                        <p className="example-text">Impacto alto</p>
-                                    </div>
-                                </div> */}
                                 <img className="result-img" src={getAgent()} alt="NOIM" />
-
                             </div>
                             <div className="home-result-text">
                                 <h2 className="home-status">Eres <b>IMPACTO {getImpact(carbonPoints)}</b></h2>

@@ -13,7 +13,7 @@ const GraphicBar = ({ carbonPoints }) => {
                         goals: [
                             {
                                 name: 'Consumo Ideal',
-                                value: 2,
+                                value: 2.125,
                                 strokeWidth: 5,
                                 strokeDashArray: 5,
                                 strokeColor: '#FF4560',
@@ -22,11 +22,11 @@ const GraphicBar = ({ carbonPoints }) => {
                     },
                     {
                         x: 'Promedio Mundial',
-                        y: 3.8,
+                        y: 3.875,
                         goals: [
                             {
                                 name: 'Consumo Ideal',
-                                value: 2,
+                                value: 2.125,
                                 strokeWidth: 5,
                                 strokeDashArray: 5,
                                 strokeColor: '#FF4560',

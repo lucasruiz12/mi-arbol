@@ -2,14 +2,15 @@ import React, { useEffect } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 // import { useNavigate } from 'react-router-dom';
 import { CARBON_POINTS, IS_AUTHENTICATED, PRICE_TO_PAY } from '../../helpers/constants';
-import { logout } from '../../firebase/connections';
 import loginConnections from '../../helpers/loginConnections';
 import { toast, ToastContainer, Bounce } from 'react-toastify';
 import LoadingLogo from '../../components/LoadingLogo';
 import handlePayment from '../../helpers/stripePayments';
+import { useNavigate } from 'react-router-dom';
 
 const LoadingUser = () => {
-    const { user, isAuthenticated } = useAuth0();
+    const { user, isAuthenticated, logout } = useAuth0();
+    const navigate = useNavigate();
 
     const makeRegister = async (userData) => {
         try {
@@ -21,12 +22,17 @@ const LoadingUser = () => {
                 const priceToPay = JSON.parse(localStorage.getItem(PRICE_TO_PAY));
                 const userId = id.toString();
                 localStorage.setItem(IS_AUTHENTICATED, JSON.stringify(isAuthenticated));
-                await handlePayment(parseInt(priceToPay), userId, email);
-                // setTimeout(() => {
-                //     navigate("/home");
-                // }, 2500);
+                if (priceToPay) {
+                    await handlePayment(parseInt(priceToPay), userId, email);
+                } else {
+                    isAuthenticated.carbonPoints = data.user.carbonPoints;
+                    localStorage.setItem(IS_AUTHENTICATED, JSON.stringify(isAuthenticated));
+                    setTimeout(() => {
+                        navigate("/home");
+                    }, 1000);
+                };
             } else {
-                toast.error("Error. Intente nuevamente", {
+                toast.error("Error. Intente nuevamente!", {
                     position: "top-right",
                     autoClose: 3000,
                     hideProgressBar: false,
@@ -68,6 +74,7 @@ const LoadingUser = () => {
                 name,
                 email: "",
                 password: "",
+                sub,
                 carbonPoints
             };
             if (user.email) {

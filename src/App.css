@@ -31,7 +31,7 @@ body {
   cursor: pointer;
 }
 
-.btn-green.disabled{
+.btn-green.disabled {
   background-color: #6C757D;
   cursor: no-drop
 }
@@ -40,7 +40,7 @@ body {
   background-color: #C0D860;
 }
 
-.btn-green.disabled:hover{
+.btn-green.disabled:hover {
   background-color: #6C757D;
 }
 
@@ -66,7 +66,17 @@ body {
   }
 }
 
-.app-video{
+@keyframes showContent {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.app-video {
   position: absolute;
   top: 50%;
   left: 50%;
