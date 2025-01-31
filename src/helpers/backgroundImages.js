@@ -5,7 +5,6 @@ import image4 from '../assets/images/questions/P4_cliente.jpg';
 import image5 from '../assets/images/questions/P5_cliente.jpg';
 import image6 from '../assets/images/questions/P6_cliente.jpg';
 import image7 from '../assets/images/questions/P7_cliente.jpg';
-import image8 from '../assets/images/questions/P8_cliente.jpg';
 import image9 from '../assets/images/questions/P9_cliente.jpg';
 import image10 from '../assets/images/questions/P10_cliente.jpg';
 import image11 from '../assets/images/questions/P11_cliente.jpg';
@@ -20,7 +19,6 @@ import movil4 from '../assets/images/questions/P4_movil.jpg';
 import movil5 from '../assets/images/questions/P5_movil.jpg';
 import movil6 from '../assets/images/questions/P6_movil.jpg';
 import movil7 from '../assets/images/questions/P7_movil.jpg';
-import movil8 from '../assets/images/questions/P8_movil.jpg';
 import movil9 from '../assets/images/questions/P9_movil.jpg';
 import movil10 from '../assets/images/questions/P10_movil.jpg';
 import movil11 from '../assets/images/questions/P11_movil.jpg';
@@ -34,7 +32,6 @@ export const backgroundImages = [
     image1,
     image2,
     image5,
-    image5,
     image6,
     image3,
     image13,
@@ -44,7 +41,6 @@ export const backgroundImages = [
     image4,
     image9,
     image10,
-    image8,
     image12,
     image13,
     image11,
@@ -55,7 +51,6 @@ export const backgroundImagesMovil = [
     movil1,
     movil2,
     movil5,
-    movil5,
     movil6,
     movil3,
     movil13,
@@ -65,29 +60,7 @@ export const backgroundImagesMovil = [
     movil4,
     movil9,
     movil10,
-    movil8,
     movil12,
     movil13,
     movil11,
 ];
-
-// export const backgroundImagesMovil = [
-//     image1,
-//     image1,
-//     movil2,
-//     image5,
-//     image5,
-//     movil6,
-//     image3,
-//     movil13,
-//     image7,
-//     movil4,
-//     image14,
-//     movil4,
-//     image9,
-//     movil10,
-//     image8,
-//     movil12,
-//     image13,
-//     movil11,
-// ];
