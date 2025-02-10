@@ -1,4 +1,7 @@
+import { useEffect } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { messaging } from "./helpers/firebaseConfig";
+import { onMessage } from "firebase/messaging";
 import LandingHome from './pages/LandingHome';
 import InitQuestions from './pages/InitQuestions';
 import RegisterForm from './pages/RegisterForm';
@@ -18,6 +21,21 @@ import { videoCover, videoCoverMovil } from './helpers/fullVideo';
 import './App.css';
 
 function App() {
+
+  useEffect(() => {
+    const unsubscribe = onMessage(messaging, (payload) => {
+      console.log("Notificación en primer plano recibida:", payload);
+      if(payload?.notification){
+        new Notification(payload.notification.title, {
+          body: payload.notification.body,
+          icon: payload.notification.icon || "/favicon-192x192.png",
+        });
+      };
+    });
+
+    return () => unsubscribe();
+  }, []);
+
   return (
     <BrowserRouter>
       <video autoPlay muted loop className="app-video">
@@ -39,9 +57,6 @@ function App() {
         <Route path="/successPayment" element={<SuccessPayment />} />
         <Route path="/failurePayment" element={<FailurePayment />} />
       </Routes>
-      {/* {
-        !locationsWithoutWatermark.includes(window.location.pathname) && <Watermark />
-      } */}
       <Watermark />
     </BrowserRouter>
   );

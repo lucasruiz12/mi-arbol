@@ -1,5 +1,5 @@
 import React from 'react';
-import homeVideo from '../../assets/videos/Home.mp4';
+import homeVideo from '../../assets/videos/video-view-in-progress.mp4';
 import { useNavigate } from 'react-router-dom';
 import './style.css';
 

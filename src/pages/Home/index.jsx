@@ -73,17 +73,17 @@ const Home = () => {
                     <div className="home-user-data">
                         <div>
                             <h5 className="home-text">Tu huella de carbono es: </h5>
-                            <h1 className="home-number">{formattedNumber(carbonPoints)} tons CO2</h1>
+                            <h1 className="home-number">{formattedNumber(carbonPoints)} Tons CO2 Eq.</h1>
+                            <h2 className="home-invitation">¡Mitiga tu huella al 100% sembrando <b>{Math.ceil(carbonPoints / 0.015)} árboles</b>!</h2>
                         </div>
                         <div className="home-result">
                             <div className="home-container-img">
                                 <img className="result-img" src={getAgent()} alt="NOIM" />
                             </div>
                             <div className="home-result-text">
-                                <h2 className="home-status">Eres <b>IMPACTO {getImpact(carbonPoints)}</b></h2>
-                                <h5 className="home-invitation">Plantando <b>{Math.ceil(carbonPoints / 0.015)} árboles</b> en un año puede disminuir su impacto. Modifique sus hábitos y empiece a disminuir su impacto</h5>
+                                <h2 className="home-status">Tienes un <b>IMPACTO {getImpact(carbonPoints)}</b></h2>
                                 <Link className="btn-container-link" to="/neutralCarbon">
-                                    <button className="btn-green">Mitigar tu huella</button>
+                                    <button className="btn-green">¡Mitigar mi huella!</button>
                                 </Link>
                             </div>
                         </div>

@@ -1,7 +1,7 @@
-.container-arrow-back {
+.container-arrow-page {
     display: flex;
     position: absolute;
-    top: 80%;
+    top: 90%;
     left: 3%;
     height: 5vh;
     width: 5vh;

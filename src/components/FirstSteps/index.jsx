@@ -7,6 +7,7 @@ import logoGreenHouse from '../../assets/logos/logo-green-house.svg';
 import CarouselLogo from '../CarouselLogos';
 import { tipsAndRecommendations } from '../../helpers/messagesAndTips';
 import BackArrow from '../BackArrow';
+// import { showPushNotification } from '../../helpers/pushNotification';
 import './style.css';
 
 const FirstSteps = ({ setView }) => {
@@ -50,9 +51,13 @@ const FirstSteps = ({ setView }) => {
                 }
                 <div className="steps-info-container">
                     <div className="steps-text">
-                        <p className="steps-line-text">El primer paso es medir el impacto de tu día a día, respondiendo unas simples preguntas que usaremos para determinar tu huella de carbono individual, apegándonos a los factores de emisión del protocolo internacional GHG.</p>
+                        <p className="steps-line-text">El primer paso que debes dar es medir los gases de efecto invernadero que generas en tu vida diaria.</p>
+                        <p className="steps-line-text">Contestando unas preguntas muy sencillas y apegándonos a los factores de emisión del <i>Protocolo Internacional GHG</i>, podemos determinar un cálculo preciso de cuanto debemos mitigar para ser carbon neutro.</p>
                     </div>
                 </div>
+                {/* <button className="btn-green" onClick={() => showPushNotification()}>
+                    Test push notification
+                </button> */}
                 <Link className="link-btn" to="/initQuestions">
                     <button className="btn-green">
                         Medir mi huella

@@ -41,6 +41,37 @@
     height: 100%;
 }
 
+@keyframes growText {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+  
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+.you-know-tips{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    padding: 2rem;
+    width: 40vw;
+    height: 5vw;
+    font-size: large;
+    font-weight: bold;
+    background-color: #4e4e4e7e;
+    color: white;
+    position: absolute;
+    left: 33%;
+    top: 2%;
+    border-radius: 1rem;
+    animation: growText 4s ease-out;
+}
+
 .text-you-know {
     font-size: 5vh;
     font-weight: bold;
@@ -161,8 +192,16 @@
         width: 100% !important;
     }
 
+    .carbon-pizza-content{
+        flex-direction: column;
+    }
+
     .container-info-text {
         width: 100%;
+    }
+
+    .you-know-tips{
+        display: none;
     }
 
     .text-you-know {

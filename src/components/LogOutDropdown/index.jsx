@@ -14,7 +14,11 @@ const LogOutDropdown = ({ openModal }) => {
             </Dropdown.Toggle>
             <Dropdown.Menu>
                 {
-                    JSON.parse(localStorage.getItem(IS_AUTHENTICATED))?.subscription && <Dropdown.Item style={{ color: "#604848", fontFamily: "Open Sans, serif !important" }} onClick={() => navigate("/mySubscription")}>Ver mi subscripción</Dropdown.Item>
+                    JSON.parse(localStorage.getItem(IS_AUTHENTICATED))?.subscription && 
+                    <>
+                    <Dropdown.Item style={{ color: "#604848", fontFamily: "Open Sans, serif !important" }} onClick={() => navigate("/mySeeds")}>Mis semillas</Dropdown.Item>
+                    <Dropdown.Item style={{ color: "#604848", fontFamily: "Open Sans, serif !important" }} onClick={() => navigate("/mySubscription")}>Ver mi subscripción</Dropdown.Item>
+                    </>
                 }
                 <Dropdown.Item style={{ color: "#604848", fontFamily: "Open Sans, serif !important" }} onClick={() => openModal()}>Cerrar sesión</Dropdown.Item>
             </Dropdown.Menu>

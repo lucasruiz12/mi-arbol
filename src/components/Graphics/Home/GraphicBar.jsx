@@ -10,28 +10,28 @@ const GraphicBar = ({ carbonPoints }) => {
                     {
                         x: 'Su consumo',
                         y: carbonPoints,
-                        goals: [
-                            {
-                                name: 'Consumo Ideal',
-                                value: 2.125,
-                                strokeWidth: 5,
-                                strokeDashArray: 5,
-                                strokeColor: '#FF4560',
-                            },
-                        ],
+                        // goals: [
+                        //     {
+                        //         name: 'Consumo Ideal',
+                        //         value: 2.125,
+                        //         strokeWidth: 5,
+                        //         strokeDashArray: 5,
+                        //         strokeColor: '#FF4560',
+                        //     },
+                        // ],
                     },
                     {
-                        x: 'Promedio Mundial',
+                        x: 'Persona promedio',
                         y: 3.875,
-                        goals: [
-                            {
-                                name: 'Consumo Ideal',
-                                value: 2.125,
-                                strokeWidth: 5,
-                                strokeDashArray: 5,
-                                strokeColor: '#FF4560',
-                            },
-                        ],
+                        // goals: [
+                        //     {
+                        //         name: 'Consumo Ideal',
+                        //         value: 2.125,
+                        //         strokeWidth: 5,
+                        //         strokeDashArray: 5,
+                        //         strokeColor: '#FF4560',
+                        //     },
+                        // ],
                     },
                 ],
             },
@@ -79,7 +79,7 @@ const GraphicBar = ({ carbonPoints }) => {
                 show: true,
                 showForSingleSeries: true,
                 position: 'top',
-                customLegendItems: ['Consumo medido', 'Consumo Ideal'],
+                customLegendItems: ['Consumo medido (Tons CO2 Eq.)'],
                 markers: {
                     fillColors: ['#A4B46A', '#FF4560'],
                 },

@@ -1,6 +1,7 @@
 import { createRoot } from 'react-dom/client';
-import App from './App.jsx';
 import { Auth0Provider } from '@auth0/auth0-react';
+import { requestPermission } from './helpers/firebaseConfig.js';
+import App from './App.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 
@@ -11,6 +12,7 @@ if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('/sw.js').then(
             (registration) => {
                 console.log('Service Worker registrado con éxito:', registration);
+                requestPermission();
             },
             (error) => {
                 console.log('Fallo en el registro del Service Worker:', error);

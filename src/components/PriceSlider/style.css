@@ -61,7 +61,7 @@
 
 .tree-line {
     color: white;
-    font-size: x-large;
+    font-size: xx-large;
 }
 
 .price-symbol {
@@ -82,7 +82,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 14vh;
+    width: 17vh;
     height: 10vh;
     background-color: transparent;
     border: none !important;

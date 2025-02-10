@@ -27,7 +27,7 @@ const PriceSlider = ({ minPrice, currentPrice, setCurrentPrice, setModalPayment 
         let value = parseInt(event.target.value, 10);
 
         if (!isNaN(value)) {
-            value = Math.min(Math.max(value, 0), 2000);
+            value = Math.min(Math.max(value, 0), 3000);
             setCurrentPrice(value);
             newPriceToValue(value);
         } else if (event.target.value === "") {
@@ -53,8 +53,8 @@ const PriceSlider = ({ minPrice, currentPrice, setCurrentPrice, setModalPayment 
                 thumbClassName="thumb"
                 trackClassName="track"
                 min={minPrice}
-                max={2000}
-                step={50}
+                max={3000}
+                step={1}
                 value={currentPrice}
                 onChange={handleSliderChange}
             />
@@ -69,20 +69,19 @@ const PriceSlider = ({ minPrice, currentPrice, setCurrentPrice, setModalPayment 
                         onChange={handleInputChange}
                         onBlur={handleInputBlur}
                         min={150}
-                        max={2000}
-                        step={50}
+                        max={3000}
+                        step={1}
                     />
                 </div>
                 <div className="container-tree-text">
                     <p className="tree-line">{priceToValue.trees} {currentPrice === 150 ? "árbol" : "árboles"} por mes</p>
-                    <p className="tree-line">{priceToValue.tons} tons de CO2</p>
                 </div>
             </div>
-            <button className={`btn-green${(JSON.parse(localStorage.getItem(IS_AUTHENTICATED))?.subscription?.amount === currentPrice) ? " disabled" : ""}`} disabled={JSON.parse(localStorage.getItem(IS_AUTHENTICATED))?.subscription?.amount === currentPrice} onClick={() => setModalPayment(true)}>Contratar plan</button>
+            <button className={`btn-green${(JSON.parse(localStorage.getItem(IS_AUTHENTICATED))?.subscription?.amount === currentPrice) ? " disabled" : ""}`} disabled={JSON.parse(localStorage.getItem(IS_AUTHENTICATED))?.subscription?.amount === currentPrice} onClick={() => setModalPayment(true)}>Sembrar mis raíces</button>
             {
                 JSON.parse(localStorage.getItem(IS_AUTHENTICATED))?.subscription &&
                 <Link className="container-go-subscription" to="/mySubscription">
-                    <button className="btn-green" onClick={() => setModalPayment(true)}>Ver mi suscripción</button>
+                    <button className="btn-green" onClick={() => setModalPayment(true)}>Sembrar mis raíces</button>
                 </Link>
             }
         </div >

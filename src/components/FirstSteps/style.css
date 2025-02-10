@@ -36,8 +36,8 @@
 
 .steps-logo {
     height: 12vh;
-    /* width: 12vh; */
     cursor: pointer;
+    margin: -10rem 0 0 -5rem
 }
 
 .steps-info-container {
@@ -53,6 +53,7 @@
     align-items: flex-start;
     width: 60%;
     height: 35vh;
+    margin: -2rem 0 2rem 0;
 }
 
 .steps-line-text {
@@ -170,6 +171,7 @@
     
     .steps-logo {
         width: 15vh;
+        margin: 0
     }
 
     .logo-iso {
@@ -217,11 +219,13 @@
         height: auto;
         padding: 0.5rem 1rem;
         border-radius: 1rem;
+        margin: 0;
     }
 
     .steps-line-text {
         color: white;
-        font-size: large;
+        font-size: smaller;
+        margin-bottom: 1rem;
     }
 
     .steps-logos{
@@ -244,5 +248,7 @@
         width: 90% !important;
         align-self: center !important;
         font-size: larger !important;
+        height: auto !important;
+        padding: 1rem !important;
     }
 }

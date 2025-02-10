@@ -29,7 +29,7 @@
 
 .mission-logo {
     height: 12vh;
-    /* width: 12vh; */
+    margin: -5rem 0 0 -2rem;
 }
 
 .mission-tips {
@@ -182,6 +182,10 @@
         width: 90% !important;
         align-self: center;
         font-size: larger !important;
+    }
+
+    .mission-logo{
+        margin: 0;
     }
 
     .mission-tips {

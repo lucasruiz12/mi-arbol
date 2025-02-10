@@ -65,7 +65,7 @@ export const questionsAndAnswers = [
     },
     {
         id: 8,
-        question: "Si pudieras sumar todos los vuelos que tomas al año, ¿cuántas horas de viaje suman aproximadamente?",
+        question: "Si pudieras sumar todos los vuelos que tomas al año, ¿Cuántas horas de viaje suman aproximadamente?",
         answers: [
             { name: "Menos de 7 hrs", points: 0.4 },
             { name: "Entre 8 y 18 hrs", points: 1.4 },
@@ -99,6 +99,7 @@ export const questionsAndAnswers = [
         id: 11,
         question: "¿Cuántos kilómetros de carretera manejas al mes en promedio? (en idas y vueltas)",
         answers: [
+            { name: "No viajo en carretera normalmente", points: 0 },
             { name: "Menos de 250 km", points: 0.7 },
             { name: "Entre 250 y 600 km", points: 0.21 },
             { name: "Más de 600 km", points: 0.42 },
@@ -134,7 +135,7 @@ export const questionsAndAnswers = [
     },
     {
         id: 15,
-        question: "¿Qué tanto usas plásticos de un solo uso?",
+        question: "¿Con qué frecuencia utilizas plásticos de un solo uso?",
         answers: [
             { name: "Diario", points: 0.75 },
             { name: "Una vez a la semana", points: 0.15 },

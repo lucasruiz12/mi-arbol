@@ -63,8 +63,8 @@ const OurMission = ({ setView }) => {
                 </div>
                 <div className="mission-info-container">
                     <div className="mission-text">
-                        <p className="mission-line-text">En Más Raíces, Menos Huella te ayudamos a calcular tu huella de carbono para entender el impacto que tienes en tu vida diaria.</p>
-                        <p className="mission-line-text">Entendiendo cuántos gases de efecto invernadero generas, te ayudaremos a ser CARBONO NEUTRO reforestando los árboles necesarios para ello.</p>
+                        <p className="mission-line-text">En “Más Raíces, Menos Huella” te ayudamos a calcular tus emisiones diarias para entender el impacto que tienes como persona.</p>
+                        <p className="mission-line-text">Al entender cuanto CO2 generas, te ayudaremos a reforestar los suficientes árboles para mitigar tu huella de carbono.</p>
                     </div>
                 </div>
                 {/* <button className="btn-green" onClick={() => setView(2)}>

@@ -5,6 +5,8 @@ import NavBar from '../../components/NavBar';
 import GraphicsNeutralCarbon from '../../components/Graphics/NeutralCarbon';
 import treeIcon from '../../assets/icons/cartoon/tree.svg';
 import pizzaIcon from '../../assets/icons/cartoon/pizza-box.svg';
+import BackPages from '../../components/BackPages';
+import BackArrow from '../../components/BackArrow';
 import './style.css';
 // import { videoCover } from '../../helpers/fullVideo';
 
@@ -27,10 +29,11 @@ const NeutralCarbon = () => {
                         <>
                             <div className="container-info-text">
                                 <p className="text-you-know">¿Sabías qué?</p>
-                                <p className="info-you-know">Por menos de lo que te gastas en una pizza grande al mes, puedes neutralizar tu huella de carbono individual.</p>
-                                <p className="info-you-know">Sembrar árboles tiene una serie de impactos positivos y beneficiosos para el medio ambiente, la biodiversidad y la salud humana. Los árboles capturan dióxido de carbono (CO2), ayudando a reducir las concentraciones de este gas de efecto invernadero.</p>
+                                <p className="info-you-know">Por menos de lo que gastas en una pizza al mes, puedes neutralizar tu huella de carbono como persona.</p>
+                                <p className="info-you-know">¡Unete a nuestra comunidad con una pequeña suscripción para ser carbon neutro!</p>
+                                <p className="info-you-know">Te invitaremos a todas nuestras reforestaciones y te daremos la geolocalización de los árboles etiquetados con tu nombre, para que los visites el día que quieras!</p>
                                 <div className="container-btn-carbono">
-                                    <button className="btn-green" onClick={() => setRenderView(2)}>Saber más</button>
+                                    <button className="btn-green" onClick={() => setRenderView(2)}>¿Cómo se invierte mi suscripción?</button>
                                 </div>
                             </div>
                             <div className="container-all-info">
@@ -50,16 +53,19 @@ const NeutralCarbon = () => {
                                 <p className="pizza-price">$189</p> */}
                                 </div>
                                 <div className="contianer-btn-carbono-mobile">
-                                    <button className="btn-green" onClick={() => setRenderView(2)}>Saber más</button>
+                                    <button className="btn-green" onClick={() => setRenderView(2)}>¿Cómo se invierte mi suscripción?</button>
                                 </div>
                             </div>
+                            <BackPages goToPage="/home" />
                         </>
                         :
                         <div className="carbon-pizza-content">
                             <div className="container-info-text">
+                                <p className="you-know-tips">¡Somos la plataforma que más arboles sembrará con cada peso tuyo!</p>
                                 <p className="text-you-know">¿Cómo impacta tu inversión?</p>
-                                <p className="info-you-know">Inscrito podrás conocer la geolocalización de tus árboles y visitarlos siempre que gustes. Tus árboles estarán etiquetados con tus datos y podrás formar parte de las reforestaciones que hagamos.</p>
-                                <p className="info-you-know">Somos la plataforma que más árboles siembra por cada peso que recibimos.</p>
+                                <p className="info-you-know">Con tu inversión llevamos a cabo <b>reforestaciones masivas</b>, con esta acción logramos capturar carbono de la atmósfera, dar <b>trabajo a comunidades</b> y proteger ecosistemas que producen el oxígeno que respiramos. </p>
+                                <p className="info-you-know">Tus árboles tendrán un <b>identificador personalizado y geolocalizado</b>, para que puedas visitar tus raíces siempre que quieras.</p>
+                                <p className="info-you-know">¡Al ser miembro también <b>podrás asistir a nuestras reforestaciones</b> masivas!</p>
                                 <div className="container-btn-carbono">
                                     <Link className="container-link-mobile" to="/subscriptionPlans">
                                         <button className="btn-green" onClick={() => setRenderView(2)}>¡Vuélvete carbono neutro!</button>
@@ -71,6 +77,7 @@ const NeutralCarbon = () => {
                                 {/* <p className="pizza-price">Foto de la pizza</p>
                                 <p className="pizza-img">Toca la pizza para ver el impacto de tu inversión</p> */}
                             </div>
+                            <BackArrow handleAction={() => setRenderView(1)} customMargin="90%" />
                         </div>
                 }
             </div>
