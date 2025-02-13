@@ -68,7 +68,6 @@ const GraphicPie = ({ carbonPoints, categoryPoints }) => {
                 text: {
                   fill: 'white', // Establece el color de las etiquetas en blanco
                   fontSize: 20,
-                  // display: isResponsive ? 'none' : 'block', // Oculta los labels en responsive
                 },
               },
             }}
