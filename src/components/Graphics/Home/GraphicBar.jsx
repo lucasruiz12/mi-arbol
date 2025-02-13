@@ -5,7 +5,7 @@ const GraphicBar = ({ carbonPoints }) => {
     const data = {
         series: [
             {
-                name: 'Consumo medido',
+                name: 'Consumo',
                 data: [
                     {
                         x: 'Su consumo',
@@ -79,7 +79,7 @@ const GraphicBar = ({ carbonPoints }) => {
                 show: true,
                 showForSingleSeries: true,
                 position: 'top',
-                customLegendItems: ['Consumo medido (Tons CO2 Eq.)'],
+                customLegendItems: ['Consumo'],
                 markers: {
                     fillColors: ['#A4B46A', '#FF4560'],
                 },
