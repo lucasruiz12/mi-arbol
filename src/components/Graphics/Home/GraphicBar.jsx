@@ -119,7 +119,7 @@ const GraphicBar = ({ carbonPoints }) => {
     };
 
     return (
-        <div className="graphics-background">
+        <div className="graphics-background-home">
             <ReactApexChart options={data.options} series={data.series} type="bar" width={500} height={250} />
         </div>
     );

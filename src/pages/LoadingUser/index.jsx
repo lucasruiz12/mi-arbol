@@ -25,6 +25,7 @@ const LoadingUser = () => {
                     await handlePayment(parseInt(priceToPay), userId, email);
                 } else {
                     isAuthenticated.carbonPoints = data.user.carbonPoints;
+                    isAuthenticated.categoryPoints = data.user.categoryPoints;
                     localStorage.setItem(IS_AUTHENTICATED, JSON.stringify(isAuthenticated));
                     setTimeout(() => {
                         navigate("/home");

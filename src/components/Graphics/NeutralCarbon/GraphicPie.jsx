@@ -1,134 +1,138 @@
-import React, { useState } from 'react';
-import ReactApexChart from 'react-apexcharts';
-import './style.css';
+import React, { useState, useEffect } from 'react';
+import { ResponsivePie } from '@nivo/pie';
+
+// Hook para obtener las dimensiones de la ventana
+const useWindowDimensions = () => {
+    const [windowDimensions, setWindowDimensions] = useState({
+        width: window.innerWidth,
+        height: window.innerHeight,
+    });
+
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowDimensions({
+                width: window.innerWidth,
+                height: window.innerHeight,
+            });
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    return windowDimensions;
+};
 
 const GraphicPie = () => {
 
-    const [tooltip, setTooltip] = useState({ visible: false, text: '', position: { x: 0, y: 0 } });
+    const [selectedValue, setSelectedValue] = useState("");
 
-    const categoriesLabel = [
-        "Comunicación y expansión",
-        "Ingeniería forestal",
-        "Pago justo a la comunidad",
-        "Cuidando raíces",
-        "Planta de pino a reforestar",
-        "Coordinación de plataforma y reforestaciones",
-        "Programación web y mantenimiento de comunidad",
+    const { width } = useWindowDimensions(); // Obtiene el ancho de la ventana
+
+    const data = [
+        { id: 'Comunicación y expansión', label: 'Importante para que llegues a conocer de nosotros y juntos mitiguemos CO2e', value: 8, color: '#A4B46A' },
+        { id: 'Ingeniería forestal', label: 'Una parte va destinada a biólogos, agrónomos e ingenieros forestales que validan nuestras superficies', value: 15, color: '#C8D390' },
+        { id: 'Programación web y mantenimiento de comunidad', label: 'Ayudamos a mantener la comunidad en servicio con actualizaciones manejando licencias y operaciones web', value: 6, color: '#F4D06F' },
+        { id: 'Cuidando raíces', label: 'Cuidamos que tus raíces lleguen alto, vigilándolas los primeros 3 años después de ser plantadas', value: 10, color: '#B4B886' },
+        { id: 'Planta de pino a reforestar', label: 'Plantamos plantillas de invernadero garantizando la calidad de cada raíz', value: 27, color: '#D6CBB2' },
+        { id: 'Coordinación de plataforma y reforestaciones', label: 'Pago transmitido al equipo responsable de preparar las actividades y dar servicio a la plataforma', value: 8, color: '#8BB174' },
+        { id: 'Pago justo a la comunidad', label: 'Remuneramos a las personas que hacen que suceda la magia de cada raíz plantada', value: 26, color: '#C0D860' },
     ];
 
-    const data = {
-        series: [8, 15, 26, 10, 27, 8, 6],
-        options: {
-            chart: {
-                width: 450,
-                type: 'pie',
-                events: {
-                    dataPointSelection: (event, chartContext, config) => {
-                        const index = config.dataPointIndex;
-
-                        if (index !== -1) {
-                            const selectedElement = document.querySelector(
-                                `.apexcharts-pie-series:nth-child(${index + 1}) path`
-                            );
-                            const allElements = document.querySelectorAll('.apexcharts-pie-series path');
-
-                            // Resetear estilos previos
-                            allElements.forEach((el) => (el.style.filter = 'none'));
-
-                            // Aplicar efecto de "hover" al elemento seleccionado
-                            if (selectedElement) {
-                                selectedElement.style.filter = 'brightness(1.2)';
-                            }
-
-                            // Mostrar tooltip con el label
-                            setTooltip({
-                                visible: true,
-                                text: categoriesLabel[index],
-                                position: { x: event.clientX, y: event.clientY },
-                            });
-                        }
-                    },
-                },
-            },
-            labels: [
-                "Importante para que llegues a conocer de nosotros y juntos mitiguemos CO2e",
-                "Una parte va destinada a biólogos, agrónomos e ingenieros forestales que validan nuestras superficies",
-                "Remuneramos a las personas que hacen que suceda la magia de cada raíz plantada",
-                "Cuidamos que tus raíces lleguen alto, vigilándolas los primeros 3 años después de ser plantadas",
-                "Plantamos plantillas de invernadero garantizando la calidad de cada raíz",
-                "Pago transmitido al equipo responsable de preparar las actividades y dar servicio a la plataforma",
-                "Ayudamos a mantener la comunidad en servicio con actualizaciones manejando licencias y operaciones web",
-            ],
-            colors: ["#A4B46A", "#C8D390", "#C0D860", "#B4B886", "#D6CBB2", "#8BB174", "#F4D06F"],
-            legend: {
-                show: false,
-            },
-            responsive: [
-                {
-                    breakpoint: 768,
-                    options: {
-                        chart: {
-                            width: 300,
-                        },
-                        legend: {
-                            show: false,
-                        },
-                    },
-                },
-            ],
-        },
-    };
+    // Determina si el gráfico está en una pantalla pequeña (responsive)
+    const isResponsive = width < 768;
 
     return (
-        <div className="graphics-background pie-chart">
-            <div style={{ display: "flex", justifyContent: "center" }}>
-                <ReactApexChart
-                    options={data.options}
-                    series={data.series}
-                    type="pie"
-                    width={450}
+        <div className="graphics-background-carbon pie-chart">
+            <div style={{ height: isResponsive ? "20rem" : "100%", width: "100%" }}>
+                <ResponsivePie
+                    data={data}
+                    margin={{ top: isResponsive ? 10 : 40, right: isResponsive ? 10 : 80, bottom: isResponsive ? 10 : 80, left: isResponsive ? 10 : 80 }}
+                    innerRadius={0} // Hace que el gráfico sea más pequeño
+                    padAngle={0.7}
+                    cornerRadius={7}
+                    activeOuterRadiusOffset={5}
+                    borderWidth={1}
+                    borderColor={{ from: 'color', modifiers: [['darker', 0.2]] }}
+                    colorBy="id"
+                    colors={data.map((d) => d.color)} // Aquí aplicamos los colores personalizados
+                    arcLabel={(d) => `${d.value}%`} // Formatear los valores como porcentaje
+                    isInteractive={true} // Mantiene la interactividad para el tooltip
+                    theme={{
+                        tooltip: {
+                            container: {
+                                background: '#333',
+                                color: 'white',
+                            },
+                        },
+                        labels: {
+                            text: {
+                                fill: 'white', // Establece el color de las etiquetas en blanco
+                                fontSize: isResponsive ? 15 : 18,
+                                // display: isResponsive ? 'none' : 'block', // Oculta los labels en responsive
+                            },
+                        },
+                    }}
+                    onClick={(data) => setSelectedValue(data)}
+                    // enableArcLabels={!isResponsive} // No mostrar los labels de los segmentos en pantallas pequeñas
+                    enableArcLinkLabels={!isResponsive} // No mostrar las líneas de conexión en pantallas pequeñas
+                    tooltipFormat={isResponsive ? null : undefined} // Deshabilitar tooltips en responsive si no es clickeado
+                    startAngle={90}
+                    endAngle={450}
+                    tooltip={({ datum }) => (
+                        <div
+                            style={{
+                                background: '#333',
+                                color: 'white',
+                                padding: '6px 10px',
+                                borderRadius: '5px',
+                                display: 'flex',
+                                alignItems: 'center',
+                                maxWidth: '40vw', // Máximo 80% del ancho de la pantalla
+                                whiteSpace: 'normal', // Permite saltos de línea
+                                wordWrap: 'break-word', // Asegura que el texto no cause desbordamiento
+                                overflow: 'hidden', // Evita que se expanda demasiado
+                            }}
+                        >
+                            <div
+                                style={{
+                                    width: 12,
+                                    height: 12,
+                                    backgroundColor: datum.color,
+                                    marginRight: 8,
+                                    borderRadius: 3,
+                                }}
+                            />
+                            {isResponsive ? datum.id : datum.label}
+                        </div>
+                    )}
                 />
             </div>
-            <div className="legend-wrapper">
-                {categoriesLabel.map((label, index) => (
-                    <div className="category" key={index}>
-                        <div
-                            className="color-box"
-                            style={{ backgroundColor: data.options.colors[index] }}
-                        ></div>
-                        <p className="label-legend">
-                            {label}
-                        </p>
-                    </div>
-                ))}
-            </div>
-            {tooltip.visible && (
+            {
+                isResponsive && selectedValue &&
                 <div
-                    className="custom-tooltip"
                     style={{
-                        position: 'absolute',
-                        top: tooltip.position.y,
-                        left: tooltip.position.x,
-                        backgroundColor: '#fff',
-                        border: '1px solid #ccc',
+                        color: 'white',
+                        padding: '6px',
                         borderRadius: '5px',
-                        padding: '8px',
-                        boxShadow: '0px 4px 6px rgba(0,0,0,0.1)',
-                        transform: 'translate(-50%, -120%)',
-                        zIndex: 100,
-                        width: '50vw', // Ancho fijo del tooltip
-                        wordWrap: 'break-word', // Permite dividir palabras largas
-                        whiteSpace: "normal",
-                        textAlign: 'center', // Centra el texto
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        width: '100%'
                     }}
-                    onClick={() => setTooltip({
-                        ...tooltip,
-                        visible: false,
-                    })}
                 >
-                    {tooltip.text}
+                    <div
+                        style={{
+                            width: '10%',
+                            height: 15,
+                            backgroundColor: selectedValue.color,
+                            marginRight: 8,
+                            borderRadius: 3,
+                        }}
+                    />
+                    {selectedValue.label} ({selectedValue.value}%)
                 </div>
-            )}
+            }
         </div>
     );
 };

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 // import { Link } from 'react-router-dom';
-import { CARBON_POINTS, IS_AUTHENTICATED, PRICE_TO_PAY } from '../../helpers/constants';
+import { CARBON_POINTS, CATEGORY_POINTS, IS_AUTHENTICATED, PRICE_TO_PAY } from '../../helpers/constants';
 import logoArbol from '../../assets/logos/logo-TAO-brown.svg';
 import iconGoogle from '../../assets/icons/rrss-google.svg';
 import iconFacebook from '../../assets/icons/rrss-facebook.svg';
@@ -9,8 +9,8 @@ import { Spinner } from 'react-bootstrap';
 import { toast, ToastContainer, Bounce } from 'react-toastify';
 import { useAuth0 } from '@auth0/auth0-react';
 import handlePayment from '../../helpers/stripePayments';
-import './style.css';
 import LoadingResult from '../LoadingResult';
+import './style.css';
 
 const Register = () => {
 
@@ -47,12 +47,14 @@ const Register = () => {
 
         const { name, email, password } = formData;
         const carbonPoints = JSON.parse(localStorage.getItem(CARBON_POINTS));
+        const categoryPoints = JSON.parse(localStorage.getItem(CATEGORY_POINTS));
 
         const userData = {
             name,
             email,
             password,
-            carbonPoints
+            carbonPoints,
+            categoryPoints
         };
 
         try {
@@ -63,7 +65,7 @@ const Register = () => {
                 const priceToPay = JSON.parse(localStorage.getItem(PRICE_TO_PAY));
                 const userId = id.toString();
                 localStorage.setItem(IS_AUTHENTICATED, JSON.stringify(isAuthenticated));
-                await handlePayment(parseInt(priceToPay), userId, email, carbonPoints);
+                await handlePayment(parseInt(priceToPay), userId, email);
 
                 // setTimeout(() => {
                 //     setLoading(false);

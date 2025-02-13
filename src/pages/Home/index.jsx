@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import NavBar from '../../components/NavBar';
-import { CARBON_POINTS, IS_AUTHENTICATED } from '../../helpers/constants';
+import { CARBON_POINTS, CATEGORY_POINTS, IS_AUTHENTICATED } from '../../helpers/constants';
 import { Link, useNavigate } from 'react-router-dom';
 // import { IS_AUTHENTICATED } from '../../helpers/constants';
 // import LoadingLogo from '../../components/LoadingLogo';
@@ -17,6 +17,7 @@ import './style.css';
 const Home = () => {
 
     const [carbonPoints, setCarbonPoints] = useState(0);
+    const [categoryPoints, setCategoryPoints] = useState(0);
     const navigate = useNavigate();
 
     const getImpact = (points) => {
@@ -58,8 +59,10 @@ const Home = () => {
     useEffect(() => {
         if (JSON.parse(localStorage.getItem(CARBON_POINTS))) {
             setCarbonPoints(JSON.parse(localStorage.getItem(CARBON_POINTS)));
+            setCategoryPoints(JSON.parse(localStorage.getItem(CATEGORY_POINTS)));
         } else if (JSON.parse(localStorage.getItem(IS_AUTHENTICATED))?.carbonPoints) {
             setCarbonPoints(JSON.parse(localStorage.getItem(IS_AUTHENTICATED)).carbonPoints);
+            setCategoryPoints(JSON.parse(localStorage.getItem(IS_AUTHENTICATED))?.categoryPoints || "");
         } else {
             navigate("/initQuestions");
         };
@@ -89,7 +92,7 @@ const Home = () => {
                         </div>
                     </div>
                     <div className="home-user-graphics">
-                        <GraphicsHome carbonPoints={parseFloat(carbonPoints).toFixed(3)} />
+                        <GraphicsHome carbonPoints={parseFloat(carbonPoints).toFixed(3)} categoryPoints={categoryPoints} />
                     </div>
                 </div>
             </div>

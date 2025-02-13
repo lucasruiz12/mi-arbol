@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { questionsAndAnswers } from '../../helpers/questionsAndAnswers';
-import { CARBON_POINTS, IS_AUTHENTICATED } from '../../helpers/constants';
+import { CARBON_POINTS, CATEGORY_POINTS, IS_AUTHENTICATED } from '../../helpers/constants';
 import logoArbol from '../../assets/logos/logo-TAO-brown.svg';
 import LoadingLogo from '../../components/LoadingLogo';
 import CustomCheckbox from '../../components/CustomCheckbox';
@@ -66,9 +66,20 @@ const InitQuestions = () => {
                         newResponseUser.push(el);
                     };
                 });
-                // console.log("RESPUESTAS FINALES", newResponseUser);
-                const totalPoints = newResponseUser.filter(el => el.countPoints).reduce((acc, el) => acc + el.points, 0) * allMultiply;
+                const responsesFilter = newResponseUser.filter(el => el.countPoints);
+                const carbonCategories = [0, 0, 0];
+                responsesFilter.forEach(el => {
+                    if (el.id < 8) {
+                        carbonCategories[0] += (el.points * allMultiply);
+                    } else if (el.id < 12) {
+                        carbonCategories[1] += (el.points * allMultiply);
+                    } else {
+                        carbonCategories[2] += (el.points * allMultiply);
+                    };
+                });
+                const totalPoints = carbonCategories.reduce((acc, el) => acc + el, 0);
                 localStorage.setItem(CARBON_POINTS, JSON.stringify(totalPoints));
+                localStorage.setItem(CATEGORY_POINTS, JSON.stringify(carbonCategories));
             }, 1000);
         } else {
             setCurrentQuestion(currentQuestion + 1);

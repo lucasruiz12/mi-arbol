@@ -30,7 +30,7 @@
 
 .home-info {
     display: flex;
-    padding: 2rem 4rem;
+    padding: 0 4rem;
     width: 100%;
     height: 100%;
 }
@@ -124,7 +124,7 @@
 
 .home-user-graphics {
     display: flex;
-    padding: 5vh 0;
+    padding: 2.5vh 0;
     margin-left: 2vh;
     flex-direction: column;
     /* justify-content: space-between; */
