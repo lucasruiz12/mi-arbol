@@ -5,13 +5,6 @@ import './style.css';
 
 const BackPages = ({ goToPage }) => {
 
-    // const handleTouchStart = (e) => {
-    //     e.target.classList.add('disable-hover');
-    //     setTimeout(() => {
-    //         e.target.classList.remove('disable-hover');
-    //     }, 500);
-    // };
-
     return (
         <div className="container-arrow-page">
             <Link to={goToPage}>

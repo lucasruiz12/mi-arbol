@@ -10,28 +10,10 @@ const GraphicBar = ({ carbonPoints }) => {
                     {
                         x: 'Su consumo',
                         y: carbonPoints,
-                        // goals: [
-                        //     {
-                        //         name: 'Consumo Ideal',
-                        //         value: 2.125,
-                        //         strokeWidth: 5,
-                        //         strokeDashArray: 5,
-                        //         strokeColor: '#FF4560',
-                        //     },
-                        // ],
                     },
                     {
                         x: 'Persona promedio',
                         y: 3.875,
-                        // goals: [
-                        //     {
-                        //         name: 'Consumo Ideal',
-                        //         value: 2.125,
-                        //         strokeWidth: 5,
-                        //         strokeDashArray: 5,
-                        //         strokeColor: '#FF4560',
-                        //     },
-                        // ],
                     },
                 ],
             },

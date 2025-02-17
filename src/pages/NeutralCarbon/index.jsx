@@ -1,27 +1,19 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import NavBar from '../../components/NavBar';
-// import LoadingLogo from '../../components/LoadingLogo';
 import GraphicsNeutralCarbon from '../../components/Graphics/NeutralCarbon';
 import treeIcon from '../../assets/icons/cartoon/tree.svg';
 import pizzaIcon from '../../assets/icons/cartoon/pizza-box.svg';
 import BackPages from '../../components/BackPages';
 import BackArrow from '../../components/BackArrow';
 import './style.css';
-// import { videoCover } from '../../helpers/fullVideo';
 
 const NeutralCarbon = () => {
-
-    {/* <GraphicsNeutralCarbon /> */ }
 
     const [renderView, setRenderView] = useState(1);
 
     return (
         <div className="container-neutral-carbon">
-            {/* <video autoPlay muted loop className="neutral-carbon-video">
-                <source src={window.innerWidth >= 768 ? loginVideo : loginMobileVideo} type="video/mp4" />
-                <source src={window.innerWidth >= 768 ? videoCover : videoCover} type="video/mp4" />
-            </video> */}
             <NavBar />
             <div className="container-neutral-carbon-content">
                 {
@@ -49,8 +41,6 @@ const NeutralCarbon = () => {
                                         <img className="info-pizza-img" src={treeIcon} alt="NOIMG" />
                                         <p className="info-pizza-text">$149</p>
                                     </div>
-                                    {/* <p className="pizza-img">Foto de la pizza</p>
-                                <p className="pizza-price">$189</p> */}
                                 </div>
                                 <div className="contianer-btn-carbono-mobile">
                                     <button className="btn-green" onClick={() => setRenderView(2)}>¿Cómo se invierte mi suscripción?</button>
@@ -74,8 +64,6 @@ const NeutralCarbon = () => {
                             </div>
                             <div className="container-info-pizza">
                                 <GraphicsNeutralCarbon />
-                                {/* <p className="pizza-price">Foto de la pizza</p>
-                                <p className="pizza-img">Toca la pizza para ver el impacto de tu inversión</p> */}
                             </div>
                             <BackArrow handleAction={() => setRenderView(1)} customMargin="90%" />
                         </div>

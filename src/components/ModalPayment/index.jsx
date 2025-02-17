@@ -47,7 +47,6 @@ const ModalPayment = ({ currentPrice, showModal, hideModal }) => {
                     Muchas gracias por tu apoyo
                 </h3>
                 <button className="btn-close-modal" onClick={() => hideModal()}>
-                    {/* <img src={closeModal} alt="X" /> */}
                     X
                 </button>
             </Modal.Header>
@@ -57,7 +56,6 @@ const ModalPayment = ({ currentPrice, showModal, hideModal }) => {
                         <span className="pay-greetings">Con tu contribución estamos haciendo un mundo mejor</span>
                         <div className="container-video-checkout">
                             <video autoPlay muted loop className="video-checkout">
-                                {/* <source src={window.innerWidth >= 768 ? loginVideo : loginMobileVideo} type="video/mp4" /> */}
                                 <source src={window.innerWidth >= 768 ? videoCover : videoCover} type="video/mp4" />
                             </video>
                         </div>
@@ -69,7 +67,6 @@ const ModalPayment = ({ currentPrice, showModal, hideModal }) => {
                                 <button className="btn-green" onClick={() => updatePayment(currentPrice, sessionUser.id.toString(), sessionUser.email)}>Continuar</button>
                                 :
                                 <Link to="/registerForm" onClick={() => localStorage.setItem(PRICE_TO_PAY, currentPrice)}>
-                                    {/* <button className="btn-green" onClick={() => window.location.href = `${linkPayment}?prefilled_email=${currentEmail}`}>Sí</button> */}
                                     <button className="btn-green">Continuar</button>
                                 </Link>
                             )

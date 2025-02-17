@@ -39,7 +39,6 @@ function App() {
   return (
     <BrowserRouter>
       <video autoPlay muted loop className="app-video">
-        {/* <source src={window.innerWidth >= 768 ? loginVideo : loginMobileVideo} type="video/mp4" /> */}
         <source src={window.innerWidth >= 768 ? videoCover : videoCoverMovil} type="video/mp4" />
       </video>
       <Routes>

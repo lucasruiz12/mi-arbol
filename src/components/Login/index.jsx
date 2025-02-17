@@ -122,7 +122,6 @@ const Login = () => {
                 theme="colored"
                 transition={Bounce}
             />
-            {/* <form className="form-login" onSubmit={fakeSubmit}> */}
             <form className="form-login" onSubmit={submitData}>
                 <div className="title-login">
                     <img className="login-logo" src={logoFull} alt="LOG" />
