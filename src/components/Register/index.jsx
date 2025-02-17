@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-// import { Link } from 'react-router-dom';
 import { CARBON_POINTS, CATEGORY_POINTS, IS_AUTHENTICATED, PRICE_TO_PAY } from '../../helpers/constants';
 import logoArbol from '../../assets/logos/logo-TAO-brown.svg';
 import iconGoogle from '../../assets/icons/rrss-google.svg';
@@ -66,11 +65,6 @@ const Register = () => {
                 const userId = id.toString();
                 localStorage.setItem(IS_AUTHENTICATED, JSON.stringify(isAuthenticated));
                 await handlePayment(parseInt(priceToPay), userId, email);
-
-                // setTimeout(() => {
-                //     setLoading(false);
-                //     window.location.href = "/home"
-                // }, 2000);
             } else {
                 setTimeout(() => {
                     toast.error('Error!', {
@@ -107,13 +101,6 @@ const Register = () => {
         };
     };
 
-    // const fakeSubmit = (e) => {
-    //     e.preventDefault();
-    //     setTimeout(() => {
-    //         window.location.href = "/home";
-    //     }, 1000);
-    // };
-
     useEffect(() => {
         const user = JSON.parse(localStorage.getItem(IS_AUTHENTICATED));
 
@@ -143,7 +130,6 @@ const Register = () => {
                     theme="colored"
                     transition={Bounce}
                 />
-                {/* <form className="form-register" onSubmit={fakeSubmit}> */}
                 <form className="form-register" onSubmit={submitData}>
                     <div className="title-register">
                         <img className="register-logo" src={logoArbol} alt="LOG" />
@@ -243,11 +229,6 @@ const Register = () => {
                                     />
                             }
                         </div>
-                        {/* <div className="container-social-media">
-                        <Link to="/loginForm">
-                            <span style={{ cursor: "pointer" }}>¿Tienes cuenta? Iniciar sesión</span>
-                        </Link>
-                    </div> */}
                     </div>
                 </form>
 

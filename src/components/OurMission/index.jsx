@@ -67,9 +67,6 @@ const OurMission = ({ setView }) => {
                         <p className="mission-line-text">Al entender cuanto CO2 generas, te ayudaremos a reforestar los suficientes árboles para mitigar tu huella de carbono.</p>
                     </div>
                 </div>
-                {/* <button className="btn-green" onClick={() => setView(2)}>
-                    Empezar
-                </button> */}
             </div>
         </div>
     );

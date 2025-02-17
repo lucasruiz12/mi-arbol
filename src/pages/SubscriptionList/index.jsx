@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import NavBar from '../../components/NavBar';
 import PriceSlider from '../../components/PriceSlider';
 import ModalPayment from '../../components/ModalPayment';
-import './style.css';
 import { IS_AUTHENTICATED } from '../../helpers/constants';
 import BackPages from '../../components/BackPages';
+import './style.css';
 
 const SubscriptionList = () => {
 

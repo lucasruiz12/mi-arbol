@@ -130,10 +130,6 @@ const InitQuestions = () => {
                 currentQuestion > 1 && !loadResults &&
                 <BackArrow handleAction={() => setCurrentQuestion(currentQuestion - 1)} />
             }
-            {
-                // !loadResults && questionsAndAnswers.find(el => el.id === currentQuestion) && questionsAndAnswers.find(el => el.id === currentQuestion).messageToShow &&
-                // <p className="question-tip">{questionsAndAnswers.find(el => el.id === currentQuestion).messageToShow}</p>
-            }
             {loading ?
                 <LoadingLogo />
                 :

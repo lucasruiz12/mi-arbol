@@ -4,7 +4,6 @@ import './style.css';
 
 const ModalConfirmLogout = ({ showModal, handleClose, handleConfirm }) => {
     return (
-        // <Modal className="modal-confirm-logout" show={showModal} onHide={handleClose} centered size="sm">
         <Modal show={showModal} onHide={handleClose} centered size="sm">
             <Modal.Body>
                 <div style={{ padding: "1vh 0" }}>
