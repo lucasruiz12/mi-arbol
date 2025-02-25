@@ -145,6 +145,7 @@
     .container-init-questions {
         justify-content: flex-start;
         gap: 3vh;
+        overflow-y: hidden;
     }
     .container-text {
         width: 100%;

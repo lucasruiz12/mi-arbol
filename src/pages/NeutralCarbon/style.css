@@ -163,6 +163,7 @@
 @media (max-width: 768px) {
     .container-neutral-carbon {
         flex-direction: column-reverse;
+        overflow-y: hidden;
     }
 
     .container-neutral-carbon-content {

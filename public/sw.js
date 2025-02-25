@@ -14,7 +14,7 @@ self.addEventListener("push", (event) => {
 self.addEventListener("notificationclick", (event) => {
     event.notification.close();
     event.waitUntil(
-        clients.openWindow("/") // Cambia esto si necesitas abrir una URL específica
+        clients.openWindow("/home") // Cambia esto si necesitas abrir una URL específica
         // clients.openWindow("/home") // Cambia esto si necesitas abrir una URL específica
     );
 });
