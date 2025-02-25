@@ -40,6 +40,6 @@ export const scheduleNotification = (date, notification, type) => {
       showPushNotification(notification);
     }, diff);
 
-    timeouts[notification.id] = timeoutId; // Guardamos el timeout en el objeto
+    timeouts[notification.id] = timeoutId;
   };
 };
