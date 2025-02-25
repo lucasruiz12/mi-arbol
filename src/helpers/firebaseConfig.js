@@ -23,6 +23,8 @@ const firebaseConfig = {
   measurementId: VITE_FIREBASE_MEASUREMENT_ID,
 };
 
+console.log("FIREBASE CONFIG", firebaseConfig)
+
 // Inicializar Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
