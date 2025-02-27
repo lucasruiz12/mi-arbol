@@ -20,6 +20,12 @@ import './App.css';
 
 function App() {
 
+  document.addEventListener("touchmove", function (event) {
+    if (window.scrollY === 0) {
+      event.preventDefault();
+    }
+  }, { passive: false });
+
   // useEffect(() => {
   //   const unsubscribe = onMessage(messaging, (payload) => {
   //     console.log("Notificación en primer plano recibida:", payload);

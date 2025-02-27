@@ -20,3 +20,9 @@
         filter: invert(50%);
     }
 }
+
+@media (max-width: 768px){
+    .container-arrow-page {
+        top: 93% !important;
+    }
+}
