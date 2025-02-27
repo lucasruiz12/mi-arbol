@@ -12,7 +12,6 @@
 .nav-logo {
     height: auto;
     margin-top: 2vh;
-    /* width: 12vh; */
 }
 
 .navbar-container-btn {
@@ -93,7 +92,8 @@
     }
 
     .nav-logo {
-        display: none;
+        height: 6vh;
+        margin-left: 3vw;
     }
 
     .container-home {
@@ -140,9 +140,6 @@
     }
 
     .navbar-logout {
-        display: none;
-        justify-content: center;
-        align-items: center;
         font-size: smaller;
     }
 

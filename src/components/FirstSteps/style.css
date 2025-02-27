@@ -245,9 +245,9 @@
     }
 
     .btn-green {
-        width: 90% !important;
+        width: 60% !important;
         align-self: center !important;
-        font-size: larger !important;
+        font-size: medium !important;
         height: auto !important;
         padding: 1rem !important;
     }

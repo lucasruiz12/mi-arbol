@@ -44,7 +44,7 @@
 
 @media (max-width: 768px) {
     .container-subscription-list {
-        flex-direction: column-reverse;
+        /* flex-direction: column-reverse; */
         overflow-y: hidden;
     }
 

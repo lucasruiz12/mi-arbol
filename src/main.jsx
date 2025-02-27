@@ -29,7 +29,7 @@ if ('serviceWorker' in navigator) {
 
         listenNotifications((notification) => {
             const { type, data } = notification;
-            console.log("Notificaciones actualizadas en tiempo real:", data);
+            // console.log("Notificaciones actualizadas en tiempo real:", data);
             const { timestamp, body, title, id } = data;
             scheduleNotification(timestamp.toDate(), {
                 body,
@@ -39,7 +39,7 @@ if ('serviceWorker' in navigator) {
         });
 
 
-        // const notificationDate = new Date(2025, 1, 24, 18, 40);
+        // const notificationDate = new Date(2025, 1, 27, 15, 26);
         // const notificationInfo = {
         //     title: "Test de programación",
         //     body: "Por Dios que llegue",

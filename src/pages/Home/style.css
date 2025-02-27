@@ -162,7 +162,7 @@
     }
 
     .container-home {
-        flex-direction: column-reverse;
+        /* flex-direction: column-reverse; */
         overflow-y: hidden;
     }
 
