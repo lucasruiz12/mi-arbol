@@ -3,6 +3,19 @@ body {
     background-color: #C8D390;
     /* min-height: 100vh;
     min-height: 100dvh; */
+    overflow: hidden;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: env(safe-area-inset-bottom);
+    background-color: #5e6150;
+    /* O el color que uses */
+    pointer-events: none;
 }
 
 a {

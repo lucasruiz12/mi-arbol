@@ -50,7 +50,7 @@
         justify-content: center;
         width: 100%;
         margin-top: 1rem;
-        margin-bottom: 1rem;
+        margin-bottom: 4rem;
     }
     .item-home-tofix{
         display: none;
@@ -58,8 +58,5 @@
     .graphics-background-home {
         width: 100% !important;
         height: 45% !important;
-    }
-    .container-graphics-home{
-        height: 80%;
     }
 }
