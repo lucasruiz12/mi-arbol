@@ -1,6 +1,8 @@
 body {
     margin: 0;
     background-color: #C8D390;
+    /* min-height: 100vh;
+    min-height: 100dvh; */
 }
 
 a {

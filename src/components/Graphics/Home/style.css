@@ -59,4 +59,7 @@
         width: 100% !important;
         height: 45% !important;
     }
+    .container-graphics-home{
+        height: 80%;
+    }
 }
