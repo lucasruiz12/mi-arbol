@@ -171,6 +171,7 @@
         align-items: flex-start;
         overflow-y: scroll;
         padding: 1.5rem;
+        height: 80%;
     }
 
     .container-btn-carbono {
@@ -216,6 +217,7 @@
 
     .container-info-pizza {
         width: 100%;
+        margin: 1.5rem 0;
     }
 
     .info-pizza-img {

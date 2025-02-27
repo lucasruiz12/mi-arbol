@@ -167,12 +167,13 @@
     }
 
     .container-home-content {
-        height: 90%;
+        height: 100%;
     }
 
     .home-info {
         flex-direction: column;
         padding: 0 2rem;
+        overflow-y: scroll;
     }
 
     .home-user-data {
@@ -211,6 +212,7 @@
 
     .home-user-graphics {
         width: 100%;
+        /* padding: 0 0 2rem 0; */
         padding: 0;
         margin-left: 0;
     }

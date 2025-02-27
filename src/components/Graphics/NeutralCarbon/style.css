@@ -108,7 +108,7 @@
 
     .container-button-carbon{
         display: flex;
-        margin-bottom: 1rem;
+        padding-bottom: 2rem;
         justify-content: center;
     }
     
