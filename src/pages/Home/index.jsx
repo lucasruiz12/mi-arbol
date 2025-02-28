@@ -72,7 +72,7 @@ const Home = () => {
                         <div>
                             <h5 className="home-text">Tu huella de carbono es: </h5>
                             <h1 className="home-number">{formattedNumber(carbonPoints)} Tons CO2 Eq.</h1>
-                            <h2 className="home-invitation">¡Mitiga tu huella al 100% sembrando <b>{Math.ceil(carbonPoints / 0.015)} árboles</b>!</h2>
+                            <h2 className="home-invitation">¡Mitiga tu huella al 100% sembrando <b>{Math.ceil(carbonPoints / 0.015)} árboles mensuales</b>!</h2>
                         </div>
                         <div className="home-result">
                             <div className="home-container-img">

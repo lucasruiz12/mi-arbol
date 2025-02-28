@@ -25,7 +25,7 @@
 
 .subscription-text-header{
     color: white;
-    font-size: 31px;
+    font-size: 35px;
     font-weight: bold;
     width: 35%;
     text-align: center;
@@ -33,9 +33,10 @@
 
 .subscription-text-line{
     color: white;
-    font-size: 27px;
+    font-size: 31px;
     width: 45%;
     text-align: center;
+    margin-top: 5vh;
 }
 
 .container-subscription-slider{

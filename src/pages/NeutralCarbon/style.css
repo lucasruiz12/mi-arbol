@@ -81,6 +81,12 @@
 }
 
 .info-you-know {
+    font-size: 45px;
+    margin: -2vh 0 2.5vh 0.5vw;
+    color: white;
+    text-align: justify;
+}
+.info-inversion {
     font-size: 31px;
     margin: -2vh 0 2.5vh 0.5vw;
     color: white;
@@ -212,6 +218,10 @@
     }
 
     .info-you-know {
+        font-size: large;
+    }
+    
+    .info-inversion{
         font-size: large;
     }
 
