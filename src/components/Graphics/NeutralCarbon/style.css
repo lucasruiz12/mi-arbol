@@ -1,8 +1,15 @@
 .container-graphics-carbon {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
-    height: 75%;
+    height: 97%;
+}
+
+.container-button-more-information{
+    margin-top: 2vh;
+    padding-top: 2vh;
 }
 
 .apexcharts-legend-text {
@@ -22,6 +29,7 @@
     background-color: #ffffff28;
     border-radius: 2rem;
     width: 90%;
+    height: 75%;
 }
 
 .graphics-div{
@@ -80,7 +88,6 @@
 
 @media (max-width: 768px) {
     .container-graphics-carbon {
-        flex-direction: column;
         align-items: center;
         width: 100% !important;
     }
@@ -99,7 +106,7 @@
         flex-direction: column;
         align-items: center;
         width: 100%;
-        height: 100%;
+        height: 110%;
     }
 
     .label-legend{

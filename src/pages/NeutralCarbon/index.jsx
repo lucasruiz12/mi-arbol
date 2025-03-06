@@ -6,11 +6,13 @@ import treeIcon from '../../assets/icons/cartoon/tree.svg';
 import pizzaIcon from '../../assets/icons/cartoon/pizza-box.svg';
 import BackPages from '../../components/BackPages';
 import BackArrow from '../../components/BackArrow';
+import ModalMoreInfo from '../../components/ModalMoreInfo';
 import './style.css';
 
 const NeutralCarbon = () => {
 
     const [renderView, setRenderView] = useState(1);
+    const [showModalMoreInfo, setShowModalMoreInfo] = useState(false);
 
     return (
         <div className="container-neutral-carbon">
@@ -61,10 +63,13 @@ const NeutralCarbon = () => {
                                     </Link>
                                 </div>
                             </div>
-                            <div className="container-info-pizza">
-                                <GraphicsNeutralCarbon />
+                            <div className="container-info-graphics">
+                                <GraphicsNeutralCarbon showModal={() => setShowModalMoreInfo(true)} />
                             </div>
                             <BackArrow handleAction={() => setRenderView(1)} customMargin="90%" />
+                            {
+                                showModalMoreInfo && <ModalMoreInfo showModal={showModalMoreInfo} hideModal={() => setShowModalMoreInfo(false)} />
+                            }
                         </div>
                 }
             </div>

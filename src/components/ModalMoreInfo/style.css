@@ -1,0 +1,79 @@
+.modal-more-info-title {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: 0;
+    font-weight: bold;
+    font-size: 31px;
+    color: #A4B46A;
+}
+
+.btn-close-modal {
+    background-color: transparent;
+    border: none;
+    font-weight: bold;
+}
+
+.modal-more-info-body {
+    max-height: 70vh;
+    overflow-y: scroll;
+}
+
+.modal-more-info-body::-webkit-scrollbar {
+    width: 4px;
+}
+
+.modal-more-info-body::-webkit-scrollbar-track {
+    background: #A4B46A;
+}
+
+.modal-more-info-body::-webkit-scrollbar-thumb {
+    background-color: #78834E;
+    border-radius: 20px;
+    border: 1px solid #A4B46A;
+}
+
+.container-more-info-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container-more-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2vh;
+    padding: 1rem;
+}
+
+.more-info-text {
+    font-size: x-large;
+    color: #78834E;
+    text-align: justify;
+}
+
+.container-buttons-confirm {
+    margin-top: 2vh;
+}
+
+@media (max-width: 768px) {
+    .modal-more-info-title {
+        font-size: larger;
+    }
+
+    .more-info-text {
+        font-size: large;
+        color: #A4B46A;
+        text-align: justify;
+    }
+
+    .container-buttons-confirm {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+}
