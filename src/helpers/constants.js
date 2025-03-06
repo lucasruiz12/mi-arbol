@@ -1,3 +1,4 @@
+export const ACCESS_TOKEN = "accessToken";
 export const IS_AUTHENTICATED = "isAuthenticated";
 export const PRICE_TO_PAY = "priceToPay";
 export const CARBON_POINTS = "carbonPoints";

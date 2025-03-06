@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
-import { CARBON_POINTS, IS_AUTHENTICATED, PRICE_TO_PAY } from '../../helpers/constants';
+import { ACCESS_TOKEN, CARBON_POINTS, CATEGORY_POINTS, IS_AUTHENTICATED, PRICE_TO_PAY } from '../../helpers/constants';
 import loginConnections from '../../helpers/loginConnections';
 import { toast, ToastContainer, Bounce } from 'react-toastify';
 import LoadingLogo from '../../components/LoadingLogo';
@@ -15,14 +15,15 @@ const LoadingUser = () => {
         try {
             const { data } = await loginConnections.loginUser(userData);
             if (data.success) {
-                const { subscription } = data;
+                const { subscription, token } = data;
                 const { email, name, id, createdAt } = data.user
                 const isAuthenticated = { email, name, id, createdAt, subscription };
                 const priceToPay = JSON.parse(localStorage.getItem(PRICE_TO_PAY));
                 const userId = id.toString();
                 localStorage.setItem(IS_AUTHENTICATED, JSON.stringify(isAuthenticated));
+                localStorage.setItem(ACCESS_TOKEN, token);
                 if (priceToPay) {
-                    await handlePayment(parseInt(priceToPay), userId, email);
+                    await handlePayment(parseInt(priceToPay), userId, email, token);
                 } else {
                     isAuthenticated.carbonPoints = data.user.carbonPoints;
                     isAuthenticated.categoryPoints = data.user.categoryPoints;
@@ -70,12 +71,14 @@ const LoadingUser = () => {
         if (isAuthenticated) {
             const { name, sub } = user;
             const carbonPoints = parseFloat(JSON.parse(localStorage.getItem(CARBON_POINTS)));
+            const categoryPoints = localStorage.getItem(CATEGORY_POINTS);
             const dataUser = {
                 name,
                 email: "",
                 password: "",
                 sub,
-                carbonPoints
+                carbonPoints,
+                categoryPoints,
             };
             if (user.email) {
                 dataUser.email = user.email;

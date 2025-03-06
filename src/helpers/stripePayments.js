@@ -1,9 +1,9 @@
 import { SESSION_ID_PAYMENT } from './constants';
 import loginConnections from './loginConnections';
 
-const handlePayment = async (amount, userId, email) => {
+const handlePayment = async (amount, userId, email, token) => {
     try {
-        const response = await loginConnections.createSubscription({ amount, userId, email });
+        const response = await loginConnections.createSubscription({ amount, userId, email }, token);
         const { url, id } = response.data;
 
         if (url) {
