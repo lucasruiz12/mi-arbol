@@ -46,9 +46,9 @@
 }
 
 @media (max-width: 768px) {
-    .container-my-subscription {
+    /* .container-my-subscription {
         flex-direction: column-reverse;
-    }
+    } */
 
     .container-my-subscription-content {
         flex-direction: column;

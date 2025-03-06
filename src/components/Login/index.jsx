@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { IS_AUTHENTICATED } from '../../helpers/constants';
+import { ACCESS_TOKEN, IS_AUTHENTICATED } from '../../helpers/constants';
 import logoFull from '../../assets/logos/logo-TAO-brown.svg';
 import iconGoogle from '../../assets/icons/rrss-google.svg';
 import iconFacebook from '../../assets/icons/rrss-facebook.svg';
@@ -50,10 +50,11 @@ const Login = () => {
         try {
             const { data } = await loginConnections.loginUser(userData);
             if (data.success) {
-                const { subscription, allSubscriptions } = data;
+                const { subscription, allSubscriptions, token } = data;
                 const { email, name, id, createdAt, carbonPoints, categoryPoints } = data.user
                 const isAuthenticated = { email, name, id, createdAt, subscription, allSubscriptions, carbonPoints, categoryPoints: JSON.parse(categoryPoints) };
                 localStorage.setItem(IS_AUTHENTICATED, JSON.stringify(isAuthenticated));
+                localStorage.setItem(ACCESS_TOKEN, token);
 
                 setTimeout(() => {
                     setLoading(false);
@@ -77,7 +78,7 @@ const Login = () => {
                 }, 2000);
             };
         } catch (err) {
-            console.log(err.response);
+            console.error(err.response);
             const { message } = err.response.data;
             setTimeout(() => {
                 toast.error(message, {

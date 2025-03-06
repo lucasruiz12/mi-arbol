@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { CARBON_POINTS, CATEGORY_POINTS, IS_AUTHENTICATED, PRICE_TO_PAY } from '../../helpers/constants';
+import { ACCESS_TOKEN, CARBON_POINTS, CATEGORY_POINTS, IS_AUTHENTICATED, PRICE_TO_PAY } from '../../helpers/constants';
 import logoArbol from '../../assets/logos/logo-TAO-brown.svg';
 import iconGoogle from '../../assets/icons/rrss-google.svg';
 import iconFacebook from '../../assets/icons/rrss-facebook.svg';
@@ -59,11 +59,13 @@ const Register = () => {
         try {
             const { data } = await loginConnections.createUser(userData);
             if (data.success) {
-                const { email, name, id, createdAt } = data.user
+                const { email, name, id, createdAt } = data.user;
+                const { token } = data;
                 const isAuthenticated = { email, name, id, createdAt };
                 const priceToPay = JSON.parse(localStorage.getItem(PRICE_TO_PAY));
                 const userId = id.toString();
                 localStorage.setItem(IS_AUTHENTICATED, JSON.stringify(isAuthenticated));
+                localStorage.setItem(ACCESS_TOKEN, token);
                 await handlePayment(parseInt(priceToPay), userId, email);
             } else {
                 setTimeout(() => {
@@ -231,8 +233,6 @@ const Register = () => {
                         </div>
                     </div>
                 </form>
-
-
             </div>
     );
 };

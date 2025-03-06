@@ -78,12 +78,6 @@ const PriceSlider = ({ minPrice, currentPrice, setCurrentPrice, setModalPayment 
                 </div>
             </div>
             <button className={`btn-green${(JSON.parse(localStorage.getItem(IS_AUTHENTICATED))?.subscription?.amount === currentPrice) ? " disabled" : ""}`} disabled={JSON.parse(localStorage.getItem(IS_AUTHENTICATED))?.subscription?.amount === currentPrice} onClick={() => setModalPayment(true)}>Sembrar mis raíces</button>
-            {
-                JSON.parse(localStorage.getItem(IS_AUTHENTICATED))?.subscription &&
-                <Link className="container-go-subscription" to="/mySubscription">
-                    <button className="btn-green" onClick={() => setModalPayment(true)}>Sembrar mis raíces</button>
-                </Link>
-            }
         </div >
     );
 };
