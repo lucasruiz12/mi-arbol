@@ -19,7 +19,6 @@ const NavBar = () => {
         <nav className="nav-container">
             <img className="nav-logo" src={logoArbol} alt="LOG" />
             <div className="navbar-item logout">
-                <img onClick={() => handleLogout()} src={iconLogout} alt="NOIC" className="navbar-icon" />
                 <LogOutDropdown openModal={() => handleLogout()} />
             </div>
         </nav>

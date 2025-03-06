@@ -53,7 +53,7 @@ const GraphicBar = ({ carbonPoints }) => {
                     return val;
                 },
                 style: {
-                    fontSize: '14px',
+                    fontSize: '20px',
                     colors: ['white'],
                 },
             },
@@ -102,7 +102,7 @@ const GraphicBar = ({ carbonPoints }) => {
 
     return (
         <div className="graphics-background-home">
-            <ReactApexChart options={data.options} series={data.series} type="bar" width={500} height={250} />
+            <ReactApexChart options={data.options} series={data.series} type="bar" width={600} height={250} />
         </div>
     );
 };

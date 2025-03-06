@@ -32,7 +32,7 @@ const GraphicPie = ({ carbonPoints, categoryPoints }) => {
   const data = [
     { id: 'Vivienda', label: 'Vivienda', value: categoryPoints ? parseFloat((categoryPoints[0] / carbonPoints) * 100).toFixed(2) : 17, color: '#A4B46A' },
     { id: 'Traslados', label: 'Traslados', value: categoryPoints ? parseFloat((categoryPoints[1] / carbonPoints) * 100).toFixed(2) : 71, color: '#C8D390' },
-    { id: 'Consumidor', label: 'Consumidor', value: categoryPoints ? parseFloat((categoryPoints[2] / carbonPoints) * 100).toFixed(2) : 12, color: '#C0D860' },
+    { id: 'Compras', label: 'Compras', value: categoryPoints ? parseFloat((categoryPoints[2] / carbonPoints) * 100).toFixed(2) : 12, color: '#C0D860' },
   ];
 
   // Determina si el gráfico está en una pantalla pequeña (responsive)
@@ -45,7 +45,7 @@ const GraphicPie = ({ carbonPoints, categoryPoints }) => {
         <div style={{ height: "100%", width: "100%" }}>
           <ResponsivePie
             data={data}
-            margin={{ top: isResponsive ? 10 : 20, right: isResponsive ? 10 : 40, bottom: isResponsive ? 10 : 40, left: isResponsive ? 10 : 60 }}
+            margin={{ top: isResponsive ? 10 : 30, right: isResponsive ? 10 : 40, bottom: isResponsive ? 10 : 40, left: isResponsive ? 10 : 60 }}
             innerRadius={0} // Hace que el gráfico sea más pequeño
             padAngle={0.7}
             cornerRadius={7}
@@ -55,6 +55,7 @@ const GraphicPie = ({ carbonPoints, categoryPoints }) => {
             colorBy="id"
             colors={data.map((d) => d.color)} // Aquí aplicamos los colores personalizados
             arcLabel={(d) => `${d.value}%`} // Formatear los valores como porcentaje
+            arcLabelsRadiusOffset={0.65}
             isInteractive={true} // Mantiene la interactividad para el tooltip
             theme={{
               tooltip: {
@@ -67,7 +68,7 @@ const GraphicPie = ({ carbonPoints, categoryPoints }) => {
               labels: {
                 text: {
                   fill: 'white', // Establece el color de las etiquetas en blanco
-                  fontSize: 20,
+                  fontSize: 22.5,
                 },
               },
             }}

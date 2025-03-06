@@ -23,7 +23,6 @@ const NeutralCarbon = () => {
                                 <p className="text-you-know">¿Sabías qué?</p>
                                 <p className="info-you-know">Por menos de lo que gastas en una pizza al mes, puedes neutralizar tu huella de carbono como persona.</p>
                                 <p className="info-you-know">¡Unete a nuestra comunidad con una pequeña suscripción para ser carbon neutro!</p>
-                                <p className="info-you-know">Te invitaremos a todas nuestras reforestaciones y te daremos la geolocalización de los árboles etiquetados con tu nombre, para que los visites el día que quieras!</p>
                                 <div className="container-btn-carbono">
                                     <button className="btn-green" onClick={() => setRenderView(2)}>¿Cómo se invierte mi suscripción?</button>
                                 </div>
@@ -53,9 +52,9 @@ const NeutralCarbon = () => {
                             <div className="container-info-text">
                                 <p className="you-know-tips">¡Somos la plataforma que más arboles sembrará con cada peso tuyo!</p>
                                 <p className="text-you-know">¿Cómo impacta tu inversión?</p>
-                                <p className="info-you-know">Con tu inversión llevamos a cabo <b>reforestaciones masivas</b>, con esta acción logramos capturar carbono de la atmósfera, dar <b>trabajo a comunidades</b> y proteger ecosistemas que producen el oxígeno que respiramos. </p>
-                                <p className="info-you-know">Tus árboles tendrán un <b>identificador personalizado y geolocalizado</b>, para que puedas visitar tus raíces siempre que quieras.</p>
-                                <p className="info-you-know">¡Al ser miembro también <b>podrás asistir a nuestras reforestaciones</b> masivas!</p>
+                                <p className="info-inversion">Con tu inversión llevamos a cabo <b>reforestaciones masivas</b>, con esta acción logramos capturar carbono de la atmósfera, dar <b>trabajo a comunidades</b> y proteger ecosistemas que producen el oxígeno que respiramos. </p>
+                                <p className="info-inversion">Tus árboles tendrán un <b>identificador personalizado y geolocalizado</b>, para que puedas visitar tus raíces siempre que quieras.</p>
+                                <p className="info-inversion">¡Al ser miembro también <b>podrás asistir a nuestras reforestaciones</b> masivas!</p>
                                 <div className="container-btn-carbono">
                                     <Link className="container-link-mobile" to="/subscriptionPlans">
                                         <button className="btn-green" onClick={() => setRenderView(2)}>¡Vuélvete carbono neutro!</button>

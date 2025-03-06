@@ -179,9 +179,9 @@
     }
 
     .btn-green {
-        width: 90% !important;
+        width: 60% !important;
         align-self: center;
-        font-size: larger !important;
+        font-size: medium !important;
     }
 
     .mission-logo{

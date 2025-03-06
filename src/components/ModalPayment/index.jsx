@@ -4,6 +4,7 @@ import { Modal } from 'react-bootstrap';
 import { IS_AUTHENTICATED, PRICE_TO_PAY } from '../../helpers/constants';
 import { videoCover } from '../../helpers/fullVideo';
 import handlePayment from '../../helpers/stripePayments';
+import { toast, ToastContainer, Bounce } from 'react-toastify';
 import './style.css';
 
 
@@ -13,9 +14,9 @@ const ModalPayment = ({ currentPrice, showModal, hideModal }) => {
     const [sessionUser, setSessionUser] = useState("");
 
     const updatePayment = async (amount, userId, email) => {
-        try{
+        try {
             await handlePayment(amount, userId, email);
-        } catch(err){
+        } catch (err) {
             toast.error('Ocurrió un error en el pago! Reintentar.', {
                 position: "top-right",
                 autoClose: 3000,
@@ -42,6 +43,19 @@ const ModalPayment = ({ currentPrice, showModal, hideModal }) => {
 
     return (
         <Modal size="lg" backdrop={"static"} show={showModal} onHide={hideModal}>
+            <ToastContainer
+                position="top-right"
+                autoClose={3000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick={false}
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="colored"
+                transition={Bounce}
+            />
             <Modal.Header>
                 <h3 className="modal-payment-title">
                     Muchas gracias por tu apoyo
@@ -64,10 +78,10 @@ const ModalPayment = ({ currentPrice, showModal, hideModal }) => {
                         {
                             showButtons &&
                             (sessionUser ?
-                                <button className="btn-green" onClick={() => updatePayment(currentPrice, sessionUser.id.toString(), sessionUser.email)}>Continuar</button>
+                                <button className="btn-green payment" onClick={() => updatePayment(currentPrice, sessionUser.id.toString(), sessionUser.email)}>Continuar</button>
                                 :
-                                <Link to="/registerForm" onClick={() => localStorage.setItem(PRICE_TO_PAY, currentPrice)}>
-                                    <button className="btn-green">Continuar</button>
+                                <Link to="/registerForm" onClick={() => localStorage.setItem(PRICE_TO_PAY, currentPrice)} className="container-link-payment">
+                                    <button className="btn-green payment">Continuar</button>
                                 </Link>
                             )
                         }

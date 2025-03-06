@@ -81,6 +81,12 @@
 }
 
 .info-you-know {
+    font-size: 45px;
+    margin: -2vh 0 2.5vh 0.5vw;
+    color: white;
+    text-align: justify;
+}
+.info-inversion {
     font-size: 31px;
     margin: -2vh 0 2.5vh 0.5vw;
     color: white;
@@ -162,7 +168,8 @@
 
 @media (max-width: 768px) {
     .container-neutral-carbon {
-        flex-direction: column-reverse;
+        /* flex-direction: column-reverse; */
+        overflow-y: hidden;
     }
 
     .container-neutral-carbon-content {
@@ -170,6 +177,7 @@
         align-items: flex-start;
         overflow-y: scroll;
         padding: 1.5rem;
+        height: 80%;
     }
 
     .container-btn-carbono {
@@ -212,9 +220,14 @@
     .info-you-know {
         font-size: large;
     }
+    
+    .info-inversion{
+        font-size: large;
+    }
 
     .container-info-pizza {
         width: 100%;
+        margin: 1.5rem 0;
     }
 
     .info-pizza-img {

@@ -47,7 +47,7 @@ const GraphicPie = () => {
             <div style={{ height: isResponsive ? "20rem" : "100%", width: "100%" }}>
                 <ResponsivePie
                     data={data}
-                    margin={{ top: isResponsive ? 10 : 40, right: isResponsive ? 10 : 80, bottom: isResponsive ? 10 : 80, left: isResponsive ? 10 : 80 }}
+                    margin={{ top: isResponsive ? 10 : 60, right: isResponsive ? 10 : 100, bottom: isResponsive ? 10 : 100, left: isResponsive ? 10 : 100 }}
                     innerRadius={0} // Hace que el gráfico sea más pequeño
                     padAngle={0.7}
                     cornerRadius={7}
