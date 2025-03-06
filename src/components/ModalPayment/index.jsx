@@ -13,9 +13,9 @@ const ModalPayment = ({ currentPrice, showModal, hideModal }) => {
     const [showButtons, setShowButtons] = useState(false);
     const [sessionUser, setSessionUser] = useState("");
 
-    const updatePayment = async (amount, userId, email) => {
+    const updatePayment = async (amount, userId, email, token) => {
         try {
-            await handlePayment(amount, userId, email);
+            await handlePayment(amount, userId, email, token);
         } catch (err) {
             toast.error('Ocurrió un error en el pago! Reintentar.', {
                 position: "top-right",
@@ -78,7 +78,7 @@ const ModalPayment = ({ currentPrice, showModal, hideModal }) => {
                         {
                             showButtons &&
                             (sessionUser ?
-                                <button className="btn-green payment" onClick={() => updatePayment(currentPrice, sessionUser.id.toString(), sessionUser.email)}>Continuar</button>
+                                <button className="btn-green payment" onClick={() => updatePayment(currentPrice, sessionUser.id.toString(), sessionUser.email, sessionUser.token)}>Continuar</button>
                                 :
                                 <Link to="/registerForm" onClick={() => localStorage.setItem(PRICE_TO_PAY, currentPrice)} className="container-link-payment">
                                     <button className="btn-green payment">Continuar</button>

@@ -66,7 +66,7 @@ const Register = () => {
                 const userId = id.toString();
                 localStorage.setItem(IS_AUTHENTICATED, JSON.stringify(isAuthenticated));
                 localStorage.setItem(ACCESS_TOKEN, token);
-                await handlePayment(parseInt(priceToPay), userId, email);
+                await handlePayment(parseInt(priceToPay), userId, email, token);
             } else {
                 setTimeout(() => {
                     toast.error('Error!', {
