@@ -11,7 +11,7 @@ const PriceSlider = ({ minPrice, currentPrice, setCurrentPrice, setModalPayment 
     });
 
     const newPriceToValue = (value) => {
-        const trees = (value / 150).toFixed(2);
+        const trees = (value / 149).toFixed(2);
         setPriceToValue({
             trees,
             tons: (0.015 * trees).toFixed(3),
@@ -27,7 +27,7 @@ const PriceSlider = ({ minPrice, currentPrice, setCurrentPrice, setModalPayment 
         let value = parseInt(event.target.value, 10);
 
         if (!isNaN(value)) {
-            value = Math.min(Math.max(value, 0), 3000);
+            value = Math.min(Math.max(value, 0), 2980);
             setCurrentPrice(value);
             newPriceToValue(value);
         } else if (event.target.value === "") {
@@ -53,8 +53,8 @@ const PriceSlider = ({ minPrice, currentPrice, setCurrentPrice, setModalPayment 
                 thumbClassName="thumb"
                 trackClassName="track"
                 min={minPrice}
-                max={3000}
-                step={1}
+                max={2980}
+                step={149}
                 value={currentPrice}
                 onChange={handleSliderChange}
             />
@@ -68,22 +68,16 @@ const PriceSlider = ({ minPrice, currentPrice, setCurrentPrice, setModalPayment 
                         value={currentPrice}
                         onChange={handleInputChange}
                         onBlur={handleInputBlur}
-                        min={150}
-                        max={3000}
-                        step={1}
+                        min={149}
+                        max={2980}
+                        step={149}
                     />
                 </div>
                 <div className="container-tree-text">
-                    <p className="tree-line">{priceToValue.trees} {currentPrice === 150 ? "árbol" : "árboles"} por mes</p>
+                    <p className="tree-line">{priceToValue.trees} {currentPrice === 149 ? "árbol" : "árboles"} por mes</p>
                 </div>
             </div>
-            <button className={`btn-green${(JSON.parse(localStorage.getItem(IS_AUTHENTICATED))?.subscription?.amount === currentPrice) ? " disabled" : ""}`} disabled={JSON.parse(localStorage.getItem(IS_AUTHENTICATED))?.subscription?.amount === currentPrice} onClick={() => setModalPayment(true)}>Sembrar mis raíces</button>
-            {
-                JSON.parse(localStorage.getItem(IS_AUTHENTICATED))?.subscription &&
-                <Link className="container-go-subscription" to="/mySubscription">
-                    <button className="btn-green" onClick={() => setModalPayment(true)}>Sembrar mis raíces</button>
-                </Link>
-            }
+            <button className={`btn-green${(JSON.parse(localStorage.getItem(IS_AUTHENTICATED))?.subscription?.amount === currentPrice) ? " disabled" : ""} checkout-btn`} disabled={JSON.parse(localStorage.getItem(IS_AUTHENTICATED))?.subscription?.amount === currentPrice} onClick={() => setModalPayment(true)}>Sembrar mis raíces</button>
         </div >
     );
 };

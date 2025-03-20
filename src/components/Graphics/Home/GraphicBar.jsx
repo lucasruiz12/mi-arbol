@@ -13,7 +13,7 @@ const GraphicBar = ({ carbonPoints }) => {
                     },
                     {
                         x: 'Persona promedio',
-                        y: 3.875,
+                        y: 9.45,
                     },
                 ],
             },
@@ -92,7 +92,7 @@ const GraphicBar = ({ carbonPoints }) => {
                     options: {
                         chart: {
                             width: '100%',
-                            height: 250, // Ajustamos la altura para pantallas pequeñas
+                            height: 200, // Ajustamos la altura para pantallas pequeñas
                         },
                     },
                 },
@@ -101,8 +101,8 @@ const GraphicBar = ({ carbonPoints }) => {
     };
 
     return (
-        <div className="graphics-background-home">
-            <ReactApexChart options={data.options} series={data.series} type="bar" width={600} height={250} />
+        <div className="graphics-background-home-bar" style={{zIndex: 99}}>
+            <ReactApexChart options={data.options} series={data.series} type="bar" width={600} height={200} />
         </div>
     );
 };

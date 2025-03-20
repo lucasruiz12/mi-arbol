@@ -166,7 +166,7 @@
 @media (max-width: 768px) {
     .steps-clients-title {
         color: white;
-        font-size: larger;
+        font-size: medium;
     }
     
     .steps-logo {

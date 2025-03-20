@@ -188,7 +188,7 @@
     }
 
     .home-number {
-        font-size: 7vh;
+        font-size: 5vh;
         text-align: center;
     }
 
@@ -207,7 +207,14 @@
         font-size: 5vh;
     }
 
+    .home-status {
+        color: white;
+        text-align: center;
+        font-size: medium;
+    }
+
     .home-invitation {
+        font-size: 3vh;
         text-align: center;
     }
 

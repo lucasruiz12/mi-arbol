@@ -24,7 +24,7 @@ const NeutralCarbon = () => {
                             <div className="container-info-text">
                                 <p className="text-you-know">¿Sabías qué?</p>
                                 <p className="info-you-know">Por menos de lo que gastas en una pizza al mes, puedes neutralizar tu huella de carbono como persona.</p>
-                                <p className="info-you-know">¡Unete a nuestra comunidad con una pequeña suscripción para ser carbon neutro!</p>
+                                <p className="info-you-know">¡Únete a nuestra comunidad con una pequeña suscripción para ser carbono neutro!</p>
                                 <div className="container-btn-carbono">
                                     <button className="btn-green" onClick={() => setRenderView(2)}>¿Cómo se invierte mi suscripción?</button>
                                 </div>
@@ -43,8 +43,8 @@ const NeutralCarbon = () => {
                                         <p className="info-pizza-text">$149</p>
                                     </div>
                                 </div>
-                                <div className="contianer-btn-carbono-mobile">
-                                    <button className="btn-green" onClick={() => setRenderView(2)}>¿Cómo se invierte mi suscripción?</button>
+                                <div className="container-btn-carbono-mobile">
+                                    <button className="btn-green inversion" style={{ width: "100% !important" }} onClick={() => setRenderView(2)}>¿Cómo se invierte mi suscripción?</button>
                                 </div>
                             </div>
                             <BackPages goToPage="/home" />
@@ -54,7 +54,7 @@ const NeutralCarbon = () => {
                             <div className="container-info-text">
                                 <p className="you-know-tips">¡Somos la plataforma que más arboles sembrará con cada peso tuyo!</p>
                                 <p className="text-you-know">¿Cómo impacta tu inversión?</p>
-                                <p className="info-inversion">Con tu inversión llevamos a cabo <b>reforestaciones masivas</b>, con esta acción logramos capturar carbono de la atmósfera, dar <b>trabajo a comunidades</b> y proteger ecosistemas que producen el oxígeno que respiramos. </p>
+                                <p className="info-inversion">Con tu inversión llevamos a cabo <b>reforestaciones masivas</b>, con esta acción logramos capturar carbono de la atmósfera, dar <b>trabajo a comunidades</b> y proteger ecosistemas que producen el oxígeno que respiramos.</p>
                                 <p className="info-inversion">Tus árboles tendrán un <b>identificador personalizado y geolocalizado</b>, para que puedas visitar tus raíces siempre que quieras.</p>
                                 <p className="info-inversion">¡Al ser miembro también <b>podrás asistir a nuestras reforestaciones</b> masivas!</p>
                                 <div className="container-btn-carbono">
