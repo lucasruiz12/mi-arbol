@@ -152,7 +152,7 @@
     font-size: xx-large;
 }
 
-.contianer-btn-carbono-mobile {
+.container-btn-carbono-mobile {
     display: none;
     width: 100%;
 }
@@ -193,9 +193,13 @@
         display: none;
     }
 
-    .contianer-btn-carbono-mobile {
+    .container-btn-carbono-mobile {
         display: flex;
         justify-content: center;
+    }
+
+    .btn-green.inversion{
+        width: 100% !important;
     }
 
     .container-link-mobile {
@@ -227,11 +231,11 @@
     }
 
     .info-you-know {
-        font-size: large;
+        font-size: medium;
     }
 
     .info-inversion {
-        font-size: large;
+        font-size: medium;
     }
 
     .container-info-pizza {

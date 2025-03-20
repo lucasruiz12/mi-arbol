@@ -44,7 +44,7 @@ const MySubscription = () => {
                     <SubscriptionCard currentSubscription={currentSubscription} />
                 </div>
                 <Link className="container-btn-plan" to="/subscriptionPlans" >
-                    <button className="btn-green">Mejorar plan</button>
+                    <button className="btn-green upgrade-btn">Mejorar plan</button>
                 </Link>
             </div>
         </div>

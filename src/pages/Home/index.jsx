@@ -48,7 +48,7 @@ const Home = () => {
             maximumFractionDigits: 3,
         }).format(number);
 
-        return formatNumber;
+        return formatNumber.replace(',', '.');
     };
 
     useEffect(() => {
