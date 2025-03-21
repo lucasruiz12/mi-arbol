@@ -8,9 +8,9 @@ import './style.css';
 
 const SubscriptionList = () => {
 
-    const [currentPrice, setCurrentPrice] = useState(150);
+    const [currentPrice, setCurrentPrice] = useState(149);
     const [modalPayment, setModalPayment] = useState(false);
-    const [minPrice, setMinPrice] = useState(150);
+    const [minPrice, setMinPrice] = useState(149);
 
     useEffect(() => {
 

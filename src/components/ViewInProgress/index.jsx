@@ -13,7 +13,7 @@ const ViewInProgress = () => {
                 <source src={homeVideo} type="video/mp4" />
             </video>
             <div className="container-progress-view">
-                <p className="progress-line">Estamos trabajando en este proceso</p>
+                <p className="progress-line">Dirección no encontrada</p>
                 <button className="btn-green" onClick={() => navigate("/home")}>
                     Regresar al inicio
                 </button>

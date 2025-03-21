@@ -29,4 +29,13 @@ export default {
     verifyPayment: (data) => {
         return axios.post(`${URL_BASE}/api/stripe/verifyPayment`, data);
     },
+    getSeedsByUserId: (user_id) => {
+        if (token) {
+            return axiosToken.get(`${URL_BASE}/api/seeds/user/${user_id}`);
+        } else {
+            return axios.create({
+                headers: { 'Authorization': forceToken },
+            }).get(`${URL_BASE}/api/seeds/user/${user_id}`);
+        };
+    },
 };
