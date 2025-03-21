@@ -7,7 +7,7 @@ import LoginForm from './pages/LoginForm';
 import Home from './pages/Home';
 import NeutralCarbon from './pages/NeutralCarbon';
 import MySubscription from './pages/MySubscription';
-// import MySeeds from './pages/MySeeds';
+import MySeeds from './pages/MySeeds';
 import SubscriptionList from './pages/SubscriptionList';
 import SuccessPayment from './pages/SuccessPayment';
 import FailurePayment from './pages/FailurePayment';
@@ -49,10 +49,10 @@ function App() {
         <Route path="/neutralCarbon" element={<NeutralCarbon />} />
         <Route path="/mySubscription" element={<MySubscription />} />
         <Route path="/subscriptionPlans" element={<SubscriptionList />} />
-        {/* <Route path="/mySeeds" element={<MySeeds />} /> */}
-        <Route path="/mySeeds" element={<ViewInProgress />} />
+        <Route path="/mySeeds" element={<MySeeds />} />
         <Route path="/successPayment" element={<SuccessPayment />} />
         <Route path="/failurePayment" element={<FailurePayment />} />
+        <Route path="*" element={<ViewInProgress />} />
       </Routes>
       <Watermark />
     </BrowserRouter>

@@ -11,7 +11,7 @@ const PriceSlider = ({ minPrice, currentPrice, setCurrentPrice, setModalPayment 
     });
 
     const newPriceToValue = (value) => {
-        const trees = (value / 149).toFixed(2);
+        const trees = parseInt(value / 149);
         setPriceToValue({
             trees,
             tons: (0.015 * trees).toFixed(3),
