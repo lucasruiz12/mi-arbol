@@ -18,9 +18,10 @@
 .container-seeds-text {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
     width: 45vw;
-    padding: 2rem;
+    padding: 1rem;
 }
 
 .text-my-seeds {
@@ -36,6 +37,68 @@
     text-align: justify;
     font-size: 31px;
     margin: 2rem 0;
+}
+
+.container-invitation {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: #D6CBB281;
+    border-radius: 8px;
+    padding: 3rem;
+}
+
+.title-invitation {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+
+.info-invitation {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0.5rem 1rem;
+}
+
+.date-invitation {
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    height: 100px;
+    align-items: center;
+    background-color: #A4B46A;
+    border-radius: 8px;
+}
+
+.date-invitation-day {
+    color: white;
+    font-size: 60px;
+    margin: 0;
+}
+
+.date-invitation-month {
+    color: white;
+    font-size: medium;
+    margin: 0;
+}
+
+.columns-invitation {
+    display: flex;
+    flex-direction: column;
+}
+
+.text-invitation {
+    margin: 0;
+    color: white;
+}
+
+.container-invitation-button {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100%;
+    width: 40%;
 }
 
 .container-seeds-map {
@@ -72,9 +135,9 @@
 }
 
 @media (max-width: 768px) {
-    .container-my-seeds {
+    /* .container-my-seeds {
         overflow-y: hidden;
-    }
+    } */
 
     .container-my-seeds-content {
         flex-direction: column;
@@ -89,7 +152,7 @@
         padding: 0.5rem 2rem;
     }
 
-    .info-my-seeds{
+    .info-my-seeds {
         margin: 1rem 0;
     }
 
@@ -112,7 +175,28 @@
         font-style: italic;
     }
 
-    .btn-green.btn-seeds-info{
+    .btn-green.btn-seeds-info {
         width: 100% !important;
     }
+
+    .container-invitation{
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .info-invitation{
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .container-invitation-button{
+        margin-top: 1vh;
+        width: 100%;
+    }
+
+    .seeds-map-wrapper{
+        height: 20rem;
+    }
+
 }

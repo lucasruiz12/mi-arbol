@@ -58,7 +58,7 @@ const Login = () => {
 
                 setTimeout(() => {
                     setLoading(false);
-                    window.location.href = "/home"
+                    window.location.href = "/mySeeds";
                 }, 2000);
 
             } else {
@@ -102,7 +102,7 @@ const Login = () => {
         const user = JSON.parse(localStorage.getItem(IS_AUTHENTICATED));
 
         if (user) {
-            window.location.href = "/home";
+            window.location.href = "/mySeeds";
         };
 
     }, []);

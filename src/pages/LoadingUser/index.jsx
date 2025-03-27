@@ -29,7 +29,7 @@ const LoadingUser = () => {
                     isAuthenticated.categoryPoints = data.user.categoryPoints;
                     localStorage.setItem(IS_AUTHENTICATED, JSON.stringify(isAuthenticated));
                     setTimeout(() => {
-                        navigate("/home");
+                        navigate("/mySeeds");
                     }, 1000);
                 };
             } else {

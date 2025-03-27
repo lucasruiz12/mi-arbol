@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import LandingHome from './pages/LandingHome';
 import InitQuestions from './pages/InitQuestions';
@@ -6,7 +6,7 @@ import RegisterForm from './pages/RegisterForm';
 import LoginForm from './pages/LoginForm';
 import Home from './pages/Home';
 import NeutralCarbon from './pages/NeutralCarbon';
-import MySubscription from './pages/MySubscription';
+// import MySubscription from './pages/MySubscription';
 import MySeeds from './pages/MySeeds';
 import SubscriptionList from './pages/SubscriptionList';
 import SuccessPayment from './pages/SuccessPayment';
@@ -47,7 +47,7 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/loadingUser" element={<LoadingUser />} />
         <Route path="/neutralCarbon" element={<NeutralCarbon />} />
-        <Route path="/mySubscription" element={<MySubscription />} />
+        {/* <Route path="/mySubscription" element={<MySubscription />} /> */}
         <Route path="/subscriptionPlans" element={<SubscriptionList />} />
         <Route path="/mySeeds" element={<MySeeds />} />
         <Route path="/successPayment" element={<SuccessPayment />} />

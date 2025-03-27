@@ -39,7 +39,7 @@ const SuccessPayment = () => {
                                 setMessageToShow("Se cargó completamente el pago");
                             }, 2000);
                             setTimeout(() => {
-                                navigate("/home");
+                                navigate("/mySeeds");
                             }, 3000);
                         };
                     } else {
@@ -47,7 +47,7 @@ const SuccessPayment = () => {
                             setMessageToShow("Se cargó completamente el pago");
                         }, 2000);
                         setTimeout(() => {
-                            navigate("/home");
+                            navigate("/mySeeds");
                         }, 3000);
                     }
                 } else {

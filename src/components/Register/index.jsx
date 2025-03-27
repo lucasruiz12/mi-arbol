@@ -107,7 +107,7 @@ const Register = () => {
         const user = JSON.parse(localStorage.getItem(IS_AUTHENTICATED));
 
         if (user) {
-            window.location.href = "/home";
+            window.location.href = "/mySeeds";
         };
 
         setTimeout(() => {

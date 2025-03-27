@@ -3,7 +3,7 @@ import { IS_AUTHENTICATED } from '../../helpers/constants';
 import loginConnections from '../../helpers/loginConnections';
 import NavBar from '../../components/NavBar';
 import MapView from '../../components/MapView';
-import BackPages from '../../components/BackPages';
+// import BackPages from '../../components/BackPages';
 // import LoadingLogo from '../../components/LoadingLogo';
 import './style.css';
 
@@ -47,9 +47,29 @@ const MySeeds = () => {
                         <p className="text-my-seeds">¡Te damos la bienvenida!</p>
                         <p className="info-my-seeds">En esta sección encontrarás la <b>geolocalización de tus semillas.</b></p>
                         <p className="info-my-seeds">Recuerda que con tu aporte estás <b>contribuyendo a disminuir</b> los daños ocasionados por la contaminación de cientos de tons de <b>CO2 Eq!</b></p>
+                        {/* <p className="info-my-seeds">Te invitamos a ser parte de <b>nuestro próximo evento de reforestación!</b></p> */}
                     </div>
-                    <div>
-                        <p className="info-my-seeds">Te invitamos a ser parte de <b>nuestro próximo evento de reforestación!</b></p>
+                    <div className="container-invitation">
+                        <h1 className="title-invitation">Próximo evento de reforestación</h1>
+                        <br />
+                        <div className="info-invitation">
+                            <div className="date-invitation">
+                                <h4 className="date-invitation-day">1</h4>
+                                <p className="date-invitation-month">may</p>
+                            </div>
+                            <div className="columns-invitation">
+                                <h4 className="title-invitation">Reforestación CDMX</h4>
+                                <br />
+                                <div className="columns-invitation">
+                                    <p className="text-invitation">Jueves, 1 de mayo de 2025</p>
+                                    <p className="text-invitation">11:00hs., Vivero Coyoacán,</p>
+                                    <p className="text-invitation">Ciudad de México</p>
+                                </div>
+                            </div>
+                            <div className="container-invitation-button">
+                                <button className="btn-green btn-seeds-info">Asistir</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div className="container-seeds-map">
@@ -62,7 +82,7 @@ const MySeeds = () => {
                     </div>
                 </div>
             </div>
-            <BackPages goToPage="/home" />
+            {/* <BackPages goToPage="/home" /> */}
         </div>
     );
 };
