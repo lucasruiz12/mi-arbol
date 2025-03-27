@@ -1,12 +1,12 @@
 import React from 'react';
 import { Dropdown } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import { IS_AUTHENTICATED } from '../../helpers/constants';
 import './style.css';
 
 const LogOutDropdown = ({ openModal }) => {
 
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     return (
         <Dropdown className="navbar-logout">
@@ -16,8 +16,8 @@ const LogOutDropdown = ({ openModal }) => {
                 {
                     JSON.parse(localStorage.getItem(IS_AUTHENTICATED))?.subscription && 
                     <>
-                    <Dropdown.Item style={{ color: "#604848", fontFamily: "Open Sans, serif !important" }} onClick={() => navigate("/mySeeds")}>Mis semillas</Dropdown.Item>
-                    <Dropdown.Item style={{ color: "#604848", fontFamily: "Open Sans, serif !important" }} onClick={() => navigate("/mySubscription")}>Ver mi subscripción</Dropdown.Item>
+                    {/* <Dropdown.Item style={{ color: "#604848", fontFamily: "Open Sans, serif !important" }} onClick={() => navigate("/mySeeds")}>Mis semillas</Dropdown.Item> */}
+                    {/* <Dropdown.Item style={{ color: "#604848", fontFamily: "Open Sans, serif !important" }} onClick={() => navigate("/mySubscription")}>Ver mi subscripción</Dropdown.Item> */}
                     </>
                 }
                 <Dropdown.Item style={{ color: "#604848", fontFamily: "Open Sans, serif !important" }} onClick={() => openModal()}>Cerrar sesión</Dropdown.Item>

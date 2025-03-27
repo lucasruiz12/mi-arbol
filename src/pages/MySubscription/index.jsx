@@ -25,7 +25,7 @@ const MySubscription = () => {
                     price: parseInt(amount),
                 });
             } else {
-                navigate("/home");
+                navigate("/mySeeds");
             };
         };
     }, []);

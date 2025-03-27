@@ -33,8 +33,8 @@ const GraphicPie = () => {
         { id: 'Comunicación y expansión', label: 'Importante para que llegues a conocer de nosotros y juntos mitiguemos CO2e', value: 8, color: '#A4B46A' },
         { id: 'Ingeniería forestal', label: 'Una parte va destinada a biólogos, agrónomos e ingenieros forestales que validan nuestras superficies', value: 15, color: '#C8D390' },
         { id: 'Programación web y mantenimiento de comunidad', label: 'Ayudamos a mantener la comunidad en servicio con actualizaciones manejando licencias y operaciones web', value: 6, color: '#F4D06F' },
-        { id: 'Cuidando raíces', label: 'Cuidamos que tus raíces lleguen alto, vigilándolas los primeros 3 años después de ser plantadas', value: 10, color: '#C0D860' },
-        { id: 'Planta de pino a reforestar', label: 'Plantamos plantillas de invernadero garantizando la calidad de cada raíz', value: 27, color: '#D6CBB2' },
+        { id: 'Planta de pino a reforestar', label: 'Plantamos plantillas de invernadero garantizando la calidad de cada raíz', value: 27, color: '#C0D860' },
+        { id: 'Cuidando raíces', label: 'Cuidamos que tus raíces lleguen alto, vigilándolas los primeros 3 años después de ser plantadas', value: 10, color: '#D6CBB2' },
         { id: 'Coordinación de plataforma y reforestaciones', label: 'Pago transmitido al equipo responsable de preparar las actividades y dar servicio a la plataforma', value: 8, color: '#8BB174' },
         { id: 'Pago justo a la comunidad', label: 'Remuneramos a las personas que hacen que suceda la magia de cada raíz plantada', value: 26, color: '#B4B886' },
     ];
