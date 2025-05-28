@@ -55,17 +55,22 @@ const FirstSteps = ({ setView }) => {
                         <p className="steps-line-text">Contestando unas preguntas muy sencillas y apegándonos a los factores de emisión del <i>Protocolo Internacional GHG</i>, podemos determinar un cálculo preciso de cuanto debemos mitigar para ser carbon neutro.</p>
                     </div>
                 </div>
-                <Link className="link-btn" to="/initQuestions">
-                    <button className="btn-green">
-                        Medir mi huella
-                    </button>
-                </Link>
-                <Link className="link-btn" to="/loginForm">
-                    <button className="btn-green have-account">
-                        Ya tengo cuenta
-                    </button>
-                </Link>
-                <div style={{ display: "flex", flexDirection: "column", alignItems: "center", marginTop: "5vh" }}>
+                <div style={{ display: "flex", flexDirection: "column", width: "30%", alignItems: "center" }}>
+                    <Link className="link-btn" to="/initQuestions">
+                        <button className="btn-green">
+                            Medir mi huella
+                        </button>
+                    </Link>
+                    <div>
+                        <p style={{ color: "white", marginTop: "0.5rem" }}>
+                            ¿Tienes una cuenta?
+                            <Link style={{ paddingTop: "1rem", fontSize: "1rem", marginLeft: "0.25rem" }} to="/loginForm">
+                                Inicia sesión
+                            </Link>
+                        </p>
+                    </div>
+                </div>
+                <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
                     <p className="steps-clients-title">Nuestros clientes</p>
                     <CarouselLogo />
                 </div>
