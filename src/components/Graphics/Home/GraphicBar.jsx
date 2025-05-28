@@ -5,14 +5,19 @@ const GraphicBar = ({ carbonPoints }) => {
     const data = {
         series: [
             {
-                name: 'Consumo',
+                name: 'Su consumo',
                 data: [
                     {
-                        x: 'Su consumo',
+                        x: '',
                         y: carbonPoints,
                     },
+                ],
+            },
+            {
+                name: 'Persona promedio',
+                data: [
                     {
-                        x: 'Persona promedio',
+                        x: '',
                         y: 9.45,
                     },
                 ],
@@ -21,8 +26,8 @@ const GraphicBar = ({ carbonPoints }) => {
         options: {
             chart: {
                 type: 'bar',
-                height: '100%',
-                width: '100%', // Se ajusta automáticamente al 100% del contenedor
+                height: '90%',
+                width: '90%', // Se ajusta automáticamente al 100% del contenedor
                 toolbar: {
                     show: false,
                 },
@@ -30,17 +35,11 @@ const GraphicBar = ({ carbonPoints }) => {
             plotOptions: {
                 bar: {
                     horizontal: true,
-                    barHeight: '50%',
+                    barHeight: '80%',
                     borderRadius: 5,
-                    colors: {
-                        ranges: [
-                            { from: 0, to: 10000, color: '#A4B46A' },
-                            { from: 0, to: 10000, color: '#C0D860' },
-                            { from: 0, to: 10000, color: '#C8D390' },
-                        ],
-                    },
                 },
             },
+            colors: ['#A4B46A', '#FF4560'],
             dataLabels: {
                 formatter: function (val, opt) {
                     const goals =
@@ -61,7 +60,7 @@ const GraphicBar = ({ carbonPoints }) => {
                 show: true,
                 showForSingleSeries: true,
                 position: 'top',
-                customLegendItems: ['Consumo'],
+                customLegendItems: ['Su consumo', 'Persona promedio'],
                 markers: {
                     fillColors: ['#A4B46A', '#FF4560'],
                 },
@@ -101,8 +100,8 @@ const GraphicBar = ({ carbonPoints }) => {
     };
 
     return (
-        <div className="graphics-background-home-bar" style={{zIndex: 99}}>
-            <ReactApexChart options={data.options} series={data.series} type="bar" width={600} height={200} />
+        <div className="graphics-background-home-bar" style={{ zIndex: 99 }}>
+            <ReactApexChart options={data.options} series={data.series} type="bar" width={500} height={180} />
         </div>
     );
 };

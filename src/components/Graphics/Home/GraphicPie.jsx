@@ -42,7 +42,7 @@ const GraphicPie = ({ carbonPoints, categoryPoints }) => {
     <>
       <h2 style={{ color: 'white' }}>Análisis de consumo</h2>
       <div className="graphics-background-home-pie pie-chart">
-        <div style={{ height: "100%", width: "100%" }}>
+        <div style={{ height: "90%", width: "90%" }}>
           <ResponsivePie
             data={data}
             margin={{ top: isResponsive ? 10 : 30, right: isResponsive ? 10 : 40, bottom: isResponsive ? 10 : 40, left: isResponsive ? 10 : 60 }}

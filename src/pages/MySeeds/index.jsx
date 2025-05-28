@@ -44,31 +44,48 @@ const MySeeds = () => {
             <div className="container-my-seeds-content">
                 <div className="container-seeds-text">
                     <div>
-                        <p className="text-my-seeds">¡Te damos la bienvenida!</p>
-                        <p className="info-my-seeds">En esta sección encontrarás la <b>geolocalización de tus semillas.</b></p>
-                        <p className="info-my-seeds">Recuerda que con tu aporte estás <b>contribuyendo a disminuir</b> los daños ocasionados por la contaminación de cientos de tons de <b>CO2 Eq!</b></p>
-                        {/* <p className="info-my-seeds">Te invitamos a ser parte de <b>nuestro próximo evento de reforestación!</b></p> */}
+                        <p className="text-my-seeds">Llevas <b>20 árboles sembrados</b></p>
+                        <p className="info-my-seeds">Lo que se traduce en <b>8.25 Tons CO2 eq.</b></p>
+                        <p className="info-my-seeds">En <b>7 meses</b> mitigarás toda tu huella de carbono</p>
+                    </div>
+                    <div style={{ display: "flex", justifyContent: "space-between", width: "90%" }}>
+                        <div style={{ display: "flex", flexDirection: "column", width: "70%" }}>
+                            <div className="container-invitation" style={{ padding: "1.5rem" }}>
+                                <h1 className="title-invitation">Geolocalización de semillas</h1>
+                                <ul style={{ color: "#604848", marginBottom: 0 }}>
+                                    <li>
+                                        <p style={{ color: "white", fontSize: "20px" }}>Cdad. Apizaco - Coord: (19.4159, -98.1406)</p>
+                                    </li>
+                                    <li>
+                                        <p style={{ color: "white", fontSize: "20px" }}>Muñoz - Coord: (19.4451, -98.2069)</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div className="container-invitation" style={{ padding: "1.5rem", margin: "1rem 0" }}>
+                                <h1 className="title-invitation">Tipos de árboles sembrados</h1>
+                                <ul style={{ color: "#604848", marginBottom: 0 }}>
+                                    <li>
+                                        <p style={{ color: "white", fontSize: "20px" }}>Pinus Pinea</p>
+
+                                    </li>
+                                    <li>
+                                        <p style={{ color: "white", fontSize: "20px" }}>Pinus elliottii</p>
+
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div style={{ display: "flex", flexDirection: "column", width: "30%" }}>
+                            <div className="container-invitation" style={{ padding: "1.5rem", height: "100%", width: "95%", margin: "0 1rem 1rem 1rem" }}>
+                                <p style={{color: "white"}}>Aquí verás las fotos de tus etiquetas</p>
+                            </div>
+                        </div>
                     </div>
                     <div className="container-invitation">
-                        <h1 className="title-invitation">Próximo evento de reforestación</h1>
+                        <h1 className="title-invitation">¡Asiste a nuestra siguiente reforestación masiva!</h1>
                         <br />
-                        <div className="info-invitation">
-                            <div className="date-invitation">
-                                <h4 className="date-invitation-day">1</h4>
-                                <p className="date-invitation-month">may</p>
-                            </div>
-                            <div className="columns-invitation">
-                                <h4 className="title-invitation">Reforestación CDMX</h4>
-                                <br />
-                                <div className="columns-invitation">
-                                    <p className="text-invitation">Jueves, 1 de mayo de 2025</p>
-                                    <p className="text-invitation">11:00hs., Vivero Coyoacán,</p>
-                                    <p className="text-invitation">Ciudad de México</p>
-                                </div>
-                            </div>
-                            <div className="container-invitation-button">
-                                <button className="btn-green btn-seeds-info">Asistir</button>
-                            </div>
+                        <div className="container-invitation-button">
+                            <button className="btn-green btn-seeds-info">Inscripción</button>
                         </div>
                     </div>
                 </div>

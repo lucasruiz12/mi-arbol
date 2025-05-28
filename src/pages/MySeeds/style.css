@@ -20,15 +20,14 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 45vw;
-    padding: 1rem;
+    width: 50vw;
 }
 
 .text-my-seeds {
     color: white;
     text-align: justify;
     font-size: 42px;
-    margin: 0 0 2rem 0;
+    margin: 0 0 0.5rem 0;
     font-weight: bold;
 }
 
@@ -36,7 +35,7 @@
     color: white;
     text-align: justify;
     font-size: 31px;
-    margin: 2rem 0;
+    margin: 0.5rem 0;
 }
 
 .container-invitation {
@@ -45,13 +44,16 @@
     justify-content: space-around;
     background-color: #D6CBB281;
     border-radius: 8px;
-    padding: 3rem;
+    padding: 2rem;
+    margin-bottom: 1rem;
+    width: 90%;
 }
 
 .title-invitation {
     text-align: center;
     color: white;
     font-weight: bold;
+    font-size: 1.75rem;
 }
 
 .info-invitation {
@@ -98,7 +100,7 @@
     justify-content: center;
     align-items: flex-end;
     height: 100%;
-    width: 40%;
+    width: 100%;
 }
 
 .container-seeds-map {
@@ -179,23 +181,23 @@
         width: 100% !important;
     }
 
-    .container-invitation{
+    .container-invitation {
         padding: 1rem;
         margin-bottom: 1rem;
     }
 
-    .info-invitation{
+    .info-invitation {
         flex-direction: column;
         align-items: center;
         gap: 1rem;
     }
 
-    .container-invitation-button{
+    .container-invitation-button {
         margin-top: 1vh;
         width: 100%;
     }
 
-    .seeds-map-wrapper{
+    .seeds-map-wrapper {
         height: 20rem;
     }
 

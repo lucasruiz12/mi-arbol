@@ -55,12 +55,14 @@ const FirstSteps = ({ setView }) => {
                         <p className="steps-line-text">Contestando unas preguntas muy sencillas y apegándonos a los factores de emisión del <i>Protocolo Internacional GHG</i>, podemos determinar un cálculo preciso de cuanto debemos mitigar para ser carbon neutro.</p>
                     </div>
                 </div>
-                {/* <button className="btn-green" onClick={() => showPushNotification()}>
-                    Test push notification
-                </button> */}
                 <Link className="link-btn" to="/initQuestions">
                     <button className="btn-green">
                         Medir mi huella
+                    </button>
+                </Link>
+                <Link className="link-btn" to="/loginForm">
+                    <button className="btn-green have-account">
+                        Ya tengo cuenta
                     </button>
                 </Link>
                 <div style={{ display: "flex", flexDirection: "column", alignItems: "center", marginTop: "5vh" }}>

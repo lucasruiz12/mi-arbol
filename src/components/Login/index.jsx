@@ -198,7 +198,7 @@ const Login = () => {
                     </div>
                 </div>
                 <div className="container-social-media">
-                    <Link to="/registerForm">
+                    <Link to="/initQuestions">
                         <span style={{ cursor: "pointer" }}>¿No tienes cuenta? Crear una</span>
                     </Link>
                 </div>
