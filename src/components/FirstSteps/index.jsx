@@ -45,27 +45,25 @@ const FirstSteps = ({ setView }) => {
                         <img src={logoISO} alt="NOIMG" className="logo-iso" />
                     </div>
                 </div>
-                {
-                    currentMessage !== "" && showMessage &&
+                {currentMessage !== "" && showMessage && (
                     <p className="steps-tips">{tipsAndRecommendations[currentMessage].message}</p>
-                }
+                )}
                 <div className="steps-info-container">
                     <div className="steps-text">
                         <p className="steps-line-text">El primer paso que debes dar es medir los gases de efecto invernadero que generas en tu vida diaria.</p>
                         <p className="steps-line-text">Contestando unas preguntas muy sencillas y apegándonos a los factores de emisión del <i>Protocolo Internacional GHG</i>, podemos determinar un cálculo preciso de cuanto debemos mitigar para ser carbon neutro.</p>
+                        <Link className="link-btn text-decoration-none" to="/initQuestions">
+                            <button className="btn-green">
+                                Medir mi huella
+                            </button>
+                        </Link>
                     </div>
                 </div>
-                {/* <button className="btn-green" onClick={() => showPushNotification()}>
-                    Test push notification
-                </button> */}
-                <Link className="link-btn" to="/initQuestions">
-                    <button className="btn-green">
-                        Medir mi huella
-                    </button>
-                </Link>
-                <div style={{ display: "flex", flexDirection: "column", alignItems: "center", marginTop: "5vh" }}>
-                    <p className="steps-clients-title">Nuestros clientes</p>
-                    <CarouselLogo />
+                <div className="steps-clients-section">
+                    <h2 className="steps-clients-title">Nuestros clientes</h2>
+                    <div className="steps-carousel-container">
+                        <CarouselLogo />
+                    </div>
                 </div>
             </div>
         </div>

@@ -36,25 +36,29 @@ function App() {
 
   return (
     <BrowserRouter>
-      <video autoPlay muted loop className="app-video">
-        <source src={window.innerWidth >= 768 ? videoCover : videoCoverMovil} type="video/mp4" />
-      </video>
-      <Routes>
-        <Route path="/" element={<LandingHome />} />
-        <Route path="/initQuestions" element={<InitQuestions />} />
-        <Route path="/registerForm" element={<RegisterForm />} />
-        <Route path="/loginForm" element={<LoginForm />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/loadingUser" element={<LoadingUser />} />
-        <Route path="/neutralCarbon" element={<NeutralCarbon />} />
-        {/* <Route path="/mySubscription" element={<MySubscription />} /> */}
-        <Route path="/subscriptionPlans" element={<SubscriptionList />} />
-        <Route path="/mySeeds" element={<MySeeds />} />
-        <Route path="/successPayment" element={<SuccessPayment />} />
-        <Route path="/failurePayment" element={<FailurePayment />} />
-        <Route path="*" element={<ViewInProgress />} />
-      </Routes>
-      <Watermark />
+      <div className="min-vh-100 position-relative overflow-hidden">
+        {/* <video autoPlay muted loop className="position-fixed top-0 start-0 w-100 h-100 app-video">
+          <source src={window.innerWidth >= 768 ? videoCover : videoCoverMovil} type="video/mp4" />
+        </video> */}
+        <div className="position-relative routes-container">
+          <Routes>
+            <Route path="/" element={<LandingHome />} />
+            <Route path="/initQuestions" element={<InitQuestions />} />
+            <Route path="/registerForm" element={<RegisterForm />} />
+            <Route path="/loginForm" element={<LoginForm />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/loadingUser" element={<LoadingUser />} />
+            <Route path="/neutralCarbon" element={<NeutralCarbon />} />
+            {/* <Route path="/mySubscription" element={<MySubscription />} /> */}
+            <Route path="/subscriptionPlans" element={<SubscriptionList />} />
+            <Route path="/mySeeds" element={<MySeeds />} />
+            <Route path="/successPayment" element={<SuccessPayment />} />
+            <Route path="/failurePayment" element={<FailurePayment />} />
+            <Route path="*" element={<ViewInProgress />} />
+          </Routes>
+          <Watermark />
+        </div>
+      </div>
     </BrowserRouter>
   );
 };

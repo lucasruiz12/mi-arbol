@@ -1,11 +1,12 @@
 .watermark {
-    position: absolute;
-    top: 85%;
-    left: 90%;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
     text-align: center;
+    z-index: 1000;
 }
 
-.water-none{
+.water-none {
     display: none;
 }
 
@@ -24,9 +25,9 @@
 }
 
 @media (max-width: 768px) {
-    .watermark{
-        left: 77.5%;
-        top: 92.5%
+    .watermark {
+        bottom: 1rem;
+        right: 1rem;
     }
 
     .watermark img {
@@ -36,10 +37,7 @@
     }
     
     .watermark span {
-        display: block;
         font-size: 8px;
-        color: #636363;
-        opacity: 0.5;
-        margin-top: 10px;
+        margin-top: 5px;
     }
 }

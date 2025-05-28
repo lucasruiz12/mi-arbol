@@ -1,17 +1,102 @@
-.img-logo-carousel{
+.carousel-container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.slick-track {
+    display: flex !important;
+    align-items: center !important;
+}
+
+.slick-slide {
+    padding: 0 35px;
+    height: auto !important;
+}
+
+.slick-slide > div {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilo base para todos los logos */
+.img-logo-carousel {
     width: 100px;
     height: 100px;
     object-fit: contain;
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+    display: block;
+    margin: 0 auto;
 }
 
-@media (max-width: 768px) {
-    .carousel-container{
-        padding: 0 !important;     
-        margin: 0 auto !important;   
+/* Ajustes específicos para logos horizontales */
+.img-logo-carousel[src*="canon"],
+.img-logo-carousel[src*="forvia"],
+.img-logo-carousel[src*="blason"] {
+    width: 120px;
+    height: 60px;
+}
+
+/* Ajustes específicos para logos cuadrados */
+.img-logo-carousel[src*="habitat"],
+.img-logo-carousel[src*="onu"],
+.img-logo-carousel[src*="pepsi"],
+.img-logo-carousel[src*="gruposanchez"] {
+    width: 90px;
+    height: 90px;
+}
+
+.img-logo-carousel:hover {
+    opacity: 1;
+}
+
+/* Tablet y dispositivos medianos */
+@media (max-width: 1024px) {
+    .slick-slide {
+        padding: 0 30px;
     }
 
-    .img-logo-carousel{
-        width: 60px;
-        height: 75px;
+    /* Logos horizontales en tablet */
+    .img-logo-carousel[src*="canon"],
+    .img-logo-carousel[src*="forvia"],
+    .img-logo-carousel[src*="blason"] {
+        width: 100px;
+        height: 50px;
+    }
+
+    /* Logos cuadrados en tablet */
+    .img-logo-carousel[src*="habitat"],
+    .img-logo-carousel[src*="onu"],
+    .img-logo-carousel[src*="pepsi"],
+    .img-logo-carousel[src*="gruposanchez"] {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+/* Mobile y dispositivos pequeños */
+@media (max-width: 768px) {
+    .slick-slide {
+        padding: 0 25px;
+    }
+
+    /* Logos horizontales en mobile */
+    .img-logo-carousel[src*="canon"],
+    .img-logo-carousel[src*="forvia"],
+    .img-logo-carousel[src*="blason"] {
+        width: 80px;
+        height: 40px;
+    }
+
+    /* Logos cuadrados en mobile */
+    .img-logo-carousel[src*="habitat"],
+    .img-logo-carousel[src*="onu"],
+    .img-logo-carousel[src*="pepsi"],
+    .img-logo-carousel[src*="gruposanchez"] {
+        width: 70px;
+        height: 70px;
     }
 }    

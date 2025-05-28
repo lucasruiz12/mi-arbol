@@ -1,28 +1,21 @@
-.container-arrow-page {
-    display: flex;
-    position: absolute;
-    top: 90%;
-    left: 3%;
-    height: 5vh;
-    width: 5vh;
+.container-arrow-back {
+    position: fixed;
+    left: 2rem;
+    cursor: pointer;
+    z-index: 100;
 }
 
 .img-arrow-back {
-    width: 100%;
-    height: 100%;
-    transition: 0.5s;
     cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
-@media (pointer: fine) {
-    .img-arrow-back:hover {
-        transform: scale(1.1);
-        filter: invert(50%);
-    }
+.img-arrow-back:hover {
+    transform: scale(1.1);
 }
 
-@media (max-width: 768px){
-    .container-arrow-page {
-        top: 93% !important;
+@media (max-width: 768px) {
+    .container-arrow-back {
+        left: 1rem;
     }
 }

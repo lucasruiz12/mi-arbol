@@ -1,6 +1,8 @@
 .container-mission-view {
-    height: 100%;
     width: 100%;
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
 }
 
 .mission-video {
@@ -16,15 +18,18 @@
 }
 
 .mission-content {
-    height: 100%;
-    width: 100%;
     padding: 5%;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .mission-header {
     display: flex;
     justify-content: space-between;
     margin-top: 5vh;
+    position: relative;
 }
 
 .mission-logo {
@@ -38,17 +43,18 @@
     align-items: center;
     text-align: justify;
     padding: 2rem;
-    width: 22.5vw;
-    height: 7.5vw;
-    font-size: large;
-    font-weight: bold;
-    background-color: #4e4e4e7e;
+    width: 30vw;
+    background-color: rgba(78, 78, 78, 0.5);
     color: white;
     position: absolute;
-    left: 75%;
-    top: 5%;
+    right: 5%;
+    top: 33%;
     border-radius: 1rem;
-    animation: grow 8s ease-out;
+    font-size: 1.2rem;
+    font-weight: bold;
+    z-index: 100;
+    backdrop-filter: blur(5px);
+    animation: slideInMission 8s ease-out;
 }
 
 .close-mission-tips {
@@ -60,14 +66,13 @@
     animation: slideInCloseMission 8s ease-out;
 }
 
-
 @keyframes slideInMission {
     0% {
         top: -100px;
     }
 
     10% {
-        top: 10%;
+        top: 33%;
     }
 
     90% {
@@ -99,19 +104,31 @@
 
 @keyframes slideInMobileMission {
     0% {
-        top: 100%;
-    }
-
-    10% {
-        top: 70%;
-    }
-
-    90% {
-        opacity: 0.99;
-    }
-
-    100% {
+        bottom: -100%;
         opacity: 0;
+    }
+    30% {
+        bottom: 20%;
+        opacity: 1;
+    }
+    80% {
+        bottom: 20%;
+        opacity: 1;
+    }
+    100% {
+        bottom: 20%;
+        opacity: 0;
+    }
+}
+
+@keyframes slideInFromBottom {
+    0% {
+        transform: translate(-50%, 100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-50%, 0);
+        opacity: 1;
     }
 }
 
@@ -122,19 +139,16 @@
 
 .mission-info-container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    width: 100%;
     margin: 5vh 0;
+    position: relative;
+    z-index: 1;
+    flex-grow: 1;
 }
 
 .mission-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: flex-start;
     width: 60%;
-    height: 35vh;
+    position: relative;
 }
 
 .mission-line-text {
@@ -144,56 +158,72 @@
     font-weight: bold;
 }
 
+/* Tablet y dispositivos medianos */
+@media (max-width: 1024px) {
+    .mission-line-text {
+        font-size: 24px;
+    }
+
+    .mission-tips {
+        width: 30vw;
+        font-size: 1.1rem;
+        right: 10%;
+    }
+
+    .mission-logo {
+        margin: -2.5rem 0 0 -1rem;
+    }
+}
+
+/* Mobile y dispositivos pequeños */
 @media (max-width: 768px) {
-    .mission-header {
-        justify-content: center;
+    .container-mission-view {
+        height: 100vh;
+        overflow-y: auto;
     }
 
     .mission-content {
-        width: 100%;
+        min-height: 100vh;
+        padding: 1.5rem;
         display: flex;
         flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .mission-header {
+        justify-content: center;
+        margin-top: 1rem;
+    }
+
+    .mission-logo {
+        margin: 0;
+        height: 10vh;
     }
 
     .mission-info-container {
-        margin: 5vh 0
-    }
-
-    .mission-title {
-        font-size: 5vh;
-        font-weight: bold;
+        margin: 2rem 0;
+        flex-direction: column;
     }
 
     .mission-text {
         width: 100%;
-        height: auto;
         background-color: rgba(0, 0, 0, 0.35);
         padding: 1rem;
         border-radius: 1rem;
     }
 
     .mission-line-text {
-        color: white;
-        font-size: medium;
-        margin: 0.5rem 0
-    }
-
-    .btn-green {
-        width: 60% !important;
-        align-self: center;
-        font-size: medium !important;
-    }
-
-    .mission-logo{
-        margin: 0;
+        font-size: 1rem;
+        margin: 0.5rem 0;
     }
 
     .mission-tips {
-        width: 80vw;
-        height: auto;
-        left: 10%;
-        top: 70%;
+        width: 80%;
+        font-size: 1rem;
+        padding: 1rem;
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
         animation: slideInMobileMission 8s ease-out;
-        font-size: medium;
     }
 }

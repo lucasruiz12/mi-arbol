@@ -52,18 +52,19 @@ const OurMission = ({ setView }) => {
     }, [showMessage]);
 
     return (
-        <div className="container-mission-view">
-            <div className="mission-content">
-                <div className="mission-header">
+        <div className="container-mission-view vh-100">
+            <div className="mission-content d-flex flex-column h-100">
+                <div className="mission-header position-relative">
                     <img /*onClick={() => setView(2)}*/ className="mission-logo" src={logoArbol} alt="LOG" />
-                    {
-                        currentMessage !== "" && showMessage && !hideMessage &&
-                        <p className="mission-tips">{tipsAndRecommendations[currentMessage].message}</p>
-                    }
+                    {currentMessage !== "" && showMessage && !hideMessage && (
+                        <div className="mission-tips">
+                            {tipsAndRecommendations[currentMessage].message}
+                        </div>
+                    )}
                 </div>
-                <div className="mission-info-container">
+                <div className="mission-info-container flex-grow-1">
                     <div className="mission-text">
-                        <p className="mission-line-text">En “Más Raíces, Menos Huella” te ayudamos a calcular tus emisiones diarias para entender el impacto que tienes como persona.</p>
+                        <p className="mission-line-text mb-4">En "Más Raíces, Menos Huella" te ayudamos a calcular tus emisiones diarias para entender el impacto que tienes como persona.</p>
                         <p className="mission-line-text">Al entender cuanto CO2 generas, te ayudaremos a reforestar los suficientes árboles para mitigar tu huella de carbono.</p>
                     </div>
                 </div>

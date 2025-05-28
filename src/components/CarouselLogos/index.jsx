@@ -2,47 +2,55 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { colorLogos, whiteLogos } from "../../helpers/logosToCarousel";
+import { whiteLogos } from "../../helpers/logosToCarousel";
 import './style.css';
 
 const CarouselLogo = () => {
   const settings = {
-    dots: false, // Muestra los puntos de navegación
-    infinite: true, // Hace que el carrusel sea infinito
-    speed: 2000, // Velocidad de la transición
-    slidesToShow: 5, // Cantidad de logos visibles
-    slidesToScroll: 1, // Logos que se mueven por scroll
-    autoplay: true, // Activar desplazamiento automático
-    autoplaySpeed: 2000, // Velocidad del desplazamiento
-    cssEase: "linear", // Transición fluida
-    arrows: false, // Oculta flechas
+    dots: false,
+    infinite: true,
+    speed: 2000,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    cssEase: "linear",
+    arrows: false,
     responsive: [
       {
-        breakpoint: 1024, // Para pantallas menores a 1024px
+        breakpoint: 1200,
         settings: {
-          slidesToShow: 4, // Muestra 3 imágenes
+          slidesToShow: 4,
         },
       },
       {
-        breakpoint: 768, // Para pantallas menores a 768px
+        breakpoint: 1024,
         settings: {
-          slidesToShow: 3, // Muestra 2 imágenes
+          slidesToShow: 3,
         },
       },
       {
-        breakpoint: 480, // Para pantallas menores a 480px
+        breakpoint: 768,
         settings: {
-          slidesToShow: 2, // Muestra 1 imagen
+          slidesToShow: 3,
+          speed: 1500,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2,
+          speed: 1500,
         },
       },
     ],
   };
 
   return (
-    <div className="carousel-container" style={{ width: "70%", margin: "0 auto", padding: "2rem 0", marginTop: "2vh" }}>
+    <div className="carousel-container">
       <Slider {...settings}>
         {whiteLogos.map((logo, index) => (
-          <div key={index} style={{ display: "flex", justifyContent: "center" }}>
+          <div key={index} style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
             <img
               src={logo}
               alt={`Logo ${index + 1}`}
