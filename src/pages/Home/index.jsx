@@ -44,8 +44,8 @@ const Home = () => {
     const formattedNumber = (number) => {
 
         const formatNumber = new Intl.NumberFormat('es-ES', {
-            minimumFractionDigits: 3,
-            maximumFractionDigits: 3,
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2,
         }).format(number);
 
         return formatNumber.replace(',', '.');
