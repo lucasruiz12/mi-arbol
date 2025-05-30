@@ -28,7 +28,7 @@ const SubscriptionList = () => {
             <div className="container-subscription-list-content">
                 <div className="subscription-text-container">
                     <h2 className="subscription-text-header">¡Somos la plataforma que más árboles sembrará por cada peso que inviertas!</h2>
-                    <h4 className="subscription-text-line"><i>Recuerda que la acción más altruista que puedes hacer hoy, es sembrar un árbol para las personas del mañana.</i></h4>
+                    <h4 className="subscription-text-line"><i>"Recuerda que la acción más altruista que puedes hacer hoy, es sembrar un árbol para las personas del mañana."</i></h4>
                 </div>
                 <div className="container-subscription-slider">
                     <PriceSlider minPrice={minPrice} currentPrice={currentPrice} setCurrentPrice={setCurrentPrice} setModalPayment={setModalPayment} />

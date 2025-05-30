@@ -27,7 +27,7 @@ const GraphicBar = ({ carbonPoints }) => {
             chart: {
                 type: 'bar',
                 height: '90%',
-                width: '90%', // Se ajusta automáticamente al 100% del contenedor
+                width: '90%',
                 toolbar: {
                     show: false,
                 },
@@ -87,11 +87,11 @@ const GraphicBar = ({ carbonPoints }) => {
             },
             responsive: [
                 {
-                    breakpoint: 768, // Para pantallas más pequeñas
+                    breakpoint: 768,
                     options: {
                         chart: {
                             width: '100%',
-                            height: 200, // Ajustamos la altura para pantallas pequeñas
+                            height: 200,
                         },
                     },
                 },

@@ -5,6 +5,11 @@
     text-align: center;
 }
 
+.watermark.watermar-graphic{
+    top: 83%;
+    left: 86%;
+}
+
 .water-none{
     display: none;
 }
@@ -24,7 +29,8 @@
 }
 
 @media (max-width: 768px) {
-    .watermark{
+    .watermark
+    .watermark.watermar-graphic{
         left: 77.5%;
         top: 92.5%
     }

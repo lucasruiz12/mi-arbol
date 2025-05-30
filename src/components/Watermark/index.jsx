@@ -19,7 +19,7 @@ const Watermark = () => {
     }, []);
 
     return (
-        <div className={showMark ? "watermark" : "water-none"}>
+        <div className={pathname === "/home" ? "watermark watermar-graphic" :showMark ? "watermark" : "water-none"}>
             <span>Powered by</span>
             <img src={pathname === "/initQuestions" ? logoTAOBrown : logoTAOWhite} alt="Company Logo" />
         </div>
