@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ReactSlider from 'react-slider';
 // import { Link } from 'react-router-dom';
-import { IS_AUTHENTICATED } from '../../helpers/constants';
+import { IS_AUTHENTICATED, PRICE_TO_PAY } from '../../helpers/constants';
 import './style.css';
 import { useNavigate } from 'react-router-dom';
 
