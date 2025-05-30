@@ -138,9 +138,10 @@
 }
 
 @media (max-width: 768px) {
-    /* .container-my-seeds {
-        overflow-y: hidden;
-    } */
+    .container-my-seeds {
+        /* overflow-y: hidden; */
+        padding: 0;
+    }
 
     .container-my-seeds-content {
         flex-direction: column;

@@ -166,6 +166,7 @@
     .container-home {
         /* flex-direction: column-reverse; */
         overflow-y: hidden;
+        padding: 0;
     }
 
     .container-home-content {

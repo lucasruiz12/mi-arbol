@@ -82,7 +82,7 @@
 }
 
 .info-you-know {
-    font-size: 45px;
+    font-size: 39px;
     margin: -2vh 0 2.5vh 0.5vw;
     color: white;
     text-align: justify;
@@ -180,6 +180,7 @@
     .container-neutral-carbon {
         /* flex-direction: column-reverse; */
         overflow-y: hidden;
+        padding: 0;
     }
 
     .container-neutral-carbon-content {

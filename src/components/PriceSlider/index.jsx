@@ -3,8 +3,12 @@ import ReactSlider from 'react-slider';
 // import { Link } from 'react-router-dom';
 import { IS_AUTHENTICATED } from '../../helpers/constants';
 import './style.css';
+import { useNavigate } from 'react-router-dom';
 
 const PriceSlider = ({ minPrice, currentPrice, setCurrentPrice, setModalPayment }) => {
+
+    const navigate = useNavigate();
+
     const [priceToValue, setPriceToValue] = useState({
         trees: 1,
         tons: 0.015
@@ -42,6 +46,11 @@ const PriceSlider = ({ minPrice, currentPrice, setCurrentPrice, setModalPayment 
         };
     };
 
+    const goToRegisterTemporal = () => {
+        localStorage.setItem(PRICE_TO_PAY, currentPrice);
+        navigate("/registerForm");
+    }
+
     useEffect(() => {
         newPriceToValue(minPrice);
     }, [minPrice]);
@@ -77,7 +86,8 @@ const PriceSlider = ({ minPrice, currentPrice, setCurrentPrice, setModalPayment 
                     <p className="tree-line">{priceToValue.trees} {currentPrice === 189 ? "árbol" : "árboles"} por mes</p>
                 </div>
             </div>
-            <button className={`btn-green${(JSON.parse(localStorage.getItem(IS_AUTHENTICATED))?.subscription?.amount === currentPrice) ? " disabled" : ""} checkout-btn`} disabled={JSON.parse(localStorage.getItem(IS_AUTHENTICATED))?.subscription?.amount === currentPrice} onClick={() => setModalPayment(true)}>Sembrar mis raíces</button>
+            {/* <button className={`btn-green${(JSON.parse(localStorage.getItem(IS_AUTHENTICATED))?.subscription?.amount === currentPrice) ? " disabled" : ""} checkout-btn`} disabled={JSON.parse(localStorage.getItem(IS_AUTHENTICATED))?.subscription?.amount === currentPrice} onClick={() => setModalPayment(true)}>Sembrar mis raíces</button> */}
+            <button className={`btn-green${(JSON.parse(localStorage.getItem(IS_AUTHENTICATED))?.subscription?.amount === currentPrice) ? " disabled" : ""} checkout-btn`} disabled={JSON.parse(localStorage.getItem(IS_AUTHENTICATED))?.subscription?.amount === currentPrice} onClick={goToRegisterTemporal}>Sembrar mis raíces</button>
         </div >
     );
 };
