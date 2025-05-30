@@ -145,7 +145,25 @@ const InitQuestions = () => {
                         </div>
                         <div className="container-question">
                             <div className="container-text">
-                                <p className="question-text">{questionsAndAnswers.find(el => el.id === currentQuestion).id}.- {questionsAndAnswers.find(el => el.id === currentQuestion).question}</p>
+                                <p className="question-text">
+                                    {questionsAndAnswers.find(el => el.id === currentQuestion).id}.- {
+                                        questionsAndAnswers
+                                            .find(el => el.id === currentQuestion)
+                                            .question
+                                            .split('\n')
+                                            .map((line, index) => (
+                                                <React.Fragment key={index}>
+                                                    {/* <span
+                                                        style={index === 1 ? { display: 'block', textAlign: 'center' } : {}}
+                                                    >
+                                                        {line}
+                                                    </span> */}
+                                                    {line}
+                                                    <br />
+                                                </React.Fragment>
+                                            ))
+                                    }
+                                </p>
                             </div>
                         </div>
                         <div className={`container-answers ${questionsAndAnswers.find(el => el.id === currentQuestion)?.answers.length > 3 ? " many-answers" : ""}`}>

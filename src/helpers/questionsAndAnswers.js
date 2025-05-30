@@ -1,7 +1,7 @@
 export const questionsAndAnswers = [
     {
         id: 1,
-        question: "¿Cuántas habitaciones tiene tu casa? (Cuenta todas, no sólo las que tengan cama para dormir)",
+        question: "¿Cuántas habitaciones tiene tu casa? \n(Cuenta todas, no sólo las que tengan cama para dormir)",
         answers: [
             { name: "1-2", points: 1.314 },
             { name: "3-4", points: 2.628 },
@@ -67,11 +67,11 @@ export const questionsAndAnswers = [
         id: 8,
         question: "Si pudieras sumar todos los vuelos que tomas al año, ¿Cuántas horas de viaje suman aproximadamente?",
         answers: [
+            { name: "No viajo", points: 0 },
             { name: "Menos de 7 hrs", points: 0.4 },
             { name: "Entre 8 y 18 hrs", points: 1.4 },
             { name: "Entre 19 y 28 hrs", points: 2.71 },
             { name: "Más de 28 hrs", points: 3.2 },
-            { name: "No viajo", points: 0 },
         ],
     },
     {
@@ -79,16 +79,16 @@ export const questionsAndAnswers = [
         question: "¿Cuál es tu medio de transporte para uso diario?",
         answers: [
             { name: "Automóvil", points: 0.51 },
+            { name: "Auto Eléctrico", points: 0.15},
             { name: "Camioneta", points: 1 },
             { name: "Transporte público", points: 0.3 },
             { name: "Motocicleta", points: 0.33 },
             { name: "Caminando/Bicicleta", points: 0 },
-            { name: "Auto EV", points: 0.15},
         ],
     },
     {
         id: 10,
-        question: "¿Cuántas horas a la semana utilizas este medio de transporte? (No tomes en cuenta tus viajes en carretera)",
+        question: "¿Cuántas horas a la semana utilizas este medio de transporte? \n(No tomes en cuenta tus viajes en carretera)",
         answers: [
             { name: "Menos de 5 horas", points: 1.9 },
             { name: "Entre 5 y 10 horas", points: 3.8 },
@@ -97,7 +97,7 @@ export const questionsAndAnswers = [
     },
     {
         id: 11,
-        question: "¿Cuántos kilómetros de carretera manejas al mes en promedio? (en idas y vueltas)",
+        question: "¿Cuántos kilómetros de carretera manejas al mes en promedio? \n(En idas y vueltas)",
         answers: [
             { name: "No viajo en carretera normalmente", points: 0 },
             { name: "Menos de 250 km", points: 0.7 },
@@ -109,8 +109,8 @@ export const questionsAndAnswers = [
         id: 12,
         question: "¿Con qué frecuencia comes productos de origen animal?",
         answers: [
-            { name: "En cada comida", points: 6.63 },
-            { name: "Diario", points: 5.1 },
+            { name: "No consumo", points: 0 },
+            { name: "Todos los días", points: 5.1 },
             { name: "Cada tercer día", points: 3.06 },
             { name: "Una vez a la semana", points: 1.53 },
         ],
@@ -128,9 +128,9 @@ export const questionsAndAnswers = [
         id: 14,
         question: "¿Qué haces con los residuos que generas en tu hogar?",
         answers: [
-            { name: "Los separo y los llevo a puntos de reciclaje", points: 0.75 },
-            { name: "Los tiro a la basura", points: 0.85 },
             { name: "Hago composta", points: 0.625 },
+            { name: "Los tiro a la basura", points: 0.85 },
+            { name: "Los separo y los llevo a puntos de reciclaje", points: 0.75 },
         ],
     },
     {

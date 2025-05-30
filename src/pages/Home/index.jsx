@@ -87,7 +87,7 @@ const Home = () => {
                         </div>
                     </div>
                     <div className="home-user-graphics">
-                        <GraphicsHome carbonPoints={parseFloat(carbonPoints).toFixed(3)} categoryPoints={categoryPoints} />
+                        <GraphicsHome carbonPoints={parseFloat(carbonPoints).toFixed(2)} categoryPoints={categoryPoints} />
                     </div>
                 </div>
             </div>
