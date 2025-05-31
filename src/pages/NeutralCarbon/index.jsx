@@ -24,7 +24,7 @@ const NeutralCarbon = () => {
                             <div className="container-info-text">
                                 <p className="text-you-know">¿Sabías qué?</p>
                                 <p className="info-you-know">Por menos de lo que gastas en una pizza al mes, puedes neutralizar tu huella de carbono como persona.</p>
-                                <p className="info-you-know">¡Únete a nuestra comunidad con una pequeña suscripción para ser carbono neutro!</p>
+                                <p className="info-you-know" style={{ justifySelf: "center" }}>¡Únete a nuestra comunidad con una pequeña suscripción para ser carbono neutro!</p>
                                 <div className="container-btn-carbono">
                                     <button className="btn-green" onClick={() => setRenderView(2)}>¿Cómo se invierte mi suscripción?</button>
                                 </div>

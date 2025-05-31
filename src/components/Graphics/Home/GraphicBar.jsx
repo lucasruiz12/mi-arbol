@@ -5,7 +5,7 @@ const GraphicBar = ({ carbonPoints }) => {
     const data = {
         series: [
             {
-                name: 'Su consumo',
+                name: 'Tu impacto',
                 data: [
                     {
                         x: '',
@@ -60,7 +60,7 @@ const GraphicBar = ({ carbonPoints }) => {
                 show: true,
                 showForSingleSeries: true,
                 position: 'top',
-                customLegendItems: ['Su consumo', 'Persona promedio'],
+                customLegendItems: ['Tu impacto', 'Persona promedio'],
                 markers: {
                     fillColors: ['#A4B46A', '#FF4560'],
                 },
