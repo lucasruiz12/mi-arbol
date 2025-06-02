@@ -40,7 +40,7 @@ const GraphicPie = ({ carbonPoints, categoryPoints }) => {
 
   return (
     <>
-      <h2 style={{ color: 'white' }}>Análisis de consumo</h2>
+      <h2 style={{ color: 'white', marginBottom: "3rem" }}>Análisis de consumo</h2>
       <div className="graphics-background-home-pie pie-chart">
         <div style={{ height: "90%", width: "90%" }}>
           <ResponsivePie
@@ -56,6 +56,8 @@ const GraphicPie = ({ carbonPoints, categoryPoints }) => {
             colors={data.map((d) => d.color)} // Aquí aplicamos los colores personalizados
             arcLabel={(d) => `${d.value}%`} // Formatear los valores como porcentaje
             arcLabelsRadiusOffset={0.65}
+            arcLinkLabelsThickness={3}
+            arcLinkLabelsColor={{ from: 'color' }}
             isInteractive={true} // Mantiene la interactividad para el tooltip
             theme={{
               tooltip: {

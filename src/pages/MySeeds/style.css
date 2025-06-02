@@ -48,6 +48,26 @@
     padding: 2rem;
     margin-bottom: 1rem;
     width: 90%;
+    max-height: 20vh;
+    overflow-y: auto;
+}
+
+.container-invitation.container-btn-inscription{
+    overflow-y: hidden;
+}
+
+.container-invitation::-webkit-scrollbar {
+    width: 4px;
+}
+
+.container-invitation::-webkit-scrollbar-track {
+    background: #A4B46A;
+}
+
+.container-invitation::-webkit-scrollbar-thumb {
+    background-color: #78834E;
+    border-radius: 20px;
+    border: 1px solid #A4B46A;
 }
 
 .title-invitation {

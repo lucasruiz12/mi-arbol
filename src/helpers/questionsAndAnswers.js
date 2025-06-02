@@ -109,10 +109,10 @@ export const questionsAndAnswers = [
         id: 12,
         question: "¿Con qué frecuencia comes productos de origen animal?",
         answers: [
-            { name: "No consumo", points: 0 },
             { name: "Todos los días", points: 5.1 },
             { name: "Cada tercer día", points: 3.06 },
             { name: "Una vez a la semana", points: 1.53 },
+            { name: "No consumo", points: 0 },
         ],
     },
     {

@@ -57,6 +57,8 @@ const GraphicPie = () => {
                     colorBy="id"
                     colors={data.map((d) => d.color)} // Aquí aplicamos los colores personalizados
                     arcLabel={(d) => `${d.value}%`} // Formatear los valores como porcentaje
+                    arcLinkLabelsThickness={3}
+                    arcLinkLabelsColor={{ from: 'color' }}
                     isInteractive={true} // Mantiene la interactividad para el tooltip
                     theme={{
                         tooltip: {

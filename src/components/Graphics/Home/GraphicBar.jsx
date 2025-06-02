@@ -39,7 +39,7 @@ const GraphicBar = ({ carbonPoints }) => {
                     borderRadius: 5,
                 },
             },
-            colors: ['#A4B46A', '#FF4560'],
+            colors: ['#C0D860', '#A4B46A'],
             dataLabels: {
                 formatter: function (val, opt) {
                     const goals =
@@ -62,7 +62,7 @@ const GraphicBar = ({ carbonPoints }) => {
                 position: 'top',
                 customLegendItems: ['Tu impacto', 'Persona promedio'],
                 markers: {
-                    fillColors: ['#A4B46A', '#FF4560'],
+                    fillColors: ['#C0D860', '#A4B46A'],
                 },
                 labels: {
                     colors: 'white',

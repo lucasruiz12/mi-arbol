@@ -20,6 +20,7 @@ const MySeeds = () => {
         const user_id = JSON.parse(localStorage.getItem(IS_AUTHENTICATED)).id;
         loginConnections.getSeedsByUserId(user_id).then(response => {
             if (response.data.success) {
+                console.log(response.data.data)
                 const lat = response.data.data.reduce((acc, el) => acc + parseFloat(el.google_coordinates_lat), 0) / response.data.data.length;
                 const lng = response.data.data.reduce((acc, el) => acc + parseFloat(el.google_coordinates_lng), 0) / response.data.data.length;
                 setCenter({ lat, lng });
@@ -53,12 +54,15 @@ const MySeeds = () => {
                             <div className="container-invitation" style={{ padding: "1.5rem" }}>
                                 <h1 className="title-invitation">Geolocalización de semillas</h1>
                                 <ul style={{ color: "#604848", marginBottom: 0 }}>
-                                    <li>
-                                        <p style={{ color: "white", fontSize: "20px" }}>Cdad. Apizaco - Coord: (19.4159, -98.1406)</p>
-                                    </li>
-                                    <li>
-                                        <p style={{ color: "white", fontSize: "20px" }}>Muñoz - Coord: (19.4451, -98.2069)</p>
-                                    </li>
+                                    {
+                                        userSeeds.map((el, idx) => {
+                                            return (
+                                                <li key={idx}>
+                                                    <p style={{ color: "white", fontSize: "20px" }}>{el.address} - Coord: ({el.google_coordinates_lat}, {el.google_coordinates_lng})</p>
+                                                </li>
+                                            )
+                                        })
+                                    }
                                 </ul>
                             </div>
                             <div className="container-invitation" style={{ padding: "1.5rem", margin: "1rem 0" }}>
@@ -75,13 +79,13 @@ const MySeeds = () => {
                                 </ul>
                             </div>
                         </div>
-                        <div style={{ display: "flex", flexDirection: "column", width: "30%" }}>
+                        <div style={{ display: "flex", flexDirection: "column", width: "30%", justifyContent: "center" }}>
                             <div className="container-invitation" style={{ padding: "1.5rem", height: "100%", width: "95%", margin: "0 1rem 1rem 1rem" }}>
-                                <p style={{color: "white"}}>Aquí verás las fotos de tus etiquetas</p>
+                                <p style={{ color: "white" }}>Aquí verás las fotos de tus etiquetas</p>
                             </div>
                         </div>
                     </div>
-                    <div className="container-invitation">
+                    <div className="container-invitation container-btn-inscription">
                         <h1 className="title-invitation">¡Asiste a nuestra siguiente reforestación masiva!</h1>
                         <br />
                         <div className="container-invitation-button">
