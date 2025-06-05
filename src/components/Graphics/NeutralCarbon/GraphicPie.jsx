@@ -1,142 +1,213 @@
 import React, { useState, useEffect } from 'react';
-import { ResponsivePie } from '@nivo/pie';
+import {
+    PieChart, Pie, Cell, Tooltip, ResponsiveContainer, Legend, Sector,
+    Label,
+    LabelList
+} from 'recharts';
 
-// Hook para obtener las dimensiones de la ventana
+const data = [
+    {
+        name: 'Coordinación de nuestras reforestaciones',
+        value: 8,
+        description: 'Pago transmitido al equipo responsable de preparar las actividades y dar servicio a la plataforma',
+        color: '#8BB174',
+    },
+    {
+        name: 'Pago justo a la comunidad que nos ayuda a reforestar',
+        value: 26,
+        description: 'Remuneramos a las personas que hacen que suceda la magia de cada raíz plantada',
+        color: '#B4B886',
+    },
+    {
+        name: 'Mantenimiento de nuestros árboles',
+        value: 10,
+        description: 'Cuidamos que tus raíces lleguen alto, vigilándolas los primeros 3 años después de ser plantadas',
+        color: '#D6CBB2',
+    },
+    {
+        name: 'Plantula de pino a reforestar',
+        value: 27,
+        description: 'Plantamos plantillas de invernadero garantizando la calidad de cada raíz',
+        color: '#C0D860',
+    },
+    {
+        name: 'Programación y mantenimiento de nuestra comunidad',
+        value: 6,
+        description: 'Ayudamos a mantener la comunidad en servicio con actualizaciones manejando licencias y operaciones web',
+        color: '#F4D06F',
+    },
+    {
+        name: 'Comunicación y expansión del proyecto',
+        value: 8,
+        description: 'Importante para que llegues a conocer de nosotros y juntos mitiguemos CO2e',
+        color: '#A4B46A',
+    },
+    {
+        name: 'Ingeniería forestal',
+        value: 15,
+        description: 'Una parte va destinada a biólogos, agrónomos e ingenieros forestales que validan nuestras superficies',
+        color: '#C8D390',
+    },
+];
+
+// Hook para responsive
 const useWindowDimensions = () => {
-    const [windowDimensions, setWindowDimensions] = useState({
+    const [dimensions, setDimensions] = useState({
         width: window.innerWidth,
         height: window.innerHeight,
     });
 
     useEffect(() => {
-        const handleResize = () => {
-            setWindowDimensions({
+        const handleResize = () =>
+            setDimensions({
                 width: window.innerWidth,
                 height: window.innerHeight,
             });
-        };
 
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    return windowDimensions;
+    return dimensions;
 };
 
-const GraphicPie = () => {
+const CustomTooltip = ({ active, payload }) => {
+    if (active && payload?.length) {
+        const { name, value, description, color } = payload[0].payload;
+        return (
+            <div style={{
+                background: '#333',
+                color: 'white',
+                padding: 10,
+                borderRadius: 6,
+                maxWidth: 300,
+                whiteSpace: 'normal',
+                wordWrap: 'break-word',
+            }}>
+                <div style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    marginBottom: 6
+                }}>
+                    <div style={{
+                        width: 12,
+                        height: 12,
+                        backgroundColor: color,
+                        marginRight: 8,
+                        borderRadius: 2
+                    }} />
+                    <strong>{name} ({value}%)</strong>
+                </div>
+                <div style={{ fontSize: 14 }}>{description}</div>
+            </div>
+        );
+    }
+    return null;
+};
 
-    const [selectedValue, setSelectedValue] = useState("");
-
-    const { width } = useWindowDimensions(); // Obtiene el ancho de la ventana
-
-    const data = [
-        { id: 'Comunicación y expansión', label: 'Importante para que llegues a conocer de nosotros y juntos mitiguemos CO2e', value: 8, color: '#A4B46A' },
-        { id: 'Ingeniería forestal', label: 'Una parte va destinada a biólogos, agrónomos e ingenieros forestales que validan nuestras superficies', value: 15, color: '#C8D390' },
-        { id: 'Programación web y mantenimiento de comunidad', label: 'Ayudamos a mantener la comunidad en servicio con actualizaciones manejando licencias y operaciones web', value: 6, color: '#F4D06F' },
-        { id: 'Planta de pino a reforestar', label: 'Plantamos plantillas de invernadero garantizando la calidad de cada raíz', value: 27, color: '#C0D860' },
-        { id: 'Cuidando raíces', label: 'Cuidamos que tus raíces lleguen alto, vigilándolas los primeros 3 años después de ser plantadas', value: 10, color: '#D6CBB2' },
-        { id: 'Coordinación de plataforma y reforestaciones', label: 'Pago transmitido al equipo responsable de preparar las actividades y dar servicio a la plataforma', value: 8, color: '#8BB174' },
-        { id: 'Pago justo a la comunidad', label: 'Remuneramos a las personas que hacen que suceda la magia de cada raíz plantada', value: 26, color: '#B4B886' },
-    ];
-
-    // Determina si el gráfico está en una pantalla pequeña (responsive)
+const GraphicPieRecharts = () => {
+    const { width } = useWindowDimensions();
     const isResponsive = width < 768;
 
+    const renderLabelLine = ({ cx, cy, midAngle, outerRadius }) => {
+        const RADIAN = Math.PI / 180;
+        const startRadius = outerRadius;
+        const endRadius = outerRadius + 30; // Más largo
+        const sx = cx + startRadius * Math.cos(-midAngle * RADIAN);
+        const sy = cy + startRadius * Math.sin(-midAngle * RADIAN);
+        const ex = cx + endRadius * Math.cos(-midAngle * RADIAN);
+        const ey = cy + endRadius * Math.sin(-midAngle * RADIAN);
+
+        return (
+            <path
+                d={`M${sx},${sy}L${ex},${ey}`}
+                stroke="#fff"
+                strokeWidth={2}
+                fill="none"
+            />
+        );
+    };
+
     return (
-        <div className="graphics-background-carbon pie-chart">
-            <div style={{ height: isResponsive ? "20rem" : "100%", width: "100%" }}>
-                <ResponsivePie
-                    data={data}
-                    margin={{ top: isResponsive ? 10 : 60, right: isResponsive ? 10 : 100, bottom: isResponsive ? 10 : 100, left: isResponsive ? 10 : 100 }}
-                    innerRadius={0} // Hace que el gráfico sea más pequeño
-                    padAngle={0.7}
-                    cornerRadius={7}
-                    activeOuterRadiusOffset={5}
-                    borderWidth={1}
-                    borderColor={{ from: 'color', modifiers: [['darker', 0.2]] }}
-                    colorBy="id"
-                    colors={data.map((d) => d.color)} // Aquí aplicamos los colores personalizados
-                    arcLabel={(d) => `${d.value}%`} // Formatear los valores como porcentaje
-                    arcLinkLabelsThickness={3}
-                    arcLinkLabelsColor={{ from: 'color' }}
-                    isInteractive={true} // Mantiene la interactividad para el tooltip
-                    theme={{
-                        tooltip: {
-                            container: {
-                                background: '#333',
-                                color: 'white',
-                            },
-                        },
-                        labels: {
-                            text: {
-                                fill: 'white', // Establece el color de las etiquetas en blanco
-                                fontSize: isResponsive ? 15 : 18,
-                                // display: isResponsive ? 'none' : 'block', // Oculta los labels en responsive
-                            },
-                        },
-                    }}
-                    onClick={(data) => setSelectedValue(data)}
-                    // enableArcLabels={!isResponsive} // No mostrar los labels de los segmentos en pantallas pequeñas
-                    enableArcLinkLabels={!isResponsive} // No mostrar las líneas de conexión en pantallas pequeñas
-                    tooltipFormat={isResponsive ? null : undefined} // Deshabilitar tooltips en responsive si no es clickeado
-                    startAngle={90}
-                    endAngle={450}
-                    tooltip={({ datum }) => (
-                        <div
-                            style={{
-                                background: '#333',
-                                color: 'white',
-                                padding: '6px 10px',
-                                borderRadius: '5px',
-                                display: 'flex',
-                                alignItems: 'center',
-                                maxWidth: '40vw', // Máximo 80% del ancho de la pantalla
-                                whiteSpace: 'normal', // Permite saltos de línea
-                                wordWrap: 'break-word', // Asegura que el texto no cause desbordamiento
-                                overflow: 'hidden', // Evita que se expanda demasiado
-                            }}
-                        >
-                            <div
-                                style={{
-                                    width: 12,
-                                    height: 12,
-                                    backgroundColor: datum.color,
-                                    marginRight: 8,
-                                    borderRadius: 3,
-                                }}
-                            />
-                            {isResponsive ? datum.id : datum.label}
-                        </div>
-                    )}
-                />
-            </div>
-            {
-                isResponsive && selectedValue &&
-                <div
-                    style={{
-                        color: 'white',
-                        padding: '6px',
-                        borderRadius: '5px',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        width: '100%'
-                    }}
-                >
-                    <div
-                        style={{
-                            width: '10%',
-                            height: 15,
-                            backgroundColor: selectedValue.color,
-                            marginRight: 8,
-                            borderRadius: 3,
+        <div style={{ width: '100%', height: isResponsive ? 300 : 500 }}>
+            <ResponsiveContainer>
+                <PieChart>
+                    <Pie
+                        data={data}
+                        cx="50%"
+                        cy="50%"
+                        // labelLine={!isResponsive}
+                        labelLine={isResponsive ? false : { strokeWidth: 4 }}
+                        labelRadius={isResponsive ? 90 : 250}
+                        outerRadius={isResponsive ? 80 : 150}
+                        cornerRadius={6}
+                        dataKey="value"
+                        label={({ cx, cy, midAngle, outerRadius, name, value }) => {
+                            const RADIAN = Math.PI / 180;
+                            const radius = outerRadius + 50;
+                            const x = cx + radius * Math.cos(-midAngle * RADIAN);
+                            const y = cy + radius * Math.sin(-midAngle * RADIAN);
+                            const anchor = x > cx ? "start" : "end";
+
+                            // 👇 División de texto si es muy largo
+                            const maxCharsPerLine = 25;
+                            const lines = [];
+
+                            let currentLine = '';
+                            name.split(' ').forEach(word => {
+                                if ((currentLine + ' ' + word).trim().length <= maxCharsPerLine) {
+                                    currentLine += ' ' + word;
+                                } else {
+                                    lines.push(currentLine.trim());
+                                    currentLine = word;
+                                }
+                            });
+                            if (currentLine) lines.push(currentLine.trim());
+
+                            return (
+                                <text
+                                    x={x}
+                                    y={y}
+                                    fill="white"
+                                    textAnchor={anchor}
+                                    dominantBaseline="central"
+                                    style={{ fontSize: 18 }}
+                                >
+                                    {lines.map((line, i) => (
+                                        <tspan key={i} x={x} dy={i === 0 ? 0 : "1.2em"}>
+                                            {i === lines.length - 1 ? `${line} (${value}%)` : line}
+                                        </tspan>
+                                    ))}
+                                </text>
+                            );
                         }}
-                    />
-                    {selectedValue.label} ({selectedValue.value}%)
-                </div>
-            }
+                    >
+                        {data.map((entry, index) => (
+                            <Cell key={`cell-${index}`} fill={entry.color} />
+                        ))}
+                        <LabelList
+                            dataKey="value"
+                            position="inside"
+                            fill="white"
+                            formatter={(value) => `${value}%`}
+                        />
+                    </Pie>
+                    <Tooltip content={<CustomTooltip />} />
+                    {isResponsive && (
+                        <Legend
+                            verticalAlign="bottom"
+                            height={80}
+                            wrapperStyle={{
+                                fontSize: 14,
+                                color: 'white',
+                                paddingTop: 10,
+                            }}
+                        />
+                    )}
+                </PieChart>
+            </ResponsiveContainer>
         </div>
     );
 };
 
-export default GraphicPie;
+export default GraphicPieRecharts;

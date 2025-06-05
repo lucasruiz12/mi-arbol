@@ -38,4 +38,7 @@ export default {
             }).get(`${URL_BASE}/api/seeds/user/${user_id}`);
         };
     },
+    createPreregister: (data) => {
+        return axios.post(`${URL_BASE}/api/preregister/create`, data);
+    },
 };

@@ -15,7 +15,7 @@ const PriceSlider = ({ minPrice, currentPrice, setCurrentPrice, setModalPayment 
     });
 
     const newPriceToValue = (value) => {
-        const trees = parseInt((value / 189) * 4);
+        const trees = parseInt((value / 189) * 3.5 * 12);
         setPriceToValue({
             trees,
             tons: (0.015 * trees).toFixed(2),
@@ -31,7 +31,7 @@ const PriceSlider = ({ minPrice, currentPrice, setCurrentPrice, setModalPayment 
         let value = parseInt(event.target.value, 10);
 
         if (!isNaN(value)) {
-            value = Math.min(Math.max(value, 0), 3780);
+            value = Math.min(Math.max(value, 0), 1890);
             setCurrentPrice(value);
             newPriceToValue(value);
         } else if (event.target.value === "") {
@@ -62,7 +62,7 @@ const PriceSlider = ({ minPrice, currentPrice, setCurrentPrice, setModalPayment 
                 thumbClassName="thumb"
                 trackClassName="track"
                 min={minPrice}
-                max={3780}
+                max={1890}
                 step={189}
                 value={currentPrice}
                 onChange={handleSliderChange}
@@ -78,12 +78,12 @@ const PriceSlider = ({ minPrice, currentPrice, setCurrentPrice, setModalPayment 
                         onChange={handleInputChange}
                         onBlur={handleInputBlur}
                         min={189}
-                        max={3780}
+                        max={1890}
                         step={189}
                     />
                 </div>
                 <div className="container-tree-text">
-                    <p className="tree-line">{priceToValue.trees} {currentPrice === 189 ? "árbol" : "árboles"} por mes</p>
+                    <p className="tree-line">{priceToValue.trees} árboles al año</p>
                 </div>
             </div>
             {/* <button className={`btn-green${(JSON.parse(localStorage.getItem(IS_AUTHENTICATED))?.subscription?.amount === currentPrice) ? " disabled" : ""} checkout-btn`} disabled={JSON.parse(localStorage.getItem(IS_AUTHENTICATED))?.subscription?.amount === currentPrice} onClick={() => setModalPayment(true)}>Sembrar mis raíces</button> */}

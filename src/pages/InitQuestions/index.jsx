@@ -8,6 +8,9 @@ import CustomCheckbox from '../../components/CustomCheckbox';
 import { backgroundImages, backgroundImagesMovil } from '../../helpers/backgroundImages';
 import LoadingResult from '../../components/LoadingResult';
 import BackArrow from '../../components/BackArrow';
+import PreRegister from '../../components/PreRegister';
+import loginConnections from '../../helpers/loginConnections';
+import { toast, ToastContainer, Bounce } from 'react-toastify';
 import './style.css';
 
 const InitQuestions = () => {
@@ -35,6 +38,8 @@ const InitQuestions = () => {
     const [loading, setLoading] = useState(true);
     const [loadResults, setLoadResults] = useState(false);
     const [backgroundLoaded, setBackgroundLoaded] = useState(false);
+    const [showPreRegister, setShowPreRegister] = useState(false);
+    const [pointsToPreRegister, setPointsToPreRegister] = useState({})
 
     const navigate = useNavigate();
 
@@ -46,7 +51,8 @@ const InitQuestions = () => {
         setResponseUser(newResponse);
 
         if (currentQuestion === 16) {
-            goToResults();
+            setLoading(true);
+            setShowPreRegister(true);
             setTimeout(() => {
                 const newResponseUser = [];
                 let allMultiply = 0;
@@ -78,20 +84,48 @@ const InitQuestions = () => {
                     };
                 });
                 const totalPoints = carbonCategories.reduce((acc, el) => acc + el, 0);
+                const pointsToSave = {
+                    carbonPoints: JSON.stringify(totalPoints),
+                    categoryPoints: JSON.stringify(carbonCategories)
+                };
+                setPointsToPreRegister(pointsToSave);
                 localStorage.setItem(CARBON_POINTS, JSON.stringify(totalPoints));
                 localStorage.setItem(CATEGORY_POINTS, JSON.stringify(carbonCategories));
-            }, 1000);
+                setLoading(false);
+            }, 2000);
         } else {
             setCurrentQuestion(currentQuestion + 1);
             setResponsePoints("");
         };
     };
 
-    const goToResults = () => {
-        setLoadResults(true);
-        setTimeout(() => {
-            navigate("/home");
-        }, 7500);
+    const goToResults = (data) => {
+        setLoading(true);
+        loginConnections.createPreregister({ ...data, ...pointsToPreRegister, }).then(response => {
+            if (response.data.success) {
+                setLoadResults(true);
+                setTimeout(() => {
+                    navigate("/home");
+                }, 3000);
+            }
+        })
+            .catch(err => {
+                setTimeout(() => {
+                    toast.error(err.response.data.message ?? "Error! Ya existe un usuario con ese correo.", {
+                        position: "top-right",
+                        autoClose: 3000,
+                        hideProgressBar: false,
+                        closeOnClick: false,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "colored",
+                        transition: Bounce,
+                    });
+                    setLoading(false);
+                }, 2000);
+                console.error(err);
+            });
     };
 
     useEffect(() => {
@@ -119,60 +153,76 @@ const InitQuestions = () => {
         <div
             className="container-init-questions"
             style={{
-                backgroundImage: (loading || loadResults) ? "none" : backgroundLoaded ? `url(${window.innerWidth > 768 ? backgroundImages[currentQuestion - 1] : backgroundImagesMovil[currentQuestion - 1]})` : 'none',
+                backgroundImage: (loading || loadResults || showPreRegister) ? "none" : backgroundLoaded ? `url(${window.innerWidth > 768 ? backgroundImages[currentQuestion - 1] : backgroundImagesMovil[currentQuestion - 1]})` : 'none',
                 backgroundColor: loadResults ? "transparent" : "#C8D390",
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 transition: 'background-image 1s ease-in-out',
             }}
         >
+            <ToastContainer
+                position="top-right"
+                autoClose={3000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick={false}
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="colored"
+                transition={Bounce}
+            />
             {
-                currentQuestion > 1 && !loadResults &&
+                currentQuestion > 1 && !loadResults && !showPreRegister &&
                 <BackArrow handleAction={() => setCurrentQuestion(currentQuestion - 1)} />
             }
             {loading ?
                 <LoadingLogo />
                 :
-                loadResults ?
-                    <LoadingResult message="Calculando resultados" />
+                showPreRegister ?
+                    <PreRegister goToResults={goToResults} />
                     :
-                    <>
-                        <div className="container-question-logo">
-                            <img className="question-logo" src={logoArbol} alt="LOG" />
-                        </div>
-                        <div className="container-question-count">
-                            <p className="question-count">Pregunta {currentQuestion}/16</p>
-                        </div>
-                        <div className="container-question">
-                            <div className="container-text">
-                                <p className="question-text">
-                                    {questionsAndAnswers.find(el => el.id === currentQuestion).id}.- {
-                                        questionsAndAnswers
-                                            .find(el => el.id === currentQuestion)
-                                            .question
-                                            .split('\n')
-                                            .map((line, index) => (
-                                                <React.Fragment key={index}>
-                                                    {/* <span
+                    loadResults ?
+                        <LoadingResult message="Calculando resultados" />
+                        :
+                        <>
+                            <div className="container-question-logo">
+                                <img className="question-logo" src={logoArbol} alt="LOG" />
+                            </div>
+                            <div className="container-question-count">
+                                <p className="question-count">Pregunta {currentQuestion}/16</p>
+                            </div>
+                            <div className="container-question">
+                                <div className="container-text">
+                                    <p className="question-text">
+                                        {questionsAndAnswers.find(el => el.id === currentQuestion).id}.- {
+                                            questionsAndAnswers
+                                                .find(el => el.id === currentQuestion)
+                                                .question
+                                                .split('\n')
+                                                .map((line, index) => (
+                                                    <React.Fragment key={index}>
+                                                        {/* <span
                                                         style={index === 1 ? { display: 'block', textAlign: 'center' } : {}}
                                                     >
                                                         {line}
                                                     </span> */}
-                                                    {line}
-                                                    <br />
-                                                </React.Fragment>
-                                            ))
-                                    }
-                                </p>
+                                                        {line}
+                                                        <br />
+                                                    </React.Fragment>
+                                                ))
+                                        }
+                                    </p>
+                                </div>
                             </div>
-                        </div>
-                        <div className={`container-answers ${questionsAndAnswers.find(el => el.id === currentQuestion)?.answers.length > 3 ? " many-answers" : ""}`}>
-                            <CustomCheckbox data={questionsAndAnswers.find(el => el.id === currentQuestion).answers} setData={setResponsePoints} resetData={responseUser} />
-                        </div>
-                        <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "10vh", width: "50vw" }}>
-                            <button className={`btn-green${(responsePoints === "") ? " disabled" : ""}`} disabled={responsePoints === ""} onClick={() => nextQuestion()}>{currentQuestion < questionsAndAnswers.length ? "Siguiente" : "Finalizar"}</button>
-                        </div>
-                    </>
+                            <div className={`container-answers ${questionsAndAnswers.find(el => el.id === currentQuestion)?.answers.length > 3 ? " many-answers" : ""}`}>
+                                <CustomCheckbox data={questionsAndAnswers.find(el => el.id === currentQuestion).answers} setData={setResponsePoints} resetData={responseUser} />
+                            </div>
+                            <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "10vh", width: "50vw" }}>
+                                <button className={`btn-green${(responsePoints === "") ? " disabled" : ""}`} disabled={responsePoints === ""} onClick={() => nextQuestion()}>{currentQuestion < questionsAndAnswers.length ? "Siguiente" : "Finalizar"}</button>
+                            </div>
+                        </>
             }
         </div>
     );
