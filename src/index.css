@@ -1,19 +1,68 @@
 body {
     margin: 0;
     background-color: #505050;
-    /* min-height: 100vh;
-    min-height: 100dvh; */
-}
-
-a {
-    text-decoration: none;
+    overflow: hidden; /* Evita scroll en desktop */
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Open Sans', serif !important;
+  }
+  
+  #root {
+    height: 100%;
+    width: 100%;
+    overflow: hidden; /* Evita scroll en el contenedor raíz */
+  }
+  
+  /* Mantén los otros estilos como .btn-green, animaciones, etc. */
+  .btn-green {
+    width: 100%;
+    max-width: 300px;
+    padding: 0.75rem 1.5rem;
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    border: none;
+    border-radius: 2rem;
+    color: white;
+    background-color: #A4B46A;
     cursor: pointer;
-}
-
-p,
-label,
-h2,
-input {
-    color: #604848;
-    margin: 0;
-}
+  }
+  
+  .btn-green.disabled {
+    background-color: #6C757D;
+    cursor: not-allowed;
+  }
+  
+  .btn-green:hover {
+    background-color: #C0D860;
+  }
+  
+  .btn-green.disabled:hover {
+    background-color: #6C757D;
+  }
+  
+  @keyframes grow {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    90% {
+      transform: scale(1);
+      opacity: 0.9;
+    }
+    100% {
+      transform: scale(1.1);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes showContent {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }

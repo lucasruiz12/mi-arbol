@@ -4,6 +4,7 @@ import { Auth0Provider } from '@auth0/auth0-react';
 import { fetchNotifications, listenNotifications, saveNotification } from './helpers/firebaseConfig.js';
 import App from './App.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './index.css';
 
 const { VITE_AUTH0_CLIENT_ID, VITE_AUTH0_DOMAIN } = import.meta.env;
