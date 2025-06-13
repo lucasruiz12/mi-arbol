@@ -5,6 +5,7 @@
     left: 3%;
     height: 5vh;
     width: 5vh;
+    z-index: 3;
 }
 
 .img-arrow-back {

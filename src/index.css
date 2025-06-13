@@ -7,10 +7,28 @@ body {
     font-family: 'Open Sans', serif !important;
   }
   
-  #root {
-    height: 100%;
+  html, body, #root {
+    height: 100vh;
     width: 100%;
-    overflow: hidden; /* Evita scroll en el contenedor raíz */
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  .content-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  
+  .background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
   }
   
   /* Mantén los otros estilos como .btn-green, animaciones, etc. */
