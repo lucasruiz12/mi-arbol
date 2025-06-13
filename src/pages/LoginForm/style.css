@@ -18,8 +18,8 @@
     z-index: -1;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     .container-login-form{
-        justify-content: flex-start;
+        min-height: 100vh;
     }
 }
