@@ -55,6 +55,7 @@
         overflow-y: scroll;
         padding: 1.5rem;
         justify-content: space-evenly;
+        min-height: 90vh;
     }
 
     .subscription-text-container {

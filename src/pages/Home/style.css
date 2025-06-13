@@ -157,7 +157,7 @@
     border-radius: 1rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     .home-result {
         flex-direction: column;
         gap: 0;
@@ -176,8 +176,6 @@
 
     .home-info {
         flex-direction: column;
-        padding: 0 2rem;
-        overflow-y: scroll;
     }
 
     .home-user-data {

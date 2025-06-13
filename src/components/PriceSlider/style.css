@@ -112,6 +112,10 @@
     margin-top: 2vh;
 }
 
+.checkout-btn{
+    width: 50% !important;
+}
+
 @media (max-width: 768px) {
     .price-input{
         width: 17.5vh;

@@ -90,7 +90,7 @@ const GraphicBar = ({ carbonPoints }) => {
                     breakpoint: 768,
                     options: {
                         chart: {
-                            width: '100%',
+                            width: '80%',
                             height: 200,
                         },
                     },
@@ -101,7 +101,7 @@ const GraphicBar = ({ carbonPoints }) => {
 
     return (
         <div className="graphics-background-home-bar" style={{ zIndex: 99 }}>
-            <ReactApexChart options={data.options} series={data.series} type="bar" width={500} height={180} />
+            <ReactApexChart options={data.options} series={data.series} type="bar" width={450} height={180} />
         </div>
     );
 };
