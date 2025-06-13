@@ -1,263 +1,173 @@
-.container-steps-view {
-    height: 100%;
-    width: 100%;
-}
-
-.steps-video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100vw;
-    height: 100.1vh;
-    object-fit: fill;
-    transform: translate(-50%, -50%);
-    filter: brightness(50%);
-    z-index: -1;
-}
-
-.steps-content {
-    height: 100%;
-    width: 100%;
-    padding: 7%;
-}
-
-.steps-img-container {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.steps-title {
-    font-size: 6vh;
-    font-weight: bold;
-    color: white;
-}
-
-.steps-logo {
-    height: 12vh;
-    cursor: pointer;
-    margin: -10rem 0 0 -5rem
-}
-
-.steps-info-container {
-    display: flex;
-    align-items: center;
-    width: 100%;
-}
-
-.steps-text {
+/* .container-steps-view {
+  } */
+  
+  .steps-content {
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    align-items: flex-start;
-    width: 60%;
-    height: 35vh;
-    margin: -2rem 0 2rem 0;
-}
-
-.steps-line-text {
-    font-size: 25px;
-    color: white;
-    text-align: justify;
-    font-weight: bold;
-}
-
-.steps-logos{
+  }
+  
+  .steps-img-container {
+    margin-top: 1rem;
+  }
+  
+  .steps-logo {
+    height: clamp(60px, 8vw, 100px);
+  }
+  
+  .steps-logos {
     display: grid;
-    width: 30%;
-    height: 100%;
     grid-template-columns: repeat(2, 1fr);
-    place-items: center;
-    gap: 0.5vh;
-}
-
-.logo-iso {
-    height: 12.5vh;
-    width: 12.5vh;
-}
-
-@keyframes slideInSteps {
-    0% {
-        top: -100px;
-    }
-
-    10% {
-        top: 10%;
-    }
-
-    90% {
-        opacity: 0.99;
-    }
-
-    100% {
-        opacity: 0;
-    }
-}
-@keyframes slideInCloseSteps {
-    0% {
-        top: -100px;
-    }
-
-    10% {
-        top: 17%;
-    }
-
-    90% {
-        opacity: 0.99;
-    }
-
-    100% {
-        opacity: 0;
-    }
-}
-
-@keyframes slideInMobileSteps {
-    0% {
-        top: -100px;
-    }
-
-    10% {
-        top: 1%;
-    }
-
-    90% {
-        opacity: 0.99;
-    }
-
-    100% {
-        opacity: 0;
-    }
-}
-
-.steps-tips {
+    gap: 0.5rem;
+    width: auto;
+  }
+  
+  .logo-iso {
+    height: clamp(60px, 8vw, 80px);
+    width: auto;
+  }
+  .logo-green-house {
+    height: clamp(30px, 4vw, 50px);
+    width: auto;
+  }
+  
+  .steps-tips {
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: justify;
     padding: 2rem;
-    width: 22.5vw;
-    height: 7.5vw;
-    font-size: large;
-    font-weight: bold;
-    background-color: #4e4e4e7e;
-    color: white;
-    position: absolute;
-    left: 70%;
-    top: 33%;
-    border-radius: 1rem;
-    animation: grow 8s ease-out;
-}
-
-.close-steps-tips{
+    width: clamp(250px, 40vw, 500px);
     height: auto;
-    position: absolute;
-    left: 80%;
-    top: 17%;
-    cursor: pointer;
-    animation: slideInCloseSteps 8s ease-out;
-}
-
-.steps-clients-title {
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    font-weight: bold;
+    background-color: rgba(78, 78, 78, 0.5);
     color: white;
-    font-size: xx-large;
-}
-
-.btn-green.have-account{
-    background-color: transparent !important;
+    position: absolute;
+    right: 5rem;
+    top: 25rem;
+    border-radius: 0.5rem;
+    animation: grow 8s ease-out;
+  }
+  
+  .steps-info-container {
+    margin-top: 4rem;
+  }
+  
+  .steps-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .steps-line-text {
+    color: white;
+    font-size: clamp(0.85rem, 2.5vw, 1.25rem);
+    text-align: justify;
+    font-weight: bold;
+  }
+  
+  .steps-clients-title {
+    color: white;
+    font-size: clamp(1.25rem, 3vw, 1.5rem);
+  }
+  
+  .btn-green {
+    background-color: #A4B46A;
+    color: white;
+    border: none;
+    border-radius: 2rem;
+    padding: 0.75rem 1.5rem;
+    font-size: clamp(1rem, 2vw, 1.25rem);
+  }
+  
+  .btn-green:hover {
+    background-color: #C0D860;
+  }
+  
+  .btn-green.have-account {
+    background-color: transparent;
     border: 1px solid #A4B46A;
+  }
+  
+  .btn-green.have-account:hover {
+    background-color: #C0D860;
+  }
+  
+  @media (max-width: 992px) {
+    .steps-logos {
+        grid-template-columns: repeat(1, 1fr);
+      }
 }
-
-.btn-green.have-account:hover{
-    background-color: #C0D860 !important;
-}
-
-@media (max-width: 768px) {
-    .steps-clients-title {
-        color: white;
-        font-size: medium;
-    }
-    
-    .steps-logo {
-        width: 15vh;
-        margin: 0
-    }
-
-    .logo-iso {
-        width: 10vh;
-    }
-
-    .steps-tips {
-        width: 80vw;
-        height: auto;
-        left: 12.5%;
-        top: 1%;
-        padding: 2rem 1.25rem;
-        font-size: small;
-        animation: slideInMobileSteps 8s ease-out;
-        text-align: center;
-    }
-
+  @media (max-width: 768px) {
     .steps-content {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        overflow-y: auto;
+      justify-content: center !important;
+      height: 100%;
+      gap: 0.8rem;
     }
-
+  
     .steps-img-container {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        margin-top: 14vh;
+      justify-content: center;
+      margin-top: 2rem;
     }
-
-    .steps-info-container {
-        flex-direction: column-reverse;
-
+  
+    .steps-logo {
+      height: clamp(60px, 15vw, 100px);
     }
-
-    .steps-title {
-        font-size: 5vh;
-        font-weight: bold;
+  
+    .steps-logos {
+      width: 100%;
+      margin: 1rem 0;
+      justify-content: center;
+      display: flex !important;
     }
-
-    .steps-text {
-        width: 100%;
-        height: auto;
-        padding: 0.5rem 1rem;
-        border-radius: 1rem;
-        margin: 0;
-    }
-
-    .steps-line-text {
-        color: white;
-        font-size: smaller;
-        margin-bottom: 1rem;
-    }
-
-    .steps-logos{
-        width: 100%;
-        margin: 2vh 0;
-    }
-    
+  
     .logo-iso {
-        height: 7.5vh;
-        width: 7.5vh;
+      height: clamp(40px, 10vw, 60px);
     }
-
+  
+    .steps-tips {
+      width: 90%;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 2rem;
+      padding: 1rem;
+      animation: slideInMobileSteps 8s ease-out;
+      font-size: clamp(0.7rem, 2vw, 0.8rem);
+    }
+  
+    .steps-info-container {
+      margin: 0;
+      flex-direction: column-reverse !important;
+    }
+  
+    .steps-text {
+      background-color: rgba(0, 0, 0, 0.35);
+      padding: 1rem;
+      border-radius: 0.5rem;
+    }
+  
     .link-btn {
-        display: flex;
-        justify-content: center;
-        width: 100%;
+      width: 80%;
     }
-
-    .btn-green {
-        width: 60% !important;
-        align-self: center !important;
-        font-size: medium !important;
-        height: auto !important;
-        padding: 1rem !important;
+  
+    .steps-clients-title {
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
     }
-}
+  }
+  
+  @keyframes slideInMobileSteps {
+    0% {
+      top: -100%;
+    }
+    50% {
+      top: 2rem;
+    }
+    90% {
+      opacity: 0.99;
+    }
+    100% {
+      opacity: 0;
+    }
+  }

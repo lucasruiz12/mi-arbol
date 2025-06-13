@@ -15,28 +15,25 @@ body {
   
   /* Mantén los otros estilos como .btn-green, animaciones, etc. */
   .btn-green {
-    width: 100%;
-    max-width: 300px;
-    padding: 0.75rem 1.5rem;
-    font-size: clamp(1rem, 2vw, 1.25rem);
+    background-color: #A4B46A;
+    color: white;
     border: none;
     border-radius: 2rem;
-    color: white;
-    background-color: #A4B46A;
-    cursor: pointer;
-  }
-  
-  .btn-green.disabled {
-    background-color: #6C757D;
-    cursor: not-allowed;
+    padding: 0.75rem 1.5rem;
+    font-size: clamp(1rem, 2vw, 1.25rem);
   }
   
   .btn-green:hover {
     background-color: #C0D860;
   }
   
-  .btn-green.disabled:hover {
-    background-color: #6C757D;
+  .btn-green.have-account {
+    background-color: transparent;
+    border: 1px solid #A4B46A;
+  }
+  
+  .btn-green.have-account:hover {
+    background-color: #C0D860;
   }
   
   @keyframes grow {
