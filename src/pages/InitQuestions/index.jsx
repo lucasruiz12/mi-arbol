@@ -232,7 +232,7 @@ const InitQuestions = () => {
                     </div>
                     <div className="d-flex justify-content-center">
                         <button
-                            className={`btn-green${responsePoints === '' ? ' disabled' : ''} w-50`}
+                            className={`btn-green${responsePoints === '' ? ' disabled' : ''} next-question`}
                             disabled={responsePoints === ''}
                             onClick={nextQuestion}
                         >

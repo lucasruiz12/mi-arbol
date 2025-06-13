@@ -184,6 +184,10 @@
     font-size: xx-large;
 }
 
+.btn-green.suscription-how{
+    width: 70%;
+}
+
 @media (max-width: 768px) {
     .container-neutral-carbon {
         /* flex-direction: column-reverse; */
