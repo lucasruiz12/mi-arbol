@@ -1,51 +1,54 @@
 .watermark {
-    position: absolute;
-    top: 85%;
-    left: 90%;
+    position: fixed; /* Fijo para no moverse con el contenido */
+    bottom: 2rem;
+    right: 2rem;
     text-align: center;
-}
-
-.watermark.watermar-graphic{
-    top: 83%;
-    left: 86%;
-}
-
-.water-none{
+    z-index: 1; /* Por debajo de tips (z-index: 10 en mission-tips/steps-tips) */
+  }
+  
+  .water-none {
     display: none;
-}
-
-.watermark img {
-    width: 150px;
+  }
+  
+  .watermark img {
+    width: clamp(80px, 10vw, 100px);
     height: auto;
-    /* opacity: 0.2; */
-}
-
-.watermark span {
+  }
+  
+  .watermark span {
     display: block;
-    font-size: 16px;
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
     color: #636363;
     opacity: 0.5;
-    margin-top: 10px;
-}
-
-@media (max-width: 768px) {
-    .watermark
-    .watermark.watermar-graphic{
-        left: 77.5%;
-        top: 92.5%
+    margin-top: 0.5rem;
+  }
+  
+  @media (max-width: 992px) {
+    .watermark {
+      bottom: 1.5rem;
+      right: 1.5rem;
     }
-
+  
     .watermark img {
-        width: 75px;
-        height: auto;
-        /* opacity: 0.2; */
+      width: clamp(60px, 15vw, 80px);
     }
-    
+  
     .watermark span {
-        display: block;
-        font-size: 8px;
-        color: #636363;
-        opacity: 0.5;
-        margin-top: 10px;
+      font-size: clamp(0.7rem, 2vw, 0.9rem);
     }
-}
+  }
+  
+  @media (max-width: 768px) {
+    .watermark {
+      bottom: 1rem;
+      right: 1rem;
+    }
+  
+    .watermark img {
+      width: clamp(50px, 12vw, 60px);
+    }
+  
+    .watermark span {
+      font-size: clamp(0.6rem, 2vw, 0.8rem);
+    }
+  }
