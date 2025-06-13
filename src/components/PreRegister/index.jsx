@@ -28,7 +28,7 @@ const PreRegister = ({ goToResults }) => {
     };
 
     return (
-        <div className="container-register">
+        <div className="container-register w-100 h-100">
             <form className="form-register" onSubmit={submitData}>
                 <div className="title-register">
                     <img className="register-logo" src={logoArbol} alt="LOG" />

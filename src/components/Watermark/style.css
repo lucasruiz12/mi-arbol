@@ -3,7 +3,7 @@
     bottom: 2rem;
     right: 2rem;
     text-align: center;
-    z-index: 1; /* Por debajo de tips (z-index: 10 en mission-tips/steps-tips) */
+    z-index: 10; /* Por debajo de tips (z-index: 10 en mission-tips/steps-tips) */
   }
   
   .water-none {

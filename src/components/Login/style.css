@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    width: 50vw;
+    width: 60%;
 }
 
 .title-login {
@@ -37,6 +37,7 @@
 .text-carbon {
     font-size: large;
     margin-bottom: 1rem;
+    color: #604848;
 }
 
 .text-login {
@@ -132,6 +133,12 @@
     cursor: pointer;
 }
 
+@media (max-width: 992px) {
+    .form-login {
+        width: 80%;
+    }
+}
+
 @media (max-width: 768px) {
     .container-login {
         width: 100%;
@@ -140,7 +147,6 @@
     }
 
     .form-login {
-        height: 100%;
         width: 85%;
     }
 
