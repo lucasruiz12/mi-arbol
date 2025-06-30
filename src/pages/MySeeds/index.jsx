@@ -3,8 +3,8 @@ import { IS_AUTHENTICATED } from '../../helpers/constants';
 import loginConnections from '../../helpers/loginConnections';
 import NavBar from '../../components/NavBar';
 import MapView from '../../components/MapView';
-import './style.css';
 import moment from 'moment';
+import './style.css';
 
 const MySeeds = () => {
   const [loading, setLoading] = useState(true);
@@ -12,7 +12,7 @@ const MySeeds = () => {
   const [center, setCenter] = useState({ lat: 0, lng: 0 });
 
   const subscription = JSON.parse(localStorage.getItem(IS_AUTHENTICATED))?.subscription;
-  const subscriptionDate = moment(subscription?.created_at, 'DD/MM/YYYY HH:mm');
+  const subscriptionDate = moment(subscription?.subscriptionDate, 'DD/MM/YYYY HH:mm');
   const nowDate = moment();
   const totalMonth = (nowDate.year() - subscriptionDate.year()) * 12 + (nowDate.month() - subscriptionDate.month()) + 1;
   const totalTrees = Math.ceil((subscription?.amount || 0) / 12 / 3.5) * totalMonth;

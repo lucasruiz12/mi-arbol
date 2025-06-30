@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import logoArbol from '../../assets/logos/logo-TAO-brown.svg';
+import logoArbol from '../../assets/logos/logo-mas-raices.png';
 import './style.css';
 
 const PreRegister = ({ goToResults }) => {

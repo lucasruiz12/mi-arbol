@@ -1,5 +1,5 @@
 import React from 'react';
-import logoArbol from '../../assets/logos/logo-TAO-white.svg';
+import logoArbol from '../../assets/logos/logo-mas-raices.png';
 import iconLogout from '../../assets/icons/navbar/icon-logout.svg';
 import LogOutDropdown from '../LogOutDropdown';
 import { useAuth0 } from '@auth0/auth0-react';

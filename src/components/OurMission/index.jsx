@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import logoArbol from '../../assets/logos/logo-TAO-white.svg';
+import logoArbol from '../../assets/logos/logo-mas-raices.png';
 import { tipsAndRecommendations } from '../../helpers/messagesAndTips';
 import './style.css';
 

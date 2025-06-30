@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { questionsAndAnswers } from '../../helpers/questionsAndAnswers';
 import { CARBON_POINTS, CATEGORY_POINTS } from '../../helpers/constants';
-import logoArbol from '../../assets/logos/logo-TAO-brown.svg';
+import logoArbol from '../../assets/logos/logo-mas-raices.png';
 import LoadingLogo from '../../components/LoadingLogo';
 import CustomCheckbox from '../../components/CustomCheckbox';
 import { backgroundImages, backgroundImagesMovil } from '../../helpers/backgroundImages';

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { ACCESS_TOKEN, CARBON_POINTS, CATEGORY_POINTS, IS_AUTHENTICATED, PRICE_TO_PAY } from '../../helpers/constants';
-import logoArbol from '../../assets/logos/logo-TAO-brown.svg';
+import logoArbol from '../../assets/logos/logo-mas-raices.png';
 import iconGoogle from '../../assets/icons/rrss-google.svg';
 import iconFacebook from '../../assets/icons/rrss-facebook.svg';
 import loginConnections from '../../helpers/loginConnections';

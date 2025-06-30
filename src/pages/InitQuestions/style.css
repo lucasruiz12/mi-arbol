@@ -49,7 +49,7 @@
   }
   
   .question-logo {
-    height: clamp(80px, 10vw, 120px);
+    height: clamp(160px, 20vw, 240px);
   }
   
   .container-question-count {
@@ -123,7 +123,7 @@
     }
   
     .question-logo {
-      height: clamp(60px, 15vw, 80px);
+      height: clamp(120px, 30vw, 160px);
     }
   
     .container-question-count {

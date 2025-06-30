@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import logoArbol from '../../assets/logos/logo-TAO-white.svg';
+import logoArbol from '../../assets/logos/logo-mas-raices.png';
 import logoISO from '../../assets/logos/logo-ISO.svg';
 import logoGreenHouse from '../../assets/logos/logo-green-house.svg';
 import CarouselLogo from '../CarouselLogos';

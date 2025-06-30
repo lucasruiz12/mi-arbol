@@ -10,7 +10,7 @@
 }
 
 .mission-logo {
-    height: clamp(80px, 10vw, 120px);
+    height: clamp(160px, 20vw, 240px);
     margin: 0;
 }
 

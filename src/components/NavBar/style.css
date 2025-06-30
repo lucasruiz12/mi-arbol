@@ -11,6 +11,7 @@
 
 .nav-logo {
     height: auto;
+    max-height: 10vh;
     margin-top: 2vh;
 }
 
