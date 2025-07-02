@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ACCESS_TOKEN, IS_AUTHENTICATED } from '../../helpers/constants';
-import logoFull from '../../assets/logos/logo-TAO-brown.svg';
+import logoFull from '../../assets/logos/logo-mas-raices.png';
 import iconGoogle from '../../assets/icons/rrss-google.svg';
 import iconFacebook from '../../assets/icons/rrss-facebook.svg';
 import loginConnections from '../../helpers/loginConnections';
