@@ -18,12 +18,12 @@ import './App.css';
 function App() {
   return (
     <BrowserRouter>
-      {/* <div className="video-container position-fixed top-0 start-0 w-100 h-100 overflow-hidden">
+      <div className="video-container position-fixed top-0 start-0 w-100 h-100 overflow-hidden">
         <video autoPlay muted loop className="app-video w-100 h-100 object-fit-cover">
           <source src={videoCoverMovil} media="(max-width: 767px)" type="video/mp4" />
           <source src={videoCover} media="(min-width: 768px)" type="video/mp4" />
         </video>
-      </div> */}
+      </div>
       <div className="content-container position-relative">
         <Routes>
           <Route path="/" element={<LandingHome />} />
