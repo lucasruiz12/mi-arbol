@@ -1,10 +1,17 @@
+@font-face {
+  font-family: 'Azo Sans';
+  src: url('./assets/fonts/Azo_Sans_Black.otf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
 body {
     margin: 0;
     background-color: #505050;
     overflow: hidden; /* Evita scroll en desktop */
     height: 100vh;
     width: 100vw;
-    font-family: 'Open Sans', serif !important;
+    font-family: 'Azo Sans', serif !important;
   }
   
   html, body, #root {
