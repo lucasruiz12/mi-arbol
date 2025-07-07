@@ -198,39 +198,41 @@ const InitQuestions = () => {
                             backgroundPosition: 'center',
                         }}
                     />
-                    <div className="container-question-logo d-flex justify-content-center justify-content-md-start">
-                        <img className="question-logo" src={logoArbol} alt="Logo de Más Raíces, Menos Huella" />
-                    </div>
-                    <div className="container-question-count d-flex justify-content-center justify-content-md-end">
-                        <p className="question-count">Pregunta {currentQuestion}/16</p>
-                    </div>
-                    <div className="container-question d-flex justify-content-center">
-                        <div className="container-text col-12 col-md-8 col-lg-6">
-                            <p className="question-text">
-                                {questionsAndAnswers.find((el) => el.id === currentQuestion).id}.-{' '}
-                                {questionsAndAnswers
-                                    .find((el) => el.id === currentQuestion)
-                                    .question.split('\n')
-                                    .map((line, index) => (
-                                        <React.Fragment key={index}>
-                                            {line}
-                                            <br />
-                                        </React.Fragment>
-                                    ))}
-                            </p>
+                    <div className="question-main-content">
+                        <div className="container-question-logo d-flex justify-content-center justify-content-md-start">
+                            <img className="question-logo" src={logoArbol} alt="Logo de Más Raíces, Menos Huella" />
+                        </div>
+                        <div className="container-question-count d-flex justify-content-center justify-content-md-end">
+                            <p className="question-count">Pregunta {currentQuestion}/16</p>
+                        </div>
+                        <div className="container-question d-flex justify-content-center">
+                            <div className="container-text col-12 col-md-8 col-lg-6">
+                                <p className="question-text">
+                                    {questionsAndAnswers.find((el) => el.id === currentQuestion).id}.-{' '}
+                                    {questionsAndAnswers
+                                        .find((el) => el.id === currentQuestion)
+                                        .question.split('\n')
+                                        .map((line, index) => (
+                                            <React.Fragment key={index}>
+                                                {line}
+                                                <br />
+                                            </React.Fragment>
+                                        ))}
+                                </p>
+                            </div>
+                        </div>
+                        <div
+                            className={`container-answers d-flex justify-content-center align-items-start ${questionsAndAnswers.find((el) => el.id === currentQuestion)?.answers.length > 3 ? 'many-answers' : ''
+                                }`}
+                        >
+                            <CustomCheckbox
+                                data={questionsAndAnswers.find((el) => el.id === currentQuestion).answers}
+                                setData={setResponsePoints}
+                                resetData={responseUser}
+                            />
                         </div>
                     </div>
-                    <div
-                        className={`container-answers d-flex justify-content-center align-items-start ${questionsAndAnswers.find((el) => el.id === currentQuestion)?.answers.length > 3 ? 'many-answers' : ''
-                            }`}
-                    >
-                        <CustomCheckbox
-                            data={questionsAndAnswers.find((el) => el.id === currentQuestion).answers}
-                            setData={setResponsePoints}
-                            resetData={responseUser}
-                        />
-                    </div>
-                    <div className="d-flex justify-content-center">
+                    <div className="question-button-container">
                         <button
                             className={`btn-green${responsePoints === '' ? ' disabled' : ''} next-question`}
                             disabled={responsePoints === ''}
