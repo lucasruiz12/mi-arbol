@@ -3,7 +3,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 60%;
+    width: 100%;
+    height: 100vh;
+    padding-top: 2.5rem;
 }
 
 .title-register {
@@ -11,40 +13,47 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 15vh;
-    margin: 2vh 0;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+    text-align: center;
 }
 
 .register-logo {
-    height: 12vh;
+    height: clamp(60px, 8vw, 100px);
+    margin-bottom: 1rem;
+    margin-top: 2rem; 
 }
 
 .text-register {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: justify;
     align-items: center;
-    margin: 2vh 0;
-    height: 100%;
+    margin-bottom: 1rem;
 }
 
 .register-line {
     font-weight: bold;
-    text-align: center;
+    text-align: justify;
     color: #604848;
-    /* font-size: small; */
+    font-size: 0.95rem;
+    line-height: 1.3;
 }
 
 .form-register {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    padding: 3vh 3vw;
-    height: 90vh;
-    width: 50%;
-    background-color: rgba(255, 255, 255, 0.8);
+    padding: 2.5rem 1.5rem;
+    height: auto;
+    min-height: 60vh;
+    width: 280px;
+    max-width: 80%;
+    background-color: rgba(255, 255, 255, 0.9);
     border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
 }
 
 .container-input-form {
@@ -53,21 +62,51 @@
     justify-content: center;
     align-items: flex-start;
     width: 100%;
-    margin-bottom: 0.3rem;
+    margin-bottom: 1.5rem;
 }
 
 .input-title {
-    color: white;
-    margin-bottom: 2vh;
+    color: #604848;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    font-size: clamp(0.9rem, 2vw, 1rem);
 }
+
+.input-title-nombre {
+    margin-top: 2rem;
+}
+.input-title-email {
+    margin-top: 0;
+}
+
+@media (max-width: 991px) {
+  .input-title-nombre {
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .input-title-nombre {
+    margin-top: 0.5rem;
+  }
+}
+
 
 .input-form {
     background-color: white;
-    border: solid 1px transparent;
-    border-radius: 1rem;
+    border: solid 1px #ddd;
+    border-radius: 0.5rem;
     width: 100%;
-    height: 5vh;
-    padding: 0 1vw;
+    height: 3rem;
+    padding: 0 1rem;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    transition: border-color 0.3s ease;
+}
+
+.input-form:focus {
+    outline: none;
+    border-color: #A4B46A;
+    box-shadow: 0 0 0 2px rgba(164, 180, 106, 0.2);
 }
 
 .container-all-btns {
@@ -101,13 +140,16 @@
 }
 
 .btn-green-register {
-    height: 5vh;
-    width: 70%;
+    height: 3rem;
+    width: 100%;
     border: none;
     border-radius: 2rem;
     color: white;
     background-color: #A4B46A;
     cursor: pointer;
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
+    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
 .btn-green-register.disabled {
@@ -123,69 +165,116 @@
     background-color: #6C757D;
 }
 
-@media (max-width: 992px) {
+/* Responsive para tablets */
+@media (max-width: 991px) {
     .form-register {
-        width: 80%;
-    }
-}
-
-@media (max-width: 768px) {
-    .container-register {
-        width: 100%;
-        height: 100%;
+        width: 350px;
+        max-width: 70%;
+        padding: 2.5rem 1.5rem;
     }
 
-    .input-title {
-        font-size: smaller;
-        margin-bottom: 0.5vh;
-    }
-
-    .title-register {
-        flex-direction: column;
-        height: auto;
-        margin: 0;
-    }
-
-    .span-social-media {
-        font-size: small;
-    }
-
-    .link-register {
-        display: flex;
-        width: 100%;
-        justify-content: center;
-    }
-
-    .text-register {
-        padding: 0.5rem;
+    .register-logo {
+        height: clamp(60px, 8vw, 90px);
     }
 
     .register-line {
-        font-size: small;
+        font-size: clamp(1rem, 2.5vw, 1.2rem);
+    }
+
+    .input-title {
+        font-size: clamp(0.9rem, 2vw, 1rem);
+    }
+
+    .input-form {
+        height: 3rem;
+        font-size: clamp(0.9rem, 2vw, 1rem);
+    }
+
+    .btn-green-register {
+        height: 3rem;
+        font-size: clamp(1rem, 2.5vw, 1.1rem);
+    }
+}
+
+/* Responsive para móviles */
+@media (max-width: 767px) {
+    .container-register {
+        padding: 0.5rem;
     }
 
     .form-register {
-        display: flex;
-        flex-direction: column;
-        width: 95%;
-        justify-self: center;
-        overflow-y: scroll;
+        width: 100%;
+        max-width: 280px;
+        padding: 2rem 1.5rem;
+        min-height: 55vh;
     }
 
-    .form-register::-webkit-scrollbar {
-        width: 3px;
-        background-color: transparent;
-    }
-
-    .container-input-form {
+    .register-logo {
+        height: clamp(50px, 7vw, 70px);
         margin-bottom: 1rem;
     }
 
-    .container-social-media {
-        margin: 0.5rem 0;
+    .title-register {
+        margin-bottom: 1.5rem;
     }
 
-    .container-btn-social-media {
-        width: 60%;
+    .text-register {
+        margin-bottom: 1.5rem;
+    }
+
+    .register-line {
+        font-size: clamp(0.9rem, 2.2vw, 1.1rem);
+        line-height: 1.4;
+    }
+
+    .container-input-form {
+        margin-bottom: 1.2rem;
+    }
+
+    .input-title {
+        font-size: clamp(0.9rem, 2vw, 1rem);
+        margin-bottom: 0.5rem;
+    }
+
+    .input-form {
+        height: 2.8rem;
+        font-size: clamp(0.9rem, 2vw, 1rem);
+        padding: 0 1rem;
+    }
+
+    .btn-green-register {
+        height: 2.8rem;
+        font-size: clamp(1rem, 2.2vw, 1.1rem);
     }
 }
+
+/* Responsive para monitores grandes */
+@media (min-width: 1400px) {
+    .form-register {
+        width: 300px;
+        padding: 3rem 2rem;
+    }
+
+    .register-logo {
+        height: clamp(80px, 6vw, 120px);
+    }
+
+    .register-line {
+        font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+    }
+
+    .input-title {
+        font-size: clamp(1rem, 1.5vw, 1.1rem);
+    }
+
+    .input-form {
+        height: 3.2rem;
+        font-size: clamp(1rem, 1.5vw, 1.1rem);
+    }
+
+    .btn-green-register {
+        height: 3.2rem;
+        font-size: clamp(1.1rem, 1.5vw, 1.2rem);
+    }
+}
+

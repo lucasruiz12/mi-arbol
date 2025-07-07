@@ -28,51 +28,51 @@ const PreRegister = ({ goToResults }) => {
     };
 
     return (
-        <div className="container-register w-100 h-100">
-            <form className="form-register" onSubmit={submitData}>
-                <div className="title-register">
-                    <img className="register-logo" src={logoArbol} alt="LOG" />
+        <div className="container-register d-flex flex-column justify-content-center align-items-center min-vh-100">
+            <form 
+                className="bg-white bg-opacity-75 rounded-4 shadow w-100 w-md-75 w-lg-50 mx-auto p-3 p-md-4"
+                style={{ maxWidth: '400px', minHeight: '500px' }}
+                onSubmit={submitData}
+            >
+                <div className="title-register text-center mb-4">
+                    <img className="register-logo mb-2" src={logoArbol} alt="LOG" />
                     <div className="text-register">
-                        <p className="register-line">Para conocer tus resultados, déjanos tu nombre y correo electrónico</p>
+                        <p className="register-line mb-0">
+                            Para conocer tus resultados, déjanos tu nombre y correo electrónico
+                        </p>
                     </div>
                 </div>
-                <div className="container-input-form">
-                    <label className="input-title" htmlFor="name">
+                <div className="mb-3 text-start">
+                    <label className="input-title input-title-nombre mb-1" htmlFor="name">
                         Nombre:
                     </label>
                     <input
-                        className="input-form"
+                        className="form-control"
                         type="text"
                         id="name"
                         name="name"
                         onChange={changeData}
                     />
                 </div>
-                <div className="container-input-form">
-                    <label className="input-title" htmlFor="email">
+                <div className="mb-4 text-start">
+                    <label className="input-title input-title-email mb-1" htmlFor="email">
                         Email:
                     </label>
                     <input
-                        className="input-form"
+                        className="form-control"
                         type="email"
                         id="email"
                         name="email"
                         onChange={changeData}
                     />
                 </div>
-                <div className="container-all-btns">
-                    <div className="link-container-register">
-                        <input
-                            type="submit"
-                            value="Ver resultados"
-                            className={`btn-green-register${(formData.name === "" ||
-                                formData.email === "") ? " disabled" : ""}`}
-                            disabled={
-                                formData.email === "" ||
-                                formData.password === ""
-                            }
-                        />
-                    </div>
+                <div className="d-flex justify-content-center">
+                    <input
+                        type="submit"
+                        value="Ver resultados"
+                        className={`btn btn-success w-100 fw-bold${(formData.name === "" || formData.email === "") ? " disabled" : ""}`}
+                        disabled={formData.name === "" || formData.email === ""}
+                    />
                 </div>
             </form>
         </div>
