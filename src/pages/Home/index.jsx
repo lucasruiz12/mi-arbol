@@ -64,11 +64,15 @@ const Home = () => {
     }, []);
 
     return (
-        <div className={`container-home`}>
-            <NavBar />
-            <div className="container-home-content">
-                <div className="home-info">
-                    <div className="home-user-data">
+        <div className="container-fluid p-0">
+            <div className="row m-0">
+                <div className="col-12 p-0">
+                    <NavBar />
+                </div>
+            </div>
+            <div className="row m-0 justify-content-center align-items-stretch" style={{ minHeight: '90vh' }}>
+                <div className="col-12 col-md-10 col-lg-6 col-xxl-5 d-flex align-items-start justify-content-center">
+                    <div className="home-user-data w-100">
                         <div>
                             <h5 className="home-text">Tu huella de carbono es: </h5>
                             <h1 className="home-number">{formattedNumber(carbonPoints)} Tons CO2 Eq.</h1>
@@ -87,12 +91,13 @@ const Home = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="home-user-graphics">
+                </div>
+                <div className="col-12 col-md-10 col-lg-6 col-xxl-7 d-flex align-items-start justify-content-center">
+                    <div className="home-user-graphics w-100">
                         <GraphicsHome carbonPoints={parseFloat(carbonPoints).toFixed(2)} categoryPoints={categoryPoints} />
                     </div>
                 </div>
             </div>
-
         </div>
     );
 };

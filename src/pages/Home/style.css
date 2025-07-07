@@ -126,11 +126,10 @@
 
 .home-user-graphics {
     display: flex;
-    padding: 2.5vh 0;
-    margin-left: 2vh;
     flex-direction: column;
-    /* justify-content: space-between; */
-    width: 50%;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
 }
 
 .home-formula {
@@ -211,7 +210,9 @@
     .home-status {
         color: white;
         text-align: center;
-        font-size: medium;
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin: 1rem 0;
     }
 
     .home-invitation {
@@ -234,5 +235,13 @@
 
     .formula-img {
         height: 1vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .home-status {
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin: 1.5rem 0;
     }
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactApexChart from 'react-apexcharts';
 
-const GraphicBar = ({ carbonPoints }) => {
+const GraphicBar = ({ carbonPoints, width = 450, height = 180 }) => {
     const data = {
         series: [
             {
@@ -35,8 +35,9 @@ const GraphicBar = ({ carbonPoints }) => {
             plotOptions: {
                 bar: {
                     horizontal: true,
-                    barHeight: '80%',
+                    barHeight: '45%', // Más gruesas
                     borderRadius: 5,
+                    columnWidth: '70%',
                 },
             },
             colors: ['#C0D860', '#A4B46A'],
@@ -101,7 +102,7 @@ const GraphicBar = ({ carbonPoints }) => {
 
     return (
         <div className="graphics-background-home-bar" style={{ zIndex: 99 }}>
-            <ReactApexChart options={data.options} series={data.series} type="bar" width={450} height={180} />
+            <ReactApexChart options={data.options} series={data.series} type="bar" width={width} height={180} />
         </div>
     );
 };

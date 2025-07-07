@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { ResponsivePie } from '@nivo/pie';
 
-// Hook para obtener las dimensiones de la ventana
 const useWindowDimensions = () => {
   const [windowDimensions, setWindowDimensions] = useState({
     width: window.innerWidth,
     height: window.innerHeight,
   });
-
   useEffect(() => {
     const handleResize = () => {
       setWindowDimensions({
@@ -15,75 +13,77 @@ const useWindowDimensions = () => {
         height: window.innerHeight,
       });
     };
-
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
-
   return windowDimensions;
 };
 
-const GraphicPie = ({ carbonPoints, categoryPoints }) => {
-
+const GraphicPie = ({ carbonPoints, categoryPoints, width = '100%', height = 220 }) => {
   const [selectedValue, setSelectedValue] = useState("");
-
-  const { width } = useWindowDimensions(); // Obtiene el ancho de la ventana
-
+  const { width: windowWidth } = useWindowDimensions();
   const data = [
     { id: 'Vivienda', label: 'Vivienda', value: categoryPoints ? parseFloat((categoryPoints[0] / carbonPoints) * 100).toFixed(2) : 17, color: '#A4B46A' },
     { id: 'Traslados', label: 'Traslados', value: categoryPoints ? parseFloat((categoryPoints[1] / carbonPoints) * 100).toFixed(2) : 71, color: '#C8D390' },
     { id: 'Compras', label: 'Compras', value: categoryPoints ? parseFloat((categoryPoints[2] / carbonPoints) * 100).toFixed(2) : 12, color: '#C0D860' },
   ];
-
-  // Determina si el gráfico está en una pantalla pequeña (responsive)
-  const isResponsive = width < 768;
-
+  const isResponsive = windowWidth < 768;
+  let pieHeight = 300;
+  if (windowWidth >= 2560) { pieHeight = 500; }
+  else if (windowWidth >= 1200) { pieHeight = 350; }
+  else if (windowWidth >= 768) { pieHeight = 250; }
+  else { pieHeight = 180; }
   return (
     <>
-      <h2 style={{ color: 'white', marginBottom: "3rem" }}>Análisis de consumo</h2>
-      <div className="graphics-background-home-pie pie-chart">
-        <div style={{ height: "90%", width: "90%" }}>
+      <div className="graphics-background-home-pie pie-chart" style={{ height: pieHeight, width: '100%' }}>
+        <div style={{ height: '100%', width: '100%' }}>
           <ResponsivePie
             data={data}
             margin={{ top: isResponsive ? 10 : 30, right: isResponsive ? 10 : 40, bottom: isResponsive ? 10 : 40, left: isResponsive ? 10 : 60 }}
-            innerRadius={0} // Hace que el gráfico sea más pequeño
+            innerRadius={0}
             padAngle={0.7}
             cornerRadius={7}
             activeOuterRadiusOffset={5}
             borderWidth={1}
             borderColor={{ from: 'color', modifiers: [['darker', 0.2]] }}
             colorBy="id"
-            colors={data.map((d) => d.color)} // Aquí aplicamos los colores personalizados
-            arcLabel={(d) => `${d.value}%`} // Formatear los valores como porcentaje
-            arcLabelsRadiusOffset={0.65}
+            colors={data.map((d) => d.color)}
+            arcLabel={d => `${d.value}%`}
+            arcLabelsTextColor="white"
+            arcLabelsRadiusOffset={0.55}
             arcLinkLabelsThickness={3}
             arcLinkLabelsColor={{ from: 'color' }}
-            isInteractive={true} // Mantiene la interactividad para el tooltip
+            isInteractive={true}
             theme={{
               tooltip: {
                 container: {
                   background: '#333',
                   color: 'white',
-                  display: isResponsive ? 'none' : 'block', // Oculta los labels en responsive
+                  display: isResponsive ? 'none' : 'block',
                 },
               },
               labels: {
                 text: {
-                  fill: 'white', // Establece el color de las etiquetas en blanco
-                  fontSize: 22.5,
+                  fill: 'white',
+                  fontSize: 14,
+                },
+              },
+              arcLinkLabels: {
+                text: {
+                  fontSize: 22,
+                  fontWeight: 700,
+                  fill: 'white',
                 },
               },
             }}
             onClick={(data) => setSelectedValue(data)}
-            // enableArcLabels={!isResponsive} // No mostrar los labels de los segmentos en pantallas pequeñas
-            enableArcLinkLabels={!isResponsive} // No mostrar las líneas de conexión en pantallas pequeñas
-            tooltipFormat={isResponsive ? null : undefined} // Deshabilitar tooltips en responsive si no es clickeado
+            enableArcLinkLabels={!isResponsive}
+            tooltipFormat={isResponsive ? null : undefined}
             startAngle={45}
             endAngle={405}
           />
         </div>
-        {
-          isResponsive && selectedValue &&
+        {isResponsive && selectedValue &&
           <div
             style={{
               color: 'white',
