@@ -1,3 +1,57 @@
+/* Estilos para la nueva estructura de Bootstrap Grid */
+.neutral-carbon-container {
+    min-height: 100vh;
+    background: transparent;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.sabias-que-container {
+    padding: 2rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+.back-button-container {
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .neutral-carbon-container {
+        padding: 0.5rem;
+    }
+    
+    .sabias-que-container {
+        padding: 1rem;
+        text-align: center;
+    }
+    
+    .back-button-container {
+        padding: 0.5rem;
+    }
+    
+    .container-info-pizza {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .info-pizza-img {
+        height: 20vh;
+        width: 20vh;
+    }
+    
+    .info-pizza-text {
+        font-size: 6vh;
+    }
+}
+
+/* Mantener estilos existentes */
 .container-neutral-carbon {
     display: flex;
     flex-direction: column;
@@ -107,6 +161,7 @@
     display: flex;
     justify-content: center;
     width: 100%;
+    margin-top: 2rem;
 }
 
 .container-all-info {
@@ -184,94 +239,188 @@
     font-size: xx-large;
 }
 
-.btn-green.suscription-how{
-    width: 70%;
+.btn-green.suscription-how {
+    width: 90%;
+    max-width: 400px;
+    min-width: 220px;
 }
 
-@media (max-width: 768px) {
-    .container-neutral-carbon {
-        /* flex-direction: column-reverse; */
-        overflow-y: hidden;
-        padding: 0;
-    }
+/* Ajuste de espacio para subir las filas 2 y 3 */
+.row.fila-titulo {
+    min-height: 8vh !important;
+}
+.row.fila-contenido {
+    min-height: 35vh !important;
+}
 
-    .container-neutral-carbon-content {
-        flex-direction: column;
-        align-items: flex-start;
-        overflow-y: scroll;
-        padding: 1.5rem;
-        height: 80%;
-    }
+/* --- Responsive para 4K, laptop, tablet y móvil --- */
 
+/* 4K: pantallas muy grandes */
+@media (min-width: 2000px) {
+    .title-you-know {
+        font-size: 6vh;
+    }
+    .text-you-know {
+        font-size: 5vh;
+    }
+    .info-you-know, .info-inversion {
+        font-size: 2.5vw;
+    }
+    .info-pizza-img {
+        height: 40vh;
+        width: 40vh;
+    }
+    .info-pizza-text {
+        font-size: 12vh;
+    }
+    .sabias-que-container {
+        padding: 4rem;
+    }
     .container-btn-carbono {
-        display: none;
+        margin-top: 3rem;
     }
+}
 
-    .container-btn-carbono-mobile {
-        display: flex;
-        justify-content: center;
+/* Laptop (default, entre 1024px y 2000px) */
+@media (min-width: 1024px) and (max-width: 1999px) {
+    .title-you-know {
+        font-size: 4.5vh;
     }
-
-    .btn-green.inversion{
-        width: 100% !important;
-    }
-
-    .container-link-mobile {
-        width: 90%;
-    }
-
-    .container-all-info {
-        width: 100%;
-    }
-
-    .all-container {
-        width: 100% !important;
-    }
-
-    .carbon-pizza-content {
-        flex-direction: column;
-    }
-
-    .container-info-text {
-        width: 100%;
-    }
-
-    .you-know-tips {
-        display: none;
-    }
-
     .text-you-know {
         font-size: 4vh;
     }
-
-    .info-you-know {
-        font-size: medium;
+    .info-you-know, .info-inversion {
+        font-size: 31px;
     }
-
-    .info-inversion {
-        font-size: medium;
-    }
-
-    .container-info-pizza {
-        width: 100%;
-        margin: 1.5rem 0;
-    }
-
-    .container-info-graphics {
-        width: 100%;
-        margin: 1.5rem 0;
-    }
-
     .info-pizza-img {
-        height: 15vh;
-        width: 15vh;
+        height: 30vh;
+        width: 30vh;
     }
-
     .info-pizza-text {
-        font-size: 7vh;
+        font-size: 10vh;
+    }
+    .sabias-que-container {
+        padding: 2rem;
+    }
+}
+
+/* Tablet (entre 600px y 1023px) */
+@media (min-width: 600px) and (max-width: 1023px) {
+    .fila-titulo {
+        min-height: 10vh !important;
+    }
+    .fila-contenido {
+        min-height: 40vh !important;
+    }
+    .sabias-que-container {
+        padding: 1.2rem;
+        text-align: center;
     }
     .title-you-know {
+        font-size: 3.2vh;
+    }
+    .text-you-know {
         font-size: 2.5vh;
-        margin-top: 2vh;
+    }
+    .info-you-know, .info-inversion {
+        font-size: 18px;
+    }
+    .container-info-pizza {
+        flex-direction: row !important;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    .info-pizza-img {
+        height: 12vh;
+        width: 12vh;
+    }
+    .info-pizza-text {
+        font-size: 5vh;
+    }
+    .container-btn-carbono {
+        margin-top: 1.2rem;
+    }
+    .btn-green.suscription-how {
+        width: 100%;
+        max-width: 350px;
+    }
+}
+
+/* Móvil (menos de 600px) */
+@media (max-width: 599px) {
+    .container-info-pizza {
+        display: flex;
+        flex-direction: row !important;
+        justify-content: center;
+        align-items: flex-end;
+        gap: 2rem;
+        margin-bottom: 1rem;
+        width: 100%;
+    }
+    .info-pizza-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 0 !important;
+    }
+    .fila-titulo {
+        min-height: 7vh !important;
+    }
+    .fila-contenido {
+        min-height: 30vh !important;
+    }
+    .sabias-que-container {
+        padding: 0.7rem;
+        text-align: center;
+    }
+    .title-you-know {
+        font-size: 2.2vh;
+    }
+    .text-you-know {
+        font-size: 2vh;
+    }
+    .info-you-know, .info-inversion {
+        font-size: 14px;
+    }
+    .info-pizza-img {
+        height: 10vh;
+        width: 10vh;
+    }
+    .info-pizza-text {
+        font-size: 3.5vh;
+    }
+    .container-btn-carbono-responsive {
+        justify-content: center !important;
+        margin-top: 1.2rem;
+    }
+    .btn-green.suscription-how {
+        width: 100%;
+        max-width: 250px;
+    }
+    .back-button-container {
+        padding: 0.2rem;
+    }
+    .row.fila-contenido > .col-md-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .row.fila-contenido > .col-md-6:first-child {
+        order: 1;
+    }
+    .row.fila-contenido > .col-md-6:last-child {
+        order: 2;
+    }
+    .container-btn-carbono {
+        order: 3;
+    }
+}
+
+/* --- Fin de media queries responsivos --- */
+
+@media (min-width: 1024px) {
+    .container-btn-carbono-responsive {
+        margin-left: 8%;
+        justify-content: flex-start !important;
     }
 }

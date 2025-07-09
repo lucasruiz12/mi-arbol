@@ -15,22 +15,36 @@ const NeutralCarbon = () => {
     const [showModalMoreInfo, setShowModalMoreInfo] = useState(false);
 
     return (
-        <div className="container-neutral-carbon">
-            <NavBar />
-            <p className="title-you-know">{renderView === 1 ? "Siembra árboles certificados y geolocalizados." : "¡Somos la plataforma que más arboles sembrará con cada peso tuyo!"}</p>
-            <div className="container-neutral-carbon-content">
-                {
-                    renderView === 1 ?
-                        <>
-                            <div className="container-info-text">
-                                <p className="text-you-know">¿Sabías qué?</p>
-                                <p className="info-you-know">Por menos de lo que gastas en una pizza al mes, puedes neutralizar tu huella de carbono como persona.</p>
-                                <p className="info-you-know bottom-text-info">¡Únete a nuestra comunidad con una pequeña suscripción para ser carbono neutro!</p>
-                                <div className="container-btn-carbono">
-                                    <button className="btn-green suscription-how" onClick={() => setRenderView(2)}>¿Cómo se invierte mi suscripción?</button>
+        <div className="container-fluid neutral-carbon-container">
+            {
+                renderView === 1 ?
+                    <>
+                        {/* Fila 1: NavBar completo */}
+                        <div className="row" style={{ minHeight: '15vh' }}>
+                            <div className="col-12">
+                                <NavBar />
+                            </div>
+                        </div>
+
+                        {/* Fila 2: Título */}
+                        <div className="row align-items-center fila-titulo">
+                            <div className="col-12 text-center">
+                                <h1 className="title-you-know">Siembra árboles certificados y geolocalizados</h1>
+                            </div>
+                        </div>
+
+                        {/* Fila 3: Contenido dividido en 2 columnas */}
+                        <div className="row align-items-center fila-contenido">
+                            {/* Columna 1: ¿Sabías qué? y texto */}
+                            <div className="col-md-6">
+                                <div className="sabias-que-container">
+                                    <h2 className="text-you-know">¿Sabías qué?</h2>
+                                    <p className="info-you-know">Por menos de lo que gastas en una pizza al mes, puedes neutralizar tu huella de carbono como persona.</p>
+                                    <p className="info-you-know bottom-text-info">¡Únete a nuestra comunidad con una pequeña suscripción para ser carbono neutro!</p>
                                 </div>
                             </div>
-                            <div className="container-all-info">
+                            {/* Columna 2: Comparación pizza vs árbol */}
+                            <div className="col-md-6">
                                 <div className="container-info-pizza">
                                     <div className="info-pizza-item">
                                         <img className="info-pizza-img" src={pizzaIcon} alt="NOIMG" />
@@ -44,34 +58,47 @@ const NeutralCarbon = () => {
                                         <p className="info-pizza-text">$189</p>
                                     </div>
                                 </div>
-                                <div className="container-btn-carbono-mobile">
-                                    <button className="btn-green inversion" style={{ width: "100% !important" }} onClick={() => setRenderView(2)}>¿Cómo se invierte mi suscripción?</button>
-                                </div>
                             </div>
-                            <BackPages goToPage="/home" />
-                        </>
-                        :
-                        <div className="carbon-pizza-content">
-                            <div className="container-info-text">
-                                <p className="text-you-know">¿Cómo impacta tu inversión?</p>
-                                <p className="info-inversion">Con tu inversión llevamos a cabo <b>reforestaciones masivas</b>, con esta acción logramos capturar carbono de la atmósfera, dar <b>trabajo a comunidades</b> y proteger ecosistemas que producen el oxígeno que respiramos.</p>
-                                <p className="info-inversion">Tus árboles tendrán un <b>identificador personalizado y geolocalizado</b>, para que puedas visitar tus raíces siempre que quieras.</p>
-                                <div className="container-btn-carbono">
-                                    <Link className="container-link-mobile" to="/subscriptionPlans">
-                                        <button className="btn-green" onClick={() => setRenderView(2)}>¡Vuélvete carbono neutro!</button>
-                                    </Link>
-                                </div>
-                            </div>
-                            <div className="container-info-graphics">
-                                <GraphicsNeutralCarbon showModal={() => setShowModalMoreInfo(true)} />
-                            </div>
-                            <BackArrow handleAction={() => setRenderView(1)} customMargin="90%" />
-                            {
-                                showModalMoreInfo && <ModalMoreInfo showModal={showModalMoreInfo} hideModal={() => setShowModalMoreInfo(false)} />
-                            }
                         </div>
-                }
-            </div>
+                        {/* Botón fuera de la fila, para que en móvil quede debajo de los íconos */}
+                        <div className="row">
+                            <div className="col-12 d-flex justify-content-md-start justify-content-center container-btn-carbono-responsive">
+                                <button className="btn-green suscription-how" onClick={() => setRenderView(2)}>
+                                    ¿Cómo se invierte mi suscripción?
+                                </button>
+                            </div>
+                        </div>
+
+                        {/* Fila 4: Solo botón de back */}
+                        <div className="row align-items-center" style={{ minHeight: '20vh' }}>
+                            <div className="col-12 d-flex justify-content-start">
+                                <div className="back-button-container">
+                                    <BackPages goToPage="/home" />
+                                </div>
+                            </div>
+                        </div>
+                    </>
+                    :
+                    <div className="carbon-pizza-content">
+                        <div className="container-info-text">
+                            <p className="text-you-know">¿Cómo impacta tu inversión?</p>
+                            <p className="info-inversion">Con tu inversión llevamos a cabo <b>reforestaciones masivas</b>, con esta acción logramos capturar carbono de la atmósfera, dar <b>trabajo a comunidades</b> y proteger ecosistemas que producen el oxígeno que respiramos.</p>
+                            <p className="info-inversion">Tus árboles tendrán un <b>identificador personalizado y geolocalizado</b>, para que puedas visitar tus raíces siempre que quieras.</p>
+                            <div className="container-btn-carbono">
+                                <Link className="container-link-mobile" to="/subscriptionPlans">
+                                    <button className="btn-green" onClick={() => setRenderView(2)}>¡Vuélvete carbono neutro!</button>
+                                </Link>
+                            </div>
+                        </div>
+                        <div className="container-info-graphics">
+                            <GraphicsNeutralCarbon showModal={() => setShowModalMoreInfo(true)} />
+                        </div>
+                        <BackArrow handleAction={() => setRenderView(1)} customMargin="90%" />
+                        {
+                            showModalMoreInfo && <ModalMoreInfo showModal={showModalMoreInfo} hideModal={() => setShowModalMoreInfo(false)} />
+                        }
+                    </div>
+            }
         </div>
     );
 };
