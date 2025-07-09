@@ -242,12 +242,12 @@
 
 /* Estilos para la fórmula de cálculo */
 .formula-container {
-    background: rgba(255, 255, 255, 0.1);
+    background: transparent !important;
     border-radius: 15px;
     padding: 15px;
     margin: 10px 0;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: none;
+    border: none;
 }
 
 .formula-title {
