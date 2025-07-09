@@ -1,3 +1,4 @@
+/* Estilos base para todos los dispositivos */
 .container-subscription-list {
     display: flex;
     flex-direction: column;
@@ -37,17 +38,172 @@
     font-size: 25px;
     width: 60%;
     text-align: justify;
-    margin-top: 5vh;
+    margin-top: 7vh;
 }
 
 .container-subscription-slider{
     width: 100%;
-    margin-top: 5vh;
+    margin-top: 7vh;
 }
 
-@media (max-width: 768px) {
+/* 4K (2560px y superior) */
+@media (min-width: 2560px) {
+    .subscription-text-header {
+        font-size: 48px;
+        margin-top: 3vh;
+    }
+    
+    .subscription-text-line {
+        font-size: 32px;
+        width: 70%;
+        margin-top: 3vh;
+    }
+    
+    .container-subscription-slider {
+        margin-top: 3vh;
+    }
+}
+
+/* Laptop (1024px - 2559px) */
+@media (min-width: 1024px) and (max-width: 2559px) {
+    .subscription-text-header {
+        font-size: 40px;
+        margin-top: 4vh;
+    }
+    
+    .subscription-text-line {
+        font-size: 28px;
+        width: 65%;
+        margin-top: 4vh;
+    }
+    
+    .container-subscription-slider {
+        margin-top: 4vh;
+    }
+}
+
+/* Tablet (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
     .container-subscription-list {
-        /* flex-direction: column-reverse; */
+        min-height: 100vh;
+        overflow-y: auto;
+    }
+
+    .container-subscription-list-content {
+        min-height: 100vh;
+        padding: 1rem;
+        justify-content: flex-start;
+        gap: 1vh;
+    }
+
+    .subscription-text-header {
+        font-size: 24px;
+        margin-top: 1vh;
+        margin-bottom: 1vh;
+    }
+    
+    .subscription-text-line {
+        font-size: 16px;
+        width: 90%;
+        margin-top: 5vh;
+        margin-bottom: 1vh;
+    }
+    
+    .container-subscription-slider {
+        margin-top: 5vh;
+        margin-bottom: 1vh;
+    }
+
+    /* Ajustes específicos para la columna de widgets en tablet */
+    .col-md-4 {
+        margin-top: 1vh;
+    }
+
+    .formula-container {
+        padding: 10px;
+        margin: 3px 0;
+        max-height: none;
+    }
+    
+    .formula-title {
+        font-size: 18px;
+        margin-bottom: 8px;
+        padding: 5px 0;
+    }
+    
+    .formula-section {
+        margin-bottom: 8px;
+        padding: 8px;
+    }
+    
+    .formula-section h5 {
+        font-size: 12px;
+        margin-bottom: 4px;
+    }
+    
+    .carbon-points, .trees-needed, .slider-trees, .carbon-mitigated, .carbon-remaining {
+        font-size: 14px;
+    }
+    
+    .formula-text {
+        font-size: 9px;
+    }
+    
+    .formula-info {
+        font-size: 10px;
+    }
+
+    /* Asegurar que las filas tengan suficiente espacio */
+    .row {
+        margin-bottom: 1rem;
+    }
+
+    /* Ajustar el espaciado entre columnas */
+    .col-md-8, .col-md-4 {
+        padding: 0 10px;
+    }
+
+    /* Asegurar que el contenido no se corte */
+    .subscription-text-container {
+        margin-bottom: 1rem;
+    }
+
+    /* Asegurar scroll suave */
+    html, body {
+        overflow-x: hidden;
+    }
+
+    /* Ajustar altura mínima para evitar cortes */
+    .container-fluid {
+        min-height: 100vh;
+    }
+
+    /* Apilar widgets verticalmente en tablet */
+    .formula-container {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+    .formula-section {
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+        margin-bottom: 8px;
+        padding: 8px;
+    }
+    /* Asegurar que el texto no se desborde */
+    .formula-section h5, .carbon-points, .trees-needed, .slider-trees, .carbon-mitigated, .carbon-remaining {
+        word-break: break-word;
+        white-space: normal;
+    }
+}
+
+/* Móvil (hasta 767px) */
+@media (max-width: 767px) {
+    .container-subscription-list {
         overflow-y: hidden;
     }
 
@@ -65,18 +221,254 @@
     }
 
     .subscription-text-header {
-        font-size: 3vh;
+        font-size: 24px;
         width: 100%;
-        text-align: justify;
+        text-align: center;
+        margin-top: 2vh;
     }
     
     .subscription-text-line {
-        font-size: medium;
+        font-size: 18px;
         width: 100%;
         text-align: justify;
+        margin-top: 3vh;
     }
 
     .container-subscription-slider {
         width: 100%;
+        margin-top: 3vh;
+    }
+}
+
+/* Estilos para la fórmula de cálculo */
+.formula-container {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 15px;
+    margin: 10px 0;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.formula-title {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+    padding: 10px 0;
+}
+
+.formula-section {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    border-left: 4px solid #C0D860;
+}
+
+.formula-section h5 {
+    color: #C0D860;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.carbon-points, .trees-needed, .slider-trees, .carbon-mitigated, .carbon-remaining {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 5px 0;
+    text-align: center;
+}
+
+.formula-text {
+    color: #C0D860;
+    font-size: 12px;
+    display: block;
+    margin-top: 5px;
+    text-align: center;
+    font-style: italic;
+}
+
+.formula-info {
+    color: white;
+    font-size: 14px;
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.formula-info li {
+    margin-bottom: 5px;
+    line-height: 1.4;
+}
+
+/* 4K (2560px y superior) */
+@media (min-width: 2560px) {
+    .formula-container {
+        padding: 25px;
+        margin: 15px 0;
+    }
+    
+    .formula-title {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+    
+    .formula-section {
+        margin-bottom: 25px;
+        padding: 20px;
+    }
+    
+    .formula-section h5 {
+        font-size: 20px;
+        margin-bottom: 12px;
+    }
+    
+    .carbon-points, .trees-needed, .slider-trees, .carbon-mitigated, .carbon-remaining {
+        font-size: 26px;
+    }
+    
+    .formula-text {
+        font-size: 14px;
+    }
+    
+    .formula-info {
+        font-size: 16px;
+    }
+}
+
+/* Laptop (1024px - 2559px) */
+@media (min-width: 1024px) and (max-width: 2559px) {
+    .formula-container {
+        padding: 20px;
+        margin: 12px 0;
+    }
+    
+    .formula-title {
+        font-size: 28px;
+        margin-bottom: 18px;
+    }
+    
+    .formula-section {
+        margin-bottom: 22px;
+        padding: 18px;
+    }
+    
+    .formula-section h5 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    
+    .carbon-points, .trees-needed, .slider-trees, .carbon-mitigated, .carbon-remaining {
+        font-size: 24px;
+    }
+    
+    .formula-text {
+        font-size: 13px;
+    }
+    
+    .formula-info {
+        font-size: 15px;
+    }
+}
+
+/* Tablet (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .formula-container {
+        padding: 18px;
+        margin: 10px 0;
+    }
+    
+    .formula-title {
+        font-size: 26px;
+        margin-bottom: 15px;
+    }
+    
+    .formula-section {
+        margin-bottom: 20px;
+        padding: 15px;
+    }
+    
+    .formula-section h5 {
+        font-size: 17px;
+        margin-bottom: 8px;
+    }
+    
+    .carbon-points, .trees-needed, .slider-trees, .carbon-mitigated, .carbon-remaining {
+        font-size: 22px;
+    }
+    
+    .formula-text {
+        font-size: 12px;
+    }
+    
+    .formula-info {
+        font-size: 14px;
+    }
+}
+
+/* Móvil (hasta 767px) */
+@media (max-width: 767px) {
+    .formula-container {
+        margin: 8px 0;
+        padding: 12px;
+    }
+    
+    .formula-title {
+        font-size: 20px;
+        margin-bottom: 12px;
+    }
+    
+    .formula-section {
+        margin-bottom: 15px;
+        padding: 12px;
+    }
+    
+    .formula-section h5 {
+        font-size: 14px;
+        margin-bottom: 6px;
+    }
+    
+    .carbon-points, .trees-needed, .slider-trees, .carbon-mitigated, .carbon-remaining {
+        font-size: 18px;
+    }
+    
+    .formula-text {
+        font-size: 11px;
+    }
+    
+    .formula-info {
+        font-size: 12px;
+    }
+}
+
+/* Desktop (mayor a 1023px) */
+@media (min-width: 1024px) {
+    .subscription-text-line {
+        margin-top: 5vh;
+    }
+    .container-subscription-slider {
+        margin-top: 5vh;
+    }
+}
+
+/* Tablet (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .subscription-text-line {
+        margin-top: 7vh;
+    }
+    .container-subscription-slider {
+        margin-top: 7vh;
+    }
+}
+
+/* Móvil (hasta 767px) */
+@media (max-width: 767px) {
+    .subscription-text-line {
+        margin-top: 3vh;
+    }
+    .container-subscription-slider {
+        margin-top: 3vh;
     }
 }

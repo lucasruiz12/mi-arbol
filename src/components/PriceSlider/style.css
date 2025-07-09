@@ -3,6 +3,7 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    margin-top: 2.5rem;
 }
 
 .horizontal-slider {
@@ -11,6 +12,7 @@
     background: #A4B46A;
     border-radius: 5px;
     position: relative;
+    margin-bottom: 2rem;
 }
 
 .thumb {
@@ -114,8 +116,38 @@
     margin-top: 2vh;
 }
 
-.checkout-btn{
-    width: 50% !important;
+.checkout-btn {
+    width: 80%;
+    max-width: 320px;
+    display: block;
+    font-size: 1.2rem;
+    padding: 0.9rem 0;
+}
+
+@media (max-width: 1023px) and (min-width: 768px) {
+    .container-slider-price {
+        margin-top: 2.5rem;
+    }
+    .checkout-btn {
+        width: 90%;
+        max-width: 350px;
+        margin-top: 3.5rem;
+        font-size: 1.1rem;
+        padding: 0.8rem 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .container-slider-price {
+        margin-top: 1.5rem;
+    }
+    .checkout-btn {
+        width: 100%;
+        max-width: 100%;
+        margin-top: 2.2rem;
+        font-size: 1rem;
+        padding: 0.7rem 0;
+    }
 }
 
 @media (max-width: 768px) {
@@ -131,5 +163,14 @@
     }
     .checkout-btn{
         width: 100% !important;
+    }
+    .subscription-text-container{
+        margin-top: 4.5rem;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+    .checkout-btn {
+        margin-top: 1.5rem;
     }
 }
