@@ -23,19 +23,47 @@ const SubscriptionList = () => {
     }, []);
 
     return (
-        <div className="container-subscription-list">
-            <NavBar />
-            <div className="container-subscription-list-content">
-                <div className="subscription-text-container">
-                    <h2 className="subscription-text-header">¡Somos la plataforma que más árboles sembrará por cada peso que inviertas!</h2>
-                    <h4 className="subscription-text-line"><i>"Recuerda que la acción más altruista que puedes hacer hoy, es sembrar un árbol para las personas del mañana."</i></h4>
-                </div>
-                <div className="container-subscription-slider">
-                    <PriceSlider minPrice={minPrice} currentPrice={currentPrice} setCurrentPrice={setCurrentPrice} setModalPayment={setModalPayment} />
+        <div className="container-fluid">
+            {/* Fila 1: NavBar */}
+            <div className="row">
+                <div className="col-12">
+                    <NavBar />
                 </div>
             </div>
+
+            {/* Fila 2: Título principal */}
+            <div className="row">
+                <div className="col-12 text-center">
+                    <h2 className="subscription-text-header">¡Somos la plataforma que más árboles sembrará por cada peso que inviertas!</h2>
+                </div>
+            </div>
+
+            {/* Fila 3: Contenido principal con 2 columnas */}
+            <div className="row">
+                {/* Columna 1: Texto y PriceSlider (8 columnas) */}
+                <div className="col-md-8">
+                    <div className="subscription-text-container">
+                        <h4 className="subscription-text-line"><i>"Recuerda que la acción más altruista que puedes hacer hoy, es sembrar un árbol para las personas del mañana."</i></h4>
+                    </div>
+                    <div className="container-subscription-slider">
+                        <PriceSlider minPrice={minPrice} currentPrice={currentPrice} setCurrentPrice={setCurrentPrice} setModalPayment={setModalPayment} />
+                    </div>
+                </div>
+                
+                {/* Columna 2: Vacía por ahora (4 columnas) */}
+                <div className="col-md-4">
+                    {/* Contenido futuro */}
+                </div>
+            </div>
+
+            {/* Fila 3: BackPages */}
+            <div className="row">
+                <div className="col-12">
+                    <BackPages goToPage="/neutralCarbon" />
+                </div>
+            </div>
+
             {modalPayment && <ModalPayment currentPrice={currentPrice} showModal={modalPayment} hideModal={() => setModalPayment(false)} />}
-            <BackPages goToPage="/neutralCarbon" />
         </div>
     );
 };

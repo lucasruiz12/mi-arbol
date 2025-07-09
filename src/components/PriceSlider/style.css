@@ -76,6 +76,7 @@
     font-size: 50px;
     /* margin-right: 0.5vw; */
     font-weight: bold;
+    margin-top: 15px;
 }
 
 .price-input {
@@ -90,6 +91,7 @@
     color: white;
     font-size: 50px;
     font-weight: bold;
+    width: 100%;
 }
 
 .price-input::-webkit-outer-spin-button,

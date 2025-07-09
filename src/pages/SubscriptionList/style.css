@@ -27,20 +27,22 @@
     color: white;
     font-size: 35px;
     font-weight: bold;
-    width: 35%;
+    width: 100%;
     text-align: center;
+    margin-top: 5vh;
 }
 
 .subscription-text-line{
     color: white;
     font-size: 25px;
-    width: 45%;
-    text-align: center;
+    width: 60%;
+    text-align: justify;
     margin-top: 5vh;
 }
 
 .container-subscription-slider{
-    width: 50%;
+    width: 100%;
+    margin-top: 5vh;
 }
 
 @media (max-width: 768px) {
