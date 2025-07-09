@@ -13,6 +13,17 @@
     flex-direction: column;
     justify-content: center;
     text-align: left;
+    padding-top: 2.5rem;
+}
+@media (min-width: 1024px) and (max-width: 1999px) {
+    .sabias-que-container {
+        padding-top: 3rem;
+    }
+}
+@media (min-width: 2000px) {
+    .sabias-que-container {
+        padding-top: 4rem;
+    }
 }
 
 .back-button-container {
@@ -161,7 +172,17 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    margin-top: 2rem;
+    margin-top: 0.7rem !important;
+}
+@media (min-width: 1024px) and (max-width: 1999px) {
+    .container-btn-carbono {
+        margin-top: 1rem !important;
+    }
+}
+@media (min-width: 2000px) {
+    .container-btn-carbono {
+        margin-top: 1.5rem !important;
+    }
 }
 
 .container-all-info {
@@ -269,6 +290,24 @@
     min-height: 35vh !important;
 }
 
+.fila-contenido {
+    margin-top: 2.5rem !important;
+}
+@media (min-width: 1024px) and (max-width: 1999px) {
+    .fila-contenido {
+        margin-top: 3rem !important;
+    }
+}
+@media (min-width: 2000px) {
+    .fila-contenido {
+        margin-top: 4rem !important;
+    }
+}
+
+.row.fila-contenido.mt-4 {
+    margin-top: 4rem !important;
+}
+
 /* --- Responsive para 4K, laptop, tablet y móvil --- */
 
 /* 4K: pantallas muy grandes */
@@ -355,6 +394,22 @@
     .container-graphic-pie-recharts {
         align-items: flex-start !important;
         justify-content: flex-start !important;
+    }
+    .container-info-pizza {
+        gap: 3.5rem;
+    }
+    .info-pizza-img {
+        height: 12vh;
+        width: 12vh;
+    }
+}
+@media (min-width: 2000px) {
+    .container-info-pizza {
+        gap: 5rem;
+    }
+    .info-pizza-img {
+        height: 16vh;
+        width: 16vh;
     }
 }
 
@@ -670,4 +725,18 @@
         min-width: 90px;
         max-width: 220px;
     }
+}
+
+.row.container-btn-carbono-responsive {
+    margin-top: 0 !important;
+}
+
+.container-btn-carbono,
+.row.container-btn-carbono-responsive {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+.btn-suscripcion-centro {
+    margin-left: 7rem !important;
 }

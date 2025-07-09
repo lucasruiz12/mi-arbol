@@ -34,7 +34,7 @@ const NeutralCarbon = () => {
                         </div>
 
                         {/* Fila 3: Contenido dividido en 2 columnas */}
-                        <div className="row align-items-center fila-contenido">
+                        <div className="row align-items-center fila-contenido mt-4">
                             {/* Columna 1: ¿Sabías qué? y texto */}
                             <div className="col-md-6">
                                 <div className="sabias-que-container">
