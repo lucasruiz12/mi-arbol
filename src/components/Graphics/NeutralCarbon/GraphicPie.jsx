@@ -131,7 +131,7 @@ const GraphicPieRecharts = () => {
   };
 
   return (
-    <div style={{ width: '100%', height: isResponsive ? 300 : 500 }}>
+    <div style={{ width: '100%', height: 480 }}>
       <ResponsiveContainer>
         <PieChart>
           <Pie
@@ -171,7 +171,7 @@ const GraphicPieRecharts = () => {
                         fill="white"
                         textAnchor={anchor}
                         dominantBaseline="central"
-                        style={{ fontSize: 18 }}
+                        style={{ fontSize: 10.5 }}
                       >
                         {lines.map((line, i) => (
                           <tspan key={i} x={x} dy={i === 0 ? 0 : '1.2em'}>
