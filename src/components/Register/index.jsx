@@ -118,121 +118,99 @@ const Register = () => {
 
     return (
         loadingGif ? <LoadingResult message="Cargando" /> :
-            <div className="container-register">
-                <ToastContainer
-                    position="top-right"
-                    autoClose={3000}
-                    hideProgressBar={false}
-                    newestOnTop={false}
-                    closeOnClick={false}
-                    rtl={false}
-                    pauseOnFocusLoss
-                    draggable
-                    pauseOnHover
-                    theme="colored"
-                    transition={Bounce}
-                />
-                <form className="form-register" onSubmit={submitData}>
-                    <div className="title-register">
-                        <img className="register-logo" src={logoArbol} alt="LOG" />
-                        <div className="text-register">
-                            <p className="register-line">"SEMBREMOS UN ÁRBOL HOY PARA DAR SOMBRA A LAS PERSONAS DEL MAÑANA."</p>
-                        </div>
-                    </div>
-                    <div className="container-input-form">
-                        <label className="input-title" htmlFor="name">
-                            Nombre(s):
-                        </label>
-                        <input
-                            className="input-form"
-                            type="text"
-                            id="name"
-                            name="name"
-                            onChange={changeData}
-                        />
-                    </div>
-                    <div className="container-input-form">
-                        <label className="input-title" htmlFor="email">
-                            Email:
-                        </label>
-                        <input
-                            className="input-form"
-                            type="email"
-                            id="email"
-                            name="email"
-                            onChange={changeData}
-                        />
-                    </div>
-                    <div className="container-input-form">
-                        <label className="input-title" htmlFor="password">
-                            Contraseña:
-                        </label>
-                        <input
-                            className="input-form"
-                            type="password"
-                            id="password"
-                            name="password"
-                            onChange={changeData}
-                        />
-                    </div>
-                    <div className="container-input-form">
-                        <label className="input-title" htmlFor="repeatPassword">
-                            Confirmar contraseña:
-                        </label>
-                        <input
-                            className="input-form"
-                            type="password"
-                            id="repeatPassword"
-                            name="repeatPassword"
-                            onChange={changeData}
-                        />
-                    </div>
-                    <div className="container-all-btns">
-                        <div className="container-social-media">
-                            <span className="span-social-media">Registrarse con: </span>
-                            <div className="container-btn-social-media">
-                                <img src={iconGoogle} alt='GS' className="btn-social-media"
-                                    onClick={() => loginWithRedirect({ redirectUri: window.location.origin + "/loadingUser", scope: "openid profile email", prompt: "consent" })}
-                                />
-                                <img src={iconFacebook} alt='FB' className="btn-social-media"
-                                    onClick={() => loginWithRedirect({ redirectUri: window.location.origin + "/loadingUser", scope: "openid profile email", prompt: "consent" })}
-                                />
-                            </div>
-                        </div>
-                        <div className="link-container-register">
-                            {
-                                loading ?
-                                    <button className="btn-green-register">
-                                        <Spinner
-                                            as="span"
-                                            animation="border"
-                                            size="sm"
-                                            role="status"
-                                            aria-hidden="true"
-                                        />
-                                    </button>
-                                    :
-                                    <input
-                                        type="submit"
-                                        value="Registrarse"
-                                        className={`btn-green-register${(formData.name === "" ||
-                                            formData.email === "" ||
-                                            formData.password === "" ||
-                                            formData.repeatPassword === "" ||
-                                            formData.password.length < 7 ||
-                                            formData.password !== formData.repeatPassword) ? " disabled" : ""}`}
-                                        disabled={
-                                            formData.email === "" ||
-                                            formData.password === "" ||
-                                            formData.repeatPassword === "" ||
-                                            formData.password.length < 7 ||
-                                            formData.password !== formData.repeatPassword
+            <div className="container-fluid d-flex align-items-center justify-content-center py-5">
+                <div className="row w-100 justify-content-center">
+                    <div className="col-12 col-md-10 col-lg-8 col-xl-6 col-xxl-5">
+                        <div className="container-register p-3 p-md-4 shadow rounded bg-white bg-opacity-75">
+                            <ToastContainer
+                                position="top-right"
+                                autoClose={3000}
+                                hideProgressBar={false}
+                                newestOnTop={false}
+                                closeOnClick={false}
+                                rtl={false}
+                                pauseOnFocusLoss
+                                draggable
+                                pauseOnHover
+                                theme="colored"
+                                transition={Bounce}
+                            />
+                            <form className="form-register" onSubmit={submitData}>
+                                <div className="title-register text-center mb-4">
+                                    <img className="register-logo mb-3" src={logoArbol} alt="LOG" style={{ maxWidth: '70px' }} />
+                                    <div className="text-register">
+                                        <p className="register-line" style={{ fontSize: '1.1rem', fontWeight: 600, wordBreak: 'break-word', marginBottom: '0.5rem' }}>
+                                            "SEMBREMOS UN ÁRBOL HOY PARA DAR SOMBRA A LAS PERSONAS DEL MAÑANA."
+                                        </p>
+                                    </div>
+                                </div>
+                                <div className="row g-3">
+                                    <div className="col-12">
+                                        <label className="input-title" htmlFor="name">Nombre(s):</label>
+                                        <input className="input-form form-control w-100" type="text" id="name" name="name" onChange={changeData} />
+                                    </div>
+                                    <div className="col-12">
+                                        <label className="input-title" htmlFor="email">Email:</label>
+                                        <input className="input-form form-control w-100" type="email" id="email" name="email" onChange={changeData} />
+                                    </div>
+                                    <div className="col-12 col-md-6 mt-3">
+                                        <label className="input-title" htmlFor="password">Contraseña:</label>
+                                        <input className="input-form form-control w-100" type="password" id="password" name="password" onChange={changeData} />
+                                    </div>
+                                    <div className="col-12 col-md-6 mt-3">
+                                        <label className="input-title" htmlFor="repeatPassword">Confirmar contraseña:</label>
+                                        <input className="input-form form-control w-100" type="password" id="repeatPassword" name="repeatPassword" onChange={changeData} />
+                                    </div>
+                                </div>
+                                <div className="container-all-btns mt-4">
+                                    <div className="container-social-media mb-3">
+                                        <span className="span-social-media">Registrarse con: </span>
+                                        <div className="container-btn-social-media">
+                                            <img src={iconGoogle} alt='GS' className="btn-social-media"
+                                                onClick={() => loginWithRedirect({ redirectUri: window.location.origin + "/loadingUser", scope: "openid profile email", prompt: "consent" })}
+                                            />
+                                            <img src={iconFacebook} alt='FB' className="btn-social-media"
+                                                onClick={() => loginWithRedirect({ redirectUri: window.location.origin + "/loadingUser", scope: "openid profile email", prompt: "consent" })}
+                                            />
+                                        </div>
+                                    </div>
+                                    <div className="link-container-register text-center">
+                                        {
+                                            loading ?
+                                                <button className="btn-green-register w-100">
+                                                    <Spinner
+                                                        as="span"
+                                                        animation="border"
+                                                        size="sm"
+                                                        role="status"
+                                                        aria-hidden="true"
+                                                    />
+                                                </button>
+                                                :
+                                                <input
+                                                    type="submit"
+                                                    value="Registrarse"
+                                                    className={`btn-green-register w-100${(formData.name === "" ||
+                                                        formData.email === "" ||
+                                                        formData.password === "" ||
+                                                        formData.repeatPassword === "" ||
+                                                        formData.password.length < 7 ||
+                                                        formData.password !== formData.repeatPassword) ? " disabled" : ""}`}
+                                                    disabled={
+                                                        formData.email === "" ||
+                                                        formData.password === "" ||
+                                                        formData.repeatPassword === "" ||
+                                                        formData.password.length < 7 ||
+                                                        formData.password !== formData.repeatPassword
+                                                    }
+                                                />
                                         }
-                                    />
-                            }
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
-                </form>
+                </div>
             </div>
     );
 };
