@@ -62,7 +62,7 @@ const NeutralCarbon = () => {
                         </div>
                         {/* Botón fuera de la fila, para que en móvil quede debajo de los íconos */}
                         <div className="row">
-                            <div className="col-12 d-flex justify-content-md-start justify-content-center container-btn-carbono">
+                            <div className="col-12 d-flex justify-content-lg-start justify-content-center container-btn-carbono">
                                 <button className="btn-green suscription-how btn-suscripcion-centro" onClick={() => setRenderView(2)}>
                                     ¿Cómo se invierte mi suscripción?
                                 </button>

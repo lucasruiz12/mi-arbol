@@ -484,13 +484,25 @@
     }
     .btn-impacto-reducido {
         min-width: 180px;
-        max-width: 300px;
-        width: 80% !important;
+        max-width: none;
+        width: 70% !important;
         font-size: 1.1rem;
         padding: 0.7rem 1.2rem;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
     }
     .btn-impacto-reducido.btn-vuelvete-carbono {
         margin-left: 50px;
+    }
+    
+    /* Botón específico para tablet */
+    .btn-green.suscription-how.btn-suscripcion-centro {
+        width: 70% !important;
+        max-width: none !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: block !important;
     }
 }
 
@@ -739,4 +751,18 @@
 
 .btn-suscripcion-centro {
     margin-left: 7rem !important;
+}
+
+@media (max-width: 991px) {
+    .container-btn-carbono {
+        justify-content: center !important;
+    }
+    .btn-green.suscription-how,
+    .btn-suscripcion-centro {
+        width: 100% !important;
+        display: block !important;
+        max-width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
 }
