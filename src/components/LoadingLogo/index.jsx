@@ -4,7 +4,7 @@ import './style.css';
 
 const LoadingLogo = () => {
   return (
-    <div className="loading-logo-container d-flex justify-content-center align-items-center min-vh-100 w-100">
+    <div className="loading-logo-container">
       <img
         className="loading-logo"
         src={logoArbol}
