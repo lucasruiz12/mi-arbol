@@ -56,14 +56,15 @@ const MySeeds = () => {
       <div className="row m-0 mt-4">
         {/* Columna 1: Info usuario y tipo de árboles */}
         <div className="col-12 col-lg-6 mb-4">
-          <div className="row h-100 mb-4">
-            {/* Columna 1 interna: Foto usuario */}
-            <div className="col-4 d-flex align-items-center justify-content-center">
+          {/* Fila 1 interna: Avatar e información del usuario */}
+          <div className="row mb-3">
+            {/* Columna 1: Foto usuario */}
+            <div className="col-3 d-flex align-items-center justify-content-center">
               {/* Espacio para foto de usuario */}
               <div className="rounded-circle bg-secondary user-photo"></div>
             </div>
-            {/* Columna 2 interna: 3 filas */}
-            <div className="col-8">
+            {/* Columna 2: Información del usuario */}
+            <div className="col-9">
               <div className="row mb-2">
                 <div className="col-12">
                   <h5 className="fw-bold">Árboles sembrados</h5>
@@ -84,12 +85,11 @@ const MySeeds = () => {
               </div>
             </div>
           </div>
-          {/* Tipo de árboles */}
+          
+          {/* Fila 2 interna: Tipo de árboles */}
           <div className="row">
-            <div className="col-12 mb-2">
-              <h5 className="fw-bold">Tipo de árboles</h5>
-            </div>
             <div className="col-12">
+              <h5 className="fw-bold">Tipo de árboles</h5>
               <ul className="mb-0">
                 <li>Pinus Pinea</li>
                 <li>Pinus Elliotti</li>
@@ -104,15 +104,15 @@ const MySeeds = () => {
               <h4 className="fw-bold">Aquí podrás ver tus semillas</h4>
             </div>
             <div className="col-12 flex-grow-1 d-flex align-items-stretch">
-              <MapView loading={loading} markers={userSeeds} center={center} style={{ minHeight: '600px', width: '100%' }} />
+              <MapView loading={loading} markers={userSeeds} center={center} style={{ minHeight: '450px', width: '100%' }} />
             </div>
           </div>
         </div>
       </div>
 
-      {/* Fila 4: Anuncio de reforestación */}
-      <div className="row m-0 mt-2">
-        <div className="col-12">
+      {/* Fila 3: Anuncio de reforestación */}
+      <div className="row m-0 mt-3">
+        <div className="col-12 col-lg-6 mb-3">
           <div className="container-invitation container-btn-inscription">
             <h1 className="title-invitation">¡Asiste a nuestra siguiente reforestación masiva!</h1>
             <div className="container-invitation-button">
