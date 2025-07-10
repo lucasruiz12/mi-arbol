@@ -150,6 +150,15 @@
       opacity: 0;
     }
   }
+
+  .btn-green,
+  .link-btn.btn-green {
+    width: 100% !important;
+    display: block !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
 }
 
 /* Responsive para tablets */
@@ -169,6 +178,8 @@
   .steps-tips {
     font-size: clamp(0.85rem, 1.8vw, 1rem);
     padding: 1rem;
+    margin-top: 2.5rem !important;
+    align-self: flex-start !important;
   }
   
   .btn-green {
@@ -186,6 +197,10 @@
   
   .logo-iso {
     height: clamp(55px, 7vw, 65px);
+  }
+
+  .position-fixed.d-block.d-lg-none {
+    bottom: 3rem !important;
   }
 }
 

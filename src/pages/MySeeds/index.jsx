@@ -20,12 +20,6 @@ const MySeeds = () => {
   const tonsToMitigate = Math.max(0, (JSON.parse(localStorage.getItem(IS_AUTHENTICATED))?.carbonPoints || 0) - tonsMitigated);
   const countdown = Math.ceil(tonsToMitigate / (Math.ceil((subscription?.amount || 0) / 12 / 3.5) * 0.08)) || 0;
 
-  const calculateData = () => {
-    console.log('Countdown:', countdown);
-    console.log('Tons por mes:', totalTrees * 0.08);
-    // TODO: Agregar funcionalidad si es necesario
-  };
-
   useEffect(() => {
     const user_id = JSON.parse(localStorage.getItem(IS_AUTHENTICATED))?.id;
     if (!user_id) {
@@ -50,73 +44,82 @@ const MySeeds = () => {
   }, []);
 
   return (
-    <div className="container-my-seeds">
-      <NavBar />
-      <div className="container-my-seeds-content">
-        <div className="container-seeds-text">
-          <div className="stats-section">
-            <p className="text-my-seeds">
-              Llevas <b>{totalTrees} árboles sembrados</b>
-            </p>
-            <p className="info-my-seeds">
-              Lo que se traduce en <b>{tonsMitigated.toFixed(2)} Tons CO2 eq.</b>
-            </p>
-            <p className="info-my-seeds">
-              En <b>{countdown} {countdown !== 1 ? 'meses' : 'mes'}</b> mitigarás toda tu huella de carbono
-            </p>
-          </div>
-          <div className="details-section">
-            <div className="details-left">
-              <div className="container-invitation">
-                <h1 className="title-invitation">Geolocalización de semillas</h1>
-                <ul>
-                  {userSeeds.length > 0 ? (
-                    userSeeds.map((el, idx) => (
-                      <li key={idx}>
-                        <p className="info-text">{el.address} - Coord: ({el.google_coordinates_lat}, {el.google_coordinates_lng})</p>
-                      </li>
-                    ))
-                  ) : (
-                    <p className="info-text">No hay semillas registradas.</p>
-                  )}
-                </ul>
-              </div>
-              <div className="container-invitation">
-                <h1 className="title-invitation">Tipos de árboles sembrados</h1>
-                <ul>
-                  <li>
-                    <p className="info-text">Pinus Pinea</p>
-                  </li>
-                  <li>
-                    <p className="info-text">Pinus elliottii</p>
-                  </li>
-                </ul>
-              </div>
+    <div className="container-fluid p-0">
+      {/* Fila 1: NavBar */}
+      <div className="row m-0">
+        <div className="col-12 p-0">
+          <NavBar />
+        </div>
+      </div>
+
+      {/* Fila 2: Info principal y MapView */}
+      <div className="row m-0 mt-4">
+        {/* Columna 1: Info usuario y tipo de árboles */}
+        <div className="col-12 col-lg-6 mb-4">
+          <div className="row h-100 mb-4">
+            {/* Columna 1 interna: Foto usuario */}
+            <div className="col-4 d-flex align-items-center justify-content-center">
+              {/* Espacio para foto de usuario */}
+              <div className="rounded-circle bg-secondary user-photo"></div>
             </div>
-            <div className="details-right">
-              <div className="container-invitation">
-                <p className="info-text">Aquí verás las fotos de tus etiquetas</p>
+            {/* Columna 2 interna: 3 filas */}
+            <div className="col-8">
+              <div className="row mb-2">
+                <div className="col-12">
+                  <h5 className="fw-bold">Árboles sembrados</h5>
+                  <div>{totalTrees}</div>
+                </div>
+              </div>
+              <div className="row mb-2">
+                <div className="col-12">
+                  <h6 className="fw-bold">Mitigación de tons CO2 eq</h6>
+                  <div>{tonsMitigated.toFixed(2)}</div>
+                </div>
+              </div>
+              <div className="row mb-2">
+                <div className="col-12">
+                  <h6 className="fw-bold">Countdown de meses</h6>
+                  <div>{countdown}</div>
+                </div>
               </div>
             </div>
           </div>
-          <div className="container-invitation container-btn-inscription">
-            <h1 className="title-invitation">¡Asiste a nuestra siguiente reforestación masiva!</h1>
-            <div className="container-invitation-button">
-              <button className="btn-green btn-seeds-info" onClick={calculateData}>
-                Inscripción
-              </button>
+          {/* Tipo de árboles */}
+          <div className="row">
+            <div className="col-12 mb-2">
+              <h5 className="fw-bold">Tipo de árboles</h5>
+            </div>
+            <div className="col-12">
+              <ul className="mb-0">
+                <li>Pinus Pinea</li>
+                <li>Pinus Elliotti</li>
+              </ul>
             </div>
           </div>
         </div>
-        <div className="container-seeds-map">
-          <h2 className="seeds-map-title">Aquí podrás ver tus semillas</h2>
-          <div className="seeds-map-wrapper">
-            <MapView loading={loading} markers={userSeeds} center={center} />
+        {/* Columna 2: Título y MapView */}
+        <div className="col-12 col-lg-6 mb-4 d-flex flex-column justify-content-between min-vh-70">
+          <div className="row h-100">
+            <div className="col-12">
+              <h4 className="fw-bold">Aquí podrás ver tus semillas</h4>
+            </div>
+            <div className="col-12 flex-grow-1 d-flex align-items-stretch">
+              <MapView loading={loading} markers={userSeeds} center={center} style={{ minHeight: '600px', width: '100%' }} />
+            </div>
           </div>
-          <div className="container-btn-more-info">
-            <button className="btn-green btn-seeds-info" onClick={() => window.open('https://taosolutions.com.mx/')}>
-              Saber más de nosotros
-            </button>
+        </div>
+      </div>
+
+      {/* Fila 4: Anuncio de reforestación */}
+      <div className="row m-0 mt-2">
+        <div className="col-12">
+          <div className="container-invitation container-btn-inscription">
+            <h1 className="title-invitation">¡Asiste a nuestra siguiente reforestación masiva!</h1>
+            <div className="container-invitation-button">
+              <button className="btn-green btn-seeds-info">
+                Inscripción
+              </button>
+            </div>
           </div>
         </div>
       </div>

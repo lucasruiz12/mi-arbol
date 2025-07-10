@@ -51,26 +51,38 @@ const OurMission = ({ setView }) => {
   }, [showMessage]);
 
   return (
-    <div className="container-mission-view container-fluid h-100">
-      <div className="mission-content row h-100 ms-md-4 align-items-md-around">
-        <div className="mission-header col-12 d-flex justify-content-md-between justify-content-center align-items-center">
+    <div className="container-mission-view container-fluid">
+      {/* Fila 1: Logo y mission tips */}
+      <div className="row align-items-center mb-4">
+        <div className="col-12 col-md-4 col-lg-3 text-center text-lg-start align-items-center">
           <img
             className="mission-logo"
             src={logoArbol}
             alt="Logo de Más Raíces, Menos Huella"
           />
+        </div>
+        <div className="col-12 col-md-8 col-lg-9 d-none d-md-flex justify-content-center justify-content-md-end align-items-center">
           {currentMessage !== '' && showMessage && !hideMessage && (
-            <p className="mission-tips">{tipsAndRecommendations[currentMessage].message}</p>
+            <p className="mission-tips mb-0">{tipsAndRecommendations[currentMessage].message}</p>
           )}
         </div>
-        <div className="mission-info-container col-12">
-          <div className="mission-text col-12 col-md-8 col-lg-6">
+      </div>
+      {/* Fila 2: Mission text */}
+      <div className="row">
+        <div className="col-12 col-md-8 offset-md-2">
+          <div className="mission-text">
             <p className="mission-line-text">
               En “Más Raíces, Menos Huella” te ayudamos a calcular tus emisiones diarias para entender el impacto que tienes como persona.
             </p>
             <p className="mission-line-text">
               Al entender cuanto CO2 generas, te ayudaremos a reforestar los suficientes árboles para mitigar tu huella de carbono.
             </p>
+            {/* Tips debajo del texto en tablet/móvil */}
+            <div className="d-block d-md-none mt-3">
+              {currentMessage !== '' && showMessage && !hideMessage && (
+                <p className="mission-tips mb-0">{tipsAndRecommendations[currentMessage].message}</p>
+              )}
+            </div>
           </div>
         </div>
       </div>

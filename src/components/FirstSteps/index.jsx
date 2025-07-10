@@ -31,7 +31,7 @@ const FirstSteps = ({ setView }) => {
 
     return (
         <div className="container-fluid h-100">
-            <div className="row h-25 align-items-center">
+            <div className="row h-20 align-items-center">
                 <div className="col-12 col-lg-6 col-xl-4 d-flex justify-content-center justify-content-lg-start">
                     <img
                         className="steps-logo"
