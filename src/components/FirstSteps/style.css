@@ -229,6 +229,7 @@
   .btn-green {
     font-size: clamp(1.1rem, 1.5vw, 1.3rem);
     padding: 1rem 2rem;
+ 
   }
   
   .steps-clients-title {
@@ -266,6 +267,7 @@
   .btn-green {
     font-size: clamp(1.2rem, 1.3vw, 1.4rem);
     padding: 1.2rem 2.5rem;
+    width: 50% !important;
   }
   
   .steps-clients-title {

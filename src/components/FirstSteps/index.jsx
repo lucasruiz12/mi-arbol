@@ -85,14 +85,7 @@ const FirstSteps = ({ setView }) => {
                                 </div>
                             </div>
                         </div>
-                        
-                        <div className="col-12 h-50 d-flex align-items-start pt-1 d-none d-lg-flex">
-                            {currentMessage !== '' && showMessage && (
-                                <p className="steps-tips w-100 text-center">
-                                    {tipsAndRecommendations[currentMessage].message}
-                                </p>
-                            )}
-                        </div>
+
                     </div>
                 </div>
             </div>
@@ -105,13 +98,7 @@ const FirstSteps = ({ setView }) => {
                 </div>
             </div>
             
-            <div className="d-block d-lg-none position-fixed start-0 w-100 p-3" style={{zIndex: 1000, bottom: '6rem'}}>
-                {currentMessage !== '' && showMessage && (
-                    <p className="steps-tips w-100 text-center mb-0">
-                        {tipsAndRecommendations[currentMessage].message}
-                    </p>
-                )}
-            </div>
+
         </div>
     );
 };

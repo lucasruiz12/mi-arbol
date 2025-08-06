@@ -72,7 +72,7 @@ const OurMission = ({ setView }) => {
         <div className="col-12 col-md-8 offset-md-2">
           <div className="mission-text">
             <p className="mission-line-text">
-              En “Más Raíces, Menos Huella” te ayudamos a calcular tus emisiones diarias para entender el impacto que tienes como persona.
+              En "Más Raíces, Menos Huella" te ayudamos a calcular tus emisiones diarias para entender el impacto que tienes como persona.
             </p>
             <p className="mission-line-text">
               Al entender cuanto CO2 generas, te ayudaremos a reforestar los suficientes árboles para mitigar tu huella de carbono.
