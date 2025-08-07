@@ -166,92 +166,158 @@
 }
 
 /* Responsive para tablets */
-@media (max-width: 991px) {
-    .form-register {
-        width: 350px;
-        max-width: 70%;
-        padding: 2.5rem 1.5rem;
+@media (min-width: 768px) and (max-width: 1023px) {
+  .container-register {
+    height: 100vh !important;
+    padding-top: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  .title-register {
+    margin-top: 2rem !important;
+    margin-bottom: 2rem !important;
     }
 
     .register-logo {
-        height: clamp(60px, 8vw, 90px);
+    height: clamp(70px, 8vw, 100px) !important;
+    margin-bottom: 1.5rem !important;
+    margin-top: 1.5rem !important;
+  }
+
+  .text-register {
+    margin-bottom: 1.5rem !important;
     }
 
     .register-line {
-        font-size: clamp(1rem, 2.5vw, 1.2rem);
+    font-size: clamp(1rem, 2.5vw, 1.3rem) !important;
+    line-height: 1.4 !important;
+    max-width: 350px !important;
+  }
+
+  .form-register {
+    width: 350px !important;
+    min-height: 70vh !important;
+    padding: 3rem 2rem !important;
+    max-width: 70% !important;
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    border-radius: 1rem !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+    margin: 0 auto !important;
+    margin-top: 1.5rem !important;
+  }
+
+  .container-input-form {
+    margin-bottom: 2rem !important;
     }
 
     .input-title {
-        font-size: clamp(0.9rem, 2vw, 1rem);
+    font-size: clamp(0.9rem, 2vw, 1.1rem) !important;
+    margin-bottom: 0.8rem !important;
+  }
+
+  .input-title-nombre {
+    margin-top: 2rem !important;
+  }
+
+  .input-title-email {
+    margin-top: 0 !important;
     }
 
     .input-form {
-        height: 3rem;
-        font-size: clamp(0.9rem, 2vw, 1rem);
+    height: 3.2rem !important;
+    font-size: clamp(0.9rem, 2vw, 1.1rem) !important;
+    padding: 0 1.2rem !important;
     }
 
     .btn-green-register {
-        height: 3rem;
-        font-size: clamp(1rem, 2.5vw, 1.1rem);
+    height: 3.2rem !important;
+    font-size: clamp(1rem, 2.5vw, 1.2rem) !important;
+    padding: 0 2rem !important;
+    margin-top: 1.5rem !important;
     }
 }
 
 /* Responsive para móviles */
 @media (max-width: 767px) {
     .container-register {
-        padding: 0.5rem;
-    }
+    height: 100vh !important;
+    padding-top: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
 
-    .form-register {
-        width: 100%;
-        max-width: 280px;
-        padding: 2rem 1.5rem;
-        min-height: 55vh;
+  .title-register {
+    margin-top: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
     }
 
     .register-logo {
-        height: clamp(50px, 7vw, 70px);
-        margin-bottom: 1rem;
-    }
-
-    .title-register {
-        margin-bottom: 1.5rem;
+    height: clamp(60px, 8vw, 80px) !important;
+    margin-bottom: 1rem !important;
+    margin-top: 1rem !important;
     }
 
     .text-register {
-        margin-bottom: 1.5rem;
+    margin-bottom: 1rem !important;
     }
 
     .register-line {
-        font-size: clamp(0.9rem, 2.2vw, 1.1rem);
-        line-height: 1.4;
+    font-size: clamp(0.9rem, 2.2vw, 1.1rem) !important;
+    line-height: 1.4 !important;
+    max-width: 280px !important;
+  }
+
+  .form-register {
+    width: 100% !important;
+    max-width: 320px !important;
+    min-height: 65vh !important;
+    padding: 2.5rem 1.5rem !important;
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    border-radius: 1rem !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+    margin: 0 auto !important;
+    margin-top: 1rem !important;
     }
 
     .container-input-form {
-        margin-bottom: 1.2rem;
+    margin-bottom: 1.5rem !important;
     }
 
     .input-title {
-        font-size: clamp(0.9rem, 2vw, 1rem);
-        margin-bottom: 0.5rem;
+    font-size: clamp(0.9rem, 2vw, 1rem) !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .input-title-nombre {
+    margin-top: 1.5rem !important;
+  }
+
+  .input-title-email {
+    margin-top: 0 !important;
     }
 
     .input-form {
-        height: 2.8rem;
-        font-size: clamp(0.9rem, 2vw, 1rem);
-        padding: 0 1rem;
+    height: 3rem !important;
+    font-size: clamp(0.9rem, 2vw, 1rem) !important;
+    padding: 0 1rem !important;
     }
 
     .btn-green-register {
-        height: 2.8rem;
-        font-size: clamp(1rem, 2.2vw, 1.1rem);
+    height: 3rem !important;
+    font-size: clamp(1rem, 2.2vw, 1.1rem) !important;
+    padding: 0 1.5rem !important;
+    margin-top: 1rem !important;
     }
 }
 
 /* Responsive para monitores grandes */
-@media (min-width: 1400px) {
+@media (min-width: 1400px) and (max-width: 1439px) {
     .form-register {
-        width: 300px;
+        width: 400px;
+        min-height: 70vh;
         padding: 3rem 2rem;
     }
 
@@ -260,21 +326,318 @@
     }
 
     .register-line {
-        font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+        font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+        line-height: 1.5;
     }
 
     .input-title {
-        font-size: clamp(1rem, 1.5vw, 1.1rem);
+        font-size: clamp(1rem, 1.5vw, 1.2rem);
     }
 
     .input-form {
-        height: 3.2rem;
-        font-size: clamp(1rem, 1.5vw, 1.1rem);
+        height: 3.5rem;
+        font-size: clamp(1rem, 1.5vw, 1.2rem);
     }
 
     .btn-green-register {
-        height: 3.2rem;
-        font-size: clamp(1.1rem, 1.5vw, 1.2rem);
+        height: 3.5rem;
+        font-size: clamp(1rem, 1.5vw, 1.2rem);
+    }
+}
+
+/* Responsive para pantallas grandes */
+@media (min-width: 1920px) and (max-width: 2559px) {
+  .container-register {
+    height: 100vh !important;
+    padding-top: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  .title-register {
+    margin-top: 3rem !important;
+    margin-bottom: 3rem !important;
+  }
+
+  .register-logo {
+    height: clamp(120px, 5vw, 160px) !important;
+    margin-bottom: 2rem !important;
+    margin-top: 2rem !important;
+  }
+
+  .text-register {
+    margin-bottom: 2rem !important;
+  }
+
+  .register-line {
+    font-size: clamp(1.4rem, 1.8vw, 2rem) !important;
+    line-height: 1.6 !important;
+    max-width: 500px !important;
+  }
+
+  .form-register {
+    width: 625px !important;
+    min-height: 90vh !important;
+    padding: 4rem 3rem !important;
+    max-width: 90% !important;
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    border-radius: 1rem !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+    margin: 0 auto !important;
+    margin-top: 2rem !important;
+  }
+
+  .container-input-form {
+    margin-bottom: 3rem !important;
+  }
+
+  .input-title {
+    font-size: clamp(1.3rem, 1.5vw, 1.6rem) !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .input-title-nombre {
+    margin-top: 3rem !important;
+  }
+
+  .input-title-email {
+    margin-top: 0 !important;
+  }
+
+  .input-form {
+    height: 4rem !important;
+    font-size: clamp(1.2rem, 1.3vw, 1.5rem) !important;
+    padding: 0 1.5rem !important;
+  }
+
+  .btn-green-register {
+    height: 4rem !important;
+    font-size: clamp(1.3rem, 1.5vw, 1.8rem) !important;
+    padding: 0 3rem !important;
+    margin-top: 2rem !important;
+  }
+}
+
+/* Responsive para pantallas ultra grandes (4K y similares) */
+@media (min-width: 2560px) {
+  .container-register {
+    height: 100vh !important;
+    padding-top: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  .title-register {
+    margin-top: 4rem !important;
+    margin-bottom: 4rem !important;
+  }
+
+  .register-logo {
+    height: clamp(160px, 4vw, 200px) !important;
+    margin-bottom: 3rem !important;
+    margin-top: 3rem !important;
+  }
+
+  .text-register {
+    margin-bottom: 3rem !important;
+  }
+
+  .register-line {
+    font-size: clamp(1.8rem, 1.5vw, 2.5rem) !important;
+    line-height: 1.7 !important;
+    max-width: 600px !important;
+  }
+
+  .form-register {
+    width: 687px !important;
+    min-height: 95vh !important;
+    padding: 5rem 4rem !important;
+    max-width: 90% !important;
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    border-radius: 1rem !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+    margin: 0 auto !important;
+    margin-top: 3rem !important;
+  }
+
+  .container-input-form {
+    margin-bottom: 4rem !important;
+  }
+
+  .input-title {
+    font-size: clamp(1.6rem, 1.3vw, 2rem) !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  .input-title-nombre {
+    margin-top: 4rem !important;
+  }
+
+  .input-title-email {
+    margin-top: 0 !important;
+  }
+
+  .input-form {
+    height: 5rem !important;
+    font-size: clamp(1.5rem, 1.2vw, 1.8rem) !important;
+    padding: 0 2rem !important;
+  }
+
+  .btn-green-register {
+    height: 5rem !important;
+    font-size: clamp(1.7rem, 1.3vw, 2.2rem) !important;
+    padding: 0 4rem !important;
+    margin-top: 3rem !important;
+  }
+}
+
+/* Responsive para Laptop L */
+@media (min-width: 1440px) and (max-width: 1919px) {
+  .container-register {
+    height: 100vh !important;
+    padding-top: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  .title-register {
+    margin-top: 2rem !important;
+    margin-bottom: 2rem !important;
+  }
+
+  .register-logo {
+    height: clamp(100px, 6vw, 140px) !important;
+    margin-bottom: 1.5rem !important;
+    margin-top: 1.5rem !important;
+  }
+
+  .text-register {
+    margin-bottom: 1.5rem !important;
+  }
+
+  .register-line {
+    font-size: clamp(1.2rem, 1.6vw, 1.6rem) !important;
+    line-height: 1.5 !important;
+    max-width: 450px !important;
+  }
+
+  .form-register {
+    width: 450px !important;
+    min-height: 80vh !important;
+    padding: 3.5rem 2.5rem !important;
+    max-width: 90% !important;
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    border-radius: 1rem !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+    margin: 0 auto !important;
+    margin-top: 1.5rem !important;
+  }
+
+  .container-input-form {
+    margin-bottom: 2.5rem !important;
+  }
+
+  .input-title {
+    font-size: clamp(1.1rem, 1.4vw, 1.4rem) !important;
+    margin-bottom: 0.8rem !important;
+  }
+
+  .input-title-nombre {
+    margin-top: 2.5rem !important;
+  }
+
+  .input-title-email {
+    margin-top: 0 !important;
+  }
+
+  .input-form {
+    height: 3.8rem !important;
+    font-size: clamp(1.1rem, 1.3vw, 1.4rem) !important;
+    padding: 0 1.3rem !important;
+  }
+
+  .btn-green-register {
+    height: 3.8rem !important;
+    font-size: clamp(1.2rem, 1.4vw, 1.6rem) !important;
+    padding: 0 2.5rem !important;
+    margin-top: 1.5rem !important;
+  }
+}
+
+/* Responsive para laptop normal */
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .container-register {
+    height: 100vh !important;
+    padding-top: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  .title-register {
+    margin-top: 2rem !important;
+    margin-bottom: 2rem !important;
+  }
+
+  .register-logo {
+    height: clamp(90px, 7vw, 130px) !important;
+    margin-bottom: 1.5rem !important;
+    margin-top: 1.5rem !important;
+  }
+
+  .text-register {
+    margin-bottom: 1.5rem !important;
+  }
+
+  .register-line {
+    font-size: clamp(1.1rem, 1.7vw, 1.5rem) !important;
+    line-height: 1.5 !important;
+    max-width: 400px !important;
+  }
+
+  .form-register {
+    width: 400px !important;
+    min-height: 75vh !important;
+    padding: 3rem 2rem !important;
+    max-width: 90% !important;
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    border-radius: 1rem !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+    margin: 0 auto !important;
+    margin-top: 1.5rem !important;
+  }
+
+  .container-input-form {
+    margin-bottom: 2.5rem !important;
+  }
+
+  .input-title {
+    font-size: clamp(1rem, 1.5vw, 1.3rem) !important;
+    margin-bottom: 0.8rem !important;
+  }
+
+  .input-title-nombre {
+    margin-top: 2.5rem !important;
+  }
+
+  .input-title-email {
+    margin-top: 0 !important;
+  }
+
+  .input-form {
+    height: 3.5rem !important;
+    font-size: clamp(1rem, 1.4vw, 1.3rem) !important;
+    padding: 0 1.2rem !important;
+  }
+
+  .btn-green-register {
+    height: 3.5rem !important;
+    font-size: clamp(1.1rem, 1.5vw, 1.5rem) !important;
+    padding: 0 2.5rem !important;
+    margin-top: 1.5rem !important;
     }
 }
 

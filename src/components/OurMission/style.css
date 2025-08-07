@@ -14,55 +14,215 @@
 }
 
 .mission-logo {
-    height: 150px;
+    height: 180px;
     margin: 0;
 }
 
-/* Estilos específicos para 1440x858 (WXGA+) */
+/* Estilos específicos para Laptop L (1440x858) */
 @media (min-width: 1440px) and (max-width: 1919px) {
+    .container-mission-view {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        min-height: 100vh !important;
+    }
+    
+    .mission-logo {
+        height: 280px !important;
+        max-height: 280px !important;
+        margin: 0 auto !important;
+        display: block !important;
+    }
+    
     .mission-line-text {
-        font-size: 32px !important;
-        text-align: center;
-        line-height: 1.3;
-        margin-bottom: 1.8rem;
+        font-size: clamp(1.8rem, 2.2vw, 2.2rem) !important;
+        text-align: center !important;
+        line-height: 1.4 !important;
+        margin-bottom: 2rem !important;
+        max-width: 900px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
     }
     
     .mission-text {
-        margin-top: 1.8rem;
-        max-width: 1000px;
-        margin-left: auto;
-        margin-right: auto;
+        margin-top: 2rem !important;
+        max-width: 1000px !important;
+        margin-left: 3rem !important;
+        margin-right: auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        transform: translateX(3rem) !important;
     }
     
     .mission-tips {
-        font-size: 1.2rem;
-        width: clamp(350px, 35vw, 450px);
-        padding: 1.8rem;
+        font-size: clamp(1.1rem, 1.5vw, 1.3rem) !important;
+        width: clamp(350px, 35vw, 450px) !important;
+        padding: 1.8rem !important;
     }
 }
 
-/* Estilos específicos para Full HD */
-@media (min-width: 1920px) {
+/* Estilos específicos para pantallas grandes */
+@media (min-width: 1920px) and (max-width: 2559px) {
+    .mission-logo {
+        height: 320px !important;
+        max-height: 320px !important;
+        margin: 0 !important;
+        transform: translateX(-2rem) !important;
+    }
+    
+    .col-12.col-md-4.col-lg-3 {
+        display: flex !important;
+        justify-content: flex-start !important;
+        align-items: center !important;
+        width: 100% !important;
+        margin-left: 2rem !important;
+    }
+    
+    .row.align-items-center.mb-4 {
+        justify-content: flex-start !important;
+        padding-left: 3rem !important;
+    }
+    
     .mission-line-text {
-        font-size: 40px !important;
-        text-align: center;
-        line-height: 1.4;
-        margin-bottom: 2rem;
+        font-size: clamp(2.2rem, 2.8vw, 2.8rem) !important;
+        text-align: center !important;
+        line-height: 1.5 !important;
+        margin-bottom: 2.5rem !important;
+        max-width: 1100px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
     }
     
     .mission-text {
-        margin-top: 2rem;
-        max-width: 1200px;
-        margin-left: auto;
-        margin-right: auto;
+        margin-top: 2.5rem !important;
+        max-width: 1200px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
     }
     
     .mission-tips {
-        font-size: 1.4rem;
-        width: clamp(400px, 40vw, 500px);
-        padding: 2rem;
+        font-size: clamp(1.3rem, 1.8vw, 1.6rem) !important;
+        width: clamp(400px, 40vw, 500px) !important;
+        padding: 2rem !important;
+    }
+    
+    .container-mission-view {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        min-height: 100vh !important;
     }
 }
+
+/* Estilos específicos para pantallas ultra grandes (2560px) */
+@media (min-width: 2560px) {
+    .mission-logo {
+        height: 700px !important;
+        max-height: 700px !important;
+        margin: 0 auto !important;
+        margin-right: 2rem !important;
+        display: block !important;
+        transform: translateX(-2rem) !important;
+    }
+    
+    .col-12.col-md-4.col-lg-3 {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        margin-left: -2rem !important;
+    }
+    
+    .row.align-items-center.mb-4 {
+        justify-content: center !important;
+    }
+    
+    .mission-line-text {
+        font-size: clamp(2.2rem, 2.5vw, 2.8rem) !important;
+        text-align: center !important;
+        line-height: 1.5 !important;
+        margin-bottom: 2.5rem !important;
+        max-width: 1800px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    .mission-text {
+        margin-top: 2.5rem !important;
+        max-width: 2000px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    
+    .mission-tips {
+        font-size: clamp(1.4rem, 1.8vw, 1.8rem) !important;
+        width: clamp(400px, 40vw, 500px) !important;
+        padding: 2rem !important;
+    }
+    
+    .container-mission-view {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        min-height: 100vh !important;
+    }
+}
+
+/* Estilos específicos para monitores grandes */
+@media (min-width: 1400px) and (max-width: 1919px) {
+    .mission-logo {
+        height: 180px !important;
+        margin: 0 !important;
+    }
+    
+    .mission-line-text {
+        font-size: clamp(1.8rem, 2.5vw, 2.2rem) !important;
+        text-align: center !important;
+        line-height: 1.4 !important;
+        margin-bottom: 2rem !important;
+        max-width: 900px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    .mission-text {
+        margin-top: 2rem !important;
+        max-width: 1000px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    
+    .mission-tips {
+        font-size: clamp(1.1rem, 1.5vw, 1.3rem) !important;
+        width: clamp(350px, 35vw, 450px) !important;
+        padding: 1.8rem !important;
+    }
+    
+    .container-mission-view {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        min-height: 100vh !important;
+    }
+}
+
+
+
+/* Estilos base - movidos al final para evitar conflictos */
 
 .mission-tips {
     display: flex;
@@ -127,6 +287,7 @@
         display: block;
         margin-left: auto;
         margin-right: auto;
+        height: 160px;
     }
 }
 
@@ -176,5 +337,33 @@
 
     100% {
         opacity: 0;
+    }
+}
+
+/* Estilos forzados para el logo - máxima especificidad */
+img.mission-logo {
+    height: 180px !important;
+    max-height: 180px !important;
+}
+
+@media (min-width: 1440px) {
+    img.mission-logo {
+        height: 280px !important;
+        max-height: 280px !important;
+    }
+}
+
+@media (min-width: 1920px) {
+    img.mission-logo {
+        height: 320px !important;
+        max-height: 320px !important;
+    }
+}
+
+@media (min-width: 2560px) {
+    img.mission-logo {
+        height: 550px !important;
+        max-height: 700px !important;
+        margin-right: 25% !important;
     }
 }

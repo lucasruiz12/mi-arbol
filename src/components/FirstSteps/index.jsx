@@ -30,20 +30,23 @@ const FirstSteps = ({ setView }) => {
     }, [showMessage]);
 
     return (
-        <div className="container-fluid h-100">
-            <div className="row h-20 align-items-center">
-                <div className="col-12 col-lg-6 col-xl-4 d-flex justify-content-center justify-content-lg-start">
+        <div className="container-fluid h-100 first-steps-container">
+            {/* Fila 1: Logo - Aprovechar más altura */}
+            <div className="row h-20 align-items-center justify-content-center justify-content-lg-start">
+                <div className="col-12 col-lg-6 col-xl-4 col-xxl-3 d-flex justify-content-center justify-content-lg-start">
                     <img
                         className="steps-logo"
                         src={logoArbol}
                         alt="Logo de Más Raíces, Menos Huella"
                     />
                 </div>
-                <div className="col-6 col-lg-6 col-xl-8 d-none d-lg-block"></div>
+                <div className="col-6 col-lg-6 col-xl-8 col-xxl-9 d-none d-lg-block"></div>
             </div>
 
+            {/* Fila 2: Contenido principal - Mejor distribución vertical */}
             <div className="row h-60">
-                <div className="col-12 col-lg-6 col-xl-7 d-flex flex-column justify-content-center">
+                {/* Columna izquierda: Texto y botones */}
+                <div className="col-12 col-lg-6 col-xl-7 col-xxl-8 d-flex flex-column justify-content-center">
                     <div className="steps-text mb-4">
                         <p className="steps-line-text">
                             El primer paso que debes dar es medir los gases de efecto invernadero que generas en tu vida diaria.
@@ -53,7 +56,7 @@ const FirstSteps = ({ setView }) => {
                         </p>
                     </div>
                     <div className="d-flex flex-column align-items-center align-items-lg-start">
-                        <Link className="link-btn btn btn-green w-100 w-lg-75 mb-3" to="/initQuestions">
+                        <Link className="link-btn btn btn-green w-100 w-lg-75 w-xl-50 w-xxl-40 mb-3" to="/initQuestions">
                             Medir mi huella
                         </Link>
                         <p className="text-white mb-0 text-center text-lg-start">
@@ -65,18 +68,19 @@ const FirstSteps = ({ setView }) => {
                     </div>
                 </div>
 
-                <div className="col-12 col-lg-6 col-xl-5">
-                    <div className="row h-100">
-                        <div className="col-12 h-50 d-flex align-items-start pt-2 d-none d-lg-flex">
-                            <div className="row w-100">
-                                <div className="col-6 d-flex justify-content-center">
+                {/* Columna derecha: Logos - Centrar verticalmente */}
+                <div className="col-12 col-lg-6 col-xl-5 col-xxl-4">
+                    <div className="row h-100 align-items-center">
+                        <div className="col-12 h-50 d-flex align-items-center justify-content-start pt-2 d-none d-lg-flex">
+                            <div className="row w-100 justify-content-start">
+                                <div className="col-12 d-flex justify-content-start mb-4">
                                     <img
                                         src={logoGreenHouse}
                                         alt="Logo de Green House Protocol"
                                         className="logo-green-house"
                                     />
                                 </div>
-                                <div className="col-6 d-flex justify-content-center">
+                                <div className="col-12 d-flex justify-content-start">
                                     <img 
                                         src={logoISO} 
                                         alt="Logo de ISO" 
@@ -85,11 +89,11 @@ const FirstSteps = ({ setView }) => {
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
 
+            {/* Fila 3: Carrusel de clientes - Aprovechar más espacio */}
             <div className="row h-15">
                 <div className="col-12 d-flex flex-column align-items-center justify-content-center">
                     <BackArrow handleAction={() => setView(1)} />
@@ -97,8 +101,6 @@ const FirstSteps = ({ setView }) => {
                     <CarouselLogo />
                 </div>
             </div>
-            
-
         </div>
     );
 };

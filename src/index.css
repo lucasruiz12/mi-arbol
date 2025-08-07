@@ -48,6 +48,13 @@ body {
     font-size: clamp(1rem, 2vw, 1.25rem);
   }
   
+  /* Responsive para Laptop L (1440px) */
+  @media (min-width: 1400px) and (max-width: 1919px) {
+    .btn-green {
+      width: 50% !important;
+    }
+  }
+  
   .btn-green:hover {
     background-color: #C0D860;
   }
