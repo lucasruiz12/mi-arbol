@@ -4,6 +4,7 @@ import PriceSlider from '../../components/PriceSlider';
 import ModalPayment from '../../components/ModalPayment';
 import { IS_AUTHENTICATED, CARBON_POINTS } from '../../helpers/constants';
 import BackPages from '../../components/BackPages';
+import { getImpact, getImpactGif } from '../../helpers/impact';
 import './style.css';
 
 const SubscriptionList = () => {
@@ -13,6 +14,8 @@ const SubscriptionList = () => {
     const [minPrice, setMinPrice] = useState(189);
     const [carbonPoints, setCarbonPoints] = useState(0);
     const [treesNeeded, setTreesNeeded] = useState(0);
+  const impact = getImpact(carbonPoints);
+  const impactGif = getImpactGif(impact);
 
     // Función para calcular árboles necesarios
     const calculateTreesNeeded = (carbonPointsValue) => {
@@ -103,11 +106,21 @@ const SubscriptionList = () => {
                                 </div>
 
                                 <div className="formula-section">
-                                    <h5>Tu huella restante:</h5>
-                                    <p className="carbon-remaining">{(carbonPoints - (calculateSliderTrees(currentPrice) * 0.08)).toFixed(2)} toneladas CO2</p>
+                                    <h5>Tu huella de carbono es:</h5>
+                                    <p className="carbon-remaining">{Number(carbonPoints).toFixed(2)} toneladas CO2</p>
                                 </div>
                             </div>
                         </div>
+
+                      {/* Resumen de impacto: GIF + texto */}
+                      <div className="row mt-3">
+                          <div className="col-12 d-flex flex-column align-items-center justify-content-center impact-summary">
+                              <div className="impact-gif-container">
+                                  <img className="impact-gif" src={impactGif} alt="impacto" />
+                              </div>
+                              <h4 className="impact-status">Tienes un <b>IMPACTO {impact}</b></h4>
+                          </div>
+                      </div>
                     </div>
                 </div>
             </div>
