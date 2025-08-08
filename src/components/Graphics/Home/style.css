@@ -123,3 +123,36 @@
     max-height: 300px;
   }
 }
+
+/* Regla específica para resolución 1024x858 */
+@media (min-width: 1024px) and (max-width: 1024px) and (min-height: 858px) and (max-height: 858px) {
+  .graphics-background-home-pie {
+    height: 250px !important;
+    min-height: 250px !important;
+  }
+  
+  /* Mantener el tamaño del texto del gráfico */
+  .graphics-background-home-pie text {
+    font-size: 14px !important;
+  }
+  
+  /* Mantener el tamaño de las etiquetas de enlace */
+  .graphics-background-home-pie .nivo-pie-arc-link-label text {
+    font-size: 22px !important;
+    font-weight: 700 !important;
+  }
+  
+  /* Mantener el tamaño de las etiquetas del arco */
+  .graphics-background-home-pie .nivo-pie-arc-label text {
+    font-size: 14px !important;
+  }
+  
+  .bar-chart-container {
+    min-height: 200px !important;
+    max-height: 220px !important;
+  }
+  
+  .bar-chart-center {
+    height: 180px !important;
+  }
+}

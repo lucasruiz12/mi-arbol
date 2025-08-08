@@ -1,12 +1,13 @@
 .nav-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     height: 10vh;
     width: auto;
     background-color: transparent;
     border-radius: 0 0 2rem 2rem;
     padding: 0 3vw;
+    position: relative;
 }
 
 .nav-logo {
@@ -74,6 +75,10 @@
 
 .navbar-item.logout {
     font-size: medium !important;
+    position: absolute;
+    right: 3vw;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .navbar-logout {
@@ -90,6 +95,7 @@
         border-radius: 1rem 1rem 0 0;
         height: 7vh;
         padding: 0 7vw 0 0;
+        justify-content: center;
     }
 
     .nav-logo {
@@ -133,6 +139,10 @@
 
     .navbar-item.logout {
         margin-left: 1.5vw !important;
+        position: absolute;
+        right: 7vw;
+        top: 50%;
+        transform: translateY(-50%);
     }
 
     .navbar-icon {
