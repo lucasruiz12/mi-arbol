@@ -118,7 +118,7 @@ const Register = () => {
 
     return (
         loadingGif ? <LoadingResult message="Cargando" /> :
-            <div className="container-fluid d-flex align-items-center justify-content-center py-5">
+            <div className="container-fluid d-flex align-items-center justify-content-center py-5 register-wrapper">
                 <div className="row w-100 justify-content-center">
                     <div className="col-12 col-md-10 col-lg-8 col-xl-6 col-xxl-5">
                         <div className="container-register p-3 p-md-4 shadow rounded bg-white bg-opacity-75">
@@ -139,7 +139,7 @@ const Register = () => {
                                 <div className="title-register text-center mb-4">
                                     <img className="register-logo mb-3" src={logoArbol} alt="LOG" style={{ maxWidth: '70px' }} />
                                     <div className="text-register">
-                                        <p className="register-line" style={{ fontSize: '1.1rem', fontWeight: 600, wordBreak: 'break-word', marginBottom: '0.5rem' }}>
+                                        <p className="register-line">
                                             "SEMBREMOS UN ÁRBOL HOY PARA DAR SOMBRA A LAS PERSONAS DEL MAÑANA."
                                         </p>
                                     </div>
@@ -153,11 +153,11 @@ const Register = () => {
                                         <label className="input-title" htmlFor="email">Email:</label>
                                         <input className="input-form form-control w-100" type="email" id="email" name="email" onChange={changeData} />
                                     </div>
-                                    <div className="col-12 col-md-6 mt-3">
+                                    <div className="col-12 mt-3">
                                         <label className="input-title" htmlFor="password">Contraseña:</label>
                                         <input className="input-form form-control w-100" type="password" id="password" name="password" onChange={changeData} />
                                     </div>
-                                    <div className="col-12 col-md-6 mt-3">
+                                    <div className="col-12 mt-3">
                                         <label className="input-title" htmlFor="repeatPassword">Confirmar contraseña:</label>
                                         <input className="input-form form-control w-100" type="password" id="repeatPassword" name="repeatPassword" onChange={changeData} />
                                     </div>
@@ -174,7 +174,9 @@ const Register = () => {
                                             />
                                         </div>
                                     </div>
-                                    <div className="link-container-register text-center">
+                                    <div className="link-container-register text-center" style={{
+                                        marginTop: window.innerWidth === 1440 && window.innerHeight === 858 ? '0.5rem' : 'inherit'
+                                    }}>
                                         {
                                             loading ?
                                                 <button className="btn-green-register w-100">
