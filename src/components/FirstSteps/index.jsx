@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import logoArbol from '../../assets/logos/logo-mas-raices.png';
+import logoArbol2 from '../../assets/logos/GRIS.png';
 import logoISO from '../../assets/logos/logo-ISO.svg';
 import logoGreenHouse from '../../assets/logos/logo-green-house.svg';
 import CarouselLogo from '../CarouselLogos';
@@ -31,20 +32,33 @@ const FirstSteps = ({ setView }) => {
 
     return (
         <div className="container-fluid h-100 first-steps-container">
-            {/* Fila 1: Logo - Aprovechar más altura */}
-            <div className="row h-20 align-items-center justify-content-center justify-content-lg-start">
-                <div className="col-12 col-lg-6 col-xl-4 col-xxl-3 d-flex justify-content-center justify-content-lg-start">
+            {/* Fila 1: Logo - Una sola columna */}
+            <div className="row h-15 align-items-center justify-content-center">
+                <div className="col-12 d-flex justify-content-center">
                     <img
                         className="steps-logo"
-                        src={logoArbol}
+                        src={logoArbol2}
                         alt="Logo de Más Raíces, Menos Huella"
+                        style={{
+                            height: window.innerWidth >= 2560 ? '100%' :
+                                   window.innerWidth >= 1920 ? '120px' :
+                                   window.innerWidth >= 1440 ? '100px' :
+                                   window.innerWidth >= 1024 ? '80px' :
+                                   window.innerWidth >= 768 ? '70px' : '60px',
+                            maxHeight: window.innerWidth >= 2560 ? '100%' :
+                                     window.innerWidth >= 1920 ? '120px' :
+                                     window.innerWidth >= 1440 ? '100px' :
+                                     window.innerWidth >= 1024 ? '80px' :
+                                     window.innerWidth >= 768 ? '70px' : '60px',
+                            margin: '0 auto',
+                            display: 'block'
+                        }}
                     />
                 </div>
-                <div className="col-6 col-lg-6 col-xl-8 col-xxl-9 d-none d-lg-block"></div>
             </div>
 
             {/* Fila 2: Contenido principal - Mejor distribución vertical */}
-            <div className="row h-60">
+            <div className="row h-65">
                 {/* Columna izquierda: Texto y botones */}
                 <div className="col-12 col-lg-6 col-xl-7 col-xxl-8 d-flex flex-column justify-content-center">
                     <div className="steps-text mb-4">
@@ -94,10 +108,21 @@ const FirstSteps = ({ setView }) => {
             </div>
 
             {/* Fila 3: Carrusel de clientes - Aprovechar más espacio */}
-            <div className="row h-15">
+            <div className="row h-20">
                 <div className="col-12 d-flex flex-column align-items-center justify-content-center">
                     <BackArrow handleAction={() => setView(1)} />
-                    <p className="steps-clients-title mt-2 mb-1">Nuestros clientes</p>
+                    <p 
+                        className="steps-clients-title mt-2 mb-1"
+                        style={{
+                            textAlign: window.innerWidth >= 2560 ? 'center' : 'inherit',
+                            width: window.innerWidth >= 2560 ? '100%' : 'inherit',
+                            display: window.innerWidth >= 2560 ? 'block' : 'inherit',
+                            marginLeft: window.innerWidth >= 2560 ? 'auto' : 'inherit',
+                            marginRight: window.innerWidth >= 2560 ? 'auto' : 'inherit'
+                        }}
+                    >
+                        Nuestros clientes
+                    </p>
                     <CarouselLogo />
                 </div>
             </div>

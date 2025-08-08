@@ -13,8 +13,10 @@
 
 /* Fila 1: Logo */
 .steps-logo {
-  height: clamp(60px, 8vw, 100px);
+  height: clamp(60px, 8vw, 150px) !important;
   max-width: 100%;
+  margin: 0 auto !important;
+  display: block !important;
 }
 
 /* Fila 2: Contenido principal */
@@ -42,6 +44,8 @@
   height: clamp(60px, 8vw, 80px);
   width: auto;
 }
+
+
 
 /* Tips */
 .steps-tips {
@@ -108,7 +112,10 @@
   }
   
   .steps-logo {
-    height: clamp(70px, 15vw, 100px);
+    height: 60px !important;
+    max-height: 60px !important;
+    margin: 0 auto !important;
+    display: block !important;
   }
   
   .steps-line-text {
@@ -174,7 +181,10 @@
   }
   
   .steps-logo {
-    height: clamp(50px, 7vw, 70px);
+    height: 70px !important;
+    max-height: 70px !important;
+    margin: 0 auto !important;
+    display: block !important;
   }
   
   .steps-line-text {
@@ -210,6 +220,14 @@
   }
 }
 
+/* Responsive para Laptop Normal (1024px-1439px) */
+@media (min-width: 1024px) and (max-width: 1439px) {
+  /* Margin left para separar logos del texto */
+  .col-12.d-flex.justify-content-start {
+    margin-left: 2rem !important;
+  }
+}
+
 /* Responsive para monitores grandes */
 @media (min-width: 1400px) {
   .container-fluid {
@@ -219,7 +237,10 @@
   }
   
   .steps-logo {
-    height: clamp(80px, 6vw, 120px);
+    height: 80px !important;
+    max-height: 80px !important;
+    margin: 0 auto !important;
+    display: block !important;
   }
   
   .steps-line-text {
@@ -250,6 +271,11 @@
   .logo-iso {
     height: clamp(90px, 7vw, 120px);
   }
+  
+  /* Margin left para separar logos del texto en Laptop L */
+  .col-12.d-flex.justify-content-start {
+    margin-left: 3rem !important;
+  }
 }
 
 /* Responsive para monitores muy grandes */
@@ -260,7 +286,10 @@
   }
   
   .steps-logo {
-    height: clamp(100px, 5vw, 140px);
+    height: 120px !important;
+    max-height: 120px !important;
+    margin: 0 auto !important;
+    display: block !important;
   }
   
   .steps-line-text {
@@ -325,8 +354,10 @@
   }
   
   .steps-logo {
-    height: clamp(120px, 4vw, 180px);
-    max-height: 200px;
+    height: 150px !important;
+    max-height: 150px !important;
+    margin: 0 auto !important;
+    display: block !important;
   }
   
   .steps-line-text {
@@ -461,8 +492,10 @@
   }
   
   .steps-logo {
-    height: clamp(140px, 3.5vw, 200px);
-    max-height: 250px;
+    height: 150px !important;
+    max-height: 150px !important;
+    margin: 0 auto !important;
+    display: block !important;
   }
   
   .steps-line-text {
@@ -500,6 +533,8 @@
     margin-top: 2rem;
     text-align: center !important;
     width: 100% !important;
+    display: block !important;
+    text-align: center !important;
   }
   
   .logo-green-house {
@@ -561,6 +596,27 @@
     justify-content: center !important;
     text-align: center !important;
   }
+  
+  /* Asegurar que todos los elementos dentro del contenedor estén centrados */
+  .col-12.d-flex.flex-column.align-items-center.justify-content-center * {
+    text-align: center !important;
+  }
+  
+  /* Forzar centrado del título de clientes */
+  .row.h-20 .col-12 .steps-clients-title {
+    text-align: center !important;
+    display: block !important;
+    width: 100% !important;
+  }
+  
+  /* Regla más específica para forzar centrado */
+  .row.h-20 .col-12.d-flex.flex-column.align-items-center.justify-content-center .steps-clients-title {
+    text-align: center !important;
+    display: block !important;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
 }
 
 @keyframes grow {
@@ -577,5 +633,48 @@
   }
   100% {
     opacity: 0;
+  }
+}
+
+/* Estilos forzados para el logo - máxima especificidad */
+img.steps-logo {
+  height: 60px !important;
+  max-height: 60px !important;
+  margin: 0 auto !important;
+  display: block !important;
+}
+
+@media (min-width: 768px) {
+  img.steps-logo {
+    height: 70px !important;
+    max-height: 70px !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  img.steps-logo {
+    height: 80px !important;
+    max-height: 80px !important;
+  }
+}
+
+@media (min-width: 1400px) {
+  img.steps-logo {
+    height: 100px !important;
+    max-height: 100px !important;
+  }
+}
+
+@media (min-width: 1920px) {
+  img.steps-logo {
+    height: 120px !important;
+    max-height: 120px !important;
+  }
+}
+
+@media (min-width: 2560px) {
+  img.steps-logo {
+    height: 150px !important;
+    max-height: 150px !important;
   }
 }
