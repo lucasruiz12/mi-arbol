@@ -766,3 +766,62 @@
         margin-right: 0 !important;
     }
 }
+
+/* Regla específica para resolución 1024x858 */
+@media (min-width: 1024px) and (max-width: 1024px) and (min-height: 858px) and (max-height: 858px) {
+    .text-you-know {
+        font-size: 4vh !important;
+    }
+    
+    .info-you-know {
+        font-size: 26px !important;
+    }
+    
+    .info-you-know.bottom-text-info {
+        font-size: 24px !important;
+    }
+    
+    /* Achicar el botón de suscripción */
+    .btn-green.suscription-how {
+        font-size: 1.05rem !important;
+        padding: 0.5rem 1rem !important;
+        min-width: 180px !important;
+        max-width: 400px !important;
+        margin-left: 3rem !important;
+    }
+    
+    /* Achicar iconos y precios */
+    .info-pizza-img {
+        height: 8vh !important;
+        width: 8vh !important;
+    }
+    
+    .info-pizza-text {
+        font-size: 6vh !important;
+    }
+    
+    .pizza-img {
+        height: 6vh !important;
+        width: 6vh !important;
+    }
+    
+    .pizza-price {
+        font-size: 1.5rem !important;
+    }
+    
+    .tree-img {
+        height: 6vh !important;
+        width: 6vh !important;
+    }
+    
+    .tree-price {
+        font-size: 1.5rem !important;
+    }
+
+     /* Más ancho para el botón '¡Vuélvete carbono neutro!' */
+     .fila-botones-impacto .col-6 .btn-vuelvete-carbono .btn-green.btn-impacto-reducido {
+         width: 350px !important;
+         min-width: 350px !important;
+         max-width: 350px !important;
+     }
+}

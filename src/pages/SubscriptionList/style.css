@@ -64,6 +64,47 @@
     }
 }
 
+/* Resolución específica 1024x858: reducir tamaño de widgets "Tu Impacto" */
+@media (min-width: 1024px) and (max-width: 1024px) and (min-height: 858px) and (max-height: 858px) {
+    .formula-container {
+        padding: 12px !important;
+        margin: 8px 0 !important;
+    }
+
+    .formula-title {
+        font-size: 22px !important;
+        margin-bottom: 10px !important;
+        padding: 6px 0 !important;
+    }
+
+    .formula-section {
+        padding: 10px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .formula-section h5 {
+        font-size: 13px !important;
+        margin-bottom: 6px !important;
+    }
+
+    .carbon-points,
+    .trees-needed,
+    .slider-trees,
+    .carbon-mitigated,
+    .carbon-remaining {
+        font-size: 18px !important;
+        line-height: 1.2 !important;
+    }
+
+    .formula-text {
+        font-size: 11px !important;
+    }
+
+    .formula-info {
+        font-size: 12px !important;
+    }
+}
+
 /* Laptop (1024px - 2559px) */
 @media (min-width: 1024px) and (max-width: 2559px) {
     .subscription-text-header {
