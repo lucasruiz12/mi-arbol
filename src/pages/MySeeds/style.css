@@ -546,6 +546,100 @@ h4.fw-bold, h5.fw-bold, h6.fw-bold {
     }
 }
 
+/* MONITORES ULTRA GRANDES (2560px x 1168px) - TEXTO MÁS GRANDE */
+@media (min-width: 2560px) and (max-width: 2560px) and (min-height: 1168px) and (max-height: 1168px) {
+    /* Títulos principales */
+    .title-invitation {
+        font-size: 2.8rem !important;
+        line-height: 1.2 !important;
+        margin-bottom: 1.5rem !important;
+    }
+    
+    .seeds-map-title {
+        font-size: 2.5rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+    
+    /* Títulos de secciones */
+    .fw-bold, h4.fw-bold, h5.fw-bold, h6.fw-bold {
+        font-size: 1.8rem !important;
+        margin-bottom: 0.8rem !important;
+    }
+    
+    /* Información del usuario */
+    .col-9 h5.fw-bold, .col-9 h6.fw-bold {
+        font-size: 1.6rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    .col-9 div {
+        font-size: 1.8rem !important;
+        font-weight: 600 !important;
+    }
+    
+    /* Textos informativos */
+    .info-my-seeds, .info-text {
+        font-size: 1.4rem !important;
+        margin: 0.8rem 0 !important;
+    }
+    
+    /* Título "Tipo de árboles" más grande */
+    .col-12 h5.fw-bold {
+        font-size: 2.2rem !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    /* Lista de tipos de árboles más grande */
+    ul.mb-0 li {
+        font-size: 1.8rem !important;
+        margin-bottom: 0.8rem !important;
+        line-height: 1.3 !important;
+    }
+    
+    /* Botón de inscripción */
+    .btn-green.btn-seeds-info {
+        font-size: 1.6rem !important;
+        padding: 1.2rem 2.5rem !important;
+        border-radius: 3rem !important;
+    }
+    
+    /* Foto de usuario más grande con margin-top leve */
+    .user-photo {
+        width: 180px !important;
+        height: 180px !important;
+        font-size: 5.5rem !important;
+        margin-top: 15px !important;
+        border: 6px solid #fff !important;
+    }
+    
+    /* Espaciado general aumentado */
+    .col-9 .row.mb-2 {
+        margin-bottom: 1.5rem !important;
+    }
+    
+    .col-9 .col-12 {
+        padding: 0.8rem 0 !important;
+    }
+    
+    /* Contenedor de invitación reducido con margin-bottom */
+    .container-invitation.container-btn-inscription {
+        padding: 1.5rem !important;
+        max-width: 90% !important;
+        margin: 0 auto 2rem auto !important;
+    }
+    
+    .container-invitation.container-btn-inscription .title-invitation {
+        font-size: 2.4rem !important;
+        margin-bottom: 0.8rem !important;
+        line-height: 1.2 !important;
+    }
+    
+    .container-invitation.container-btn-inscription .btn-green.btn-seeds-info {
+        font-size: 1.4rem !important;
+        padding: 0.8rem 1.8rem !important;
+    }
+}
+
 /** Ajustes para listas y detalles */
 ul.mb-0 {
     margin-bottom: 0 !important;
