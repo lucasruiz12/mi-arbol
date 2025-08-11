@@ -36,7 +36,7 @@
     }
     
     .mission-line-text {
-        font-size: clamp(1.8rem, 2.2vw, 2.2rem) !important;
+        font-size: 24px !important;
         text-align: center !important;
         line-height: 1.4 !important;
         margin-bottom: 2rem !important;
@@ -179,7 +179,7 @@
 }
 
 /* Estilos específicos para monitores grandes */
-@media (min-width: 1400px) and (max-width: 1919px) {
+@media (min-width: 1400px) and (max-width: 1439px) {
     .mission-logo {
         height: 180px !important;
         margin: 0 !important;
@@ -257,14 +257,10 @@
 
 .mission-line-text {
     color: white;
-    font-size: 28px;
+    font-size: 1.2rem;
     text-align: justify;
     font-weight: bold;
     margin-bottom: 1.5rem;
-}
-
-.mission-line-text, .mission-tips, .title-invitation {
-    font-size: 1.2rem;
 }
 
 @media (max-width: 991px) {
