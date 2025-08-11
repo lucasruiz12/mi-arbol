@@ -34,7 +34,7 @@ export const backgroundImages = [
     image5,
     image6,
     image3,
-    image13,
+    image7,
     image7,
     image4,
     image14,

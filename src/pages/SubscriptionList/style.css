@@ -123,6 +123,79 @@
     }
 }
 
+/* Regla específica para 1024px - reducir tamaños */
+@media (min-width: 1024px) and (max-width: 1024px) {
+    .subscription-text-header {
+        font-size: 32px !important;
+        margin-top: 3vh !important;
+    }
+    
+    .subscription-text-line {
+        font-size: 22px !important;
+        width: 60% !important;
+        margin-top: 3vh !important;
+    }
+    
+    .container-subscription-slider {
+        margin-top: 3vh !important;
+    }
+    
+    /* Widgets más pequeños para 1024px */
+    .formula-container {
+        padding: 12px !important;
+        margin: 8px 0 !important;
+    }
+    
+    .formula-title {
+        font-size: 20px !important;
+        margin-bottom: 10px !important;
+        padding: 6px 0 !important;
+    }
+    
+    .formula-section {
+        padding: 10px !important;
+        margin-bottom: 10px !important;
+    }
+    
+    .formula-section h5 {
+        font-size: 13px !important;
+        margin-bottom: 6px !important;
+    }
+    
+    .carbon-points,
+    .trees-needed,
+    .slider-trees,
+    .carbon-mitigated,
+    .carbon-remaining {
+        font-size: 16px !important;
+        line-height: 1.2 !important;
+    }
+    
+    .formula-text {
+        font-size: 10px !important;
+    }
+    
+    .formula-info {
+        font-size: 11px !important;
+    }
+    
+    /* GIF y texto de impacto más pequeños */
+    .impact-gif {
+        max-width: 200px !important;
+        width: 45% !important;
+    }
+    
+    .impact-status {
+        font-size: 18px !important;
+        width: 45% !important;
+        max-width: 200px !important;
+        margin-left: 15px !important;
+        margin-right: auto !important;
+        text-align: center !important;
+        white-space: nowrap !important;
+    }
+}
+
 /* Tablet (768px - 1023px) */
 @media (min-width: 768px) and (max-width: 1023px) {
     .container-subscription-list {
@@ -473,47 +546,9 @@
     }
 }
 
-/* Resolución específica 1440x858: reducir tamaño de widgets "Tu Impacto" */
-@media (min-width: 1440px) and (max-width: 1440px) and (min-height: 858px) and (max-height: 858px) {
-    .formula-container {
-        padding: 16px !important;
-        margin: 10px 0 !important;
-    }
-    .formula-title {
-        font-size: 24px !important;
-        margin-bottom: 12px !important;
-    }
-    .formula-section {
-        padding: 12px !important;
-        margin-bottom: 12px !important;
-    }
-    .formula-section h5 {
-        font-size: 16px !important;
-        margin-bottom: 6px !important;
-    }
-    .carbon-points,
-    .trees-needed,
-    .slider-trees,
-    .carbon-mitigated,
-    .carbon-remaining {
-        font-size: 20px !important;
-        line-height: 1.25 !important;
-    }
-    .formula-text { font-size: 12px !important; }
-    .formula-info { font-size: 13px !important; }
 
-    /* Centrar texto de impacto respecto al GIF */
-    .impact-summary { align-items: center !important; }
-    .impact-gif { max-width: 280px !important; width: 50% !important; }
-    .impact-status {
-        width: 50% !important;
-        max-width: 280px !important;
-        margin-left: 25px !important;
-        margin-right: auto !important;
-        text-align: center !important;
-        white-space: nowrap !important;
-    }
-}
+
+
 
 /* Tablet (768px - 1023px) */
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -624,5 +659,322 @@
     }
     .container-subscription-slider {
         margin-top: 3vh;
+    }
+}
+
+/* REGLA ESPECÍFICA PARA 1440px - MÁXIMA ESPECIFICIDAD */
+@media (min-width: 1440px) and (max-width: 1440px) and (min-height: 858px) and (max-height: 858px) {
+    div.container-fluid div.row div.col-md-4 div.formula-container {
+        padding: 8px !important;
+        margin: 6px 0 !important;
+    }
+    div.container-fluid div.row div.col-md-4 div.formula-container .formula-title {
+        font-size: 18px !important;
+        margin-bottom: 8px !important;
+        padding: 4px 0 !important;
+    }
+    div.container-fluid div.row div.col-md-4 div.formula-container .formula-section {
+        padding: 8px !important;
+        margin-bottom: 8px !important;
+    }
+    div.container-fluid div.row div.col-md-4 div.formula-container .formula-section h5 {
+        font-size: 12px !important;
+        margin-bottom: 4px !important;
+    }
+    div.container-fluid div.row div.col-md-4 div.formula-container .carbon-points,
+    div.container-fluid div.row div.col-md-4 div.formula-container .trees-needed,
+    div.container-fluid div.row div.col-md-4 div.formula-container .slider-trees,
+    div.container-fluid div.row div.col-md-4 div.formula-container .carbon-mitigated,
+    div.container-fluid div.row div.col-md-4 div.formula-container .carbon-remaining {
+        font-size: 14px !important;
+        line-height: 1.1 !important;
+    }
+    div.container-fluid div.row div.col-md-4 div.formula-container .formula-text { 
+        font-size: 10px !important; 
+    }
+    div.container-fluid div.row div.col-md-4 div.formula-container .formula-info { 
+        font-size: 11px !important; 
+    }
+
+    /* Centrar texto de impacto respecto al GIF */
+    div.container-fluid div.row div.col-md-4 .impact-summary { 
+        align-items: center !important; 
+    }
+    div.container-fluid div.row div.col-md-4 .impact-gif { 
+        max-width: 220px !important; 
+        width: 50% !important; 
+    }
+    div.container-fluid div.row div.col-md-4 .impact-status {
+        font-size: 16px !important;
+        width: 50% !important;
+        max-width: 220px !important;
+        margin-left: 15px !important;
+        margin-right: auto !important;
+        text-align: center !important;
+        white-space: nowrap !important;
+    }
+}
+
+/* REGLA ALTERNATIVA PARA 1440px - SIN RESTRICCIÓN DE ALTURA */
+@media (min-width: 1440px) and (max-width: 1440px) {
+    .formula-container {
+        padding: 8px !important;
+        margin: 6px 0 !important;
+    }
+    .formula-title {
+        font-size: 18px !important;
+        margin-bottom: 8px !important;
+        padding: 4px 0 !important;
+    }
+    .formula-section {
+        padding: 8px !important;
+        margin-bottom: 8px !important;
+    }
+    .formula-section h5 {
+        font-size: 12px !important;
+        margin-bottom: 4px !important;
+    }
+    .carbon-points,
+    .trees-needed,
+    .slider-trees,
+    .carbon-mitigated,
+    .carbon-remaining {
+        font-size: 14px !important;
+        line-height: 1.1 !important;
+    }
+    .formula-text { 
+        font-size: 10px !important; 
+    }
+    .formula-info { 
+        font-size: 11px !important; 
+    }
+
+    /* Centrar texto de impacto respecto al GIF */
+    .impact-summary { 
+        align-items: center !important; 
+    }
+    .impact-gif { 
+        max-width: 220px !important; 
+        width: 50% !important; 
+    }
+    .impact-status {
+        font-size: 16px !important;
+        width: 50% !important;
+        max-width: 220px !important;
+        margin-left: 15px !important;
+        margin-right: auto !important;
+        text-align: center !important;
+        white-space: nowrap !important;
+    }
+}
+
+/* REGLA ESPECÍFICA PARA 1440px - WIDGETS MÁS PEQUEÑOS */
+@media (min-width: 1440px) and (max-width: 1440px) {
+    .formula-container {
+        padding: 8px !important;
+        margin: 6px 0 !important;
+    }
+    
+    .formula-title {
+        font-size: 18px !important;
+        margin-bottom: 8px !important;
+        padding: 4px 0 !important;
+    }
+    
+    .formula-section {
+        padding: 8px !important;
+        margin-bottom: 8px !important;
+    }
+    
+    .formula-section h5 {
+        font-size: 12px !important;
+        margin-bottom: 4px !important;
+    }
+    
+    .carbon-points,
+    .trees-needed,
+    .slider-trees,
+    .carbon-mitigated,
+    .carbon-remaining {
+        font-size: 14px !important;
+        line-height: 1.1 !important;
+    }
+    
+    .formula-text { 
+        font-size: 10px !important; 
+    }
+    
+    .formula-info { 
+        font-size: 11px !important; 
+    }
+
+    /* GIF más pequeño para 1440px */
+    .impact-gif { 
+        max-width: 180px !important; 
+        width: 45% !important; 
+    }
+    
+    .impact-status {
+        font-size: 14px !important;
+        width: 45% !important;
+        max-width: 180px !important;
+        margin-left: 120px !important;
+        margin-right: auto !important;
+        text-align: center !important;
+        white-space: nowrap !important;
+    }
+
+    /* Texto "Recuerda que la acción..." más pequeño para 1440px */
+    .subscription-text-line {
+        font-size: 20px !important;
+        width: 55% !important;
+        margin-top: 5vh !important;
+    }
+}
+
+/* REGLA ESPECÍFICA PARA 1920px - WIDGETS Y GIF MÁS PEQUEÑOS */
+@media (min-width: 1920px) and (max-width: 1920px) {
+    /* Widgets más pequeños para 1920px */
+    .formula-container {
+        padding: 14px !important;
+        margin: 8px 0 !important;
+    }
+    
+    .formula-title {
+        font-size: 22px !important;
+        margin-bottom: 12px !important;
+        padding: 6px 0 !important;
+    }
+    
+    .formula-section {
+        padding: 12px !important;
+        margin-bottom: 12px !important;
+    }
+    
+    .formula-section h5 {
+        font-size: 15px !important;
+        margin-bottom: 6px !important;
+    }
+    
+    .carbon-points,
+    .trees-needed,
+    .slider-trees,
+    .carbon-mitigated,
+    .carbon-remaining {
+        font-size: 18px !important;
+        line-height: 1.2 !important;
+    }
+    
+    .formula-text {
+        font-size: 11px !important;
+    }
+    
+    .formula-info {
+        font-size: 12px !important;
+    }
+    
+    /* GIF y texto de impacto más pequeños para 1920px */
+    .impact-gif {
+        max-width: 220px !important;
+        width: 45% !important;
+    }
+    
+    .impact-status {
+        font-size: 18px !important;
+        width: 45% !important;
+        max-width: 220px !important;
+        margin-left: 20px !important;
+        margin-right: auto !important;
+        text-align: center !important;
+        white-space: nowrap !important;
+    }
+    
+    /* Texto principal ligeramente más pequeño */
+    .subscription-text-header {
+        font-size: 36px !important;
+        margin-top: 4vh !important;
+    }
+    
+    .subscription-text-line {
+        font-size: 24px !important;
+        width: 62% !important;
+        margin-top: 4vh !important;
+    }
+    
+    .container-subscription-slider {
+        margin-top: 4vh !important;
+    }
+}
+
+/* REGLA ESPECÍFICA PARA 1920px - MÁXIMA ESPECIFICIDAD */
+@media (min-width: 1920px) and (max-width: 1920px) {
+    div.container-fluid div.row div.col-md-4 div.formula-container {
+        padding: 14px !important;
+        margin: 8px 0 !important;
+    }
+    
+    div.container-fluid div.row div.col-md-4 div.formula-container .formula-title {
+        font-size: 22px !important;
+        margin-bottom: 12px !important;
+        padding: 6px 0 !important;
+    }
+    
+    div.container-fluid div.row div.col-md-4 div.formula-container .formula-section {
+        padding: 12px !important;
+        margin-bottom: 12px !important;
+    }
+    
+    div.container-fluid div.row div.col-md-4 div.formula-container .formula-section h5 {
+        font-size: 15px !important;
+        margin-bottom: 6px !important;
+    }
+    
+    div.container-fluid div.row div.col-md-4 div.formula-container .carbon-points,
+    div.container-fluid div.row div.col-md-4 div.formula-container .trees-needed,
+    div.container-fluid div.row div.col-md-4 div.formula-container .slider-trees,
+    div.container-fluid div.row div.col-md-4 div.formula-container .carbon-mitigated,
+    div.container-fluid div.row div.col-md-4 div.formula-container .carbon-remaining {
+        font-size: 18px !important;
+        line-height: 1.2 !important;
+    }
+    
+    div.container-fluid div.row div.col-md-4 div.formula-container .formula-text {
+        font-size: 11px !important;
+    }
+    
+    div.container-fluid div.row div.col-md-4 div.formula-container .formula-info {
+        font-size: 12px !important;
+    }
+    
+    /* GIF y texto de impacto más pequeños para 1920px */
+    div.container-fluid div.row div.col-md-4 .impact-gif {
+        max-width: 220px !important;
+        width: 45% !important;
+    }
+    
+    div.container-fluid div.row div.col-md-4 .impact-status {
+        font-size: 18px !important;
+        width: 45% !important;
+        max-width: 220px !important;
+        margin-left: 20px !important;
+        margin-right: auto !important;
+        text-align: center !important;
+        white-space: nowrap !important;
+    }
+    
+    /* Texto principal ligeramente más pequeño */
+    .subscription-text-header {
+        font-size: 36px !important;
+        margin-top: 4vh !important;
+    }
+    
+    .subscription-text-line {
+        font-size: 24px !important;
+        width: 62% !important;
+        margin-top: 4vh !important;
+    }
+    
+    .container-subscription-slider {
+        margin-top: 4vh !important;
     }
 }

@@ -81,6 +81,7 @@ const PriceSlider = ({ minPrice, currentPrice, setCurrentPrice, setModalPayment 
                         max={1890}
                         step={189}
                     />
+                    <p className="price-symbol"> Mensual</p>
                 </div>
                 <div className="container-tree-text">
                     <p className="tree-line">{priceToValue.trees} árboles al año</p>

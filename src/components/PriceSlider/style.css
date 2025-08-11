@@ -75,7 +75,7 @@
     background-color: transparent;
     text-align: flex-end;
     color: white;
-    font-size: 50px;
+    font-size: 40px;
     /* margin-right: 0.5vw; */
     font-weight: bold;
     margin-top: 15px;
@@ -172,5 +172,41 @@
 @media (min-width: 1024px) and (max-width: 1439px) {
     .checkout-btn {
         margin-top: 1.5rem;
+    }
+}
+
+/* Regla específica para 1440px - reducir tamaño de elementos del slider */
+@media (min-width: 1440px) and (max-width: 1440px) {
+    .price-symbol {
+        font-size: 32px !important;
+        height: 8vh !important;
+        margin-top: 12px !important;
+    }
+    
+    .price-input {
+        font-size: 40px !important;
+        height: 8vh !important;
+    }
+    
+    .tree-line {
+        font-size: x-large !important;
+    }
+    
+    .checkout-btn {
+        font-size: 1.1rem !important;
+        padding: 0.8rem 0 !important;
+        margin-top: 1rem !important;
+    }
+    
+    .container-slider-price {
+        margin-top: 2rem !important;
+    }
+    
+    .horizontal-slider {
+        margin-bottom: 1.5rem !important;
+    }
+    
+    .container-all-price {
+        margin: 1.5vh 0 !important;
     }
 }

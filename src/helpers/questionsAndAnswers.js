@@ -130,7 +130,7 @@ export const questionsAndAnswers = [
         answers: [
             { name: "Hago composta", points: 0.625 },
             { name: "Los tiro a la basura", points: 0.85 },
-            { name: "Los separo y los llevo a puntos de reciclaje", points: 0.75 },
+            { name: "Me encargo de reciclarlos", points: 0.75 },
         ],
     },
     {
