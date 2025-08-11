@@ -360,3 +360,17 @@
       padding: 2rem 4rem;
     }
   }
+
+  /* RESOLUCIÓN ESPECÍFICA 1440px - BOTÓN MÁS ANGOSTO */
+  @media (min-width: 1440px) and (max-width: 1440px) {
+    .next-question {
+      width: 18% !important;
+      max-width: 280px !important;
+      font-size: 1.1rem !important;
+      padding: 0.8rem 1.5rem !important;
+    }
+    
+    .question-button-container {
+      padding: 1.5rem 0 !important;
+    }
+  }
