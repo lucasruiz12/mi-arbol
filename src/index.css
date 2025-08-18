@@ -1,8 +1,35 @@
 @font-face {
-  font-family: 'Azo Sans';
-  src: url('./assets/fonts/Azo_Sans_Black.otf') format('truetype');
-  font-weight: 900;
+  font-family: 'Aparajita';
+  src: url('./assets/fonts/Aparajita.woff2') format('woff2'),
+       url('./assets/fonts/Aparajita.woff') format('woff'),
+       url('./assets/fonts/Aparajita.ttf') format('truetype');
+  font-weight: normal;
   font-style: normal;
+}
+
+@font-face {
+  font-family: 'Daytone Light';
+  src: url('./assets/fonts/Daytone-Light.woff2') format('woff2'),
+       url('./assets/fonts/Daytone-Light.woff') format('woff'),
+       url('./assets/fonts/Daytone-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Kalinga';
+  src: url('./assets/fonts/Kalinga.woff2') format('woff2'),
+       url('./assets/fonts/Kalinga.woff') format('woff'),
+       url('./assets/fonts/Kalinga.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Variables CSS para las fuentes */
+:root {
+  --font-primary: 'Aparajita', serif;
+  --font-secondary: 'Daytone Light', sans-serif;
+  --font-accent: 'Kalinga', serif;
 }
 
 body {
@@ -11,7 +38,7 @@ body {
     overflow: hidden; /* Evita scroll en desktop */
     height: 100vh;
     width: 100vw;
-    font-family: 'Azo Sans', serif !important;
+    font-family: 'Aparajita', serif !important;
   }
   
   html, body, #root {
