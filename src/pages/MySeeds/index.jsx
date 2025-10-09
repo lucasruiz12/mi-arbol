@@ -3,6 +3,7 @@ import { IS_AUTHENTICATED } from '../../helpers/constants';
 import loginConnections from '../../helpers/loginConnections';
 import NavBar from '../../components/NavBar';
 import MapView from '../../components/MapView';
+import TreeCarousel from '../../components/TreeCarousel';
 import moment from 'moment';
 import './style.css';
 
@@ -89,11 +90,8 @@ const MySeeds = () => {
           {/* Fila 2 interna: Tipo de árboles */}
           <div className="row">
             <div className="col-12">
-              <h5 className="fw-bold">Tipo de árboles</h5>
-              <ul className="mb-0">
-                <li>Pinus Pinea</li>
-                <li>Pinus Elliotti</li>
-              </ul>
+              <h5 className="fw-bold mb-3">Tipo de árboles</h5>
+              <TreeCarousel />
             </div>
           </div>
         </div>
