@@ -9,9 +9,9 @@ import './style.css';
 
 const SubscriptionList = () => {
 
-    const [currentPrice, setCurrentPrice] = useState(189);
+    const [currentPrice, setCurrentPrice] = useState(198);
     const [modalPayment, setModalPayment] = useState(false);
-    const [minPrice, setMinPrice] = useState(189);
+    const [minPrice, setMinPrice] = useState(198);
     const [carbonPoints, setCarbonPoints] = useState(0);
     const [treesNeeded, setTreesNeeded] = useState(0);
   const impact = getImpact(carbonPoints);
@@ -26,8 +26,8 @@ const SubscriptionList = () => {
 
     // Función para calcular árboles del slider
     const calculateSliderTrees = (price) => {
-        // Cada 189 pesos son 4 árboles (según la lógica del PriceSlider)
-        return Math.ceil((price / 189) * 4);
+        // Cada 198 pesos son 4 árboles (según la lógica del PriceSlider)
+        return Math.ceil((price / 198) * 4);
     };
 
     useEffect(() => {

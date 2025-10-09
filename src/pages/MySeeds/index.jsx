@@ -79,7 +79,7 @@ const MySeeds = () => {
               </div>
               <div className="row mb-2">
                 <div className="col-12">
-                  <h6 className="fw-bold">Countdown de meses</h6>
+                  <h6 className="fw-bold">Meses restantes</h6>
                   <div>{countdown}</div>
                 </div>
               </div>

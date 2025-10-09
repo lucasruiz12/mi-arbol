@@ -15,7 +15,7 @@ const PriceSlider = ({ minPrice, currentPrice, setCurrentPrice, setModalPayment 
     });
 
     const newPriceToValue = (value) => {
-        const trees = parseInt((value / 189) * 3.5 * 12);
+        const trees = parseInt((value / 198) * 3.5 * 12);
         setPriceToValue({
             trees,
             tons: (0.015 * trees).toFixed(2),
@@ -31,7 +31,7 @@ const PriceSlider = ({ minPrice, currentPrice, setCurrentPrice, setModalPayment 
         let value = parseInt(event.target.value, 10);
 
         if (!isNaN(value)) {
-            value = Math.min(Math.max(value, 0), 1890);
+            value = Math.min(Math.max(value, 0), 1980);
             setCurrentPrice(value);
             newPriceToValue(value);
         } else if (event.target.value === "") {
@@ -62,8 +62,8 @@ const PriceSlider = ({ minPrice, currentPrice, setCurrentPrice, setModalPayment 
                 thumbClassName="thumb"
                 trackClassName="track"
                 min={minPrice}
-                max={1890}
-                step={189}
+                max={1980}
+                step={198}
                 value={currentPrice}
                 onChange={handleSliderChange}
             />
@@ -77,9 +77,9 @@ const PriceSlider = ({ minPrice, currentPrice, setCurrentPrice, setModalPayment 
                         value={currentPrice}
                         onChange={handleInputChange}
                         onBlur={handleInputBlur}
-                        min={189}
-                        max={1890}
-                        step={189}
+                        min={198}
+                        max={1980}
+                        step={198}
                     />
                     <p className="price-symbol"> Mensual</p>
                 </div>

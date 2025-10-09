@@ -55,7 +55,7 @@ const NeutralCarbon = () => {
                                     </div>
                                     <div className="info-pizza-item">
                                         <img className="info-pizza-img" src={treeIcon} alt="NOIMG" />
-                                        <p className="info-pizza-text">$189</p>
+                                        <p className="info-pizza-text">$198</p>
                                     </div>
                                 </div>
                             </div>
