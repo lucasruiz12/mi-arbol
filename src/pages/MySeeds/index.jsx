@@ -4,6 +4,7 @@ import loginConnections from '../../helpers/loginConnections';
 import NavBar from '../../components/NavBar';
 import MapView from '../../components/MapView';
 import TreeCarousel from '../../components/TreeCarousel';
+import ReforestationInvitation from '../../components/ReforestationInvitation';
 import moment from 'moment';
 import './style.css';
 
@@ -20,6 +21,10 @@ const MySeeds = () => {
   const tonsMitigated = totalTrees * 0.08;
   const tonsToMitigate = Math.max(0, (JSON.parse(localStorage.getItem(IS_AUTHENTICATED))?.carbonPoints || 0) - tonsMitigated);
   const countdown = Math.ceil(tonsToMitigate / (Math.ceil((subscription?.amount || 0) / 12 / 3.5) * 0.08)) || 0;
+  
+  // Calcular progreso para la barra (0 meses = 100% llena, más meses = menos llena)
+  const maxMonths = 12; // Meses máximos para mostrar progreso
+  const progressPercentage = Math.max(0, Math.min(100, ((maxMonths - (countdown || 0)) / maxMonths) * 100));
 
   useEffect(() => {
     const user_id = JSON.parse(localStorage.getItem(IS_AUTHENTICATED))?.id;
@@ -66,22 +71,35 @@ const MySeeds = () => {
             </div>
             {/* Columna 2: Información del usuario */}
             <div className="col-9">
+              {/* Fila 1: Árboles sembrados y Mitigación */}
               <div className="row mb-2">
-                <div className="col-12">
-                  <h5 className="fw-bold">Árboles sembrados</h5>
+                <div className="col-6">
+                  <h6 className="fw-bold">Árboles sembrados</h6>
                   <div>{totalTrees}</div>
                 </div>
-              </div>
-              <div className="row mb-2">
-                <div className="col-12">
+                <div className="col-6">
                   <h6 className="fw-bold">Mitigación de tons CO2 eq</h6>
                   <div>{tonsMitigated.toFixed(2)}</div>
                 </div>
               </div>
+              {/* Fila 2: Meses restantes con barra de progreso */}
               <div className="row mb-2">
-                <div className="col-12">
+                <div className="col-6">
                   <h6 className="fw-bold">Meses restantes</h6>
                   <div>{countdown}</div>
+                </div>
+                <div className="col-6">
+                  <h6 className="fw-bold">Progreso</h6>
+                  <div className="custom-progress">
+                    <div 
+                      className="custom-progress-bar" 
+                      style={{ 
+                        width: `${Math.max(2, progressPercentage)}%`,
+                        backgroundColor: '#c0d860'
+                      }}
+                    >
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -111,14 +129,10 @@ const MySeeds = () => {
       {/* Fila 3: Anuncio de reforestación */}
       <div className="row m-0 mt-3">
         <div className="col-12 col-lg-6 mb-3">
-          <div className="container-invitation container-btn-inscription">
-            <h1 className="title-invitation">¡Asiste a nuestra siguiente reforestación masiva!</h1>
-            <div className="container-invitation-button">
-              <button className="btn-green btn-seeds-info">
-                Inscripción
-              </button>
-            </div>
-          </div>
+          <ReforestationInvitation />
+        </div>
+        <div className="col-12 col-lg-6 mb-3">
+          {/* Espacio para otro componente */}
         </div>
       </div>
     </div>
