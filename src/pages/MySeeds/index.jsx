@@ -5,6 +5,7 @@ import NavBar from '../../components/NavBar';
 import MapView from '../../components/MapView';
 import TreeCarousel from '../../components/TreeCarousel';
 import ReforestationInvitation from '../../components/ReforestationInvitation';
+import CoordinatesTable from '../../components/CoordinatesTable';
 import moment from 'moment';
 import './style.css';
 
@@ -126,13 +127,13 @@ const MySeeds = () => {
         </div>
       </div>
 
-      {/* Fila 3: Anuncio de reforestación */}
+      {/* Fila 3: Anuncio de reforestación y tabla de coordenadas */}
       <div className="row m-0 mt-3">
         <div className="col-12 col-lg-6 mb-3">
           <ReforestationInvitation />
         </div>
         <div className="col-12 col-lg-6 mb-3">
-          {/* Espacio para otro componente */}
+          <CoordinatesTable />
         </div>
       </div>
     </div>
